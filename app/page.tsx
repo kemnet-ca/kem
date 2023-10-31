@@ -100,7 +100,7 @@ useEffect(() => {
 
   <div className='text-black justify-center font-medium text-2xl mt-40 flex'>
 
-    <p className='mt-2'>I'm a</p>  <div className='p-2 rounded-md bg-white w-60 ml-8  text-center cursor-pointer' onClick={switchScreens}>{displayText}</div>
+    <p className='mt-2'>I&apos;m a</p>  <div className='p-2 rounded-md bg-white w-60 ml-8  text-center cursor-pointer' onClick={switchScreens}>{displayText}</div>
 
    
     
