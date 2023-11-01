@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
+import Header from '@/components/Header';
 
 
 
@@ -64,21 +65,7 @@ useEffect(() => {
   return (
     <main className="bg-white relative">
 
-<div className="bg-slate-200 w-screen py-2 hidden md:flex  px-28 fixed z-10 shadow-sm top-header mt-0">
-
-  
-  <p className="main-logo text-black font-bold text-2xl">KEMET</p>
-  <ul className="main-menu text-black flex space-x-6 justify-center ml-40 pt-2">
-    <li className="menu-item  text-sm cursor-pointer hover:text-zinc-600 ">About Us</li>
-    <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 ">Our Focus</li>
-    <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 ">Kemet Science</li>
-    <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 ">Healthcare Pro Tools</li>
-  </ul>
-
-
-
-  
-</div>
+<Header />
 
 
 <div className="h-[350px] w-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/home/Medicines_share.jpeg')" }}>
@@ -121,7 +108,7 @@ useEffect(() => {
     <div className="w-full  mt-2 flex justify-center">
 
   
-        <Link href="../../patients/data/postal_code" className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 ml-[20px] mr-6'>Submit</Link>
+        <Link href="../../patients/success" className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 ml-[20px] mr-6'>Submit</Link>
 
 
 

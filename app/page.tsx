@@ -2,6 +2,8 @@
 import Image from 'next/image'
 import { useState, useEffect } from "react";
 import ResponsiveCarousel from "@/components/Carousel";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import Link from 'next/link';
 
 
@@ -65,35 +67,7 @@ useEffect(() => {
   return (
     <main className="bg-white relative">
 
-<div className="bg-slate-200 w-screen py-2 hidden md:flex  px-28 fixed z-10 shadow-sm top-header">
-
-  
-  <p className="main-logo text-black font-bold text-2xl">KEMET</p>
-  <ul className="main-menu text-black flex space-x-6 justify-center ml-40 pt-2">
-    <li className="menu-item  text-sm cursor-pointer hover:text-zinc-600 ">About Us</li>
-    <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 ">Our Focus</li>
-    <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 ">Kemet Science</li>
-    <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 ">Healthcare Pro Tools</li>
-  </ul>
-
-
-
-  <Link href={"/options"} className='h-20 w-60 bg-white rounded-br-md rounded-bl-md shadow-sm absolute z-20 mt-10 mr-10 p-2 flex'
-  style={{
-    left:`65%`
-  }}
-  >
-<p className='font-medium text-2xl text-center mt-4 cursor-pointer hover:ml-1'>Get Started</p>
-<div className='h-10 w-10 bg-black rounded-full ml-auto mr-3 ml-auto mt-3 cursor-pointer get-started-arrow-kemet hover:mr-4'>
-
-  <img src="/images/home/arrow-right-circle-svgrepo-com.svg" alt="get-started-arrow-kemet" />
-
-</div>
-
-  </Link>
-
-</div>
-
+<Header />
 
 <div className='h-screen w-screen bg-slate-100 relative md:pt-10 md:pb-10 md:pl-20 md:pr-20'>
   {/* Create 6 copies of inner-img */}
@@ -714,14 +688,7 @@ className='flex w-screen justify-center'>
   
 </div>
 
-<div className='h-32'></div>
-
-
-<div className="w-screen h-[300px] bg-slate-200 mt-auto grid place-content-center text-3xl text-slate-300">
-
-  
-FOOTER
-</div>
+<Footer />
 
     </main>
   )
