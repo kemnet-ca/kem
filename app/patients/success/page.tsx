@@ -65,7 +65,7 @@ export default function PatientSuccessPage() {
     <div className="w-full  mt-2 flex justify-center">
 
       
-        <Link href="../../patients/pharmacies" className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center py-2 px-6 hover:mt-2 ml-[20px] mr-6'>Back To Home</Link>
+        <Link href="/" className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center py-2 px-6 hover:mt-2 ml-[20px] mr-6'>Back To Home</Link>
 
 
 
