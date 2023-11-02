@@ -5,6 +5,10 @@ import ResponsiveCarousel from "@/components/Carousel";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Link from 'next/link';
+import Tooltip from '@mui/material/Tooltip';
+import Fade from '@mui/material/Fade';
+import { useRouter } from 'next/navigation';
+import Cookies from 'js-cookie';
 
 
 
@@ -16,17 +20,31 @@ const [isOpenOne, setIsOpenOne] = useState(false);
 const [isOpenTwo, setIsOpenTwo] = useState(false);
 const [isOpenThree, setIsOpenThree] = useState(false);
 
-const [displayText, setDisplayText] = useState('PATIENT');
+const [displayText, setDisplayText] = useState('Patient');
+const [displayTextLink, setDisplayTextLink] = useState('patients/custom/request');
+
+
+
+
+const router = useRouter();
 
 function switchScreens(){
+
+    
 
      
 }
 
 useEffect(() => {
   const interval = setInterval(() => {
-    setDisplayText((currentText) => (currentText === 'Patient' ? 'Prescriber' : 'Patient'));
-  }, 3000);
+
+ 
+
+    setDisplayText((currentText) => (currentText == 'Patient' ? 'Prescriber' : 'Patient'));
+ 
+
+    console.log(displayText)
+  }, 6000);
 
   return () => {
     clearInterval(interval);
@@ -34,35 +52,7 @@ useEffect(() => {
 }, []);
 
 
-  const handleMouseEnterOne = () => {
-    setIsOpenOne(true);
-  };
-
-  const handleMouseLeaveOne = () => {
-    setIsOpenOne(false);
-  };
-
-  const handleMouseEnterTwo = () => {
-    setIsOpenTwo(true);
-  };
-
-  const handleMouseLeaveTwo = () => {
-    setIsOpenTwo(false);
-  };
-
-
-  const handleMouseEnterThree = () => {
-    setIsOpenThree(true);
-  };
-
-  const handleMouseLeaveThree = () => {
-    setIsOpenThree(false);
-  };
-
-
-  
-
-
+ 
 
   return (
     <main className="bg-white relative">
@@ -74,7 +64,8 @@ useEffect(() => {
 
   <div className='text-black justify-center font-medium text-2xl mt-40 flex'>
 
-    <p className='mt-2'>I&apos;m a</p>  <div className='p-2 rounded-md bg-white w-60 ml-8  text-center cursor-pointer' onClick={switchScreens}>{displayText}</div>
+    {/* change link of item, depending on text */}
+    <p className='mt-2'>I&apos;m a</p>  <Link href={displayText=="Prescriber"?"/prescriber/custom/request":"patient/custom/request"} className='p-2 rounded-md bg-white w-60 ml-8  text-center cursor-pointer' onClick={switchScreens}>{displayText}</Link>
 
    
     
@@ -98,6 +89,21 @@ useEffect(() => {
   <p className='text-sm text-center text-zinc-600 mt-2 font-extralight'>Kemet Makes Medicines For You, By You</p>
   </div>
 
+
+  <Tooltip  TransitionComponent={Fade}
+  TransitionProps={{ timeout: 600 }} title="let us change from the logo with tagline to just the logo with no tagline" arrow
+  componentsProps={{
+    tooltip: {
+      sx: {
+        bgcolor: 'common.white',
+        color: 'common.black',
+        '& .MuiTooltip-arrow': {
+          color: 'common.white',
+        },
+      },
+    },
+  }}
+  >
   <div
      
      className='h-16 w-32 rounded-md bg-green-300 inner-img absolute '
@@ -107,6 +113,22 @@ useEffect(() => {
      }}
    ></div>
 
+   </Tooltip>
+
+<Tooltip  TransitionComponent={Fade}
+  TransitionProps={{ timeout: 600 }} title="let us change from the logo with tagline to just the logo with no tagline" arrow
+  componentsProps={{
+    tooltip: {
+      sx: {
+        bgcolor: 'common.white',
+        color: 'common.black',
+        '& .MuiTooltip-arrow': {
+          color: 'common.white',
+        },
+      },
+    },
+  }}
+  >
 
 <div
 
@@ -121,15 +143,29 @@ useEffect(() => {
 
    </div>
 
-
+</Tooltip>
 
 {
   //bg-yellow-box
 }
+
+<Tooltip  TransitionComponent={Fade}
+  TransitionProps={{ timeout: 600 }} title="let us change from the logo with tagline to just the logo with no tagline" arrow
+  componentsProps={{
+    tooltip: {
+      sx: {
+        bgcolor: 'common.white',
+        color: 'common.black',
+        '& .MuiTooltip-arrow': {
+          color: 'common.white',
+        },
+      },
+    },
+  }}
+  >
 <div
     
-    onMouseEnter={handleMouseEnterOne}
-    onMouseLeave={handleMouseLeaveOne}
+    
 
      className='h-16 w-32 rounded-md bg-yellow-400 inner-img absolute cursor-pointer bg-yellow -box cursor-pointer'
      style={{
@@ -139,33 +175,33 @@ useEffect(() => {
    >
 
 
-{
-  isOpenOne&&(<>
-  <div 
-style={{
-   marginTop: `-100px`,
-   marginLeft:`-30px` // Random top position
- 
-}}
-className='bg-white w-48 rounded-md shadow-sm p-2'>
-  <p className='font-medium text-xs'>Header</p>
-  <p className='text-xs text-zinc-600'>let us change from the logo with tagline to just the logo with no tagline</p>
 
-</div></>)
-
-}
 
 
    </div>
 
-
+</Tooltip>
    {
   //bg-orange-box
 }
 
+
+<Tooltip  TransitionComponent={Fade}
+  TransitionProps={{ timeout: 600 }} title="let us change from the logo with tagline to just the logo with no tagline" arrow
+  componentsProps={{
+    tooltip: {
+      sx: {
+        bgcolor: 'common.white',
+        color: 'common.black',
+        '& .MuiTooltip-arrow': {
+          color: 'common.white',
+        },
+      },
+    },
+  }}
+  >
   <div
-       onMouseEnter={handleMouseEnterTwo}
-       onMouseLeave={handleMouseLeaveTwo}
+      
      className='h-16 w-32 rounded-md bg-orange-400 inner-img absolute cursor-pointer '
      style={{
        top: `70%`, // Random top position
@@ -174,37 +210,34 @@ className='bg-white w-48 rounded-md shadow-sm p-2'>
      }}
    >
 
-{
-  isOpenTwo&&(<>
-  <div 
-  
-style={{
-   marginTop: `-100px`,
-   marginLeft:`-30px` // Random top position
-   
- 
-}}
-className='bg-white w-48 rounded-md shadow-sm p-2'>
-  <p className='font-medium text-xs'>Header2</p>
-  <p className='text-xs text-zinc-600'>let us change from the logo with tagline to just the logo with no tagline</p>
-
-</div></>)
-
-}
 
 
    </div>
 
-
+</Tooltip>
 
    {
   //bg-teal-box
 }
 
+
+<Tooltip  TransitionComponent={Fade}
+  TransitionProps={{ timeout: 600 }} title="let us change from the logo with tagline to just the logo with no tagline" arrow
+  componentsProps={{
+    tooltip: {
+      sx: {
+        bgcolor: 'common.white',
+        color: 'common.black',
+        '& .MuiTooltip-arrow': {
+          color: 'common.white',
+        },
+      },
+    },
+  }}
+  >
     <div
 
-onMouseEnter={handleMouseEnterThree}
-onMouseLeave={handleMouseLeaveThree}
+
      
      className='h-16 w-32 rounded-md bg-teal-300 inner-img absolute cursor-pointer'
      style={{
@@ -213,33 +246,52 @@ onMouseLeave={handleMouseLeaveThree}
      }}
    >
 
-{
-  isOpenThree&&(<>
-  <div 
-style={{
-   marginTop: `-100px`,
-   marginLeft:`-30px` // Random top position
- 
-}}
-className='bg-white w-48 rounded-md shadow-sm p-2 z-20 absolute'>
-  <p className='font-semibold text-xs'>Header 3</p>
-  <p className='text-xs text-zinc-600'>let us change from the logo with tagline to just the logo with no tagline</p>
 
-</div></>)
-
-}
 
    </div>
+</Tooltip>
 
+   <Tooltip  TransitionComponent={Fade}
+  TransitionProps={{ timeout: 600 }} title="let us change from the logo with tagline to just the logo with no tagline" arrow
+  componentsProps={{
+    tooltip: {
+      sx: {
+        bgcolor: 'common.white',
+        color: 'common.black',
+        '& .MuiTooltip-arrow': {
+          color: 'common.white',
+        },
+      },
+    },
+  }}
+  >
 
+    
   <div
      
-     className='h-16 w-32 rounded-md bg-black inner-img absolute '
+     className='h-16 w-32 rounded-md bg-blue-600 inner-img absolute custom-tooltip cursor-pointer '
      style={{
        top: `55%`, // Random top position
       left:'8%'
      }}
    ></div>
+
+   </Tooltip>
+
+   <Tooltip  TransitionComponent={Fade}
+  TransitionProps={{ timeout: 600 }} title="let us change from the logo with tagline to just the logo with no tagline" arrow
+  componentsProps={{
+    tooltip: {
+      sx: {
+        bgcolor: 'common.white',
+        color: 'common.black',
+        '& .MuiTooltip-arrow': {
+          color: 'common.white',
+        },
+      },
+    },
+  }}
+  >
 
     <div
      
@@ -249,7 +301,24 @@ className='bg-white w-48 rounded-md shadow-sm p-2 z-20 absolute'>
          // Random left position
       }}
     ></div>
+    </Tooltip>
 
+    
+
+    <Tooltip  TransitionComponent={Fade}
+  TransitionProps={{ timeout: 600 }} title="let us change from the logo with tagline to just the logo with no tagline" arrow
+  componentsProps={{
+    tooltip: {
+      sx: {
+        bgcolor: 'common.white',
+        color: 'common.black',
+        '& .MuiTooltip-arrow': {
+          color: 'common.white',
+        },
+      },
+    },
+  }}
+  >
 <div
      
      className='h-16 w-32 rounded-md bg-green-600 inner-img absolute '
@@ -258,7 +327,7 @@ className='bg-white w-48 rounded-md shadow-sm p-2 z-20 absolute'>
        left:'10%'
      }}
    ></div>
-
+</Tooltip>
 </div>
 
 
