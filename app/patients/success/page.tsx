@@ -58,7 +58,7 @@ export default function PatientSuccessPage() {
 
 
 
-    <p className='text-xl font-medium text-center mt-4'>REQUEST SENT SUCCESSFULLY!</p>
+    <p className='text-xl font-medium text-center mt-4'>REQUEST SUCCESSFULLY SENT !</p>
 
 
 
