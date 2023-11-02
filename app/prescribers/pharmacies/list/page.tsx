@@ -91,9 +91,9 @@ const checkboxStyle = {
  </div>
 </div>
 
-<div className="w-full  mt-2 flex justify-center">
+<div className="w-full  mt-10 flex justify-center">
 
-<p className='text-zinc-600 text-light text-sm'>Enter A postal code To get pharmacies From the prefered location</p>
+<p className='text-zinc-600 text-light text-sm'>Enter A postal code To get other pharmacies From the prefered location</p>
 
 
 </div>
