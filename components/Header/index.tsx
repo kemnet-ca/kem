@@ -10,7 +10,7 @@ export default function Header() {
        <div className="bg-slate-200 w-screen py-2 hidden md:flex  px-28 fixed z-10 shadow-sm top-header">
 
   
-<p className="main-logo text-black font-bold text-2xl"><img src="/images/KEMET_Black Tagline_Updated.png" className="logo h-10 w-32" alt="KEMET LOGO" /></p>
+<p className="main-logo text-black font-bold text-2xl"><Link href={"/"}><img src="/images/KEMET_Black Tagline_Updated.png" className="logo h-10 w-32" alt="KEMET LOGO" /></Link></p>
 <ul className="main-menu text-black flex space-x-6 justify-center ml-40 pt-2">
   <li className="menu-item  text-sm cursor-pointer hover:text-zinc-600 ">About Us</li>
   <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 ">Our Focus</li>

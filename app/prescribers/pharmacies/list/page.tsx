@@ -91,6 +91,23 @@ const checkboxStyle = {
  </div>
 </div>
 
+<div className="w-full  mt-2 flex justify-center">
+
+<p className='text-zinc-600 text-light text-sm'>Enter A postal code To get pharmacies From the prefered location</p>
+
+
+</div>
+
+<div className="w-full  mt-2 flex justify-center">
+
+<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px]' placeholder='Enter Your Postal Code' />
+
+<Link href="../../patients/pharmacies" className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 hover:mt-2 ml-[20px] mr-6'>Submit</Link>
+
+
+
+
+</div>
 
 <div className='w-screen 0 md:pb-10 md:pl-20 md:pr-20 md:pt-10 flex justify-center'>
     
