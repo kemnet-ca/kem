@@ -56,7 +56,10 @@ export default function PatientSuccessPage() {
   <div className='h-[300] w-2/3 bg-slate-200 rounded-md p-4 '>
 
 
-    
+     <div className="flex justify-center">
+
+      <img src="/images/home/checkmark-circle-svgrepo-com.svg" className='h-16 w-16' alt="request-sent kemnet" />
+     </div>
 
     <p className='text-xl font-medium text-center mt-4'>REQUEST SUCCESSFULLY SENT !</p>
 
