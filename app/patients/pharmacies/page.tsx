@@ -152,7 +152,7 @@ const checkboxStyle = {
           //  checked={this.state.selectedOption === 'option2'}
          //   onChange={this.handleOptionChange}
           />
-          <Link className='ml-4 font-medium text-sm text-zinc-800 hover:text-teal-500' href={"https://www.google.com/maps/dir//Hamptons+Pharmacy%2FRemedy's+RX.+Edmonton+canada/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x539f8bec5f9eabc7:0x76fba45b9d4bc801?sa=X&ved=2ahUKEwiU_-jL46eCAxX5rYkEHbUWDwQQ9Rd6BAg4EAA&hl=en"}>Hamptons Pharmacy/Remedy's RX. Edmonton <br></br><span className='text-xs font-extralight text-zinc-600 hover:text-teal-500'>5603 199 St NW, Edmonton, AB T6M 0M8,</span></Link> 
+          <Link className='ml-4 font-medium text-sm text-zinc-800 hover:text-teal-500' href={"https://www.google.com/maps/dir//Hamptons+Pharmacy%2FRemedy's+RX.+Edmonton+canada/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x539f8bec5f9eabc7:0x76fba45b9d4bc801?sa=X&ved=2ahUKEwiU_-jL46eCAxX5rYkEHbUWDwQQ9Rd6BAg4EAA&hl=en"}>Hamptons Pharmacy/Remedy&apos;s RX. Edmonton <br></br><span className='text-xs font-extralight text-zinc-600 hover:text-teal-500'>5603 199 St NW, Edmonton, AB T6M 0M8,</span></Link> 
           <span style={checkboxStyle}></span>
         </label>
 
