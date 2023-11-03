@@ -346,7 +346,7 @@ className='flex w-screen justify-center'>
 
   <div className='h-16 md:pl-8 pt-2 '>
     <p className='font-medium text-sm'>Shortage Resolution </p>
-    <p className='mt-2 text-zinc-600 text-xs font-extralight'>We've got you covered. Access affordable solutions to meet your patients' immediate medication needs with confidence and without delay.</p>
+    <p className='mt-2 text-zinc-600 text-xs font-extralight'>We&apos;ve got you covered. Access affordable solutions to meet your patients&apos; immediate medication needs with confidence and without delay.</p>
 
     <div className='h-10 w-48 bg-black rounded-full mt-4 text-center flex text-center items-center cursor-pointer hover:ml-2'>
       <p className='text-white text-center text-xs ml-auto font-extralight'>Meet A Prescriber</p>
