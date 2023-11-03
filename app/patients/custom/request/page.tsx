@@ -569,7 +569,7 @@ useEffect(() => {
 
     <div className="">
     <p className='font-medium text-xs'>What To Tell Your Provider To Meet Your Unique Medicine Needs </p>
-    <p className='font-light text-xs'>Kemet Simplifies Compounding; Download "Customised Medicine Companion". </p>
+    <p className='font-light text-xs'>Kemet Simplifies Compounding; Download &quot;Customised Medicine Companion&quot;. </p>
 
     </div>
    
