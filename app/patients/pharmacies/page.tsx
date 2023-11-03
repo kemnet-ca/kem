@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import ResponsiveCarousel from "@/components/Carousel";
 import Link from 'next/link';
 import Footer from '@/components/Footer';
+import Header from '@/components/Footer';
 
 
 
@@ -77,21 +78,7 @@ const checkboxStyle = {
   return (
     <main className="bg-white relative">
 
-<div className="bg-slate-200 w-screen py-2 hidden md:flex  px-28 fixed z-10 shadow-sm top-header mt-0">
-
-  
-  <p className="main-logo text-black font-bold text-2xl">KEMET</p>
-  <ul className="main-menu text-black flex space-x-6 justify-center ml-40 pt-2">
-    <li className="menu-item  text-sm cursor-pointer hover:text-zinc-600 ">About Us</li>
-    <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 ">Our Focus</li>
-    <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 ">Kemet Science</li>
-    <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 ">Healthcare Pro Tools</li>
-  </ul>
-
-
-
-  
-</div>
+<Header />
 
 
 <div className="h-[350px] w-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/home/Medicines_share.jpeg')" }}>
@@ -102,7 +89,7 @@ const checkboxStyle = {
     
     </div>
 
-    
+
 
     <p className='text-center text-white text-xl font-semibold'>WELCOME TO OUR CUSTOMIZATION CONSULT REQUEST PAGE</p>
     <p className='text-center text-white text-sm mt-4 font-normal'>PLEASE LET US KNOW HOW WE CAN ASSIST YOU WITH YOUR MEDICATION NEEDS. <br></br>CUSTOMIZE MEDICATION TO UNIQUE NEEDS AND REQUEST MEDICATION THAT ARE OUT OF STOCK AND A PHARMACIST WILL CONTACT YOU TO COMPLETE AN ASSESSMENT AND GET YOUR MEDICINES CUSTOM MADE FOR YOU.</p>

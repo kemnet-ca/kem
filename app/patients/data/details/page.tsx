@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 
 
@@ -133,7 +134,7 @@ useEffect(() => {
 </div>
 
 </div>
-
+<Footer />
 
 
 
