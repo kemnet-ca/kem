@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { useState, useEffect } from "react";
 import ResponsiveCarousel from "@/components/Carousel";
 import Link from 'next/link';
+import Footer from '@/components/Footer';
 
 
 
@@ -96,6 +97,10 @@ const checkboxStyle = {
 <div className="h-[350px] w-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/home/Medicines_share.jpeg')" }}>
  
  <div className="w-full h-full grid place-content-center md:px-10" style={{backgroundColor:`rgba(0,0,0,0.7)`}}>
+ <div className='w-8 absolute h-8 bg-white  rounded-full md:mt-20 ml-10 hidden md:block cursor-pointer hover:ml-2 grid place-content-center p-1'>
+  <img src="/images/home/arrow-back-simple-svgrepo-com.svg" alt="arrow-back-kemnet" />
+    
+    </div>
 
     <p className='text-center text-white text-xl font-semibold'>WELCOME TO OUR CUSTOMIZATION CONSULT REQUEST PAGE</p>
     <p className='text-center text-white text-sm mt-4 font-normal'>PLEASE LET US KNOW HOW WE CAN ASSIST YOU WITH YOUR MEDICATION NEEDS. <br></br>CUSTOMIZE MEDICATION TO UNIQUE NEEDS AND REQUEST MEDICATION THAT ARE OUT OF STOCK AND A PHARMACIST WILL CONTACT YOU TO COMPLETE AN ASSESSMENT AND GET YOUR MEDICINES CUSTOM MADE FOR YOU.</p>
@@ -117,12 +122,24 @@ const checkboxStyle = {
 
     <p className='text-xl font-medium text-center    mt-10'>Nearby Pharmacies</p>
 
-    <p className='text-sm text-zinc-500 font-normal text-center  mt-2'>Select Which Pharmacy You Would Want</p>
+    <p className='text-sm text-zinc-500 text-center  mt-2 font-light'>Select Which Pharmacy You Would Want</p>
+
+    <div className="w-full  mt-4 flex justify-center ">
+
+<input type="text" className='p-2 border border-zinc-400 rounded-xl w-[200px] bg-transparent text-xs text-zinc-700' placeholder='Search By Postal Code' />
+
+<Link href="../../patients/pharmacies" className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 hover:mt-2 ml-[20px] mr-6'>Submit</Link>
 
 
 
 
-   <div className='w-full flex justify-center px-20 ml-6'>
+</div>
+
+
+
+
+
+   <div className='w-full flex justify-center  ml-6'>
    <div className="w-full grid grid-cols-2 grid-gap-8 mt-4 items-center">
 
 <div className=' w-full mt-6 '>
@@ -135,7 +152,7 @@ const checkboxStyle = {
           //  checked={this.state.selectedOption === 'option2'}
          //   onChange={this.handleOptionChange}
           />
-          <span className='ml-4 font-medium text-sm text-zinc-800'>CareRx Compounding Edmonton <br></br><span className='text-xs font-extralight text-zinc-600'>CareRx Edmonton Compounding, 9509 156 St NW M5, Edmonton, AB T5P 4J5, Canada</span></span> 
+          <Link className='ml-4 font-medium text-sm text-zinc-800 hover:text-teal-500' href={"https://www.google.com/maps/dir//Hamptons+Pharmacy%2FRemedy's+RX.+Edmonton+canada/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x539f8bec5f9eabc7:0x76fba45b9d4bc801?sa=X&ved=2ahUKEwiU_-jL46eCAxX5rYkEHbUWDwQQ9Rd6BAg4EAA&hl=en"}>Hamptons Pharmacy/Remedy's RX. Edmonton <br></br><span className='text-xs font-extralight text-zinc-600 hover:text-teal-500'>5603 199 St NW, Edmonton, AB T6M 0M8,</span></Link> 
           <span style={checkboxStyle}></span>
         </label>
 
@@ -152,7 +169,7 @@ const checkboxStyle = {
           //  checked={this.state.selectedOption === 'option2'}
          //   onChange={this.handleOptionChange}
           />
-          <span className='ml-4 font-medium text-sm text-zinc-800'>CareRx Compounding Edmonton <br></br><span className='text-xs font-extralight text-zinc-600'>CareRx Edmonton Compounding, 9509 156 St NW M5, Edmonton, AB T5P 4J5, Canada</span></span> 
+          <Link href={"https://www.google.com/maps/dir//synergy+wellness+center+sherwood+park/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x53a03d8871087e8f:0x62ebd32a8cbafeb7?sa=X&ved=2ahUKEwjdhK2T6aeCAxXmrokEHd1-CFAQ9Rd6BAg5EAA"} className='ml-4 font-medium text-sm text-zinc-800 hover:text-teal-500'>Synergy Centre <br></br><span className='text-xs font-extralight text-zinc-600'>501 Bethel Dr, Sherwood Park, AB T8H 0N2, Canada</span></Link> 
           <span style={checkboxStyle}></span>
         </label>
 
@@ -171,7 +188,7 @@ const checkboxStyle = {
           //  checked={this.state.selectedOption === 'option2'}
          //   onChange={this.handleOptionChange}
           />
-          <span className='ml-4 font-medium text-sm text-zinc-800'>CareRx Compounding Edmonton <br></br><span className='text-xs font-extralight text-zinc-600'>CareRx Edmonton Compounding, 9509 156 St NW M5, Edmonton, AB T5P 4J5, Canada</span></span> 
+          <span className='ml-4 font-medium text-sm text-zinc-800'>Eastwood Pharmacy <br></br><span className='text-xs font-extralight text-zinc-600'>CareRx Edmonton Compounding, 9509 156 St NW M5, Edmonton, AB T5P 4J5, Canada</span></span> 
           <span style={checkboxStyle}></span>
         </label>
 
@@ -188,7 +205,7 @@ const checkboxStyle = {
           //  checked={this.state.selectedOption === 'option2'}
          //   onChange={this.handleOptionChange}
           />
-          <span className='ml-4 font-medium text-sm text-zinc-800'>CareRx Compounding Edmonton <br></br><span className='text-xs font-extralight text-zinc-600'>CareRx Edmonton Compounding, 9509 156 St NW M5, Edmonton, AB T5P 4J5, Canada</span></span> 
+          <span className='ml-4 font-medium text-sm text-zinc-800'>Shoppers Drug Mart #381 <br></br><span className='text-xs font-extralight text-zinc-600'>CareRx Edmonton Compounding, 9509 156 St NW M5, Edmonton, AB T5P 4J5, Canada</span></span> 
           <span style={checkboxStyle}></span>
         </label>
 
@@ -218,7 +235,7 @@ const checkboxStyle = {
 </div>
 
 
-
+<Footer />
 
     </main>
   )

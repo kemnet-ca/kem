@@ -65,7 +65,7 @@ useEffect(() => {
   <div className='text-black justify-center font-medium text-2xl mt-40 flex'>
 
     {/* change link of item, depending on text */}
-    <p className='mt-2'>I&apos;m a</p>  <Link href={displayText=="Prescriber"?"/prescriber/custom/request":"patient/custom/request"} className='p-2 rounded-md bg-white w-60 ml-8  text-center cursor-pointer' onClick={switchScreens}>{displayText}</Link>
+    <p className='mt-2'>I&apos;m a</p>  <Link href={displayText=="Prescriber"?"/prescribers/custom/request":"patients/custom/request"} className='p-2 rounded-md bg-white w-60 ml-8  text-center cursor-pointer' onClick={switchScreens}>{displayText}</Link>
 
    
     

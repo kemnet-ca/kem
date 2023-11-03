@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Tooltip from '@mui/material/Tooltip';
 import Fade from '@mui/material/Fade';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 
 
@@ -66,9 +67,18 @@ useEffect(() => {
 <Header />
 
 
+
+
 <div className="h-[350px] w-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/home/Medicines_share.jpeg')" }}>
+
+
  
  <div className="w-full h-full grid place-content-center md:px-10" style={{backgroundColor:`rgba(0,0,0,0.7)`}}>
+
+ <div className='w-8 absolute h-8 bg-white  rounded-full md:mt-20 ml-10 hidden md:block cursor-pointer hover:mr-2 grid place-content-center p-1'>
+  <img src="/images/home/arrow-back-simple-svgrepo-com.svg" alt="arrow-back-kemnet" />
+    
+    </div>
 
     <p className='text-center text-white text-xl font-semibold mt-6'>WELCOME TO OUR CUSTOMIZATION CONSULT REQUEST PAGE</p>
     <p className='text-center text-white text-sm mt-4 font-normal'>PLEASE LET US KNOW HOW WE CAN ASSIST YOU WITH YOUR MEDICATION NEEDS. <br></br>CUSTOMIZE MEDICATION TO UNIQUE NEEDS AND REQUEST MEDICATION THAT ARE OUT OF STOCK AND A PHARMACIST WILL CONTACT YOU TO COMPLETE AN ASSESSMENT AND GET YOUR MEDICINES CUSTOM MADE FOR YOU.</p>
@@ -111,7 +121,20 @@ useEffect(() => {
               },
             },
           }}
-  TransitionProps={{ timeout: 600 }} title="This is a brief summary of what this option entails" arrow>
+  TransitionProps={{ timeout: 600 }} title={
+    <div className='flex  w-[300px] p-2'>
+
+       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
+
+       </div>
+
+       <div className="">
+       <p className='text-xs font-normal text-left'>Header</p>
+     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+    
+        </div> 
+    </div>
+  }  arrow>
          <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
        
     </Tooltip>
@@ -135,7 +158,21 @@ useEffect(() => {
               },
             },
           }}
-  TransitionProps={{ timeout: 600 }} title="This is a brief summary of what this option entails" arrow>
+  TransitionProps={{ timeout: 600 }} title={
+    <div className='flex  w-[300px] p-2'>
+
+       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
+
+       </div>
+
+       <div className="">
+       <p className='text-xs font-normal text-left'>Header</p>
+     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+    
+        </div> 
+    </div>
+  }
+   arrow>
          <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
          </Tooltip>
          </p>
@@ -159,7 +196,20 @@ useEffect(() => {
               },
             },
           }}
-  TransitionProps={{ timeout: 600 }} title="This is a brief summary of what this option entails" arrow>
+  TransitionProps={{ timeout: 600 }} title={
+    <div className='flex  w-[300px] p-2'>
+
+       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
+
+       </div>
+
+       <div className="">
+       <p className='text-xs font-normal text-left'>Header</p>
+     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+    
+        </div> 
+    </div>
+  } arrow>
          <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
          </Tooltip>
          </p>
@@ -182,7 +232,20 @@ useEffect(() => {
       },
     },
   }}
-  TransitionProps={{ timeout: 600 }} title="This is a brief summary of what this option entails" arrow>
+  TransitionProps={{ timeout: 600 }} title={
+    <div className='flex  w-[300px] p-2'>
+
+       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
+
+       </div>
+
+       <div className="">
+       <p className='text-xs font-normal text-left'>Header</p>
+     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+    
+        </div> 
+    </div>
+  } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
         </p>
@@ -205,7 +268,20 @@ useEffect(() => {
               },
             },
           }}
-  TransitionProps={{ timeout: 600 }} title="This is a brief summary of what this option entails" arrow>
+  TransitionProps={{ timeout: 600 }} title={
+    <div className='flex  w-[300px] p-2'>
+
+       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
+
+       </div>
+
+       <div className="">
+       <p className='text-xs font-normal text-left'>Header</p>
+     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+    
+        </div> 
+    </div>
+  } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
         </p>
@@ -228,7 +304,20 @@ useEffect(() => {
               },
             },
           }}
-  TransitionProps={{ timeout: 600 }} title="This is a brief summary of what this option entails" arrow>
+  TransitionProps={{ timeout: 600 }} title={
+    <div className='flex  w-[300px] p-2'>
+
+       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
+
+       </div>
+
+       <div className="">
+       <p className='text-xs font-normal text-left'>Header</p>
+     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+    
+        </div> 
+    </div>
+  } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
         </p>
@@ -251,7 +340,20 @@ useEffect(() => {
               },
             },
           }}
-  TransitionProps={{ timeout: 600 }} title="This is a brief summary of what this option entails" arrow>
+  TransitionProps={{ timeout: 600 }} title={
+    <div className='flex  w-[300px] p-2'>
+
+       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
+
+       </div>
+
+       <div className="">
+       <p className='text-xs font-normal text-left'>Header</p>
+     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+    
+        </div> 
+    </div>
+  } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
         </p>
@@ -274,7 +376,20 @@ useEffect(() => {
               },
             },
           }}
-  TransitionProps={{ timeout: 600 }} title="This is a brief summary of what this option entails" arrow>
+  TransitionProps={{ timeout: 600 }} title={
+    <div className='flex  w-[300px] p-2'>
+
+       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
+
+       </div>
+
+       <div className="">
+       <p className='text-xs font-normal text-left'>Header</p>
+     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+    
+        </div> 
+    </div>
+  } arrow>
          <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
                  </Tooltip>
          </p>
@@ -297,7 +412,20 @@ useEffect(() => {
               },
             },
           }}
-  TransitionProps={{ timeout: 600 }} title="This is a brief summary of what this option entails" arrow>
+  TransitionProps={{ timeout: 600 }} title={
+    <div className='flex  w-[300px] p-2'>
+
+       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
+
+       </div>
+
+       <div className="">
+       <p className='text-xs font-normal text-left'>Header</p>
+     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+    
+        </div> 
+    </div>
+  } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
         </p>
@@ -320,7 +448,20 @@ useEffect(() => {
               },
             },
           }}
-  TransitionProps={{ timeout: 600 }} title="This is a brief summary of what this option entails" arrow>
+  TransitionProps={{ timeout: 600 }} title={
+    <div className='flex  w-[300px] p-2'>
+
+       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
+
+       </div>
+
+       <div className="">
+       <p className='text-xs font-normal text-left'>Header</p>
+     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+    
+        </div> 
+    </div>
+  } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
         </p>
@@ -344,7 +485,20 @@ useEffect(() => {
               },
             },
           }}
-  TransitionProps={{ timeout: 600 }} title="This is a brief summary of what this option entails" arrow>
+  TransitionProps={{ timeout: 600 }} title={
+    <div className='flex  w-[300px] p-2'>
+
+       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
+
+       </div>
+
+       <div className="">
+       <p className='text-xs font-normal text-left'>Header</p>
+     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+    
+        </div> 
+    </div>
+  } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         
         </Tooltip>
@@ -369,7 +523,20 @@ useEffect(() => {
               },
             },
           }}
-  TransitionProps={{ timeout: 600 }} title="This is a brief summary of what this option entails" arrow>
+  TransitionProps={{ timeout: 600 }} title={
+    <div className='flex  w-[300px] p-2'>
+
+       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
+
+       </div>
+
+       <div className="">
+       <p className='text-xs font-normal text-left'>Header</p>
+     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+    
+        </div> 
+    </div>
+  } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
         </p>
@@ -396,8 +563,27 @@ useEffect(() => {
 
   </div>
 
+<div className="w-screen flex justify-center md:p-16">
+
+  <div className="py-8 bg-slate-200 w-2/3 px-4 rounded-md flex">
+
+    <div className="">
+    <p className='font-medium text-xs'>What To Tell Your Provider To Meet Your Unique Medicine Needs </p>
+    <p className='font-light text-xs'>Kemet Simplifies Compounding; Download "Customised Medicine Companion". </p>
+
+    </div>
+   
+   <div className="ml-auto hover:mr-2">
+
+   <Link href="" className='text-center text-sm text-white font-light bg-black rounded-3xl py-2 px-6 hover:mt-2 '>Download</Link>
+
+   </div>
 
 
+  </div>
+</div>
+
+<Footer />
 
     </main>
   )

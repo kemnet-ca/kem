@@ -14,7 +14,7 @@ export default function Header() {
 <ul className="main-menu text-black flex space-x-6 justify-center ml-40 pt-2">
   <li className="menu-item  text-sm cursor-pointer hover:text-zinc-600 ">About Us</li>
   <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 ">Our Focus</li>
-  <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 ">Kemet Science</li>
+  <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 ">Blog</li>
   <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 ">Healthcare Pro Tools</li>
 </ul>
 

@@ -94,7 +94,22 @@ useEffect(() => {
     <p className='text-sm text-zinc-800 font-extralight text-center mt-2'>Provide your phone number, so we can contact you to make your custom medicine for you.</p>
 
 
+    <div className="w-full  mt-2 flex justify-center">
+<div >
+<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px]' placeholder='Full Name' />
 
+    </div>
+    </div>
+
+  
+    <div className="w-full  mt-2 flex justify-center">
+<div >
+<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px]' placeholder='Phone Number' />
+
+    </div>
+    </div>
+
+  
 <div className="w-full  mt-2 flex justify-center">
 <div >
       <PhoneInput

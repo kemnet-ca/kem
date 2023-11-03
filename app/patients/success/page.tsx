@@ -56,9 +56,11 @@ export default function PatientSuccessPage() {
   <div className='h-[300] w-2/3 bg-slate-200 rounded-md p-4 '>
 
 
-
+    
 
     <p className='text-xl font-medium text-center mt-4'>REQUEST SUCCESSFULLY SENT !</p>
+
+    <p className='text-xs font-medium text-center mt-4'>As is deemed therapeutically necessary, a prescriber will be in touch at the <b> patient&apos;s phone number</b> with you, to complete an assessment and support you further to make medicine that works for your unique body</p>
 
 
 
