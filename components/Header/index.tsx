@@ -20,7 +20,7 @@ export default function Header() {
 
 
 
-<Link href={"/options"} className='h-20 w-60 bg-white rounded-br-md rounded-bl-md shadow-sm absolute z-20 mt-10 mr-10 p-2 flex'
+<Link href={"/options"} className='h-20 w-60 bg-white rounded-br-md rounded-bl-md shadow-sm absolute z-20 mt-12 mr-10 p-2 flex'
 style={{
   left:`65%`
 }}

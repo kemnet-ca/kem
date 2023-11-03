@@ -338,18 +338,18 @@ useEffect(() => {
   }}
 className='flex w-screen justify-center'>
 
-<div className='h-36 md:w-2/3 bg-slate-200 relative md:pt-2 md:pb-2 md:pl-5 md:pr-16 shadow-md rounded-md grid grid-cols-2'>
+<div className='h-48 md:w-2/3 bg-slate-200 relative md:pt-2 md:pb-2 md:pl-5 md:pr-16 shadow-md rounded-md grid grid-cols-2'>
 
   <div className='h-full bg-white rounded-md'>
 
   </div>
 
   <div className='h-16 md:pl-8 pt-2 '>
-    <p className='font-medium text-sm'>Available Now</p>
-    <p className='mt-2 text-zinc-600 text-xs font-extralight'>Melt in your mouth tablets for <br></br>Erectile dysfunction is available NOW</p>
+    <p className='font-medium text-sm'>Shortage Resolution </p>
+    <p className='mt-2 text-zinc-600 text-xs font-extralight'>We've got you covered. Access affordable solutions to meet your patients' immediate medication needs with confidence and without delay.</p>
 
     <div className='h-10 w-48 bg-black rounded-full mt-4 text-center flex text-center items-center cursor-pointer hover:ml-2'>
-      <p className='text-white text-center text-xs ml-auto font-extralight'>Discover more</p>
+      <p className='text-white text-center text-xs ml-auto font-extralight'>Meet A Prescriber</p>
 
       <div className='h-8 w-8 bg-white rounded-full ml-auto mr-1 p-2'><img src="/images/home/navigation-forward-arrow-svgrepo-com.svg" alt="" /></div>
 
