@@ -153,6 +153,18 @@ export default function Focus() {
   
 </div>
  
+<div className="flex w-screen justify-center px-10">
+
+<div className='w-2/3 bg-slate-100 py-2 px-6 flex mt-8 rounded-md '>
+
+<p className="text-xs font-light text-zinc-800"> Take the confusion out of compounding and get all of your burning questions answered. Kemet simplifies compounding: &apos;Customized medicine companion: Mastering the Basics with Ease&apos;</p>
+
+  <button  className='text-center text-xs text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 ml-[20px] mr-6'>Download PDF</button>
+
+
+  
+</div>
+</div>
  
 
 <div className='flex-grow'></div>
