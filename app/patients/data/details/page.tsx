@@ -86,31 +86,7 @@ useEffect(() => {
 
     <>
 
-    {/**popup to confirm faxing and emailing */}
-
-
-<React.Fragment>
-     
-     <Dialog
-       open={open}
-       TransitionComponent={Transition}
-       keepMounted
-       onClose={handleClose}
-       aria-describedby="alert-dialog-slide-description"
-     >
-       <DialogTitle className="font-medium text-sm">{"Confirm To Send Your Request To A Subscriber"}</DialogTitle>
-       <DialogContent>
-         <p id="alert-dialog-slide-description " className="text-zinc-600 text-sm font-light">
-          If you agree, your information and consult requests which you have submitted will be sent to a prescriber by fax and email.
-         </p>
-       </DialogContent>
-       <DialogActions>
-         <p className='text-zinc-400 cursor-pointer mr-10 hover:mb-1' onClick={handleClose}>Disagree</p>
-         <p className='text-zinc-700 cursor-pointer hover:mb-1' onClick={handleClose}>Agree</p>
-       </DialogActions>
-     </Dialog>
-   </React.Fragment>
-
+    
    
  
     <main className="bg-white relative">
@@ -153,19 +129,35 @@ useEffect(() => {
     </div>
     </div>
 
+ 
+
+    <div className="w-full  mt-2 flex justify-center">
+<div >
+<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px]' placeholder='Last Name' />
+
+    </div>
+    </div>
+
+    <div className="w-full  mt-2 flex justify-center">
+<div >
+<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px]' placeholder='Postal Code' />
+
+    </div>
+    </div>
+
+
+    <div className="w-full  mt-2 flex justify-center">
+<div >
+<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px]' placeholder='Phone Number' />
+
+    </div>
+    </div>
+
   
   
 
   
-<div className="w-full  mt-2 flex justify-center">
-<div >
-      <PhoneInput
-        defaultCountry="ca"
-        value={phone}
-        onChange={(phone) => setPhone(phone)}
-      />
-    </div>
-    </div>
+
 
     <div className="w-full flex mt-8 ">
 
@@ -196,7 +188,7 @@ useEffect(() => {
     <div className="w-full  mt-4 flex justify-center">
 
   
-        <button onClick={handleClickOpen} className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 ml-[20px] mr-6'>Submit</button>
+        <Link href={"../../patients/pharmacies"} className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 ml-[20px] mr-6'>Submit</Link>
 
 
 

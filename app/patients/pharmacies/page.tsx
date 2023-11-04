@@ -7,6 +7,25 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 
 
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Slide from '@mui/material/Slide';
+import { TransitionProps } from '@mui/material/transitions';
+
+
+const Transition = React.forwardRef(function Transition(
+  props: TransitionProps & {
+    children: React.ReactElement<any, any>;
+  },
+  ref: React.Ref<unknown>,
+) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 
 export default function Pharmacies() {
@@ -19,8 +38,14 @@ const [isOpenThree, setIsOpenThree] = useState(false);
 const [displayText, setDisplayText] = useState('PATIENT');
 const [isChecked, setIsChecked] = useState(false);
 
-const handleCheckboxChange = () => {
-  setIsChecked(!isChecked); // Toggle the checkbox state
+const [open, setOpen] = React.useState(false);
+
+const handleClickOpen = () => {
+  setOpen(true);
+};
+
+const handleClose = () => {
+  setOpen(false);
 };
 
 
@@ -76,6 +101,33 @@ const checkboxStyle = {
 
 
   return (
+
+    <>
+    {/**popup to confirm faxing and emailing */}
+
+
+<React.Fragment>
+     
+     <Dialog
+       open={open}
+       TransitionComponent={Transition}
+       keepMounted
+       onClose={handleClose}
+       aria-describedby="alert-dialog-slide-description"
+     >
+       <DialogTitle className="font-medium text-sm">{"Confirm To Send Your Request To A Subscriber"}</DialogTitle>
+       <DialogContent>
+         <p id="alert-dialog-slide-description " className="text-zinc-600 text-sm font-light">
+          If you agree, your information and consult requests which you have submitted will be sent to a prescriber by fax and email.
+         </p>
+       </DialogContent>
+       <DialogActions>
+         <p className='text-zinc-400 cursor-pointer mr-10 hover:mb-1' onClick={handleClose}>Disagree</p>
+         <Link className='text-zinc-700 cursor-pointer hover:mb-1' href={"../../patients/success"}>Agree</Link>
+       </DialogActions>
+     </Dialog>
+   </React.Fragment>
+
     <main className="bg-white relative">
 
 <Header />
@@ -211,7 +263,7 @@ const checkboxStyle = {
        
          <div className="mt-4 flex justify-center">
 
-         <Link href="../patients/data/details" className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 hover:mt-2 ml-[20px] w-32 h-10 mr-6'>Submit</Link>
+         <button onClick={handleClickOpen} className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 hover:mt-2 ml-[20px] w-32 h-10 mr-6'>Submit</button>
 
          </div>
 
@@ -227,5 +279,7 @@ const checkboxStyle = {
 <Footer />
 
     </main>
+
+    </>
   )
 }
