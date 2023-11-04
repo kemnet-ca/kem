@@ -43,7 +43,9 @@ export default function About() {
 
 <div className='flex justify-center p-4 w-screen mb-8 mt-20'>
 
-<div className='h-[300px] bg-slate-200 w-[90%] rounded-md'>
+<div className='h-[300px] bg-slate-200 w-[90%] rounded-md grid place-content-center'>
+
+    <p className="text-md">Slider</p>
 
 </div>
 </div>
