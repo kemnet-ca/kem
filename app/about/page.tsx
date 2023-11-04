@@ -43,51 +43,53 @@ export default function About() {
 
 <div className='flex justify-center p-4 w-screen mb-8 mt-20'>
 
-<div className='h-[300px] bg-slate-200 w-2/3 rounded-md'>
+<div className='h-[300px] bg-slate-200 w-[90%] rounded-md'>
 
 </div>
 </div>
 
 
-<div className='flex w-screen justify-center px-32'>
+<div className='flex w-screen justify-center px-4'>
 
-  <div className="w-2/3 grid grid-cols-3 p-4 grid-gap-4  items-center place-content-center mx-auto">
-    <div className='h-48 w-48 bg-slate-300 rounded-2xl single-item'>
+  <div className="w-[90%] grid grid-cols-3 p-4 gap-4  items-center place-content-center mx-auto">
+    <div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
 
-        <div className="sub-inner w-full h-full bg-zinc-300 rounded-md cursor-pointer ">
+        <div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer ">
 
        
-            <div  className='w-full h-8 bg-400 rouned-br-md rounded-bl-md flex flex-col border-t  '>
+            <div  className='w-full h-8 bg-400 rouned-br-2xl rounded-bl-2xl flex flex-col border-t  '>
             
-                <p  style={{marginBottom:`3%`, marginTop:`88%`}} className='text-xs font-medium  text-center '>Recognized & Awarded</p>
+                <p  style={{marginBottom:`3%`, marginTop:`61%`}} className='text-xs font-medium  text-center '>Recognized & Awarded</p>
             </div>
 
         </div>
 
        
     </div>
-    <div className='h-48 w-48 bg-slate-300 rounded-md single-item'>
+    <div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
 
-    <div className="sub-inner w-full h-full bg-zinc-300 rounded-md cursor-pointer ">
-
-       
-<div  className='w-full h-8 bg-400 rouned-br-md rounded-bl-md flex flex-col border-t  '>
-
-    <p  style={{marginBottom:`3%`, marginTop:`88%`}} className='text-xs font-medium  text-center '>Work With Us</p>
-</div>
-
-</div>
-
-</div>
-
-<div className='h-48 w-48 bg-slate-300 rounded-md single-item'>
-
-<div className="sub-inner w-full h-full bg-zinc-300 rounded-md cursor-pointer ">
+    <div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer ">
 
        
-<div  className='w-full h-8 bg-400 rouned-br-md rounded-bl-md flex flex-col border-t  '>
+<div  className='w-full h-8 bg-400 rouned-br-2xl rounded-bl-2xl flex flex-col border-t  '>
 
-    <p  style={{marginBottom:`3%`, marginTop:`88%`}} className='text-xs font-medium  text-center '>Social Impact</p>
+<p  style={{marginBottom:`3%`, marginTop:`61%`}} className='text-xs font-medium  text-center '>Recognized & Awarded</p>
+         
+</div>
+
+</div>
+
+</div>
+
+<div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
+
+<div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer ">
+
+       
+<div  className='w-full h-8 bg-400 rouned-br-2xl rounded-bl-2xl flex flex-col border-t  '>
+
+<p  style={{marginBottom:`3%`, marginTop:`61%`}} className='text-xs font-medium  text-center '>Recognized & Awarded</p>
+         
 </div>
 
 </div>
