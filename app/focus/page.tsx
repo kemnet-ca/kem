@@ -43,46 +43,45 @@ export default function Focus() {
 
 
 
+<div className="flex w-screen justify-center px-10">
 
-<div className='flex w-screen justify-center px-10'>
+<div className='w-2/3 bg-slate-100 py-2 px-6 flex mt-8 rounded-md '>
 
-  <div className="w-2/3 grid grid-cols-3 p-4 grid-gap-4  items-center place-content-center mx-auto">
-    <div className='h-48 w-60 bg-slate-300 rounded-2xl single-item'>
+<p className="text-xs font-light text-zinc-800"> Take the confusion out of compounding and get all of your burning questions answered. Kemet simplifies compounding: &apos;Customized medicine companion: Mastering the Basics with Ease&apos;</p>
+
+  <button  className='text-center text-xs text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 ml-[20px] mr-6'>Download PDF</button>
+
+
+  
+</div>
+</div>
+<div className='flex w-screen justify-center  flex'>
+
+<div className="w-2/3 grid grid-cols-2 p-4 gap-4  items-center place-content-center mx-auto">
+    <div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
 
         <div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer ">
 
        
             <div  className='w-full h-8 bg-400 rouned-br-md rounded-bl-2xl flex flex-col border-t  '>
             
-                <p  style={{marginBottom:`3%`, marginTop:`67%`}} className='text-xs font-medium  text-center '>The process</p>
+                <p  style={{marginBottom:`3%`, marginTop:`53%`}} className='text-xs font-medium  text-center '>Our  process</p>
             </div>
 
         </div>
 
        
     </div>
-    <div className='h-48 w-60 bg-slate-300 rounded-2xl single-item'>
+   
 
-    <div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer ">
-
-       
-<div  className='w-full h-8 bg-400 rouned-br-md rounded-bl-2xl flex flex-col border-t  '>
-
-    <p  style={{marginBottom:`3%`, marginTop:`67%`}} className='text-xs font-medium  text-center '>Clients</p>
-</div>
-
-</div>
-
-</div>
-
-<div className='h-48 w-60 bg-slate-300 rounded-2xl single-item'>
+<div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
 
 <div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer ">
 
        
 <div  className='w-full h-8 bg-400 rouned-br-md rounded-bl-2xl flex flex-col border-t  '>
 
-    <p  style={{marginBottom:`3%`, marginTop:`67%`}} className='text-xs font-medium  text-center '>Customer Reviews</p>
+    <p  style={{marginBottom:`3%`, marginTop:`53%`}} className='text-xs font-medium  text-center '>Client Case Study & Testimonials</p>
 </div>
 
 </div>
@@ -97,75 +96,7 @@ export default function Focus() {
 {/*Medicine For You, By You */}
 
 
-<div className="w-screen justify-center flex mt-8">
 
-    <p className="text-xl font-medium mt-4">Medicine For You, By You</p>
-</div>
-
-
-<div className='flex w-screen justify-center md:px-10'>
-
-  <div className="w-2/3 grid grid-cols-3 p-4 grid-gap-1  items-center place-content-center mx-auto">
-    <div className='h-32 w-60 bg-slate-300 rounded-2xl single-item-'>
-
-        <div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer ">
-
-       
-            <div  className='w-full h-8 bg-400 rouned-br-2xl rounded-bl-2xl flex flex-col border-t  '>
-            
-                <p  style={{marginBottom:`3%`, marginTop:`44%`}} className='text-xs font-light  text-center '>Make Your Medicine</p>
-            </div>
-
-        </div>
-
-       
-    </div>
-    <div className='h-32 w-60 bg-slate-300 rounded-2xl single-item-'>
-
-    <div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer ">
-
-       
-<div  className='w-full h-8  rouned-br-2xl rounded-bl-2xl flex flex-col border-t  '>
-
-    <p  style={{marginBottom:`3%`, marginTop:`44%`}} className='text-xs font-light  text-center '>Videos</p>
-</div>
-
-</div>
-
-</div>
-
-<div className='h-32 w-60 bg-slate-300 rounded-2xl single-item-'>
-
-<div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer ">
-
-       
-<div  className='w-full h-8 bg-400 rouned-br-2xl rounded-bl-2xl flex flex-col border-t  '>
-
-    <p  style={{marginBottom:`3%`, marginTop:`44%`}} className='text-xs font-light  text-center '>Client Case Study & Testimonials</p>
-</div>
-
-</div>
-
-</div>
-
-
-  </div>
-  
-</div>
- 
-<div className="flex w-screen justify-center px-10">
-
-<div className='w-2/3 bg-slate-100 py-2 px-6 flex mt-8 rounded-md '>
-
-<p className="text-xs font-light text-zinc-800"> Take the confusion out of compounding and get all of your burning questions answered. Kemet simplifies compounding: &apos;Customized medicine companion: Mastering the Basics with Ease&apos;</p>
-
-  <button  className='text-center text-xs text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 ml-[20px] mr-6'>Download PDF</button>
-
-
-  
-</div>
-</div>
- 
 
 <div className='flex-grow'></div>
 
