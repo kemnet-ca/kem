@@ -58,7 +58,7 @@ function addAllSelectionsToCookies(){
 
   Cookies.set('allSelections',JSON.stringify(selectedValues) );
 
-  alert(selectedValues)
+  //alert(selectedValues)
 
   router.push('../../patients/data/details/')
 
