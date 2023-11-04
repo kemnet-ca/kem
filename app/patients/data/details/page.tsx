@@ -71,7 +71,7 @@ useEffect(() => {
 
     setSelections(JSON.parse(selections))
 
-    alert(selections);
+  //  alert(selections);
   } else {
     // 'allSelections' is undefined, handle this case, e.g., provide a default value
     console.log('Cookie not found or is undefined');
