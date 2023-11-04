@@ -154,12 +154,7 @@ useEffect(() => {
     </div>
 
   
-    <div className="w-full  mt-2 flex justify-center">
-<div >
-<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px]' placeholder='Phone Number' />
-
-    </div>
-    </div>
+  
 
   
 <div className="w-full  mt-2 flex justify-center">
