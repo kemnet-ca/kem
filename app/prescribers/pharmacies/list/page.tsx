@@ -12,65 +12,6 @@ import Footer from '@/components/Footer';
 export default function Pharmacies() {
   
 
-const [isOpenOne, setIsOpenOne] = useState(false);
-const [isOpenTwo, setIsOpenTwo] = useState(false);
-const [isOpenThree, setIsOpenThree] = useState(false);
-
-const [displayText, setDisplayText] = useState('PATIENT');
-const [isChecked, setIsChecked] = useState(false);
-
-const handleCheckboxChange = () => {
-  setIsChecked(!isChecked); // Toggle the checkbox state
-};
-
-
-useEffect(() => {
-  const interval = setInterval(() => {
-    setDisplayText((currentText) => (currentText === 'Patient' ? 'Prescriber' : 'Patient'));
-  }, 3000);
-
-  return () => {
-    clearInterval(interval);
-  };
-}, []);
-
-
-const checkboxStyle = {
-  background: isChecked ? 'green' : 'white', // Change the background color when checked
-  border: '1px solid #ccc',
-  borderRadius: '4px',
-  width: '20px',
-  height: '20px',
-};
-
-
-
-  const handleMouseEnterOne = () => {
-    setIsOpenOne(true);
-  };
-
-  const handleMouseLeaveOne = () => {
-    setIsOpenOne(false);
-  };
-
-  const handleMouseEnterTwo = () => {
-    setIsOpenTwo(true);
-  };
-
-  const handleMouseLeaveTwo = () => {
-    setIsOpenTwo(false);
-  };
-
-
-  const handleMouseEnterThree = () => {
-    setIsOpenThree(true);
-  };
-
-  const handleMouseLeaveThree = () => {
-    setIsOpenThree(false);
-  };
-
-
   
 
 

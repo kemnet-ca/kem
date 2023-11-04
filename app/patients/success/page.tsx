@@ -9,16 +9,21 @@ import Header from '@/components/Header';
 
 
 
+
+
 export default function PatientSuccessPage() {
   
 
-
-
   
 
 
 
-  return (
+  return (<>
+
+
+
+
+  {/* main widgets */}
     <main className="bg-white relative">
 
 <Header />
@@ -27,6 +32,12 @@ export default function PatientSuccessPage() {
 <div className="h-[350px] w-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/home/Medicines_share.jpeg')" }}>
  
  <div className="w-full h-full grid place-content-center md:px-10" style={{backgroundColor:`rgba(0,0,0,0.7)`}}>
+
+ <div className='w-8 absolute h-8 bg-white  rounded-full md:mt-20 ml-10 hidden md:block cursor-pointer hover:ml-2 grid place-content-center p-1'>
+  <img src="/images/home/arrow-back-simple-svgrepo-com.svg" alt="arrow-back-kemnet" />
+    
+    </div>
+
 
     <p className='text-center text-white text-xl font-semibold'>WELCOME TO OUR CUSTOMIZATION CONSULT REQUEST PAGE</p>
     <p className='text-center text-white text-sm mt-4 font-normal'>PLEASE LET US KNOW HOW WE CAN ASSIST YOU WITH YOUR MEDICATION NEEDS. <br></br>CUSTOMIZE MEDICATION TO UNIQUE NEEDS AND REQUEST MEDICATION THAT ARE OUT OF STOCK AND A PHARMACIST WILL CONTACT YOU TO COMPLETE AN ASSESSMENT AND GET YOUR MEDICINES CUSTOM MADE FOR YOU.</p>
@@ -41,7 +52,7 @@ export default function PatientSuccessPage() {
 
   
 
-  <div className='h-[300] w-2/3 bg-slate-200 rounded-md p-4 '>
+  <div className='h-[300] w-2/3 bg-slate-200 rounded-md py-4 px-8 '>
 
 
      <div className="flex justify-center">
@@ -49,9 +60,9 @@ export default function PatientSuccessPage() {
       <img src="/images/home/checkmark-circle-svgrepo-com.svg" className='h-16 w-16' alt="request-sent kemnet" />
      </div>
 
-    <p className='text-xl font-medium text-center mt-4'>REQUEST SUCCESSFULLY SENT !</p>
+    <p className='text-md font-medium text-center mt-4'>REQUEST SUCCESSFULLY SENT !</p>
 
-    <p className='text-xs font-medium text-center mt-4'>As is deemed therapeutically necessary, a prescriber will be in touch at the <b> patient&apos;s phone number</b> with you, to complete an assessment and support you further to make medicine that works for your unique body</p>
+    <p className='text-xs font-light text-center mt-4'>As is deemed therapeutically necessary, a prescriber will be in touch at the <b> patient&apos;s phone number</b> with you, to complete an assessment and support you further to make medicine that works for your unique body</p>
 
 
 
@@ -73,5 +84,6 @@ export default function PatientSuccessPage() {
 <Footer />
 
     </main>
+    </>
   )
 }

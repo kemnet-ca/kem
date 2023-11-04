@@ -7,6 +7,8 @@ import Tooltip from '@mui/material/Tooltip';
 import Fade from '@mui/material/Fade';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Cookies from 'js-cookie';
+import { useRouter } from 'next/navigation';
 
 
 
@@ -14,53 +16,55 @@ import Footer from '@/components/Footer';
 export default function CustomRequestForm() {
   
 
-const [isOpenOne, setIsOpenOne] = useState(false);
-const [isOpenTwo, setIsOpenTwo] = useState(false);
-const [isOpenThree, setIsOpenThree] = useState(false);
 
-const [displayText, setDisplayText] = useState('PATIENT');
-
-useEffect(() => {
-  const interval = setInterval(() => {
-    setDisplayText((currentText) => (currentText === 'Patient' ? 'Prescriber' : 'Patient'));
-  }, 3000);
-
-  return () => {
-    clearInterval(interval);
-  };
-}, []);
-
-
-  const handleMouseEnterOne = () => {
-    setIsOpenOne(true);
-  };
-
-  const handleMouseLeaveOne = () => {
-    setIsOpenOne(false);
-  };
-
-  const handleMouseEnterTwo = () => {
-    setIsOpenTwo(true);
-  };
-
-  const handleMouseLeaveTwo = () => {
-    setIsOpenTwo(false);
-  };
-
-
-  const handleMouseEnterThree = () => {
-    setIsOpenThree(true);
-  };
-
-  const handleMouseLeaveThree = () => {
-    setIsOpenThree(false);
-  };
-
-
-  
+const [selectedValues, setSelectedValues] = useState<string[]>([]);
 
 
 
+
+
+
+
+const router = useRouter();
+
+
+{/*function below hahndles radio button selections */}
+function handleRadioChange(event:any) {
+  const selectedValue = event.target.value;
+
+  if (selectedValues.includes(selectedValue)) {
+    // If the value is already in the array, remove it
+    setSelectedValues(selectedValues.filter(value => value !== selectedValue));
+    alert(JSON.stringify(selectedValues))
+  } else {
+    // If the value is not in the array, add it
+    setSelectedValues([...selectedValues, selectedValue]);
+
+  // alert(JSON.stringify(selectedValues))
+  }
+
+  if(selectedValues.length==0){
+
+    setSelectedValues([...selectedValues, selectedValue]);
+
+   // alert(JSON.stringify(selectedValues))
+
+  }
+}
+
+
+{/*add all selected consult requests to cookies */}
+function addAllSelectionsToCookies(){
+
+  Cookies.set('allSelections',JSON.stringify(selectedValues) );
+
+  alert(selectedValues)
+
+  router.push('../../patients/data/details/')
+
+
+}
+ 
   return (
     <main className="bg-white relative">
 
@@ -105,7 +109,11 @@ useEffect(() => {
     <div className="w-full  mt-8">
 
          <div className='mt-4 flex'>
-         <input value="test" type="checkbox" /> 
+         <input value="I have trouble swallowing your pill" type="checkbox" 
+           checked={selectedValues.includes('I have trouble swallowing your pill')}
+          
+           onChange={handleRadioChange}
+         /> 
          <p className="ml-4 font-normal text-sm flex">I have trouble swallowing your pill 
          
 
@@ -144,7 +152,11 @@ useEffect(() => {
          </div>
        
          <div className='mt-4 flex'>
-         <input value="test" type="checkbox"  /> 
+         <input value="I do not want to inject my hormones and other medications" type="checkbox" 
+          checked={selectedValues.includes('I do not want to inject my hormones and other medications')}
+          
+          onChange={handleRadioChange}
+         /> 
          <p className="ml-4 font-normal text-sm flex">I do not want to inject my hormones and other medications 
          <Tooltip  TransitionComponent={Fade}
          componentsProps={{
@@ -181,7 +193,10 @@ useEffect(() => {
 
          <div className='mt-4 flex'>
 
-         <input value="test" type="checkbox" /> 
+         <input value="I want my medications to taste better" type="checkbox"
+          checked={selectedValues.includes('I want my medications to taste better')}
+          onChange={handleRadioChange}
+         /> 
          <p className="ml-4 font-normal text-sm flex">I want my medications to taste better 
 
          <Tooltip  TransitionComponent={Fade}
@@ -217,7 +232,10 @@ useEffect(() => {
 
          <div className='mt-4 flex'>
 
-        <input value="test" type="checkbox" /> 
+        <input value="I want a different strength of my medication that is not commercially available." type="checkbox"
+         checked={selectedValues.includes('I want a different strength of my medication that is not commercially available.')}
+         onChange={handleRadioChange}
+        /> 
         <p className="ml-4 font-normal text-sm flex">I want a different strength of my medication that is not commercially available. 
         
         <Tooltip  TransitionComponent={Fade}
@@ -254,7 +272,10 @@ useEffect(() => {
 
         <div className='mt-4 flex'>
 
-        <input value="test" type="checkbox" /> 
+        <input value="I want my pain medications in a form that goes through my skill." type="checkbox"
+         checked={selectedValues.includes('I want my pain medications in a form that goes through my skill.')}
+         onChange={handleRadioChange}
+        /> 
         <p className="ml-4 font-normal text-sm flex">I want my pain medications in a form that goes through my skill. 
         <Tooltip  TransitionComponent={Fade}
         componentsProps={{
@@ -289,7 +310,10 @@ useEffect(() => {
 
         <div className='mt-4 flex'>
 
-        <input value="test" type="checkbox" /> 
+        <input value="I want to combine specific strengths for my supplements." type="checkbox"
+         checked={selectedValues.includes('I want to combine specific strengths for my supplements.')}
+         onChange={handleRadioChange}
+        /> 
         <p className="ml-4 font-normal text-sm flex">I want to combine specific strengths for my supplements. 
         
         <Tooltip  TransitionComponent={Fade}
@@ -325,7 +349,10 @@ useEffect(() => {
 
         <div className='mt-4 flex'>
 
-        <input value="test" type="checkbox" /> 
+        <input value="I want help with designing my medication, so I take it regularly and adhere to them as prescribed." type="checkbox"
+         checked={selectedValues.includes('I want help with designing my medication, so I take it regularly and adhere to them as prescribed.')}
+         onChange={handleRadioChange}
+        /> 
         <p className="ml-4 font-normal text-sm flex">I want help with designing my medication, so I take it regularly and adhere to them as prescribed. 
         
         <Tooltip  TransitionComponent={Fade}
@@ -361,7 +388,10 @@ useEffect(() => {
 
         <div className='mt-4 flex'>
 
-        <input value="test" type="checkbox" /> 
+        <input value="I want a speedy erection." type="checkbox"
+         checked={selectedValues.includes('I want a speedy erection.')}
+         onChange={handleRadioChange}
+         /> 
         <p className="ml-4 font-normal text-sm flex">I want a speedy erection.
         
         <Tooltip  TransitionComponent={Fade}
@@ -397,7 +427,11 @@ useEffect(() => {
 
         <div className='mt-4 flex'>
 
-        <input value="test" type="checkbox" /> 
+        <input value="I want a medication that is out of stock." type="checkbox"
+        
+        checked={selectedValues.includes('I want a medication that is out of stock.')}
+        onChange={handleRadioChange}
+        /> 
         <p className="ml-4 font-normal text-sm flex">I want a medication that is out of stock. 
         
         <Tooltip  TransitionComponent={Fade}
@@ -433,7 +467,11 @@ useEffect(() => {
 
         <div className='mt-4 flex'>
 
-        <input value="test" type="checkbox" /> 
+        <input value="I want a medication that is currently out of stock." type="checkbox" 
+        
+        checked={selectedValues.includes('I want a medication that is currently out of stock.')}
+        onChange={handleRadioChange}
+        /> 
         <p className="ml-4 font-normal text-sm flex">I want a medication that is currently out of stock. 
         
         <Tooltip  TransitionComponent={Fade}
@@ -469,7 +507,11 @@ useEffect(() => {
 
         <div className='mt-4 flex'>
 
-        <input value="test" type="checkbox" /> 
+        <input value="I want to request a specific Customization of my medications." type="checkbox"
+        
+        checked={selectedValues.includes('I want to request a specific Customization of my medications.')}
+        onChange={handleRadioChange}
+        /> 
         <p className="ml-4 font-normal text-sm flex">I want to request a specific Customization of my medications. 
         
 
@@ -508,7 +550,11 @@ useEffect(() => {
         <div className='mt-4 flex'>
 
 
-        <input value="test" type="checkbox" /> 
+        <input value="I want to request a specific compound." type="checkbox"
+        
+        checked={selectedValues.includes('I want to request a specific compound.')}
+        onChange={handleRadioChange}
+        /> 
         <p className="ml-4 font-normal text-sm flex">I want to request a specific compound. 
         
         <Tooltip  TransitionComponent={Fade}
@@ -554,7 +600,7 @@ useEffect(() => {
 
 <div className='w-full flex justify-center mt-2'>
 
-    <Link href="../../patients/data/postal_code" className='text-center text-sm text-white font-light bg-black rounded-3xl py-2 px-6 hover:mt-2'>Submit</Link>
+    <button onClick={addAllSelectionsToCookies} className='text-center text-sm text-white font-light bg-black rounded-3xl py-2 px-6 hover:mt-2'>Submit</button>
 </div>
 
   </div>

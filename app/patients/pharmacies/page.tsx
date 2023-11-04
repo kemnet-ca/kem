@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import ResponsiveCarousel from "@/components/Carousel";
 import Link from 'next/link';
 import Footer from '@/components/Footer';
-import Header from '@/components/Footer';
+import Header from '@/components/Header';
 
 
 

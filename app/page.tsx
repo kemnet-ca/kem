@@ -338,7 +338,7 @@ useEffect(() => {
   }}
 className='flex w-screen justify-center'>
 
-<div className='h-48 md:w-2/3 bg-slate-200 relative md:pt-2 md:pb-2 md:pl-5 md:pr-16 shadow-md rounded-md grid grid-cols-2'>
+<div className='h-40 md:w-2/3 bg-slate-200 relative md:pt-2 md:pb-2 md:pl-5 md:pr-16 shadow-md rounded-md grid grid-cols-2'>
 
   <div className='h-full bg-white rounded-md'>
 

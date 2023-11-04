@@ -3,3 +3,13 @@
 @tailwind utilities;
 
 
+
+.single-item .sub-inner {
+    display: none;
+  }
+  
+  .single-item:hover .sub-inner {
+    display: block; /* Show the .sub-inner element when .single-item is hovered */
+  }
+
+

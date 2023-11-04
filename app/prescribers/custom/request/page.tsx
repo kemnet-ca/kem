@@ -13,50 +13,6 @@ import Header from '@/components/Header';
 export default function PrescriberRequestForm() {
   
 
-const [isOpenOne, setIsOpenOne] = useState(false);
-const [isOpenTwo, setIsOpenTwo] = useState(false);
-const [isOpenThree, setIsOpenThree] = useState(false);
-
-const [displayText, setDisplayText] = useState('PATIENT');
-
-useEffect(() => {
-  const interval = setInterval(() => {
-    setDisplayText((currentText) => (currentText === 'Patient' ? 'Prescriber' : 'Patient'));
-  }, 3000);
-
-  return () => {
-    clearInterval(interval);
-  };
-}, []);
-
-
-  const handleMouseEnterOne = () => {
-    setIsOpenOne(true);
-  };
-
-  const handleMouseLeaveOne = () => {
-    setIsOpenOne(false);
-  };
-
-  const handleMouseEnterTwo = () => {
-    setIsOpenTwo(true);
-  };
-
-  const handleMouseLeaveTwo = () => {
-    setIsOpenTwo(false);
-  };
-
-
-  const handleMouseEnterThree = () => {
-    setIsOpenThree(true);
-  };
-
-  const handleMouseLeaveThree = () => {
-    setIsOpenThree(false);
-  };
-
-
-  
 
 
 

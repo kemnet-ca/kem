@@ -8,8 +8,28 @@ import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Cookies from 'js-cookie';
 
 
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Slide from '@mui/material/Slide';
+import { TransitionProps } from '@mui/material/transitions';
+
+
+const Transition = React.forwardRef(function Transition(
+  props: TransitionProps & {
+    children: React.ReactElement<any, any>;
+  },
+  ref: React.Ref<unknown>,
+) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 
 export default function CustomerDetails() {
@@ -21,49 +41,78 @@ const [isOpenThree, setIsOpenThree] = useState(false);
 
 const [displayText, setDisplayText] = useState('PATIENT');
 const [phone, setPhone] = useState('');
+const [allSelections, setSelections] = useState([]);
+
+
+
+
+const [open, setOpen] = React.useState(false);
+
+const handleClickOpen = () => {
+  setOpen(true);
+};
+
+const handleClose = () => {
+  setOpen(false);
+};
+
+
+{/*hold all selections */}
+
+
 
 useEffect(() => {
-  const interval = setInterval(() => {
-    setDisplayText((currentText) => (currentText === 'Patient' ? 'Prescriber' : 'Patient'));
-  }, 3000);
+  const selections = Cookies.get('allSelections');
 
-  return () => {
-    clearInterval(interval);
-  };
+  // Check if 'allSelections' is undefined, and provide a default value if needed
+  if (selections !== undefined) {
+    // 'allSelections' is a string, so you can work with it here
+    console.log(allSelections);
+
+    setSelections(JSON.parse(selections))
+
+    alert(selections);
+  } else {
+    // 'allSelections' is undefined, handle this case, e.g., provide a default value
+    console.log('Cookie not found or is undefined');
+  }
+
+ 
 }, []);
-
-
-  const handleMouseEnterOne = () => {
-    setIsOpenOne(true);
-  };
-
-  const handleMouseLeaveOne = () => {
-    setIsOpenOne(false);
-  };
-
-  const handleMouseEnterTwo = () => {
-    setIsOpenTwo(true);
-  };
-
-  const handleMouseLeaveTwo = () => {
-    setIsOpenTwo(false);
-  };
-
-
-  const handleMouseEnterThree = () => {
-    setIsOpenThree(true);
-  };
-
-  const handleMouseLeaveThree = () => {
-    setIsOpenThree(false);
-  };
-
-
-  
 
 
 
   return (
+
+    <>
+
+    {/**popup to confirm faxing and emailing */}
+
+
+<React.Fragment>
+     
+     <Dialog
+       open={open}
+       TransitionComponent={Transition}
+       keepMounted
+       onClose={handleClose}
+       aria-describedby="alert-dialog-slide-description"
+     >
+       <DialogTitle className="font-medium text-sm">{"Confirm To Send Your Request To A Subscriber"}</DialogTitle>
+       <DialogContent>
+         <p id="alert-dialog-slide-description " className="text-zinc-600 text-sm font-light">
+          If you agree, your information and consult requests which you have submitted will be sent to a prescriber by fax and email.
+         </p>
+       </DialogContent>
+       <DialogActions>
+         <p className='text-zinc-400 cursor-pointer mr-10 hover:mb-1' onClick={handleClose}>Disagree</p>
+         <p className='text-zinc-700 cursor-pointer hover:mb-1' onClick={handleClose}>Agree</p>
+       </DialogActions>
+     </Dialog>
+   </React.Fragment>
+
+   
+ 
     <main className="bg-white relative">
 
 <Header />
@@ -92,6 +141,8 @@ useEffect(() => {
 
 
     <p className='text-xl font-medium text-center mt-10'>Enter Your Information</p>
+
+   
     <p className='text-sm text-zinc-800 font-extralight text-center mt-2'>Provide your phone number, so we can contact you to make your custom medicine for you.</p>
 
 
@@ -121,10 +172,36 @@ useEffect(() => {
     </div>
     </div>
 
-    <div className="w-full  mt-2 flex justify-center">
+    <div className="w-full flex mt-8 ">
+
+      <p className='font-medium text-sm'>Selected choices for consult</p>
+
+
+</div>
+
+    <div className="w-full">
+
+      <div className="w-full p-6 bg-white rounded-xl mt-4 ">
+
+      {allSelections.map((value: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | null | undefined, index: React.Key | null | undefined) => (
+           
+
+            <p key={index} className='text-sm font-normal mt-4'>{value}</p>
+          ))}
+
+       
+
+      
+
+
+
+      </div>
+    </div>
+
+    <div className="w-full  mt-4 flex justify-center">
 
   
-        <Link href="../../patients/success" className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 ml-[20px] mr-6'>Submit</Link>
+        <button onClick={handleClickOpen} className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 ml-[20px] mr-6'>Submit</button>
 
 
 
@@ -139,5 +216,7 @@ useEffect(() => {
 
 
     </main>
+
+    </>
   )
 }
