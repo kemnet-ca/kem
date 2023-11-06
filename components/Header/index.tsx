@@ -13,7 +13,7 @@ export default function Header() {
 <p className="main-logo text-black font-bold text-2xl"><Link href={"/"}><img src="/images/KEMET_Black Tagline_Updated.png" className="logo h-10 w-32" alt="KEMET LOGO" /></Link></p>
 <ul className="main-menu text-black flex space-x-6 justify-center ml-40 pt-2">
   <li className="menu-item  text-sm cursor-pointer hover:text-zinc-600 "><Link href={"../../about"}>About Us</Link></li>
-  <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 "><Link href={"../../"}>Our Focus</Link></li>
+  <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 "><Link href={"../../focus"}>Our Focus</Link></li>
   <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 ">Med Info Blog</li>
   <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 ">Healthcare Pro Tools</li>
 </ul>

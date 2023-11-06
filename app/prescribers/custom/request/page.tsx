@@ -38,7 +38,7 @@ export default function PrescriberRequestForm() {
       // If the value is not in the array, add it
       setSelectedValues([...selectedValues, selectedValue]);
   
-    // alert(JSON.stringify(selectedValues))
+   //  alert(JSON.stringify(selectedValues))
     }
   
     if(selectedValues.length==0){
@@ -58,7 +58,7 @@ export default function PrescriberRequestForm() {
   
     //alert(selectedValues)
   
-    router.push('../../patients/data/details/')
+    router.push('../../prescribers/patient/details/')
   
   
   }
@@ -120,7 +120,20 @@ export default function PrescriberRequestForm() {
               },
             },
           }}
-  TransitionProps={{ timeout: 600 }} title="This is a brief summary of what this option entails" arrow>
+  TransitionProps={{ timeout: 600 }} title={
+    <div className='flex  w-[300px] p-2'>
+
+       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
+
+       </div>
+
+       <div className="">
+       <p className='text-xs font-normal text-left'>Header</p>
+     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+    
+        </div> 
+    </div>
+  } arrow>
          <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
        
     </Tooltip>
@@ -149,7 +162,20 @@ export default function PrescriberRequestForm() {
               },
             },
           }}
-  TransitionProps={{ timeout: 600 }} title="This is a brief summary of what this option entails" arrow>
+  TransitionProps={{ timeout: 600 }} title={
+    <div className='flex  w-[300px] p-2'>
+
+       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
+
+       </div>
+
+       <div className="">
+       <p className='text-xs font-normal text-left'>Header</p>
+     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+    
+        </div> 
+    </div>
+  } arrow>
          <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
          </Tooltip>
          </p>
@@ -177,7 +203,20 @@ export default function PrescriberRequestForm() {
               },
             },
           }}
-  TransitionProps={{ timeout: 600 }} title="This is a brief summary of what this option entails" arrow>
+  TransitionProps={{ timeout: 600 }} title={
+    <div className='flex  w-[300px] p-2'>
+
+       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
+
+       </div>
+
+       <div className="">
+       <p className='text-xs font-normal text-left'>Header</p>
+     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+    
+        </div> 
+    </div>
+  } arrow>
          <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
          </Tooltip>
          </p>
@@ -204,7 +243,20 @@ export default function PrescriberRequestForm() {
       },
     },
   }}
-  TransitionProps={{ timeout: 600 }} title="This is a brief summary of what this option entails" arrow>
+  TransitionProps={{ timeout: 600 }} title={
+    <div className='flex  w-[300px] p-2'>
+
+       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
+
+       </div>
+
+       <div className="">
+       <p className='text-xs font-normal text-left'>Header</p>
+     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+    
+        </div> 
+    </div>
+  } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
         </p>
@@ -231,7 +283,20 @@ export default function PrescriberRequestForm() {
               },
             },
           }}
-  TransitionProps={{ timeout: 600 }} title="This is a brief summary of what this option entails" arrow>
+  TransitionProps={{ timeout: 600 }} title={
+    <div className='flex  w-[300px] p-2'>
+
+       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
+
+       </div>
+
+       <div className="">
+       <p className='text-xs font-normal text-left'>Header</p>
+     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+    
+        </div> 
+    </div>
+  } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
         </p>
@@ -258,7 +323,20 @@ export default function PrescriberRequestForm() {
               },
             },
           }}
-  TransitionProps={{ timeout: 600 }} title="This is a brief summary of what this option entails" arrow>
+  TransitionProps={{ timeout: 600 }} title={
+    <div className='flex  w-[300px] p-2'>
+
+       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
+
+       </div>
+
+       <div className="">
+       <p className='text-xs font-normal text-left'>Header</p>
+     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+    
+        </div> 
+    </div>
+  } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
         </p>
@@ -277,7 +355,7 @@ export default function PrescriberRequestForm() {
 
 <div className='w-full flex justify-center mt-2'>
 
-    <Link href="../pharmacies/list/" className='text-center text-sm text-white font-light bg-black rounded-3xl py-2 px-6 hover:mt-2'>Submit</Link>
+    <button onClick={addAllSelectionsToCookies} className='text-center text-sm text-white font-light bg-black rounded-3xl py-2 px-6 hover:mt-2'>Submit</button>
 </div>
 
   </div>

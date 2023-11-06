@@ -22,7 +22,7 @@ export default function About() {
  <Header />
 
 
-<div className='h-[100px] w-screen  relative md:pt-10 md:pb-10 md:pl-20 md:pr-20 md:pt-28 flex'>
+<div className='h-[100px] w-screen  relative md:pt-10 md:pb-10 md:pl-20 md:pr-20 md:pt-20 flex'>
 
 <Link href={"/"} style={{marginLeft:'60px', marginTop:'-35px'}} className='w-8 absolute h-8 bg-white  rounded-full md:mt-[-20]   ml-10 hidden md:block cursor-pointer absolute hover:ml-2 grid place-content-center p-1 shadow-md'>
   <img src="/images/home/arrow-back-simple-svgrepo-com.svg" alt="arrow-back-kemnet" />
@@ -75,7 +75,7 @@ export default function About() {
        
 <div  className='w-full h-8 bg-400 rouned-br-2xl rounded-bl-2xl flex flex-col border-t  '>
 
-<p  style={{marginBottom:`3%`, marginTop:`61%`}} className='text-xs font-medium  text-center '>Recognized & Awarded</p>
+<p  style={{marginBottom:`3%`, marginTop:`61%`}} className='text-xs font-medium  text-center '>Work With Us</p>
          
 </div>
 
@@ -90,7 +90,7 @@ export default function About() {
        
 <div  className='w-full h-8 bg-400 rouned-br-2xl rounded-bl-2xl flex flex-col border-t  '>
 
-<p  style={{marginBottom:`3%`, marginTop:`61%`}} className='text-xs font-medium  text-center '>Recognized & Awarded</p>
+<p  style={{marginBottom:`3%`, marginTop:`61%`}} className='text-xs font-medium  text-center '>Social Impact</p>
          
 </div>
 
@@ -104,6 +104,76 @@ export default function About() {
 </div>
  
  
+{
+  //Awards
+
+
+}
+
+<div className='w-screen items-center mt-16'>
+
+  <p className='font-medium text-xl text-center'>Recognized & Awarded</p>
+  <p className='text-sm text-zinc-600 text-center mt-2 font-light'>Partered With The Very Best</p>
+
+
+<div className='w-full flex justify-center mt-4'>
+
+<div className='grid grid-cols-4 grid-cols-gap-4  px-20 w-full ml-40 mt-4'>
+   <div className='items-center'>
+
+    <div className='h-16 w-16 rounded-full bg-slate-300'>
+
+    </div>
+    <p className='text-sm'>Award Name</p>
+
+
+   </div>
+
+
+   <div className='items-center'>
+
+<div className='h-16 w-16 rounded-full bg-slate-300'>
+
+</div>
+<p className='text-sm'>Award Name</p>
+
+
+</div>
+
+
+
+<div className='items-center'>
+
+<div className='h-16 w-16 rounded-full bg-slate-300'>
+
+</div>
+<p className='text-sm'>Award Name</p>
+
+
+</div>
+
+
+<div className='items-center'>
+
+<div className='h-16 w-16 rounded-full bg-slate-300'>
+
+</div>
+<p className='text-sm'>Award Name</p>
+
+
+</div>
+
+
+    
+  </div>
+</div>
+
+
+
+
+
+  
+</div>
 
 <div className='flex-grow'></div>
 

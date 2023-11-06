@@ -12,49 +12,21 @@ import Cookies from 'js-cookie';
 
 
 import * as React from 'react';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import Slide from '@mui/material/Slide';
-import { TransitionProps } from '@mui/material/transitions';
 
 
-const Transition = React.forwardRef(function Transition(
-  props: TransitionProps & {
-    children: React.ReactElement<any, any>;
-  },
-  ref: React.Ref<unknown>,
-) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
+
 
 
 export default function CustomerDetails() {
   
 
-const [isOpenOne, setIsOpenOne] = useState(false);
-const [isOpenTwo, setIsOpenTwo] = useState(false);
-const [isOpenThree, setIsOpenThree] = useState(false);
 
-const [displayText, setDisplayText] = useState('PATIENT');
-const [phone, setPhone] = useState('');
 const [allSelections, setSelections] = useState([]);
 
 
 
 
 const [open, setOpen] = React.useState(false);
-
-const handleClickOpen = () => {
-  setOpen(true);
-};
-
-const handleClose = () => {
-  setOpen(false);
-};
 
 
 {/*hold all selections */}
@@ -98,7 +70,7 @@ useEffect(() => {
  
  <div className="w-full h-full grid place-content-center md:px-10" style={{backgroundColor:`rgba(0,0,0,0.7)`}}>
 
-    <p className='text-center text-white text-xl font-semibold'>WELCOME TO OUR CUSTOMIZATION CONSULT REQUEST PAGE</p>
+    <p className='text-center text-white text-xl font-semibold mt-10'>WELCOME TO OUR CUSTOMIZATION CONSULT REQUEST PAGE</p>
     <p className='text-center text-white text-sm mt-4 font-normal'>PLEASE LET US KNOW HOW WE CAN ASSIST YOU WITH YOUR MEDICATION NEEDS. <br></br>CUSTOMIZE MEDICATION TO UNIQUE NEEDS AND REQUEST MEDICATION THAT ARE OUT OF STOCK AND A PHARMACIST WILL CONTACT YOU TO COMPLETE AN ASSESSMENT AND GET YOUR MEDICINES CUSTOM MADE FOR YOU.</p>
 
  </div>
@@ -116,10 +88,10 @@ useEffect(() => {
 
 
 
-    <p className='text-xl font-medium text-center mt-10'>Enter Your Information</p>
+    <p className='text-xl font-medium text-center mt-10'>Enter Your Patient&apos;s Information</p>
 
    
-    <p className='text-sm text-zinc-800 font-extralight text-center mt-2'>Provide your full information, so we can contact you to make your custom medicine for you.</p>
+    <p className='text-sm text-zinc-800 font-extralight text-center mt-2'>Provide your patient&apos;s information.</p>
 
 
     <div className="w-full  mt-2 flex justify-center">
@@ -188,7 +160,7 @@ useEffect(() => {
     <div className="w-full  mt-4 flex justify-center">
 
   
-        <Link href={"../../patients/pharmacies"} className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 ml-[20px] mr-6'>Submit</Link>
+        <Link href={"../../prescribers/pharmacies/list"} className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 ml-[20px] mr-6'>Submit</Link>
 
 
 
