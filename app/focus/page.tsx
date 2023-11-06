@@ -81,7 +81,7 @@ export default function Focus() {
        
 <div  className='w-full h-8 bg-400 rouned-br-md rounded-bl-2xl flex flex-col border-t  '>
 
-    <p  style={{marginBottom:`3%`, marginTop:`53%`}} className='text-xs font-medium  text-center '>Our Clients</p>
+<Link href="../focus/clients"  style={{marginBottom:`3%`, marginTop:`53%`}} className='text-xs font-medium  text-center '>Our Clients</Link>
 </div>
 
 </div>

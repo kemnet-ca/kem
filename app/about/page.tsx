@@ -53,21 +53,8 @@ export default function About() {
 
 <div className='flex w-screen justify-center px-4'>
 
-  <div className="w-[90%] grid grid-cols-3 p-4 gap-4  items-center place-content-center mx-auto">
-    <div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
-
-        <div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer ">
-
-       
-            <div  className='w-full h-8 bg-400 rouned-br-2xl rounded-bl-2xl flex flex-col border-t  '>
-            
-                <p  style={{marginBottom:`3%`, marginTop:`61%`}} className='text-xs font-medium  text-center '>Recognized & Awarded</p>
-            </div>
-
-        </div>
-
-       
-    </div>
+  <div className="w-[90%] grid grid-cols-2 p-4 gap-4  items-center place-content-center mx-auto">
+   
     <div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
 
     <div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer ">
