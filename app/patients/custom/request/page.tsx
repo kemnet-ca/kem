@@ -35,7 +35,7 @@ function handleRadioChange(event:any) {
   if (selectedValues.includes(selectedValue)) {
     // If the value is already in the array, remove it
     setSelectedValues(selectedValues.filter(value => value !== selectedValue));
-    alert(JSON.stringify(selectedValues))
+   // alert(JSON.stringify(selectedValues))
   } else {
     // If the value is not in the array, add it
     setSelectedValues([...selectedValues, selectedValue]);

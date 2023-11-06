@@ -124,7 +124,7 @@ useEffect(() => {
 
     <div className="w-full  mt-2 flex justify-center">
 <div >
-<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px]' placeholder='Full Name' />
+<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px]  font-light text-xs' placeholder='Full Name' />
 
     </div>
     </div>
@@ -133,14 +133,14 @@ useEffect(() => {
 
     <div className="w-full  mt-2 flex justify-center">
 <div >
-<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px]' placeholder='Last Name' />
+<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px] font-light text-xs' placeholder='Last Name' />
 
     </div>
     </div>
 
     <div className="w-full  mt-2 flex justify-center">
 <div >
-<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px]' placeholder='Postal Code' />
+<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px] font-light text-xs' placeholder='Postal Code' />
 
     </div>
     </div>
@@ -148,7 +148,7 @@ useEffect(() => {
 
     <div className="w-full  mt-2 flex justify-center">
 <div >
-<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px]' placeholder='Phone Number' />
+<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px] font-light text-xs' placeholder='Phone Number' />
 
     </div>
     </div>

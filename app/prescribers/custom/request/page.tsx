@@ -6,6 +6,8 @@ import Link from 'next/link';
 import Tooltip from '@mui/material/Tooltip';
 import Fade from '@mui/material/Fade';
 import Header from '@/components/Header';
+import Cookies from 'js-cookie';
+import { useRouter } from 'next/navigation';
 
 
 
@@ -13,7 +15,53 @@ import Header from '@/components/Header';
 export default function PrescriberRequestForm() {
   
 
+  const [selectedValues, setSelectedValues] = useState<string[]>([]);
 
+
+
+
+
+
+
+  const router = useRouter();
+  
+  
+  {/*function below hahndles radio button selections */}
+  function handleRadioChange(event:any) {
+    const selectedValue = event.target.value;
+  
+    if (selectedValues.includes(selectedValue)) {
+      // If the value is already in the array, remove it
+      setSelectedValues(selectedValues.filter(value => value !== selectedValue));
+     // alert(JSON.stringify(selectedValues))
+    } else {
+      // If the value is not in the array, add it
+      setSelectedValues([...selectedValues, selectedValue]);
+  
+    // alert(JSON.stringify(selectedValues))
+    }
+  
+    if(selectedValues.length==0){
+  
+      setSelectedValues([...selectedValues, selectedValue]);
+  
+     // alert(JSON.stringify(selectedValues))
+  
+    }
+  }
+  
+  
+  {/*add all selected consult requests to cookies */}
+  function addAllSelectionsToCookies(){
+  
+    Cookies.set('allSelections',JSON.stringify(selectedValues) );
+  
+    //alert(selectedValues)
+  
+    router.push('../../patients/data/details/')
+  
+  
+  }
 
 
   return (
@@ -52,7 +100,11 @@ export default function PrescriberRequestForm() {
     <div className="w-full  mt-8">
 
          <div className='mt-4 flex'>
-         <input value="test" type="checkbox" /> 
+         <input value="Change the medication formulation" type="checkbox"
+          checked={selectedValues.includes('Change the medication formulation')}
+          
+          onChange={handleRadioChange}
+         /> 
          <p className="ml-4 font-normal text-sm flex">Change the medication formulation
          
 
@@ -78,7 +130,12 @@ export default function PrescriberRequestForm() {
          </div>
        
          <div className='mt-4 flex'>
-         <input value="test" type="checkbox"  /> 
+         <input value="Change the medication flavor" type="checkbox"
+         
+         checked={selectedValues.includes('Change the medication flavor')}
+          
+         onChange={handleRadioChange}
+           /> 
          <p className="ml-4 font-normal text-sm flex">Change the medication flavor
          <Tooltip  TransitionComponent={Fade}
          componentsProps={{
@@ -101,7 +158,11 @@ export default function PrescriberRequestForm() {
 
          <div className='mt-4 flex'>
 
-         <input value="test" type="checkbox" /> 
+         <input value="Change the medication dose" type="checkbox" 
+         checked={selectedValues.includes('Change the medication dose')}
+          
+         onChange={handleRadioChange}
+         /> 
          <p className="ml-4 font-normal text-sm flex">Change the medication dose
 
          <Tooltip  TransitionComponent={Fade}
@@ -124,7 +185,11 @@ export default function PrescriberRequestForm() {
 
          <div className='mt-4 flex'>
 
-        <input value="test" type="checkbox" /> 
+        <input value="Create a combination medication." type="checkbox"
+         checked={selectedValues.includes('Create a combination medication.')}
+          
+         onChange={handleRadioChange}
+        /> 
         <p className="ml-4 font-normal text-sm flex">Create a combination medication. 
         
         <Tooltip  TransitionComponent={Fade}
@@ -148,7 +213,11 @@ export default function PrescriberRequestForm() {
 
         <div className='mt-4 flex'>
 
-        <input value="test" type="checkbox" /> 
+        <input value="I want to consult with a compounding pharmacist." type="checkbox"
+         checked={selectedValues.includes('I want to consult with a compounding pharmacist.')}
+          
+         onChange={handleRadioChange}
+         /> 
         <p className="ml-4 font-normal text-sm flex">I want to consult with a compounding pharmacist. 
         <Tooltip  TransitionComponent={Fade}
         componentsProps={{
@@ -170,7 +239,11 @@ export default function PrescriberRequestForm() {
 
         <div className='mt-4 flex'>
 
-        <input value="test" type="checkbox" /> 
+        <input value="I am looking for a specific compounding medication." type="checkbox"
+        checked={selectedValues.includes('I am looking for a specific compounding medication.')}
+          
+        onChange={handleRadioChange}
+        /> 
         <p className="ml-4 font-normal text-sm flex">I am looking for a specific compounding medication.
         
         <Tooltip  TransitionComponent={Fade}
