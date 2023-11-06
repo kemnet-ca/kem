@@ -65,7 +65,7 @@ export default function Focus() {
        
             <div  className='w-full h-8 bg-400 rouned-br-md rounded-bl-2xl flex flex-col border-t  '>
             
-                <p  style={{marginBottom:`3%`, marginTop:`53%`}} className='text-xs font-medium  text-center '>Our  process</p>
+                <Link href="../focus/process"  style={{marginBottom:`3%`, marginTop:`53%`}} className='text-xs font-medium  text-center '>Our  process</Link>
             </div>
 
         </div>
@@ -81,7 +81,7 @@ export default function Focus() {
        
 <div  className='w-full h-8 bg-400 rouned-br-md rounded-bl-2xl flex flex-col border-t  '>
 
-    <p  style={{marginBottom:`3%`, marginTop:`53%`}} className='text-xs font-medium  text-center '>Client Case Study & Testimonials</p>
+    <p  style={{marginBottom:`3%`, marginTop:`53%`}} className='text-xs font-medium  text-center '>Our Clients</p>
 </div>
 
 </div>
