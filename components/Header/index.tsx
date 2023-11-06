@@ -20,12 +20,12 @@ export default function Header() {
 
 
 
-<Link href={"/options"} className='h-20 w-60 bg-white rounded-br-xl rounded-bl-xl shadow-sm absolute z-20 mt-12 mr-10 p-2 flex'
+<Link href={"/options"} className='h-20 w-60 bg-white rounded-br-xl rounded-bl-xl shadow-sm absolute z-20 mt-12 mr-10 pl-4 pr-2 py-2 flex'
 style={{
   left:`65%`
 }}
 >
-<p className='font-medium text-2xl text-center mt-4 cursor-pointer hover:ml-1'>Get Started</p>
+<p className='font-medium text-2xl  cursor-pointer hover:ml-1'>Get<br></br> <span className="font-light">Started</span></p>
 <div className='h-10 w-10 bg-black rounded-full ml-auto mr-3 ml-auto mt-3 cursor-pointer get-started-arrow-kemet hover:mr-4'>
 
 <img src="/images/home/arrow-right-circle-svgrepo-com.svg" alt="get-started-arrow-kemet" />
