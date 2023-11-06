@@ -30,7 +30,7 @@ export default function Process() {
     </Link>
 
    <div className='w-full flex justify-center'>
-   <p className='text-center text-xl font-medium ' style={{marginTop:`-20px`}}>The Process</p>
+   <p className='text-center text-xl font-medium ' style={{marginTop:`20px`}}>The Process</p>
 
 
 
@@ -43,7 +43,7 @@ export default function Process() {
 
 
 
-<div className="w-screen bg-white md:px-10">
+<div className="w-screen bg-white md:px-10 mt-20">
 
     <p className='font-medium '>Patients & Prescribers</p>
 
@@ -130,14 +130,14 @@ export default function Process() {
 
 <div className='ml-4 w-[500px]'>
 <p className="text-sm font-medium">Collaborative Partnership</p>
-<p className="text-sm font-light">We empower you throughout the journey, working side by side to address your health system's specific goals and cater to your individual needs.</p>
+<p className="text-sm font-light">We empower you throughout the journey, working side by side to address your health system&apos;s specific goals and cater to your individual needs.</p>
 </div>
 
 </div>
 
 <div className='ml-4 w-[800px] mt-6'>
 
-<p className="text-sm font-light">With this collaborative approach, we deliver the capacity to transform your healthcare system. <span className="font-medium">Medicine Your Medicine</span> becomes a reality, providing solutions tailored precisely to your country's needs and aspirations.</p>
+<p className="text-sm font-light">With this collaborative approach, we deliver the capacity to transform your healthcare system. <span className="font-medium">Medicine Your Medicine</span> becomes a reality, providing solutions tailored precisely to your country&apos;s needs and aspirations.</p>
 </div>
 
 
