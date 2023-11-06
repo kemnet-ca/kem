@@ -57,8 +57,8 @@ export default function PrescriberRequestForm() {
     Cookies.set('allSelections',JSON.stringify(selectedValues) );
   
     //alert(selectedValues)
-  
-    router.push('../../prescribers/details/')
+
+    router.push('../prescribers/details/')
   
   
   }
