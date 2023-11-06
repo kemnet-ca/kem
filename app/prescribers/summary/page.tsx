@@ -142,16 +142,16 @@ useEffect(() => {
 
     <div className="w-full flex mt-8 ">
 
-<p className='font-medium text-sm'>Your patient&apos;s information</p>
+<p className='font-medium text-sm'>Your information</p>
 
 
 </div>
     <div className="w-full bg-white p-4 rounded-md mt-4">
 
-        <p className="mt-4 font-light text-sm"><span className="text-zinc-600">Patient&apos;s First Name:</span> Ebube </p>
-        <p className="mt-4 font-light text-sm"><span className="text-zinc-600">Patient&apos;s First Name:</span> Ebube </p>
-        <p className="mt-4 font-light text-sm"><span className="text-zinc-600">Patient&apos;s Postal Code:</span> P0V ER4 </p>
-        <p className="mt-4 font-light text-sm"><span className="text-zinc-600">Patient&apos;s Phone Number:</span> +1 099 901 871 </p>
+        <p className="mt-4 font-light text-sm"><span className="text-zinc-600">Prescriber&apos;s First Name:</span> Ebube </p>
+        <p className="mt-4 font-light text-sm"><span className="text-zinc-600">Prescriber&apos;s First Name:</span> Ebube </p>
+        <p className="mt-4 font-light text-sm"><span className="text-zinc-600">Prescriber&apos;s Postal Code:</span> License Number </p>
+ 
        
 
     </div>

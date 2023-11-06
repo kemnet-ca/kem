@@ -96,7 +96,7 @@ useEffect(() => {
 
     <div className="w-full  mt-2 flex justify-center">
 <div >
-<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px]  font-light text-xs' placeholder='Full Name' />
+<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px]  font-light text-xs' placeholder='First Name' />
 
     </div>
     </div>
@@ -112,18 +112,13 @@ useEffect(() => {
 
     <div className="w-full  mt-2 flex justify-center">
 <div >
-<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px] font-light text-xs' placeholder='Postal Code' />
+<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px] font-light text-xs' placeholder='License Number' />
 
     </div>
     </div>
 
 
-    <div className="w-full  mt-2 flex justify-center">
-<div >
-<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px] font-light text-xs' placeholder='Phone Number' />
-
-    </div>
-    </div>
+  
 
   
   

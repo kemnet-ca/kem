@@ -58,7 +58,7 @@ export default function PrescriberRequestForm() {
   
     //alert(selectedValues)
   
-    router.push('../../prescribers/patient/details/')
+    router.push('../../prescribers/details/')
   
   
   }
