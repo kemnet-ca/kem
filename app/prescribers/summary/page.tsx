@@ -148,9 +148,9 @@ useEffect(() => {
 </div>
     <div className="w-full bg-white p-4 rounded-md mt-4">
 
-        <p className="mt-4 font-light text-sm"><span className="text-zinc-600">Prescriber&apos;s First Name:</span> Ebube </p>
-        <p className="mt-4 font-light text-sm"><span className="text-zinc-600">Prescriber&apos;s First Name:</span> Ebube </p>
-        <p className="mt-4 font-light text-sm"><span className="text-zinc-600">Prescriber&apos;s Postal Code:</span> License Number </p>
+        <p className="mt-4 font-light text-sm"><span className="text-zinc-600">Prescriber First Name:</span> Ebube </p>
+        <p className="mt-4 font-light text-sm"><span className="text-zinc-600">Prescriber First Name:</span> Ebube </p>
+        <p className="mt-4 font-light text-sm"><span className="text-zinc-600">Prescriber License Number:</span> License Number </p>
  
        
 

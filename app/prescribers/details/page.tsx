@@ -88,10 +88,10 @@ useEffect(() => {
 
 
 
-    <p className='text-xl font-medium text-center mt-10'>Enter Your Prescriber&apos; Information</p>
+    <p className='text-xl font-medium text-center mt-10'>Enter Your Prescriber Information</p>
 
    
-    <p className='text-sm text-zinc-800 font-extralight text-center mt-2'>Provide your prescriber&apos;s information.</p>
+    <p className='text-sm text-zinc-800 font-extralight text-center mt-2'>Provide your prescriber information.</p>
 
 
     <div className="w-full  mt-2 flex justify-center">
