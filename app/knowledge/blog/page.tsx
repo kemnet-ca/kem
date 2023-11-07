@@ -81,7 +81,7 @@ export default function Blog() {
 <div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer ">
 
        
-<div  className='w-full h-8 bg-400 rouned-br-2xl p-2 rounded-bl-2xl   border-t grid place-content-center  '>
+<div  className='w-full h-8 bg-400 rouned-br-2xl p-2 rounded-bl-2xl   border-t grid place-content-center p-4  '>
 
     <p   className='text-sm font-light text-center '>Unlock a Stunning Secret: Medications Disguised as Nail Lacquer! 💅 Did You Know?</p>
 
