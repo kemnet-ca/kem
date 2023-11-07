@@ -117,71 +117,6 @@ export default function HealthProTools() {
 
 
 
-<div className='w-full flex justify-center mt-10'>
-   <p className='text-center text-md font-medium ' >Shortage Resolution</p>
-
-
-
-
-   </div>
-
-
-
-   <div className='flex w-screen justify-center  flex'>
-
-<div className="w-2/3 grid grid-cols-2 p-4 gap-4  items-center place-content-center mx-auto">
-  
-   
-
-    <div className='h-60 w-full   single-item py-2'>
-        <p className="text-sm font-medium">Urgent Medication Needs</p>
-        <p className="font-light text-xs mt-2">When it comes to quickly securing high-quality compounded medications that are currently unavailable commercially, your search ends here. </p>
-
-        <p className="font-light text-xs mt-2">We&apos;ve got you covered. Access affordable solutions to meet your patients&apos; immediate medication needs with confidence and without delay. </p>
- 
-        <div className="w-full  mt-4 flex justify-start">
-
-<button  className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 '>Download PDF</button>
-
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
-
-       
-
-       
-</div>
-
-
-
-  
-</div>
-
-
-</div>
-
-
 
 
 
@@ -199,7 +134,7 @@ export default function HealthProTools() {
 
 
     <div className='h-60 w-full   single-item py-2'>
-        <p className="text-sm font-medium">Healthcare Professional Knowledge Base</p>
+        <p className="text-sm font-medium">Kemet Science</p>
         <p className="font-light text-xs mt-2">Take the confusion out of compounding and get all your burning questions answered. Kemet simplifies compounding with our foolproof knowledge base - making compounding crystal clear for healthcare professionals. </p>
 
        <p className="font-normal text-sm mt-2">Subscribe For Free</p>
