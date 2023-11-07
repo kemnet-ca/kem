@@ -9,19 +9,16 @@ export default function Footer() {
 
         <>
 
-<Link href={"https://wa.link/xelza8"} className="h-16 w-16 bg-white rounded-full fixed z-index p-2" style={{marginRight:`10px`, marginLeft:`90%`, marginBottom:`4%`}}>
 
-<img src="/images/home/whatsapp-svgrepo-com.svg" className="w-full h-full" alt="whatsapp-kemnet"/>
-</Link>
 
-make the button sticky and positioned to the right on scroll
+
         <div className='h-32'></div>
 
 
 
 <div className="w-screen h-[300px] bg-slate-200 mt-auto grid place-content-center text-3xl md:px-10 grid-cols-3 gap-4">
 
-  
+
 {/*footer 1 */}
   <div className=" text-black">
 
@@ -82,6 +79,21 @@ make the button sticky and positioned to the right on scroll
 </div>
 
 </div>
+
+ {/* Floating Action Button */}
+ <div
+        className="fixed bottom-10 right-10 h-16 w-16 bg-blue-500 text-white rounded-full flex items-center justify-center cursor-pointer hover:bg-blue-600">
+
+
+<Link href={"https://wa.link/xelza8"} className="h-16 w-16 bg-white rounded-full fixed z-400 p-2" >
+
+<img src="/images/home/whatsapp-svgrepo-com.svg" className="w-full h-full" alt="whatsapp-kemnet"/>
+</Link>
+
+        
+</div>
+
+
         </>
 
     )
