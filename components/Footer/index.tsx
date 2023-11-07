@@ -36,7 +36,7 @@ export default function Footer() {
 
     <ul>
         <li className="mt-2 hover:font-normal hover:cursor-pointer">Share our stories with your friends</li>
-        <li className="mt-2 hover:font-normal hover:cursor-pointer">Copyrights declaration</li>
+        
         <li className="mt-2 hover:font-normal hover:cursor-pointer">Modern slavery statement</li>
         <li className="mt-2 hover:font-normal hover:cursor-pointer">Quality statement</li>
         <li className="mt-2 hover:font-normal hover:cursor-pointer">Safety</li> 
@@ -70,7 +70,7 @@ export default function Footer() {
 
 </div>
 
-<p className="mt-4 hover:font-light text-sm hover:cursor-pointer">Legal Notice</p>
+<p className="mt-4 hover:font-light text-sm hover:cursor-pointer">Cookies Settings</p>
 </div>
 
 </div>

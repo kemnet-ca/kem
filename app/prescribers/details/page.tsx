@@ -97,7 +97,7 @@ useEffect(() => {
 
 <div className='w-1/3 bg-slate-100 py-2 px-6 flex mt-8 rounded-md justify-center '>
 
-<p className="text-md text-center font-medium  text-zinc-800"> I registered prescriber</p>
+<p className="text-md text-center font-medium  text-zinc-800">I am a licensed prescriber</p>
 
  
 

@@ -92,8 +92,7 @@ const checkboxStyle = {
        <DialogTitle className="font-medium text-sm">{"Confirm To Send Your Request To A Prescriber"}</DialogTitle>
        <DialogContent>
          <p id="alert-dialog-slide-description " className="text-zinc-600 text-sm font-light">
-          If you agree, your information and consult requests which you have submitted will be sent to the pharmacy you selected by fax and email.
-         </p>
+         Confirm to send your request to a pharmacist  </p>
        </DialogContent>
        <DialogActions>
          <p className='text-zinc-400 cursor-pointer mr-10 hover:mb-1' onClick={handleClose}>Disagree</p>

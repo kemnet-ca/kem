@@ -385,7 +385,7 @@ className='flex w-screen justify-center'>
   <p className="text-sm text-zinc-600 mt-2 font-extralight">Do you need a medication that is currently not available?</p>
 
   <div className='h-10 w-48 bg-black rounded-full mt-4 text-center flex text-center items-center cursor-pointer hover:ml-2'>
-      <p className='text-white text-center text-xs ml-auto font-extralight'>Discover more</p>
+      <Link href={"/options"} className='text-white text-center text-xs ml-auto font-extralight'>Talk To A Pharmacist</Link>
 
       <div className='h-8 w-8 bg-white rounded-full ml-auto mr-1 p-2'><img src="/images/home/navigation-forward-arrow-svgrepo-com.svg" alt="" /></div>
 
@@ -402,7 +402,7 @@ className='flex w-screen justify-center'>
   //second feature section
 }
 
-<div className=' h-48 w-screen mt-16 md:px-20  items-center '>
+<div className=' h-48 w-screen mt-16 md:px-20  items-center  hidden'>
 
  <div className='md:px-40 h-full w-full inner-padding flex'>
 
