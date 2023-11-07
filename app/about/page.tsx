@@ -77,7 +77,7 @@ export default function About() {
        
 <div  className='w-full h-8 bg-400 rouned-br-2xl rounded-bl-2xl flex flex-col border-t  '>
 
-<p  style={{marginBottom:`3%`, marginTop:`40%`}} className='text-xs font-medium  text-center '>Social Impact</p>
+<Link href={"../about/impact"}  style={{marginBottom:`3%`, marginTop:`40%`}} className='text-xs font-medium  text-center '>Social Impact</Link>
          
 </div>
 
