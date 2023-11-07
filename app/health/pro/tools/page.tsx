@@ -141,7 +141,7 @@ export default function HealthProTools() {
        <p className="font-light text-xs mt-2">Receive weekly tools to get all your questions answered and support your practice to provide quality compound medications to your patients.</p>
         <div className="w-full  mt-4 flex justify-start">
 
-<button  className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 '>Free Signup</button>
+<button  className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 '>More Info</button>
 
 
 
