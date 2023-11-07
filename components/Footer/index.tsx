@@ -8,7 +8,15 @@ export default function Footer() {
 
 
         <>
+
+<div className="h-16 w-16 bg-white rounded-full fixed z-index p-2" style={{marginRight:`10px`, marginLeft:`90%`, marginBottom:`4%`}}>
+
+<img src="/images/home/whatsapp-svgrepo-com.svg" className="w-full h-full" alt="whatsapp-kemnet"/>
+</div>
+
+make the button sticky and positioned to the right on scroll
         <div className='h-32'></div>
+
 
 
 <div className="w-screen h-[300px] bg-slate-200 mt-auto grid place-content-center text-3xl md:px-10 grid-cols-3 gap-4">
