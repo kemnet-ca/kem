@@ -85,7 +85,7 @@ export default function Footer() {
         className="fixed bottom-10 right-10 h-16 w-16 bg-blue-500 text-white rounded-full flex items-center justify-center cursor-pointer hover:bg-blue-600">
 
 
-<Link href={"https://wa.link/xelza8"} className="h-16 w-16 bg-white rounded-full fixed z-400 p-2" >
+<Link href={"https://wa.link/fopkek"} className="h-16 w-16 bg-white rounded-full fixed z-400 p-2" >
 
 <img src="/images/home/whatsapp-svgrepo-com.svg" className="w-full h-full" alt="whatsapp-kemnet"/>
 </Link>
