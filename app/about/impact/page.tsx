@@ -103,7 +103,7 @@ export default function SocialImpact() {
 
 <div className='w-full bg-slate-100 py-6  px-6 flex mt-8 rounded-md '>
 
-<p className="text-xs font-light text-zinc-800"> Explore the Power of Kemet's Drug Shortage Resolution Proof of Concept Through Data - Click Here to Download and Witness the Numbers in Action!</p>
+<p className="text-xs font-light text-zinc-800"> Explore the Power of Kemet&apos;s Drug Shortage Resolution Proof of Concept Through Data - Click Here to Download and Witness the Numbers in Action!</p>
 
   <button  className='text-center text-xs text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 ml-[20px] mr-6'>Download PDF</button>
 
