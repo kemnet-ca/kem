@@ -9,10 +9,10 @@ export default function Footer() {
 
         <>
 
-<div className="h-16 w-16 bg-white rounded-full fixed z-index p-2" style={{marginRight:`10px`, marginLeft:`90%`, marginBottom:`4%`}}>
+<Link href={"https://wa.link/xelza8"} className="h-16 w-16 bg-white rounded-full fixed z-index p-2" style={{marginRight:`10px`, marginLeft:`90%`, marginBottom:`4%`}}>
 
 <img src="/images/home/whatsapp-svgrepo-com.svg" className="w-full h-full" alt="whatsapp-kemnet"/>
-</div>
+</Link>
 
 make the button sticky and positioned to the right on scroll
         <div className='h-32'></div>
