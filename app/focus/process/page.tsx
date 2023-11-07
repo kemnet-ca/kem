@@ -111,7 +111,7 @@ export default function Process() {
 
 <div className='ml-4 w-[500px]'>
 <p className="text-sm font-medium">Scientific Excellence</p>
-<p className="text-sm font-light"> Our expertise in industrial pharmacy, engineering, and supply chain management, coupled with a stringent product development approach grounded in established scientific literature, guarantees unwavering quality assurance.</p>
+<p className="text-sm font-light"> Our clinical and compounding expertise, combined with a rigorous product development approach rooted in well-established scientific literature, ensures top-notch quality assurance.</p>
 </div>
 
 </div>
@@ -129,15 +129,15 @@ export default function Process() {
 </div>
 
 <div className='ml-4 w-[500px]'>
-<p className="text-sm font-medium">Collaborative Partnership</p>
-<p className="text-sm font-light">We empower you throughout the journey, working side by side to address your health system&apos;s specific goals and cater to your individual needs.</p>
+<p className="text-sm font-medium">Collaborative Journey</p>
+<p className="text-sm font-light">We empower you throughout the process, working hand in hand to address your specific health goals and cater to your individual needs.</p>
 </div>
 
 </div>
 
 <div className='ml-4 w-[800px] mt-6'>
 
-<p className="text-sm font-light">With this collaborative approach, we deliver the capacity to transform your healthcare system. <span className="font-medium">Medicine Your Medicine</span> becomes a reality, providing solutions tailored precisely to your country&apos;s needs and aspirations.</p>
+<p className="text-sm font-light"> With this collaborative approach, we deliver<span className="font-medium">Medicine Made For You, By You,</span> providing solutions that are tailored precisely to your needs and aspirations.</p>
 </div>
 
 

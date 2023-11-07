@@ -22,6 +22,10 @@ export default function Footer() {
 
     <p className="font-medium text-sm">EST 2023.</p>
 
+    <p className="font-light text-sm mt-8 hover:font-normal hover:cursor-pointer">Copyrights Declaration</p>
+
+    <p className="font-light mt-4 text-sm hover:font-normal hover:cursor-pointer">Site Map</p>
+
 
   </div>
 
@@ -30,9 +34,18 @@ export default function Footer() {
   <div className="text-xs font-light ">
 
     <ul>
-        <li className="mt-2">Share our stories with your friends</li>
-        <li className="mt-2">Copyrights declaration</li>
-        <li className="mt-2">Modern slavery statement</li>
+        <li className="mt-2 hover:font-normal hover:cursor-pointer">Share our stories with your friends</li>
+        <li className="mt-2 hover:font-normal hover:cursor-pointer">Copyrights declaration</li>
+        <li className="mt-2 hover:font-normal hover:cursor-pointer">Modern slavery statement</li>
+        <li className="mt-2 hover:font-normal hover:cursor-pointer">Quality statement</li>
+        <li className="mt-2 hover:font-normal hover:cursor-pointer">Safety</li> 
+        <li className="mt-2 hover:font-normal hover:cursor-pointer">Privacy Statement</li>
+        <li className="mt-2 hover:font-normal hover:cursor-pointer">Terms Of Use</li>
+        <li className="mt-2 hover:font-normal hover:cursor-pointer">Legal Notice</li>
+
+        <li className="mt-2 hover:font-normal hover:cursor-pointer">Legal Disclaimer</li>
+        <li className="mt-2 hover:font-normal hover:cursor-pointer">Support</li>
+
 
         </ul>
 
@@ -43,7 +56,20 @@ export default function Footer() {
 
 <div className="">
 
-    
+<p className="text-sm font-medium ">Media Channels</p>
+
+
+<div className="w-[130px] grid grid-cols-3 gap-2 mt-6">
+
+  <div className="h-10 w-full bg-white rounded-full"></div>
+
+  <div className="h-10 w-full bg-white rounded-full"></div>
+
+  <div className="h-10 w-full bg-white rounded-full"></div>
+
+</div>
+
+<p className="mt-4 hover:font-light text-sm hover:cursor-pointer">Legal Notice</p>
 </div>
 
 </div>
