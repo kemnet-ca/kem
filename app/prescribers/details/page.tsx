@@ -24,9 +24,14 @@ export default function CustomerDetails() {
 const [allSelections, setSelections] = useState([]);
 
 
+const [selectedValues, setSelectedValues] = useState<string[]>([]);
 
 
-const [open, setOpen] = React.useState(false);
+const [additionalInfo, setAdditionalInformation] = useState("");
+
+
+
+
 
 
 {/*hold all selections */}
@@ -35,6 +40,18 @@ const [open, setOpen] = React.useState(false);
 
 useEffect(() => {
   const selections = Cookies.get('allSelections');
+  const addedDetails = Cookies.get('additionalInformation');
+
+
+  if(addedDetails !==undefined){
+
+    // 'allSelections' is a string, so you can work with it here
+    console.log(allSelections);
+
+    setAdditionalInformation(addedDetails);
+
+ }
+
 
   // Check if 'allSelections' is undefined, and provide a default value if needed
   if (selections !== undefined) {
@@ -161,6 +178,26 @@ useEffect(() => {
 
       </div>
     </div>
+
+    <div className="w-full flex mt-8 ">
+
+<p className='font-medium text-sm'>Additional information</p>
+
+
+</div>
+
+<div className="w-full">
+
+<div className="w-full p-6 bg-white rounded-xl mt-4 text-sm font-light ">
+
+{additionalInfo}
+
+
+
+
+
+</div>
+</div>
 
     <div className="w-full  mt-4 flex justify-center">
 

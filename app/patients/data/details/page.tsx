@@ -35,26 +35,16 @@ const Transition = React.forwardRef(function Transition(
 export default function CustomerDetails() {
   
 
-const [isOpenOne, setIsOpenOne] = useState(false);
-const [isOpenTwo, setIsOpenTwo] = useState(false);
-const [isOpenThree, setIsOpenThree] = useState(false);
 
-const [displayText, setDisplayText] = useState('PATIENT');
-const [phone, setPhone] = useState('');
+
 const [allSelections, setSelections] = useState([]);
+const [additionalInformation, setAdditionalInformation] = useState("");
 
 
 
 
 const [open, setOpen] = React.useState(false);
 
-const handleClickOpen = () => {
-  setOpen(true);
-};
-
-const handleClose = () => {
-  setOpen(false);
-};
 
 
 {/*hold all selections */}
@@ -63,6 +53,17 @@ const handleClose = () => {
 
 useEffect(() => {
   const selections = Cookies.get('allSelections');
+  const addedDetails = Cookies.get('additionalInformation');
+
+
+  if(addedDetails !==undefined){
+
+     // 'allSelections' is a string, so you can work with it here
+     console.log(allSelections);
+
+     setAdditionalInformation(addedDetails);
+
+  }
 
   // Check if 'allSelections' is undefined, and provide a default value if needed
   if (selections !== undefined) {
@@ -98,7 +99,7 @@ useEffect(() => {
  
  <div className="w-full h-full grid place-content-center md:px-10" style={{backgroundColor:`rgba(0,0,0,0.7)`}}>
 
-    <p className='text-center text-white text-xl font-semibold mt-10'>WELCOME TO OUR CUSTOMIZATION CONSULT REQUEST PAGE</p>
+    <p className='text-center text-white text-xl font-semibold mt-1-'>WELCOME TO OUR CUSTOMIZATION CONSULT REQUEST PAGE</p>
     <p className='text-center text-white text-sm mt-4 font-normal'>PLEASE LET US KNOW HOW WE CAN ASSIST YOU WITH YOUR MEDICATION NEEDS. <br></br>CUSTOMIZE MEDICATION TO UNIQUE NEEDS AND REQUEST MEDICATION THAT ARE OUT OF STOCK AND A PHARMACIST WILL CONTACT YOU TO COMPLETE AN ASSESSMENT AND GET YOUR MEDICINES CUSTOM MADE FOR YOU.</p>
 
  </div>
@@ -169,6 +170,8 @@ useEffect(() => {
   
 
 
+  
+
     <div className="w-full flex mt-8 ">
 
       <p className='font-medium text-sm'>Selected choices for consult</p>
@@ -194,6 +197,31 @@ useEffect(() => {
 
       </div>
     </div>
+
+
+
+
+
+
+    <div className="w-full flex mt-8 ">
+
+<p className='font-medium text-sm'>Additional information</p>
+
+
+</div>
+
+<div className="w-full">
+
+<div className="w-full p-6 bg-white rounded-xl mt-4 text-sm font-light ">
+
+{additionalInformation}
+
+
+
+
+
+</div>
+</div>
 
     <div className="w-full  mt-4 flex justify-center">
 

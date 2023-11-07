@@ -22,6 +22,15 @@ export default function PrescriberRequestForm() {
 
 
 
+  const [additionalInfo, setAdditionalInfo] = useState('Additional information');
+  
+  {/*handle function to process additional information text*/}
+    const handleTextareaChange = (event:any) => {
+      setAdditionalInfo(event.target.value);
+    };
+  
+
+
 
   const router = useRouter();
   
@@ -359,7 +368,9 @@ export default function PrescriberRequestForm() {
 <p className='text-sm text-zinc-800 font-semibold mt-10'>Additional information</p>
     
     <div className='w-full flex justify-center mt-2'>
-<textarea className='border border-zinc-300 text-sm text-zinc-300 p-4 w-[500px] rounded-md text-light text-zinc-700'>
+<textarea
+onChange={handleTextareaChange}
+ className='border border-zinc-300 text-sm text-zinc-300 p-4 w-[500px] rounded-md text-light text-zinc-700'>
     Additional information
   </textarea>
 </div>
