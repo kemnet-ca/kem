@@ -15,7 +15,7 @@ export default function Header() {
   <li className="menu-item  text-sm cursor-pointer hover:text-zinc-600 "><Link href={"../../about"}>About Us</Link></li>
   <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 "><Link href={"../../focus"}>Our Focus</Link></li>
   <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 "><Link href={"../../knowledge/blog"}>Med Info Blog</Link></li>
-  <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 ">Healthcare Pro Tools</li>
+  <li className="menu-item text-sm cursor-pointer hover:text-zinc-600 "><Link href={"../../health/pro/tools"}>Healthcare Pro Tool</Link></li>
 </ul>
 
 
