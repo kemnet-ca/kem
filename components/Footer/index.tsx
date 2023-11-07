@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 
 export default function Footer() {
@@ -16,7 +17,7 @@ export default function Footer() {
 {/*footer 1 */}
   <div className=" text-black">
 
-    <p className="text-2xl">LOGO HERE</p>
+    <p className="text-2xl"><Link href={"/"}><img src="/images/KEMET_Black Tagline_Updated.png" className="logo h-10 w-32" alt="KEMET LOGO" /></Link></p>
 
     <p className="text-sm font-medium mt-8">Kemet Group Incorporated</p>
 
