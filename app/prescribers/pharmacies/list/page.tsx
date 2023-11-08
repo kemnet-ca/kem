@@ -89,7 +89,7 @@ const checkboxStyle = {
        onClose={handleClose}
        aria-describedby="alert-dialog-slide-description"
      >
-       <DialogTitle className="font-medium text-sm">{"Confirm To Send Your Request To A Prescriber"}</DialogTitle>
+       <DialogTitle className="font-medium text-sm">{"Confirm To Send To A Pharmacist"}</DialogTitle>
        <DialogContent>
          <p id="alert-dialog-slide-description " className="text-zinc-600 text-sm font-light">
           Confirm to send your request to a pharmacist

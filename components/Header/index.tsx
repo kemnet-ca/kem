@@ -25,7 +25,7 @@ style={{
   left:`65%`
 }}
 >
-<p className='font-medium text-2xl  cursor-pointer hover:ml-1'>Ask<br></br> <span className="font-light">A Pharmacist</span></p>
+<p className='font-medium text-2xl  cursor-pointer hover:ml-1'>Talk To<br></br> <span className="font-light">A Pharmacist</span></p>
 <div className='h-10 w-10 bg-black rounded-full ml-auto mr-3 ml-auto mt-3 cursor-pointer get-started-arrow-kemet hover:mr-4'>
 
 <img src="/images/home/arrow-right-circle-svgrepo-com.svg" alt="get-started-arrow-kemet" />
