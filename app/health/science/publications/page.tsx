@@ -153,7 +153,7 @@ Behind every breakthrough study and groundbreaking product, there&apos;s a dynam
        
             <div  className='w-full h-8 bg-400 rouned-br-md rounded-bl-2xl flex flex-col border-t  '>
             
-                <Link href=""  style={{marginBottom:`3%`, marginTop:`53%`}} className='text-xs font-medium  text-center '>Studies</Link>
+                <Link href="../science/studies"  style={{marginBottom:`3%`, marginTop:`53%`}} className='text-xs font-medium  text-center '>Studies</Link>
             </div>
 
         </div>
