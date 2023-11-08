@@ -55,13 +55,7 @@ export default function HealthProTools() {
 </div>
 </div>
 
-<div className='w-full flex justify-center mt-10'>
-   <p className='text-center text-md font-medium ' >Pseudodin Tool</p>
 
-
-
-
-   </div>
 
 
 
@@ -81,7 +75,9 @@ export default function HealthProTools() {
    
 
     <div className='h-60 w-full   single-item py-2'>
-        <p className="text-sm font-medium">Simplify Your Billing Process</p>
+
+        <p className=' text-md font-medium ' >Pseudodin Tool</p>
+        <p className="text-sm font-medium mt-2">Simplify Your Billing Process</p>
         <p className="font-light text-xs mt-2">Tired of the hassle of managing insurance billing for compounds? Discover the ultimate solution to effortlessly find the pseudodin codes for various third-party insurance providers here. Streamline your workflow and save time with ease!</p>
 
         <p className="font-light text-xs mt-2">The Ultimate Pseudodin Resource: A Comprehensive Guide and 3rd Party Insurance Pseudodin Listings for Compounds </p>
