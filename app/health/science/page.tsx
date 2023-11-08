@@ -65,7 +65,7 @@ export default function KemetScience() {
        
             <div  className='w-full h-8 bg-400 rouned-br-md rounded-bl-2xl flex flex-col border-t  '>
             
-                <Link href="../science/rd"  style={{marginBottom:`3%`, marginTop:`53%`}} className='text-xs font-medium  text-center '>Research & Development</Link>
+                <Link href="../health/science/rd"  style={{marginBottom:`3%`, marginTop:`53%`}} className='text-xs font-medium  text-center '>Research & Development</Link>
             </div>
 
         </div>
