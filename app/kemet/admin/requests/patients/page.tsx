@@ -122,16 +122,16 @@ const AdminPatients = () => {
         </div>
      
 
-        {patientRequestData !== null && patientRequestData.map((singleRequest: any, index: any) => (
-           <p key={index}>{singleRequest.first_name} dkjcnkdck</p>
-
-        ))}
+       
 
       {/* Your main content goes here */}
 
       <div className="overflow-x-auto shadow-md sm:rounded-lg mt-8">
     <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-200 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-200">
+
+
+            
             <tr>
                 <th scope="col" className="px-6 py-3">
 Full Name
@@ -140,7 +140,11 @@ Full Name
                     Phone
                 </th>
                 <th scope="col" className="px-6 py-3">
-                postal 
+                Postal 
+                </th>
+
+                 <th scope="col" className="px-6 py-3">
+               IP addr
                 </th>
                 <th scope="col" className="px-6 py-3">
                     Request Info
@@ -151,18 +155,26 @@ Full Name
             </tr>
         </thead>
         <tbody>
-        <tr className="bg-gray-200 border-b dark:border-gray-700 even:text-white odd:text-black">
+
+             {patientRequestData !== null && patientRequestData.map((singleRequest: any, index: any) => (
+
+                <>
+
+<tr className="bg-gray-200 border-b dark:border-gray-700 even:text-white odd:text-black" key={index}>
              <th scope="row" className="px-6 py-4 font-medium even:text-white whitespace-nowrap dark:text-black">
-                    Apple MacBook Pro 17
+                   {singleRequest.first_name + " "+singleRequest.last_name}
                 </th>
                 <td className="px-6 py-4 text-gray-700">
-                    Silver
+                   {singleRequest.phone}
                 </td>
                 <td className="px-6 py-4 text-gray-700">
-                    Laptop
+                   {singleRequest.postal_code}
                 </td>
-                <td className="px-6 py-4 text-gray-700">
-                    $2999
+                 <td className="px-6 py-4 text-gray-700">
+                   {singleRequest.ip_address}
+                </td>
+                <td className="px-6 py-4 text-gray-700 font-medium">
+                    View
                 </td>
                 <td className="px-6 py-4 text-gray-700">
                     <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
@@ -171,46 +183,15 @@ Full Name
 
 
 
-
-
-            <tr className="bg-gray-200 border-b dark:border-gray-700 even:text-white odd:text-black">
-                     <th scope="row" className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-black">
-                    Apple MacBook Pro 17
-                </th>
-                <td className="px-6 py-4 text-gray-700">
-                    Silver
-                </td>
-                <td className="px-6 py-4 text-gray-700">
-                    Laptop
-                </td>
-                <td className="px-6 py-4 text-gray-700">
-                    $2999
-                </td>
-                <td className="px-6 py-4 text-gray-700">
-                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
-                </td>
-            </tr>
-
-
-            <tr className="odd:bg-white odd:dark:bg-gray-200 even:bg-white even:dark:bg-gray-800 border-b dark:border-gray-700 even:text-white odd:text-black">
-             <th scope="row" className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-black">
-                    Apple MacBook Pro 17
-                </th>
-                <td className="px-6 py-4 text-gray-700">
-                    Silver
-                </td>
-                <td className="px-6 py-4 text-gray-700">
-                    Laptop
-                </td>
-                <td className="px-6 py-4 text-gray-700">
-                    $2999
-                </td>
-                <td className="px-6 py-4 text-gray-700">
-                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
-                </td>
-            </tr>
+                </>
           
-           
+
+        ))}
+      
+
+
+
+         
         </tbody>
     </table>
 </div>
