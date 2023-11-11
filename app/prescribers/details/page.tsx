@@ -149,7 +149,7 @@ function addAllDataToCookies(){
 
     <div className="w-full  mt-2 flex justify-center">
 <div >
-<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px]  font-light text-xs' placeholder='First Name' />
+<input onChange={(e) => setFirstName(e.target.value)} type="text" className='p-2 border border-zinc-300 rounded-md w-[300px]  font-light text-xs' placeholder='First Name' />
 
     </div>
     </div>
@@ -158,14 +158,14 @@ function addAllDataToCookies(){
 
     <div className="w-full  mt-2 flex justify-center">
 <div >
-<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px] font-light text-xs' placeholder='Last Name' />
+<input onChange={(e) => setLastName(e.target.value)} type="text" className='p-2 border border-zinc-300 rounded-md w-[300px] font-light text-xs' placeholder='Last Name' />
 
     </div>
     </div>
 
     <div className="w-full  mt-2 flex justify-center">
 <div >
-<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px] font-light text-xs' placeholder='License Number' />
+<input onChange={(e) => setLicensee(e.target.value)} type="text" className='p-2 border border-zinc-300 rounded-md w-[300px] font-light text-xs' placeholder='License Number' />
 
     </div>
     </div>

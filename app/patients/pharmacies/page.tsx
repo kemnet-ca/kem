@@ -122,6 +122,13 @@ const send = async () => {
   formData.append('request',  JSON.stringify(allSelections));
 
 
+  formData.append('selected_pharm',  "...");
+
+  formData.append('ip_address',  "...");
+
+  formData.append('est_location',  "...");
+
+
   try {
 
    
