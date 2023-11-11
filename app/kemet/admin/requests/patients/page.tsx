@@ -228,6 +228,9 @@ Full Name
                     Request Info
                 </th>
                 <th scope="col" className="px-6 py-3">
+                   Date
+                </th>
+                <th scope="col" className="px-6 py-3">
                     Action
                 </th>
             </tr>
@@ -248,9 +251,14 @@ Full Name
                 <td className="px-6 py-4 text-gray-700">
                    {singleRequest.postal_code}
                 </td>
-                 <td className="px-6 py-4 text-gray-700">
+                <td className="px-6 py-4 text-gray-700">
                    {singleRequest.ip_address}
                 </td>
+                 <td className="px-6 py-4 text-gray-700">
+                   {singleRequest.created_at}
+                </td>
+
+               
                 <td className="px-6 py-4 text-gray-700 font-medium cursor-pointer hover:font-semibold">
                    <p onClick={()=>showRequestInf(singleRequest.consult_request)}>View</p> 
                 </td>
