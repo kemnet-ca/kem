@@ -10,7 +10,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Cookies from 'js-cookie';
 
-
+import { useRouter } from 'next/navigation';
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -36,14 +36,21 @@ export default function CustomerDetails() {
   
 
 
-
 const [allSelections, setSelections] = useState([]);
 const [additionalInformation, setAdditionalInformation] = useState("");
+
+const [firstName, setFirstName]= useState("");
+const [lastName, setLastName]= useState("");
+const [postal, setPostal]= useState("");
+const [phone, setPhone]= useState("");
+
 
 
 
 
 const [open, setOpen] = React.useState(false);
+
+const router = useRouter();
 
 
 
@@ -54,6 +61,7 @@ const [open, setOpen] = React.useState(false);
 useEffect(() => {
   const selections = Cookies.get('allSelections');
   const addedDetails = Cookies.get('additionalInformation');
+  
 
 
   if(addedDetails !==undefined){
@@ -81,6 +89,26 @@ useEffect(() => {
  
 }, []);
 
+
+{/*add all selected consult requests to cookies */}
+function addAllDataToCookies(){
+
+  //save items to cookies
+  Cookies.set('firstName', firstName);
+  Cookies.set('lastName', lastName);
+  Cookies.set('postal', postal);
+  Cookies.set('phone', phone);
+
+ 
+
+ 
+
+  //alert(selectedValues)
+
+  router.push('../../patients/pharmacies')
+
+
+}
 
 
   return (
@@ -135,7 +163,7 @@ useEffect(() => {
 
     <div className="w-full  mt-2 flex justify-center">
 <div >
-<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px]  font-light text-xs' placeholder='First Name' />
+<input type="text"  onChange={(e) => setFirstName(e.target.value)} className='p-2 border border-zinc-300 rounded-md w-[300px]  font-light text-xs' placeholder='First Name' />
 
     </div>
     </div>
@@ -144,14 +172,14 @@ useEffect(() => {
 
     <div className="w-full  mt-2 flex justify-center">
 <div >
-<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px] font-light text-xs' placeholder='Last Name' />
+<input type="text" onChange={(e) => setLastName(e.target.value)}  className='p-2 border border-zinc-300 rounded-md w-[300px] font-light text-xs' placeholder='Last Name' />
 
     </div>
     </div>
 
     <div className="w-full  mt-2 flex justify-center">
 <div >
-<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px] font-light text-xs' placeholder='Postal Code' />
+<input type="text" onChange={(e) => setPostal(e.target.value)}  className='p-2 border border-zinc-300 rounded-md w-[300px] font-light text-xs' placeholder='Postal Code' />
 
     </div>
     </div>
@@ -159,7 +187,7 @@ useEffect(() => {
 
     <div className="w-full  mt-2 flex justify-center">
 <div >
-<input type="text" className='p-2 border border-zinc-300 rounded-md w-[300px] font-light text-xs' placeholder='Phone Number' />
+<input type="text" onChange={(e) => setPhone(e.target.value)}  className='p-2 border border-zinc-300 rounded-md w-[300px] font-light text-xs' placeholder='Phone Number' />
 
     </div>
     </div>
@@ -226,7 +254,7 @@ useEffect(() => {
     <div className="w-full  mt-4 flex justify-center">
 
   
-        <Link href={"../../patients/pharmacies"} className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 ml-[20px] mr-6'>Submit</Link>
+        <button onClick={addAllDataToCookies} className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 ml-[20px] mr-6'>Submit</button>
 
 
 

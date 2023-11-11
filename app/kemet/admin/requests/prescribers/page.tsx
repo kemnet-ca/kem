@@ -8,34 +8,11 @@ import React, { useState,useEffect } from 'react';
 
 import axios, { AxiosError, AxiosResponse } from "axios";
 
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import Slide from '@mui/material/Slide';
-import { TransitionProps } from '@mui/material/transitions';
-
-
-
-
-
-const Transition = React.forwardRef(function Transition(
-    props: TransitionProps & {
-      children: React.ReactElement<any, any>;
-    },
-    ref: React.Ref<unknown>,
-  ) {
-    return <Slide direction="up" ref={ref} {...props} />;
-  });
 // Your main component
-const AdminPatients = () => {
+const AdminPrescribers = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
-    const [patientRequestData, setPatientRequestData] = useState([]);
-    const [open, setOpen] = React.useState(false);
-    const [requestData, setRequestData] = React.useState("");
+    const [prescribersRequestData, setPrescribersRequestData] = useState([]);
   
     const toggleMenu = () => {
       setMenuOpen(!isMenuOpen);
@@ -44,15 +21,6 @@ const AdminPatients = () => {
     const handleMenuClick = (event:any) => {
       setAnchorEl(event.currentTarget);
     };
-
-
-const handleClickOpen = () => {
-    setOpen(true);
-  };
-  
-  const handleClose = () => {
-    setOpen(false);
-  };
   
     const handleMenuClose = () => {
       setAnchorEl(null);
@@ -61,13 +29,13 @@ const handleClickOpen = () => {
 //get patient request data
     useEffect(() => {
         // Fetch all posts
-        axios.get('https://kemet.care/api/requests/patients', {
+        axios.get('https://kemet.care/api/requests/prescribers', {
          
         })
           .then((response: { data: any; }) => {
             const data = response.data;
            console.log(data);
-            setPatientRequestData(data );
+           setPrescribersRequestData(data );
           })
           .catch((error: any) => {
             console.error('Error fetching data:', error);
@@ -75,36 +43,10 @@ const handleClickOpen = () => {
       }, []);
   
 
-function showRequestInf(data:any){
-    setRequestData(data);
-    setOpen(true);
 
-}
 
   return (
     <div >
-
-<React.Fragment>
-     
-     <Dialog
-       open={open}
-       TransitionComponent={Transition}
-       keepMounted
-       onClose={handleClose}
-       aria-describedby="alert-dialog-slide-description"
-     >
-       <DialogTitle className="font-medium text-sm">{"Request Details"}</DialogTitle>
-       <DialogContent>
-         <p id="alert-dialog-slide-description " className="text-zinc-600 text-sm font-light">
-         Confirm to send your request to a pharmacist  </p>
-       </DialogContent>
-       <DialogActions>
-         <p className='text-zinc-400 cursor-pointer mr-10 hover:mb-1' onClick={handleClose}>Close</p>
-        
-       </DialogActions>
-     </Dialog>
-   </React.Fragment>
-
       {/* Top Navigation Bar */}
       <AppBar position="static">
         <Toolbar style={{ backgroundColor: 'black' }}>
@@ -160,7 +102,7 @@ function showRequestInf(data:any){
         <div className="grid grid-cols-4 gap-4">
 
         <div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
-  <p className="text-sm text-zinc-500 font-medium">Total Patient Requests</p>
+  <p className="text-sm text-zinc-500 font-medium">Total Prescribers Requests</p>
 
   <p className="text-xl text-zinc-700 font-medium mt-4">5</p>
 
@@ -170,12 +112,12 @@ function showRequestInf(data:any){
 </div>
 
 <div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
-  <p className="text-sm text-zinc-500 font-medium">Today&apos;s Patient Requests</p>
+  <p className="text-sm text-zinc-500 font-medium">Today&apos;s Prescribers Requests</p>
 
   <p className="text-xl text-zinc-700 font-medium mt-4">10</p>
 </div>
 
-            
+
 
         </div>
      
@@ -214,7 +156,7 @@ Full Name
         </thead>
         <tbody>
 
-             {patientRequestData !== null && patientRequestData.map((singleRequest: any, index: any) => (
+             {prescribersRequestData !== null && prescribersRequestData.map((singleRequest: any, index: any) => (
 
                 <>
 
@@ -232,7 +174,7 @@ Full Name
                    {singleRequest.ip_address}
                 </td>
                 <td className="px-6 py-4 text-gray-700 font-medium cursor-pointer hover:font-semibold">
-                   <p onClick={()=>showRequestInf(singleRequest.consult_request)}>View</p> 
+                    View
                 </td>
                 <td className="px-6 py-4 text-gray-700">
                     <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
@@ -264,4 +206,4 @@ Full Name
   );
 };
 
-export default AdminPatients;
+export default AdminPrescribers;

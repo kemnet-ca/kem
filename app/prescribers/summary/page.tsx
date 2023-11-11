@@ -16,6 +16,8 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
+import axios, { AxiosError, AxiosResponse } from "axios";
+import { useRouter } from 'next/navigation';
 
 
 const Transition = React.forwardRef(function Transition(
@@ -33,7 +35,7 @@ export default function Summary() {
 
 
 const [isChecked, setIsChecked] = useState(false);
-const [allSelections, setSelections] = useState([]);
+
 const [open, setOpen] = React.useState(false);
 
 const handleClickOpen = () => {
@@ -68,7 +70,134 @@ useEffect(() => {
 
 
 
+  const [allSelections, setSelections] = useState([]);
+  const [additionalInformation, setAdditionalInformation] = useState("");
+  const [firstName, setFirstName]= useState("");
+  const [lastName, setLastName]= useState("");
+  const [licensee, setLicensee]= useState("");
+  
+  
+  const router = useRouter();
+  
+  var errorMessage = "";
+  
+  
+  useEffect(() => {
+    const selections = Cookies.get('allSelections');
+    const addedDetails = Cookies.get('additionalInformation');
+  
+  
+    const savedFirstName = Cookies.get('firstName');
+    const savedLastName = Cookies.get('lastName');
+  
+    const savedLicensee = Cookies.get('licensee');
+  
+    // Do something with the retrieved values (e.g., set state)
+    setFirstName(savedFirstName || '');
+    setLastName(savedLastName || '');
+    setLicensee(savedLicensee || '');
+  
+    
+  
+  
+    if(addedDetails !==undefined){
+  
+       // 'allSelections' is a string, so you can work with it here
+       console.log(allSelections);
+  
+       setAdditionalInformation(addedDetails);
+  
+    }
+  
+    // Check if 'allSelections' is undefined, and provide a default value if needed
+    if (selections !== undefined) {
+      // 'allSelections' is a string, so you can work with it here
+      console.log(allSelections);
+  
+      setSelections(JSON.parse(selections))
+  
+      
+    } else {
+      // 'allSelections' is undefined, handle this case, e.g., provide a default value
+      console.log('Cookie not found or is undefined');
+    }
+  
+   
+  }, []);
 
+
+  const send = async () => {
+
+
+    //alert(firstName +" "+ lastName+" "+postal)
+  
+    //this method handles creation of anoniposts for logged in user
+  
+    
+    //setIsLoading(true);
+  
+    const formData = new FormData();
+  
+    formData.append('first_name',  firstName.toString());
+    formData.append('last_name',  lastName.toString());
+    formData.append('licensee',  licensee.toString());
+    
+    formData.append('additional_info',additionalInformation.toString());
+    formData.append('request',  JSON.stringify(allSelections));
+  
+  
+    try {
+  
+     
+  
+  
+     // create new guest post
+      axios.post('https://kemet.care/api/new_request', formData )
+        .then((response: { data: any; }) => {
+          const data = response.data;
+          console.log(data);
+  
+          router.push("../../prescribers/success")
+         // setPostData(data.post_text.split('\n'));
+        // setIsLoading(false);
+       // setOpenSuccessDialog(true)
+        })
+        .catch((error: any) => {
+          console.error('Error fetching data:', error);
+         // setIsLoading(false);
+        });
+    
+  
+  }
+  
+  catch (err ) {
+       
+  
+  if (err instanceof Error) {
+    const axiosError = err as AxiosError;
+    if (axiosError.response) {
+      const errorResponse = axiosError.response as AxiosResponse;
+      if (errorResponse.data) {
+        errorMessage = errorResponse.data.message;
+      }
+    }
+  
+   
+  
+     console.log(errorMessage);
+  }
+  
+  
+  //setIsLoading(false);
+  
+  
+  }
+  finally {
+  ///  setIsLoading(false);
+  
+  }
+  
+  }
  
 
 
@@ -98,7 +227,7 @@ useEffect(() => {
        </DialogContent>
        <DialogActions>
          <p className='text-zinc-400 cursor-pointer mr-10 hover:mb-1' onClick={handleClose}>Disagree</p>
-         <Link className='text-zinc-700 cursor-pointer hover:mb-1' href={"../../prescribers/success"}>Agree</Link>
+         <button onClick={send} className='text-zinc-700 cursor-pointer hover:mb-1' >Agree</button>
        </DialogActions>
      </Dialog>
    </React.Fragment>
@@ -148,9 +277,9 @@ useEffect(() => {
 </div>
     <div className="w-full bg-white p-4 rounded-md mt-4">
 
-        <p className="mt-4 font-light text-sm"><span className="text-zinc-600">Prescriber First Name:</span> Ebube </p>
-        <p className="mt-4 font-light text-sm"><span className="text-zinc-600">Prescriber First Name:</span> Ebube </p>
-        <p className="mt-4 font-light text-sm"><span className="text-zinc-600">Prescriber License Number:</span> License Number </p>
+        <p className="mt-4 font-light text-sm"><span className="text-zinc-600">Prescriber First Name:</span> {firstName} </p>
+        <p className="mt-4 font-light text-sm"><span className="text-zinc-600">Prescriber First Name:</span> {lastName} </p>
+        <p className="mt-4 font-light text-sm"><span className="text-zinc-600">Prescriber License Number:</span> {licensee}</p>
  
        
 

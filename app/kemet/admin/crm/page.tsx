@@ -4,11 +4,13 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useRouter } from 'next/navigation';
 
 // Your main component
 const AdminPanel = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
+    const router = useRouter();
   
     const toggleMenu = () => {
       setMenuOpen(!isMenuOpen);
@@ -22,6 +24,17 @@ const AdminPanel = () => {
       setAnchorEl(null);
     };
 
+
+    const gotToPatients = () => {
+       router.push("../admin/requests/patients")
+      };
+  
+
+
+    const goToPrescribers = () => {
+        router.push("../admin/requests/prescribers")
+      };
+  
 
 
   return (
@@ -66,9 +79,9 @@ const AdminPanel = () => {
             open={Boolean(anchorEl)}
             onClose={handleMenuClose}
           >
-            <MenuItem onClick={handleMenuClose}>Patients</MenuItem>
+            <MenuItem onClick={gotToPatients}>Patients</MenuItem>
             <hr></hr>
-            <MenuItem onClick={handleMenuClose}>Prescribers</MenuItem>
+            <MenuItem onClick={goToPrescribers}>Prescribers</MenuItem>
           </Menu>
 
 

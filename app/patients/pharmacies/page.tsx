@@ -5,7 +5,8 @@ import ResponsiveCarousel from "@/components/Carousel";
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
-
+import Cookies from 'js-cookie';
+import { useRouter } from 'next/navigation';
 
 import * as React from 'react';
 import Button from '@mui/material/Button';
@@ -16,6 +17,9 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
+import axios, { AxiosError, AxiosResponse } from "axios";
+
+
 
 
 const Transition = React.forwardRef(function Transition(
@@ -39,6 +43,140 @@ const [displayText, setDisplayText] = useState('PATIENT');
 const [isChecked, setIsChecked] = useState(false);
 
 const [open, setOpen] = React.useState(false);
+
+const [allSelections, setSelections] = useState([]);
+const [additionalInformation, setAdditionalInformation] = useState("");
+
+const [firstName, setFirstName]= useState("");
+const [lastName, setLastName]= useState("");
+const [postal, setPostal]= useState("");
+const [phone, setPhone]= useState("");
+
+const router = useRouter();
+
+var errorMessage = "";
+
+
+
+useEffect(() => {
+  const selections = Cookies.get('allSelections');
+  const addedDetails = Cookies.get('additionalInformation');
+
+
+  const savedFirstName = Cookies.get('firstName');
+  const savedLastName = Cookies.get('lastName');
+  const savedPostal = Cookies.get('postal');
+  const savedPhone = Cookies.get('phone');
+
+  // Do something with the retrieved values (e.g., set state)
+  setFirstName(savedFirstName || '');
+  setLastName(savedLastName || '');
+  setPostal(savedPostal || '');
+  setPhone(savedPhone || '');
+  
+
+
+  if(addedDetails !==undefined){
+
+     // 'allSelections' is a string, so you can work with it here
+     console.log(allSelections);
+
+     setAdditionalInformation(addedDetails);
+
+  }
+
+  // Check if 'allSelections' is undefined, and provide a default value if needed
+  if (selections !== undefined) {
+    // 'allSelections' is a string, so you can work with it here
+    console.log(allSelections);
+
+    setSelections(JSON.parse(selections))
+
+    
+  } else {
+    // 'allSelections' is undefined, handle this case, e.g., provide a default value
+    console.log('Cookie not found or is undefined');
+  }
+
+ 
+}, []);
+
+
+const send = async () => {
+
+
+  //alert(firstName +" "+ lastName+" "+postal)
+
+  //this method handles creation of anoniposts for logged in user
+
+  
+  //setIsLoading(true);
+
+  const formData = new FormData();
+
+  formData.append('first_name',  firstName.toString());
+  formData.append('last_name',  lastName.toString());
+  formData.append('postal_code',  postal.toString());
+  formData.append('phone', phone.toString());
+  formData.append('additional_info',additionalInformation.toString());
+  formData.append('request',  JSON.stringify(allSelections));
+
+
+  try {
+
+   
+
+
+   // create new guest post
+    axios.post('https://kemet.care/api/new_patient_request', formData )
+      .then((response: { data: any; }) => {
+        const data = response.data;
+        console.log(data);
+
+        router.push("../../patients/success")
+       // setPostData(data.post_text.split('\n'));
+      // setIsLoading(false);
+     // setOpenSuccessDialog(true)
+      })
+      .catch((error: any) => {
+        console.error('Error fetching data:', error);
+       // setIsLoading(false);
+      });
+  
+
+}
+
+catch (err ) {
+     
+
+if (err instanceof Error) {
+  const axiosError = err as AxiosError;
+  if (axiosError.response) {
+    const errorResponse = axiosError.response as AxiosResponse;
+    if (errorResponse.data) {
+      errorMessage = errorResponse.data.message;
+    }
+  }
+
+ 
+
+   console.log(errorMessage);
+}
+
+
+//setIsLoading(false);
+
+
+}
+finally {
+///  setIsLoading(false);
+
+}
+
+}
+
+
+
 
 const handleClickOpen = () => {
   setOpen(true);
@@ -96,7 +234,7 @@ const checkboxStyle = {
        </DialogContent>
        <DialogActions>
          <p className='text-zinc-400 cursor-pointer mr-10 hover:mb-1' onClick={handleClose}>Disagree</p>
-         <Link className='text-zinc-700 cursor-pointer hover:mb-1' href={"../../patients/success"}>Agree</Link>
+         <button onClick={send} className='text-zinc-700 cursor-pointer hover:mb-1' >Agree</button>
        </DialogActions>
      </Dialog>
    </React.Fragment>

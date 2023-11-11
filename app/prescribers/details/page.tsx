@@ -9,6 +9,7 @@ import 'react-international-phone/style.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Cookies from 'js-cookie';
+import { useRouter } from 'next/navigation';
 
 
 import * as React from 'react';
@@ -28,6 +29,11 @@ const [selectedValues, setSelectedValues] = useState<string[]>([]);
 
 
 const [additionalInfo, setAdditionalInformation] = useState("");
+const router = useRouter();
+
+const [firstName, setFirstName]= useState("");
+const [lastName, setLastName]= useState("");
+const [licensee, setLicensee]= useState("");
 
 
 
@@ -68,6 +74,26 @@ useEffect(() => {
 
  
 }, []);
+
+
+function addAllDataToCookies(){
+
+  //save items to cookies
+  Cookies.set('firstName', firstName);
+  Cookies.set('lastName', lastName);
+  Cookies.set('licensee', licensee);
+ 
+
+ 
+
+ 
+
+  //alert(selectedValues)
+
+  router.push("../../prescribers/pharmacies/list")
+
+
+}
 
 
 
@@ -202,7 +228,7 @@ useEffect(() => {
     <div className="w-full  mt-4 flex justify-center">
 
   
-        <Link href={"../../prescribers/pharmacies/list"} className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 ml-[20px] mr-6'>Submit</Link>
+        <button onClick={addAllDataToCookies}  className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 ml-[20px] mr-6'>Submit</button>
 
 
 

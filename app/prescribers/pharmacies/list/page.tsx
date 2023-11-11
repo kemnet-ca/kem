@@ -17,6 +17,9 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
 
+import Cookies from 'js-cookie';
+import { useRouter } from 'next/navigation';
+
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -39,6 +42,69 @@ const [displayText, setDisplayText] = useState('PATIENT');
 const [isChecked, setIsChecked] = useState(false);
 
 const [open, setOpen] = React.useState(false);
+
+
+
+const [allSelections, setSelections] = useState([]);
+const [additionalInformation, setAdditionalInformation] = useState("");
+const [firstName, setFirstName]= useState("");
+const [lastName, setLastName]= useState("");
+const [licensee, setLicensee]= useState("");
+
+
+const router = useRouter();
+
+var errorMessage = "";
+
+
+useEffect(() => {
+  const selections = Cookies.get('allSelections');
+  const addedDetails = Cookies.get('additionalInformation');
+
+
+  const savedFirstName = Cookies.get('firstName');
+  const savedLastName = Cookies.get('lastName');
+
+  const savedLicensee = Cookies.get('licensee');
+
+  // Do something with the retrieved values (e.g., set state)
+  setFirstName(savedFirstName || '');
+  setLastName(savedLastName || '');
+  setLicensee(savedLicensee || '');
+
+  
+
+
+  if(addedDetails !==undefined){
+
+     // 'allSelections' is a string, so you can work with it here
+     console.log(allSelections);
+
+     setAdditionalInformation(addedDetails);
+
+  }
+
+  // Check if 'allSelections' is undefined, and provide a default value if needed
+  if (selections !== undefined) {
+    // 'allSelections' is a string, so you can work with it here
+    console.log(allSelections);
+
+    setSelections(JSON.parse(selections))
+
+    
+  } else {
+    // 'allSelections' is undefined, handle this case, e.g., provide a default value
+    console.log('Cookie not found or is undefined');
+  }
+
+ 
+}, []);
+
+
+
+
+
+
 
 const handleClickOpen = () => {
   setOpen(true);
@@ -126,7 +192,7 @@ const checkboxStyle = {
 
 <div className='w-1/3 bg-slate-100 py-2 px-6 flex mt-8 rounded-md justify-center '>
 
-<p className="text-md text-center font-medium  text-zinc-800"> I am a licensed prescriberr</p>
+<p className="text-md text-center font-medium  text-zinc-800"> I am a licensed prescriber</p>
 
  
 
