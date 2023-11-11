@@ -153,7 +153,7 @@ Full Name
         <tbody>
         <tr className="bg-gray-200 border-b dark:border-gray-700 even:text-white odd:text-black">
              <th scope="row" className="px-6 py-4 font-medium even:text-white whitespace-nowrap dark:text-black">
-                    Apple MacBook Pro 17"
+                    Apple MacBook Pro 17
                 </th>
                 <td className="px-6 py-4 text-gray-700">
                     Silver
@@ -175,7 +175,7 @@ Full Name
 
             <tr className="bg-gray-200 border-b dark:border-gray-700 even:text-white odd:text-black">
                      <th scope="row" className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-black">
-                    Apple MacBook Pro 17"
+                    Apple MacBook Pro 17
                 </th>
                 <td className="px-6 py-4 text-gray-700">
                     Silver
@@ -194,7 +194,7 @@ Full Name
 
             <tr className="odd:bg-white odd:dark:bg-gray-200 even:bg-white even:dark:bg-gray-800 border-b dark:border-gray-700 even:text-white odd:text-black">
              <th scope="row" className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-black">
-                    Apple MacBook Pro 17"
+                    Apple MacBook Pro 17
                 </th>
                 <td className="px-6 py-4 text-gray-700">
                     Silver
