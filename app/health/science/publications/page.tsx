@@ -148,7 +148,9 @@ Behind every breakthrough study and groundbreaking product, there&apos;s a dynam
 </div>
 </div>
 
+{
 
+/*
 
 <div className='w-full flex justify-center mt-10'>
    <p className='text-center text-md font-medium ' style={{marginTop:`-20px`}}>Publications</p>
@@ -236,6 +238,266 @@ Behind every breakthrough study and groundbreaking product, there&apos;s a dynam
   </div>
   
 </div>
+
+*/}
+
+
+<div className="w-screen flex  justify-center mt-6 ">
+
+  <div className="w-2/3 px-8  flex ">
+
+  <FormControl>
+      <Select
+        value={selectedOption}
+        onChange={handleCategoryChange}
+        displayEmpty
+
+        className="w-full md:w-[200px] mr-auto"
+      >
+        <MenuItem value="Categories" disabled >
+          Categories
+        </MenuItem>
+        <MenuItem value="Drug Product Compendium">Drug Product Compendium</MenuItem>
+        <MenuItem value="Compounding Clinical Practice Guidelines">Compounding Clinical Practice Guidelines</MenuItem>
+       
+      </Select>
+    </FormControl>
+
+
+   <div className="w-[100px]  flex ml-auto mt-4 ">
+
+
+   <Tooltip  TransitionComponent={Fade}
+        componentsProps={{
+            tooltip: {
+              sx: {
+                bgcolor: 'common.white',
+                color: 'common.black',
+                '& .MuiTooltip-arrow': {
+                  color: 'common.white',
+                },
+              },
+            },
+          }}
+  TransitionProps={{ timeout: 600 }} title={
+   
+     <p className='text-xs font-light text-leight'> Change post view to gallery mode</p>
+    
+        
+  } arrow>
+
+<img onClick={setViewGallery} src="/images/grid-svgrepo-com (2).svg" alt=" " className="h-8 w-8 cursor-pointer" />
+   
+    </Tooltip>
+    <div className="w-4"></div>
+
+    <div className="w-1 bg-zinc-400"></div>
+
+    <div className="w-4"></div>
+
+    <img onClick={setViewSnippet} src="/images/snippet-svgrepo-com.svg" alt=" " className="h-8 w-8 cursor-pointer" />
+
+
+   </div>
+
+
+  </div>
+
+</div>
+
+{
+
+selectedView=="GALLERY"?(<>
+
+<div className='flex w-screen justify-center  flex'>
+
+<div className="w-2/3 grid grid-cols-2 p-4 gap-4  items-center place-content-center mx-auto">
+    <div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
+
+        <div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer p-4 ">
+
+       
+        <div  className='w-full h-8 bg-400 rouned-br-2xl p-2 rounded-bl-2xl   border-t grid place-content-center  '>
+
+<p   className='text-sm font-light text-center '>Blog Item</p>
+
+
+</div>
+
+        </div>
+
+       
+    </div>
+   
+
+    <div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
+
+<div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer p-4">
+
+       
+<div  className='w-full h-8 bg-400 rouned-br-2xl p-2 rounded-bl-2xl   border-t grid place-content-center p-4  '>
+
+    <p   className='text-sm font-light text-center '>Blog Item</p>
+
+  
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
+
+<div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer border-t grid place-content-center p-4 ">
+
+       
+<div  className='w-full h-8 bg-400 rouned-br-2xl p-2 rounded-bl-2xl    '>
+
+    <p   className='text-sm font-light text-center '>Blog Item</p>
+
+ 
+</div>
+
+</div>
+
+</div>
+
+
+<div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
+
+<div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer border-t grid place-content-center p-4 ">
+
+       
+<div  className='w-full h-8 bg-400 rouned-br-2xl p-2 rounded-bl-2xl   border-t grid place-content-center   '>
+
+    <p   className='text-sm font-light text-center '>Blog Item</p>
+
+ 
+</div>
+
+</div>
+
+</div>
+
+
+<div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
+
+<div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer p-4">
+
+       
+<div  className='w-full h-8 bg-400 rouned-br-2xl p-2 rounded-bl-2xl   border-t grid place-content-center  '>
+
+    <p   className='text-sm font-light text-center '>Blog Item</p>
+
+ 
+</div>
+
+</div>
+
+</div>
+
+
+<div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
+
+<div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer border-t flex flex-col justify-center items-center p-4">
+
+  <p className='text-sm font-light text-center'>Blog Item</p>
+
+</div>
+
+
+</div>
+
+  </div>
+  
+</div>
+  </>):(<>
+  
+    <div className='flex w-screen justify-center  flex'>
+
+<div className="w-2/3 grid grid-cols-2 p-4 gap-4  items-center place-content-center mx-auto">
+
+
+  <div className="flex w-full shadow-xl p-2 rounded-xl border border-slate-200">
+    <div className="h-20 w-32 bg-slate-200 rounded-md">
+
+    </div>
+    <p   className='text-xs font-light text-start ml-2'>Blog Item</p>
+
+
+
+  </div>
+   
+
+  <div className="flex w-full shadow-xl p-2 rounded-xl border border-slate-200">
+    <div className="h-20 w-32 bg-slate-200 rounded-md">
+
+    </div>
+    <p   className='text-xs font-light text-start ml-2'>Blog Item</p>
+
+
+
+  </div>
+
+
+
+
+
+
+  <div className="flex w-full shadow-xl p-2 rounded-xl border border-slate-200">
+    <div className="h-20 w-32 bg-slate-200 rounded-md">
+
+    </div>
+    <p   className='text-xs font-light text-start ml-2'>Blog Item</p>
+
+
+
+  </div>
+
+
+  <div className="flex w-full shadow-xl p-2 rounded-xl border border-slate-200">
+    <div className="h-20 w-32 bg-slate-200 rounded-md">
+
+    </div>
+    <p   className='text-xs font-light text-start ml-2'>Blog Item</p>
+
+
+
+  </div>
+
+
+  <div className="flex w-full shadow-xl p-2 rounded-xl border border-slate-200">
+    <div className="h-20 w-32 bg-slate-200 rounded-md">
+
+    </div>
+    <p   className='text-xs font-light text-start ml-2'>Blog Item</p>
+
+
+
+  </div>
+
+
+  <div className="flex w-full shadow-xl p-2 rounded-xl border border-slate-200">
+    <div className="h-20 w-32 bg-slate-200 rounded-md">
+
+    </div>
+    <p   className='text-xs font-light text-start ml-2'>Blog Item</p>
+
+
+
+  </div>
+
+  </div>
+  
+</div>
+  
+  </>)
+}
+
+
 
 {/*Medicine For You, By You */}
 

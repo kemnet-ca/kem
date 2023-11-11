@@ -123,9 +123,11 @@ export default function ResearchAndDev() {
         <MenuItem value="Categories" disabled >
           Categories
         </MenuItem>
-        <MenuItem value="Category 1">Category 1</MenuItem>
-        <MenuItem value="Category 2">Category 2</MenuItem>
-        <MenuItem value="Category 3">Category 3</MenuItem>
+        <MenuItem value="Applied Research">Applied Research</MenuItem>
+        <MenuItem value="Technical Reports">Technical Reports</MenuItem>
+        <MenuItem value="Category 3">Journal Articles</MenuItem>
+        <MenuItem value="Technical Reports">Ebooks</MenuItem>
+        <MenuItem value="Category 3">White Papers & Literature Reviews</MenuItem>
       </Select>
     </FormControl>
 
