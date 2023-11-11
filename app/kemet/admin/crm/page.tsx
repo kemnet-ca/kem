@@ -6,11 +6,22 @@ import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Menu
 import MenuIcon from '@mui/icons-material/Menu';
 import { useRouter } from 'next/navigation';
 
+
 // Your main component
 const AdminPanel = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
     const router = useRouter();
+
+    const gotToPatients = () => {
+      router.push("../admin/requests/patients")
+     };
+ 
+
+
+   const goToPrescribers = () => {
+       router.push("../admin/requests/prescribers")
+     };
   
     const toggleMenu = () => {
       setMenuOpen(!isMenuOpen);
@@ -25,15 +36,7 @@ const AdminPanel = () => {
     };
 
 
-    const gotToPatients = () => {
-       router.push("../admin/requests/patients")
-      };
-  
-
-
-    const goToPrescribers = () => {
-        router.push("../admin/requests/prescribers")
-      };
+   
   
 
 

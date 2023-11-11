@@ -16,7 +16,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
-
+import { useRouter } from 'next/navigation';
 
 
 
@@ -35,7 +35,21 @@ const AdminPatients = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const [patientRequestData, setPatientRequestData] = useState([]);
     const [open, setOpen] = React.useState(false);
-    const [requestData, setRequestData] = React.useState("");
+    const [requestData, setRequestData] = React.useState([]);
+
+
+
+    const router = useRouter();
+
+    const gotToPatients = () => {
+      router.push("../requests/patients")
+     };
+ 
+
+
+   const goToPrescribers = () => {
+       router.push("../requests/prescribers")
+     };
   
     const toggleMenu = () => {
       setMenuOpen(!isMenuOpen);
@@ -76,7 +90,9 @@ const handleClickOpen = () => {
   
 
 function showRequestInf(data:any){
-    setRequestData(data);
+
+   
+    setRequestData(JSON.parse(data));
     setOpen(true);
 
 }
@@ -93,10 +109,16 @@ function showRequestInf(data:any){
        onClose={handleClose}
        aria-describedby="alert-dialog-slide-description"
      >
-       <DialogTitle className="font-medium text-sm">{"Request Details"}</DialogTitle>
+       <DialogTitle className="font-semibold text-md">{"Request Details"}</DialogTitle>
        <DialogContent>
-         <p id="alert-dialog-slide-description " className="text-zinc-600 text-sm font-light">
-         Confirm to send your request to a pharmacist  </p>
+
+       {requestData !== null && requestData.map((single: any, index: any) => (
+        <p key={index} id="alert-dialog-slide-description " className="text-zinc-900 text-sm font-normal"><span className="mr-2">{index+1}</span>{single}</p>
+
+       ))}
+
+
+        
        </DialogContent>
        <DialogActions>
          <p className='text-zinc-400 cursor-pointer mr-10 hover:mb-1' onClick={handleClose}>Close</p>
@@ -145,9 +167,9 @@ function showRequestInf(data:any){
             open={Boolean(anchorEl)}
             onClose={handleMenuClose}
           >
-            <MenuItem onClick={handleMenuClose}>Patients</MenuItem>
+           <MenuItem onClick={gotToPatients}>Patients</MenuItem>
             <hr></hr>
-            <MenuItem onClick={handleMenuClose}>Prescribers</MenuItem>
+            <MenuItem onClick={goToPrescribers}>Prescribers</MenuItem>
           </Menu>
 
 
@@ -162,17 +184,15 @@ function showRequestInf(data:any){
         <div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Total Patient Requests</p>
 
-  <p className="text-xl text-zinc-700 font-medium mt-4">5</p>
+  <p className="text-xl text-zinc-700 font-medium mt-4">{patientRequestData.length}</p>
 
-  <div className="flex-shrink-0 align-items-flex-end text-sm">
-    <Link href={""}>View All</Link>
-  </div>
+
 </div>
 
 <div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Today&apos;s Patient Requests</p>
 
-  <p className="text-xl text-zinc-700 font-medium mt-4">10</p>
+  <p className="text-xl text-zinc-700 font-medium mt-4">{ patientRequestData.length}</p>
 </div>
 
             

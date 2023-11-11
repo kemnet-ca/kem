@@ -5,14 +5,46 @@ import Link from 'next/link';
 import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import React, { useState,useEffect } from 'react';
-
+import { useRouter } from 'next/navigation';
 import axios, { AxiosError, AxiosResponse } from "axios";
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Slide from '@mui/material/Slide';
+import { TransitionProps } from '@mui/material/transitions';
+
+
+const Transition = React.forwardRef(function Transition(
+  props: TransitionProps & {
+    children: React.ReactElement<any, any>;
+  },
+  ref: React.Ref<unknown>,
+) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 // Your main component
 const AdminPrescribers = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
     const [prescribersRequestData, setPrescribersRequestData] = useState([]);
+    const [open, setOpen] = React.useState(false);
+    const [requestData, setRequestData] = React.useState([]);
+
+    const router = useRouter();
+
+    const gotToPatients = () => {
+      router.push("../requests/patients")
+     };
+ 
+
+
+   const goToPrescribers = () => {
+       router.push("../requests/prescribers")
+     };
   
     const toggleMenu = () => {
       setMenuOpen(!isMenuOpen);
@@ -24,6 +56,14 @@ const AdminPrescribers = () => {
   
     const handleMenuClose = () => {
       setAnchorEl(null);
+    };
+
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+    
+    const handleClose = () => {
+      setOpen(false);
     };
 
 //get patient request data
@@ -43,6 +83,13 @@ const AdminPrescribers = () => {
       }, []);
   
 
+      function showRequestInf(data:any){
+
+   
+        setRequestData(JSON.parse(data));
+        setOpen(true);
+    
+    }
 
 
   return (
@@ -87,14 +134,43 @@ const AdminPrescribers = () => {
             open={Boolean(anchorEl)}
             onClose={handleMenuClose}
           >
-            <MenuItem onClick={handleMenuClose}>Patients</MenuItem>
+           <MenuItem onClick={gotToPatients}>Patients</MenuItem>
             <hr></hr>
-            <MenuItem onClick={handleMenuClose}>Prescribers</MenuItem>
+            <MenuItem onClick={goToPrescribers}>Prescribers</MenuItem>
           </Menu>
 
 
         </List>
       </Drawer>
+
+
+
+<React.Fragment>
+     
+     <Dialog
+       open={open}
+       TransitionComponent={Transition}
+       keepMounted
+       onClose={handleClose}
+       aria-describedby="alert-dialog-slide-description"
+     >
+       <DialogTitle className="font-semibold text-md">{"Request Details"}</DialogTitle>
+       <DialogContent>
+
+       {requestData !== null && requestData.map((single: any, index: any) => (
+        <p key={index} id="alert-dialog-slide-description " className="text-zinc-900 text-sm font-normal"><span className="mr-2">{index+1}</span>{single}</p>
+
+       ))}
+
+
+        
+       </DialogContent>
+       <DialogActions>
+         <p className='text-zinc-400 cursor-pointer mr-10 hover:mb-1' onClick={handleClose}>Close</p>
+        
+       </DialogActions>
+     </Dialog>
+   </React.Fragment>
 
     
 
@@ -104,17 +180,15 @@ const AdminPrescribers = () => {
         <div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Total Prescribers Requests</p>
 
-  <p className="text-xl text-zinc-700 font-medium mt-4">5</p>
+  <p className="text-xl text-zinc-700 font-medium mt-4">{prescribersRequestData.length}</p>
 
-  <div className="flex-shrink-0 align-items-flex-end text-sm">
-    <Link href={""}>View All</Link>
-  </div>
+ 
 </div>
 
 <div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Today&apos;s Prescribers Requests</p>
 
-  <p className="text-xl text-zinc-700 font-medium mt-4">10</p>
+  <p className="text-xl text-zinc-700 font-medium mt-4">{prescribersRequestData.length}</p>
 </div>
 
 
@@ -137,11 +211,9 @@ const AdminPrescribers = () => {
 Full Name
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    Phone
+                    License No
                 </th>
-                <th scope="col" className="px-6 py-3">
-                Postal 
-                </th>
+              
 
                  <th scope="col" className="px-6 py-3">
                IP addr
@@ -165,16 +237,14 @@ Full Name
                    {singleRequest.first_name + " "+singleRequest.last_name}
                 </th>
                 <td className="px-6 py-4 text-gray-700">
-                   {singleRequest.phone}
+                   {singleRequest.licensee}
                 </td>
-                <td className="px-6 py-4 text-gray-700">
-                   {singleRequest.postal_code}
-                </td>
+               
                  <td className="px-6 py-4 text-gray-700">
                    {singleRequest.ip_address}
                 </td>
                 <td className="px-6 py-4 text-gray-700 font-medium cursor-pointer hover:font-semibold">
-                    View
+                   <p onClick={()=>showRequestInf(singleRequest.consult_request)}>View</p> 
                 </td>
                 <td className="px-6 py-4 text-gray-700">
                     <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
