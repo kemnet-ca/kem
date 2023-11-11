@@ -1,0 +1,228 @@
+"use client"
+// Import necessary React and Material-UI components
+
+import Link from 'next/link';
+import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Menu, MenuItem } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import React, { useState,useEffect } from 'react';
+
+import axios, { AxiosError, AxiosResponse } from "axios";
+
+// Your main component
+const AdminPatients = () => {
+    const [isMenuOpen, setMenuOpen] = useState(false);
+    const [anchorEl, setAnchorEl] = useState(null);
+    const [patientRequestData, setPatientRequestData] = useState([]);
+  
+    const toggleMenu = () => {
+      setMenuOpen(!isMenuOpen);
+    };
+  
+    const handleMenuClick = (event:any) => {
+      setAnchorEl(event.currentTarget);
+    };
+  
+    const handleMenuClose = () => {
+      setAnchorEl(null);
+    };
+
+//get patient request data
+    useEffect(() => {
+        // Fetch all posts
+        axios.get('https://kemet.care/api/requests/patients', {
+         
+        })
+          .then((response: { data: any; }) => {
+            const data = response.data;
+           console.log(data);
+            setPatientRequestData(data );
+          })
+          .catch((error: any) => {
+            console.error('Error fetching data:', error);
+          });
+      }, []);
+  
+
+
+
+  return (
+    <div >
+      {/* Top Navigation Bar */}
+      <AppBar position="static">
+        <Toolbar style={{ backgroundColor: 'black' }}>
+          {/* Hamburger Icon to toggle the slide-in menu */}
+          <IconButton edge="start" color="inherit" onClick={toggleMenu}>
+            <MenuIcon />
+          </IconButton>
+          {/* Your other top navigation bar content goes here */}
+        </Toolbar>
+      </AppBar>
+
+      {/* Slide-in Menu */}
+      <Drawer anchor="left" open={isMenuOpen} onClose={toggleMenu} PaperProps={{
+            sx: { width: "20%" , marginTop:`5%`},
+          }}>
+        <List>
+          {/* Add your menu items here */}
+          <ListItem button>
+            <ListItemText primary="Dashboard" />
+          </ListItem>
+
+          <hr></hr>
+          <ListItem button>
+            <ListItemText primary="Pharmacies" />
+          </ListItem>
+
+          <hr></hr>
+
+          {/* Main Menu Item: Requests */}
+          <ListItem button onClick={handleMenuClick}>
+            <ListItemText primary="Requests" />
+          </ListItem>
+          <hr></hr>
+
+          {/* Sub Menu Items: Patients and Prescribers */}
+          <Menu
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleMenuClose}
+          >
+            <MenuItem onClick={handleMenuClose}>Patients</MenuItem>
+            <hr></hr>
+            <MenuItem onClick={handleMenuClose}>Prescribers</MenuItem>
+          </Menu>
+
+
+        </List>
+      </Drawer>
+
+    
+
+      <div className="w-screen h-screen px-4 py-4">
+        <div className="grid grid-cols-4 gap-4">
+
+        <div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
+  <p className="text-sm text-zinc-500 font-medium">Total Patient Requests</p>
+
+  <p className="text-xl text-zinc-700 font-medium mt-4">5</p>
+
+  <div className="flex-shrink-0 align-items-flex-end text-sm">
+    <Link href={""}>View All</Link>
+  </div>
+</div>
+
+<div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
+  <p className="text-sm text-zinc-500 font-medium">Today&apos;s Patient Requests</p>
+
+  <p className="text-xl text-zinc-700 font-medium mt-4">10</p>
+</div>
+
+            
+
+        </div>
+     
+
+        {patientRequestData !== null && patientRequestData.map((singleRequest: any, index: any) => (
+           <p key={index}>{singleRequest.first_name} dkjcnkdck</p>
+
+        ))}
+
+      {/* Your main content goes here */}
+
+      <div className="overflow-x-auto shadow-md sm:rounded-lg mt-8">
+    <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead className="text-xs text-gray-200 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-200">
+            <tr>
+                <th scope="col" className="px-6 py-3">
+Full Name
+                </th>
+                <th scope="col" className="px-6 py-3">
+                    Phone
+                </th>
+                <th scope="col" className="px-6 py-3">
+                postal 
+                </th>
+                <th scope="col" className="px-6 py-3">
+                    Request Info
+                </th>
+                <th scope="col" className="px-6 py-3">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr className="bg-gray-200 border-b dark:border-gray-700 even:text-white odd:text-black">
+             <th scope="row" className="px-6 py-4 font-medium even:text-white whitespace-nowrap dark:text-black">
+                    Apple MacBook Pro 17"
+                </th>
+                <td className="px-6 py-4 text-gray-700">
+                    Silver
+                </td>
+                <td className="px-6 py-4 text-gray-700">
+                    Laptop
+                </td>
+                <td className="px-6 py-4 text-gray-700">
+                    $2999
+                </td>
+                <td className="px-6 py-4 text-gray-700">
+                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
+                </td>
+            </tr>
+
+
+
+
+
+            <tr className="bg-gray-200 border-b dark:border-gray-700 even:text-white odd:text-black">
+                     <th scope="row" className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-black">
+                    Apple MacBook Pro 17"
+                </th>
+                <td className="px-6 py-4 text-gray-700">
+                    Silver
+                </td>
+                <td className="px-6 py-4 text-gray-700">
+                    Laptop
+                </td>
+                <td className="px-6 py-4 text-gray-700">
+                    $2999
+                </td>
+                <td className="px-6 py-4 text-gray-700">
+                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
+                </td>
+            </tr>
+
+
+            <tr className="odd:bg-white odd:dark:bg-gray-200 even:bg-white even:dark:bg-gray-800 border-b dark:border-gray-700 even:text-white odd:text-black">
+             <th scope="row" className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-black">
+                    Apple MacBook Pro 17"
+                </th>
+                <td className="px-6 py-4 text-gray-700">
+                    Silver
+                </td>
+                <td className="px-6 py-4 text-gray-700">
+                    Laptop
+                </td>
+                <td className="px-6 py-4 text-gray-700">
+                    $2999
+                </td>
+                <td className="px-6 py-4 text-gray-700">
+                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
+                </td>
+            </tr>
+          
+           
+        </tbody>
+    </table>
+</div>
+</div>
+      <div>
+        {/* table content */}
+
+
+       
+      </div>
+    </div>
+  );
+};
+
+export default AdminPatients;
