@@ -152,11 +152,11 @@ const MedBlogCMS = () => {
 
        <div>
       <div className="editor">
-    {/*  <ReactQuill
-          value={content}
-          onChange={handleEditorChange}
+    {  <ReactQuill
+         // value={content}
+         // onChange={handleEditorChange}
           placeholder="Write your blog post here..."
-        />*/}
+        />}
       </div>
 
       {
