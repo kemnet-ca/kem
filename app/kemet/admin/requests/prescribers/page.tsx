@@ -139,6 +139,26 @@ const AdminPrescribers = () => {
             <MenuItem onClick={goToPrescribers}>Prescribers</MenuItem>
           </Menu>
 
+           {/* Main Menu Item: Requests */}
+           <ListItem button onClick={handleMenuClick}>
+            <ListItemText primary="Blogs" />
+          </ListItem>
+          <hr></hr>
+
+          {/* Sub Menu Items: Patients and Prescribers */}
+          <Menu
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleMenuClose}
+          >
+            <MenuItem onClick={gotToPatients}>Med Info</MenuItem>
+            <hr></hr>
+            <MenuItem onClick={goToPrescribers}>R & D</MenuItem>
+            <hr></hr>
+            <MenuItem onClick={goToPrescribers}>Knowledge</MenuItem>
+          </Menu>
+
+
 
         </List>
       </Drawer>

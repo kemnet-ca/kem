@@ -107,6 +107,8 @@ const AdminPanel = () => {
             <MenuItem onClick={goToPrescribers}>Knowledge</MenuItem>
           </Menu>
 
+          
+
 
         </List>
       </Drawer>
