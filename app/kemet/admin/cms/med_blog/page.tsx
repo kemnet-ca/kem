@@ -6,7 +6,14 @@ import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Menu
 import MenuIcon from '@mui/icons-material/Menu';
 import { useRouter } from 'next/navigation';
 
-import ReactQuill from 'react-quill';
+//import ReactQuill from 'react-quill';
+
+import dynamic from 'next/dynamic';
+
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+
+// Use ReactQuill in your component
+
 import 'react-quill/dist/quill.snow.css';
 //import ReactMarkdown from 'react-markdown';
 
