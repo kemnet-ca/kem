@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import ReactMarkdown from 'react-markdown';
+//import ReactMarkdown from 'react-markdown';
 
 
 // Your main component
@@ -19,14 +19,14 @@ const MedBlogCMS = () => {
 
 
     const [content, setContent] = useState('');
-  const [markdown, setMarkdown] = useState('');
+ // const [markdown, setMarkdown] = useState('');
 
   const handleEditorChange = (value:any) => {
     setContent(value);
-    setMarkdown(value); // You can use a library to convert HTML to Markdown if needed
+ //   setMarkdown(value); // You can use a library to convert HTML to Markdown if needed
   };
 
-
+    
     const gotToPatients = () => {
       router.push("../admin/requests/patients")
      };
