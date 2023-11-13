@@ -151,13 +151,17 @@ const MedBlogCMS = () => {
 
 
        <div>
-      <div className="editor">
+      <div className="editor mt-8">
         <ReactQuill
           value={content}
           onChange={handleEditorChange}
           placeholder="Write your blog post here..."
         />
       </div>
+
+      <button  className='text-center text-xs text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 mt-8'>Submit</button>
+
+
 
       {
         /* <div className="preview">
