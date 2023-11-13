@@ -6,39 +6,49 @@ import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Menu
 import MenuIcon from '@mui/icons-material/Menu';
 import { useRouter } from 'next/navigation';
 
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import ReactMarkdown from 'react-markdown';
+
 
 // Your main component
-const AdminPanel = () => {
+const MedBlogCMS = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
     const router = useRouter();
 
+
+    const [content, setContent] = useState('');
+  const [markdown, setMarkdown] = useState('');
+
+  const handleEditorChange = (value:any) => {
+    setContent(value);
+    setMarkdown(value); // You can use a library to convert HTML to Markdown if needed
+  };
+
+
     const gotToPatients = () => {
       router.push("../admin/requests/patients")
      };
-
-     
  
 
 
    const goToPrescribers = () => {
        router.push("../admin/requests/prescribers")
      };
+
+      const goToMed = () => {
+       router.push("../admin/cms/med_blog")
+     };
+
+     const goToRD = () => {
+        router.push("../admin/requests/prescribers")
+      };
+
+      const goToKnowledge = () => {
+        router.push("../admin/requests/prescribers")
+      };
   
-
-     const goToMed = () => {
-      router.push("../admin/cms/med_blog")
-    };
-
-    const goToRD = () => {
-      router.push("../admin/requests/prescribers")
-    };
-
-    const goToKnowledge = () => {
-      router.push("../admin/requests/prescribers")
-    };
-
-    
     const toggleMenu = () => {
       setMenuOpen(!isMenuOpen);
     };
@@ -64,7 +74,10 @@ const AdminPanel = () => {
           {/* Hamburger Icon to toggle the slide-in menu */}
           <IconButton edge="start" color="inherit" onClick={toggleMenu}>
             <MenuIcon />
+            
           </IconButton>
+
+          <p className='text-white text-2xl'>New Content</p>
           {/* Your other top navigation bar content goes here */}
         </Toolbar>
       </AppBar>
@@ -123,7 +136,7 @@ const AdminPanel = () => {
             <MenuItem onClick={goToKnowledge}>Knowledge</MenuItem>
           </Menu>
 
-
+          
 
 
         </List>
@@ -132,39 +145,33 @@ const AdminPanel = () => {
     
 
       <div className="w-screen h-screen px-4 py-4">
-        <div className="grid grid-cols-4 gap-4">
 
-        <div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
-  <p className="text-sm text-zinc-500 font-medium">Total Patient Requests</p>
 
-  <p className="text-xl text-zinc-700 font-medium mt-4">5</p>
+       <p className='font-medium text-2xl'>Add New Content</p>
 
-  <div className="flex-shrink-0 align-items-flex-end text-sm">
-    <Link href={"../admin/requests/patients"}>View All</Link>
-  </div>
-</div>
 
-<div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
-  <p className="text-sm text-zinc-500 font-medium">Total Prescriber Requests</p>
-
-  <p className="text-xl text-zinc-700 font-medium mt-4">10</p>
-</div>
-
-            <div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
-                 <p className="text-sm text-zinc-500 font-medium">Pharmacies</p>
-              <p className="text-xl text-zinc-700 font-medium mt-4">41</p>
-
-            </div>
-
-        </div>
-     </div>
-
-      {/* Your main content goes here */}
-      <div>
-        {/* Add your main content components here */}
+       <div>
+      <div className="editor">
+        <ReactQuill
+          value={content}
+          onChange={handleEditorChange}
+          placeholder="Write your blog post here..."
+        />
       </div>
+
+      {
+        /* <div className="preview">
+        <ReactMarkdown>{markdown}</ReactMarkdown>
+      </div>
+
+        */
+      }
+     
+    </div>
+       
+       </div>
     </div>
   );
 };
 
-export default AdminPanel;
+export default MedBlogCMS;
