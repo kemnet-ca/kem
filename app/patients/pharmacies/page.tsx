@@ -32,6 +32,9 @@ const Transition = React.forwardRef(function Transition(
 });
 
 
+
+
+
 export default function Pharmacies() {
   
 
@@ -45,6 +48,11 @@ const [isChecked, setIsChecked] = useState(false);
 const [open, setOpen] = React.useState(false);
 
 const [allSelections, setSelections] = useState([]);
+
+const [ipData, setIPData] = useState([]);
+
+
+
 const [additionalInformation, setAdditionalInformation] = useState("");
 
 const [firstName, setFirstName]= useState("");
@@ -54,7 +62,12 @@ const [phone, setPhone]= useState("");
 
 const router = useRouter();
 
+const [pharmaciesRequestData, setPharmRequestData] = useState([]);
+
+
 var errorMessage = "";
+
+
 
 
 
@@ -67,6 +80,7 @@ useEffect(() => {
   const savedLastName = Cookies.get('lastName');
   const savedPostal = Cookies.get('postal');
   const savedPhone = Cookies.get('phone');
+
 
   // Do something with the retrieved values (e.g., set state)
   setFirstName(savedFirstName || '');
@@ -215,6 +229,41 @@ const checkboxStyle = {
 
 
 
+//get patient request data
+useEffect(() => {
+  // Fetch all posts
+  axios.get('https://kemet.care/api/all_pharm', {
+   
+  })
+    .then((response: { data: any; }) => {
+      const data = response.data;
+     console.log(data);
+      setPharmRequestData(data );
+    })
+    .catch((error: any) => {
+      console.error('Error fetching data:', error);
+    });
+}, []);
+ 
+
+
+//get patient request data
+useEffect(() => {
+  // Fetch all posts
+  axios.get('https://kemet.care/api/get-ip', {
+   
+  })
+    .then((response: { data: any; }) => {
+      const data = response.data;
+     console.log(data);
+      setIPData(data );
+
+      alert(ipData)
+    })
+    .catch((error: any) => {
+      console.error('Error fetching data:', error);
+    });
+}, []);
  
 
 
@@ -311,75 +360,34 @@ const checkboxStyle = {
    <div className='w-full flex justify-center  ml-6'>
    <div className="w-full grid grid-cols-2 grid-gap-8 mt-4 items-center">
 
-<div className=' w-full mt-6 '>
+   {pharmaciesRequestData !== null && pharmaciesRequestData.map((singleRequest: any, index: any) => (
+
+
+<div className=' w-full mt-6 ' key={index}>
 
 <label>
           <input
             type="radio"
-            name="options"
-            value="option2"
+            name={singleRequest.id}
+            value={singleRequest.id}
           //  checked={this.state.selectedOption === 'option2'}
          //   onChange={this.handleOptionChange}
           />
-          <Link className='ml-4 font-medium text-sm text-zinc-800 hover:text-teal-500' href={"https://www.google.com/maps/dir//Hamptons+Pharmacy%2FRemedy's+RX.+Edmonton+canada/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x539f8bec5f9eabc7:0x76fba45b9d4bc801?sa=X&ved=2ahUKEwiU_-jL46eCAxX5rYkEHbUWDwQQ9Rd6BAg4EAA&hl=en"}>Hamptons Pharmacy/Remedy&apos;s RX. Edmonton <br></br><span className='text-xs font-extralight text-zinc-600 hover:text-teal-500'>5603 199 St NW, Edmonton, AB T6M 0M8,</span></Link> 
+          <Link className='ml-4 font-medium text-sm text-zinc-800 hover:text-teal-500' href={"https://www.google.com/maps/dir//Hamptons+Pharmacy%2FRemedy's+RX.+Edmonton+canada/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x539f8bec5f9eabc7:0x76fba45b9d4bc801?sa=X&ved=2ahUKEwiU_-jL46eCAxX5rYkEHbUWDwQQ9Rd6BAg4EAA&hl=en"}>{singleRequest.name}<br></br><span className='text-xs font-light text-zinc-800 hover:text-teal-500'><span className="font-semibold text-black ml-8">Postal Code: </span>{singleRequest.postal_code} <br></br><span className="font-semibold text-black ml-8">City: </span>{singleRequest.city}</span></Link> 
           <span style={checkboxStyle}></span>
         </label>
 
 
 </div>
-
-<div className=' w-full mt-6 '>
-
-<label>
-          <input
-            type="radio"
-            name="options"
-            value="option2"
-          //  checked={this.state.selectedOption === 'option2'}
-         //   onChange={this.handleOptionChange}
-          />
-          <Link href={"https://www.google.com/maps/dir//synergy+wellness+center+sherwood+park/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x53a03d8871087e8f:0x62ebd32a8cbafeb7?sa=X&ved=2ahUKEwjdhK2T6aeCAxXmrokEHd1-CFAQ9Rd6BAg5EAA"} className='ml-4 font-medium text-sm text-zinc-800 hover:text-teal-500'>Synergy Centre <br></br><span className='text-xs font-extralight text-zinc-600'>501 Bethel Dr, Sherwood Park, AB T8H 0N2, Canada</span></Link> 
-          <span style={checkboxStyle}></span>
-        </label>
-
-
-</div>
+   ))}
 
 
 
-<div className=' w-full mt-6 '>
-
-<label>
-          <input
-            type="radio"
-            name="options"
-            value="option2"
-          //  checked={this.state.selectedOption === 'option2'}
-         //   onChange={this.handleOptionChange}
-          />
-          <span className='ml-4 font-medium text-sm text-zinc-800'>Eastwood Pharmacy <br></br><span className='text-xs font-extralight text-zinc-600'>CareRx Edmonton Compounding, 9509 156 St NW M5, Edmonton, AB T5P 4J5, Canada</span></span> 
-          <span style={checkboxStyle}></span>
-        </label>
 
 
-</div>
-
-<div className=' w-full mt-6 '>
-
-<label>
-          <input
-            type="radio"
-            name="options"
-            value="option2"
-          //  checked={this.state.selectedOption === 'option2'}
-         //   onChange={this.handleOptionChange}
-          />
-          <span className='ml-4 font-medium text-sm text-zinc-800'>Shoppers Drug Mart #381 <br></br><span className='text-xs font-extralight text-zinc-600'>CareRx Edmonton Compounding, 9509 156 St NW M5, Edmonton, AB T5P 4J5, Canada</span></span> 
-          <span style={checkboxStyle}></span>
-        </label>
 
 
-</div>
+
 
 </div>
 

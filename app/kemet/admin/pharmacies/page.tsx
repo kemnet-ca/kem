@@ -36,7 +36,7 @@ const AdminPharm = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const [anchorElTwo, setAnchorElTwo] = useState(null);
     
-    const [pharmaciesRequestData, setPatientRequestData] = useState([]);
+    const [pharmaciesRequestData, setPharmRequestData] = useState([]);
     const [open, setOpen] = React.useState(false);
     const [requestData, setRequestData] = React.useState([]);
 
@@ -101,7 +101,7 @@ const handleClickOpen = () => {
           .then((response: { data: any; }) => {
             const data = response.data;
            console.log(data);
-            setPatientRequestData(data );
+            setPharmRequestData(data );
           })
           .catch((error: any) => {
             console.error('Error fetching data:', error);
