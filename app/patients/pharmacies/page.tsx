@@ -234,6 +234,8 @@ const handleClose = () => {
 };
 
 
+
+
 useEffect(() => {
   const interval = setInterval(() => {
     setDisplayText((currentText) => (currentText === 'Patient' ? 'Prescriber' : 'Patient'));
