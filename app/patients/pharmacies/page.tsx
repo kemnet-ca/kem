@@ -277,7 +277,7 @@ useEffect(() => {
 
 function getIP(){
   //get patient request data
-useEffect(() => {
+
   // Fetch all posts
   axios.get('https://kemet.care/api/get-ip', {
    
@@ -292,7 +292,8 @@ useEffect(() => {
     .catch((error: any) => {
       console.error('Error fetching data:', error);
     });
-}, []);
+
+
 }
  
 
