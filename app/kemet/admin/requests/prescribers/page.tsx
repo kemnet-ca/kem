@@ -33,6 +33,7 @@ const AdminPrescribers = () => {
     const [prescribersRequestData, setPrescribersRequestData] = useState([]);
     const [open, setOpen] = React.useState(false);
     const [requestData, setRequestData] = React.useState([]);
+    const [additionalInfo, setAdditionalInfo] = React.useState([]);
 
     const router = useRouter();
 
@@ -97,11 +98,11 @@ const AdminPrescribers = () => {
       }, []);
   
 
-      function showRequestInf(data:any){
-
-   
-        setRequestData(JSON.parse(data));
+      function showRequestInf(data:any, additionalInformation:any){
         setOpen(true);
+
+        setAdditionalInfo(additionalInformation);
+        setRequestData(JSON.parse(data))
     
     }
 
@@ -197,6 +198,14 @@ const AdminPrescribers = () => {
        ))}
 
 
+<p className='mt-4 font-medium text-sm'>Additional Info:</p>
+
+<p className="text-zinc-900 text-sm font-normal">
+ {additionalInfo}
+
+</p>
+
+
         
        </DialogContent>
        <DialogActions>
@@ -284,7 +293,7 @@ Full Name
                    {singleRequest.created_at}
                 </td>
                 <td className="px-6 py-4 text-gray-700 font-medium cursor-pointer hover:font-semibold">
-                   <p onClick={()=>showRequestInf(singleRequest.consult_request)}>View</p> 
+                   <p onClick={()=>showRequestInf(singleRequest.consult_request, singleRequest.additional_info)}>View</p> 
                 </td>
                 <td className="px-6 py-4 text-gray-700">
                     <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>

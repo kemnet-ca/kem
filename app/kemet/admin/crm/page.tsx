@@ -44,6 +44,10 @@ const AdminPanel = () => {
       router.push("../admin/crm")
     };
 
+    const goToPharmacies = () => {
+      router.push("../admin/pharmacies")
+    };
+
     
     const toggleMenu = () => {
       setMenuOpen(!isMenuOpen);
@@ -96,7 +100,7 @@ const AdminPanel = () => {
           </ListItem>
 
           <hr></hr>
-          <ListItem button>
+          <ListItem button onClick={goToPharmacies}>
             <ListItemText primary="Pharmacies" />
           </ListItem>
 

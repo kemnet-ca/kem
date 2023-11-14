@@ -30,13 +30,13 @@ const Transition = React.forwardRef(function Transition(
     return <Slide direction="up" ref={ref} {...props} />;
   });
 // Your main component
-const AdminPatients = () => {
+const AdminPharm = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
    
     const [anchorEl, setAnchorEl] = useState(null);
     const [anchorElTwo, setAnchorElTwo] = useState(null);
     
-    const [patientRequestData, setPatientRequestData] = useState([]);
+    const [pharmaciesRequestData, setPatientRequestData] = useState([]);
     const [open, setOpen] = React.useState(false);
     const [requestData, setRequestData] = React.useState([]);
 
@@ -95,7 +95,7 @@ const handleClickOpen = () => {
 //get patient request data
     useEffect(() => {
         // Fetch all posts
-        axios.get('https://kemet.care/api/requests/patients', {
+        axios.get('https://kemet.care/api/all_pharm', {
          
         })
           .then((response: { data: any; }) => {
@@ -244,17 +244,11 @@ const goToDashboard = () => {
         <div className="grid grid-cols-4 gap-4">
 
         <div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
-  <p className="text-sm text-zinc-500 font-medium">Total Patient Requests</p>
+  <p className="text-sm text-zinc-500 font-medium">Total Pharmacies</p>
 
-  <p className="text-xl text-zinc-700 font-medium mt-4">{patientRequestData.length}</p>
+  <p className="text-xl text-zinc-700 font-medium mt-4">{pharmaciesRequestData.length}</p>
 
 
-</div>
-
-<div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
-  <p className="text-sm text-zinc-500 font-medium">Today&apos;s Patient Requests</p>
-
-  <p className="text-xl text-zinc-700 font-medium mt-4">{ patientRequestData.length}</p>
 </div>
 
             
@@ -274,24 +268,26 @@ const goToDashboard = () => {
             
             <tr>
                 <th scope="col" className="px-6 py-3">
-Full Name
+Name
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    Phone
+                    Postal Code
                 </th>
                 <th scope="col" className="px-6 py-3">
-                Postal 
+                Address
                 </th>
 
                  <th scope="col" className="px-6 py-3">
-               IP addr
+               Phone
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    Request Info
+                   City
                 </th>
                 <th scope="col" className="px-6 py-3">
-                   Date
+                   Province
                 </th>
+
+               
                 <th scope="col" className="px-6 py-3">
                     Action
                 </th>
@@ -299,31 +295,33 @@ Full Name
         </thead>
         <tbody>
 
-             {patientRequestData !== null && patientRequestData.map((singleRequest: any, index: any) => (
+             {pharmaciesRequestData !== null && pharmaciesRequestData.map((singleRequest: any, index: any) => (
 
                 <>
 
 <tr className="bg-gray-200 border-b dark:border-gray-700 even:text-white odd:text-black" key={index}>
              <th scope="row" className="px-6 py-4 font-medium even:text-white whitespace-nowrap dark:text-black">
-                   {singleRequest.first_name + " "+singleRequest.last_name}
+                   {singleRequest.name}
                 </th>
-                <td className="px-6 py-4 text-gray-700">
-                   {singleRequest.phone}
-                </td>
+
                 <td className="px-6 py-4 text-gray-700">
                    {singleRequest.postal_code}
                 </td>
                 <td className="px-6 py-4 text-gray-700">
-                   {singleRequest.ip_address}
+                   {singleRequest.address}
+                </td>
+                <td className="px-6 py-4 text-gray-700">
+                   {singleRequest.phone}
+                </td>
+                <td className="px-6 py-4 text-gray-700">
+                   {singleRequest.city}
                 </td>
                  <td className="px-6 py-4 text-gray-700">
-                   {singleRequest.created_at}
+                   {singleRequest.province}
                 </td>
 
                
-                <td className="px-6 py-4 text-gray-700 font-medium cursor-pointer hover:font-semibold">
-                   <p onClick={()=>showRequestInf(singleRequest.consult_request,singleRequest.additional_info)}>View</p> 
-                </td>
+             
                 <td className="px-6 py-4 text-gray-700">
                     <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
                 </td>
@@ -354,4 +352,4 @@ Full Name
   );
 };
 
-export default AdminPatients;
+export default AdminPharm;
