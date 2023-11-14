@@ -61,6 +61,10 @@ const AdminPrescribers = () => {
     const handleClickOpen = () => {
       setOpen(true);
     };
+
+    const goToDashboard = () => {
+      router.push("../../admin/crm")
+    };
      
     const handleClose = () => {
       setOpen(false);
@@ -121,7 +125,7 @@ const AdminPrescribers = () => {
           }}>
         <List>
           {/* Add your menu items here */}
-          <ListItem button>
+          <ListItem button onClick={goToDashboard}>
             <ListItemText primary="Dashboard" />
           </ListItem>
 

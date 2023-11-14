@@ -40,6 +40,10 @@ const AdminPanel = () => {
       router.push("../admin/requests/prescribers")
     };
 
+    const goToDashboard = () => {
+      router.push("../admin/crm")
+    };
+
     
     const toggleMenu = () => {
       setMenuOpen(!isMenuOpen);
@@ -87,8 +91,8 @@ const AdminPanel = () => {
           }}>
         <List>
           {/* Add your menu items here */}
-          <ListItem button>
-            <ListItemText primary="Dashboard" />
+          <ListItem button onClick={goToDashboard}>
+            <ListItemText primary="Dashboard"  />
           </ListItem>
 
           <hr></hr>

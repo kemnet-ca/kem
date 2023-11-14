@@ -125,6 +125,10 @@ const handleMenuCloseTwo = () => {
 };
 
 
+const goToDashboard = () => {
+  router.push("../../admin/crm")
+};
+
   return (
     <div >
 
@@ -172,7 +176,7 @@ const handleMenuCloseTwo = () => {
           }}>
         <List>
           {/* Add your menu items here */}
-          <ListItem button>
+          <ListItem button onClick={goToDashboard}>
             <ListItemText primary="Dashboard" />
           </ListItem>
 
