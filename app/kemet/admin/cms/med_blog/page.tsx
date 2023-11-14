@@ -6,9 +6,16 @@ import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Menu
 import MenuIcon from '@mui/icons-material/Menu';
 import { useRouter } from 'next/navigation';
 
-import ReactQuill from 'react-quill';
+//import ReactQuill from 'react-quill';
+
+import dynamic from 'next/dynamic';
+
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+
+// Use ReactQuill in your component
+
 import 'react-quill/dist/quill.snow.css';
-import ReactMarkdown from 'react-markdown';
+//import ReactMarkdown from 'react-markdown';
 
 
 // Your main component
@@ -19,14 +26,14 @@ const MedBlogCMS = () => {
 
 
     const [content, setContent] = useState('');
-  const [markdown, setMarkdown] = useState('');
+ // const [markdown, setMarkdown] = useState('');
 
   const handleEditorChange = (value:any) => {
     setContent(value);
-    setMarkdown(value); // You can use a library to convert HTML to Markdown if needed
+ //   setMarkdown(value); // You can use a library to convert HTML to Markdown if needed
   };
 
-
+    
     const gotToPatients = () => {
       router.push("../admin/requests/patients")
      };
@@ -157,12 +164,12 @@ const MedBlogCMS = () => {
 
 
        <div>
-      <div className="editor mt-8">
+      <div className="editor">
         <ReactQuill
           value={content}
           onChange={handleEditorChange}
           placeholder="Write your blog post here..."
-        />
+        />}
       </div>
 
       <button  className='text-center text-xs text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 mt-8'>Submit</button>
