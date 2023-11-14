@@ -274,7 +274,7 @@ Name
                     Postal Code
                 </th>
                 <th scope="col" className="px-6 py-3">
-                Address
+                Fax
                 </th>
 
                  <th scope="col" className="px-6 py-3">
@@ -308,7 +308,7 @@ Name
                    {singleRequest.postal_code}
                 </td>
                 <td className="px-6 py-4 text-gray-700">
-                   {singleRequest.address}
+                   {singleRequest.fax}
                 </td>
                 <td className="px-6 py-4 text-gray-700">
                    {singleRequest.phone}
