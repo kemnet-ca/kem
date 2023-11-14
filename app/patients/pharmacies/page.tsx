@@ -49,7 +49,9 @@ const [open, setOpen] = React.useState(false);
 
 const [allSelections, setSelections] = useState([]);
 
-const [ipData, setIPData] = useState([]);
+const [currCity, setCurrCity] = useState("");
+
+const [ipData, setIPData] = useState("");
 
 
 
@@ -64,10 +66,28 @@ const router = useRouter();
 
 const [pharmaciesRequestData, setPharmRequestData] = useState([]);
 
+  // Filtered data state
+  const [filteredPharmacies, setFilteredPharmacies] = useState([]);
+
+
 
 var errorMessage = "";
 
 
+
+
+
+//filter pharmacies
+
+ // Filter pharmaciesRequestData when it changes
+
+ function filterPharmacies(city) {
+  const filteredData = pharmaciesRequestData.filter(
+    (pharmacy) => pharmacy?.city.toLowerCase().includes(city.toLowerCase())
+  );
+
+  setFilteredPharmacies(filteredData);
+}
 
 
 
@@ -134,6 +154,11 @@ const send = async () => {
   formData.append('phone', phone.toString());
   formData.append('additional_info',additionalInformation.toString());
   formData.append('request',  JSON.stringify(allSelections));
+  formData.append('ip_address', ipData.toString());
+
+
+
+  
 
 
   formData.append('selected_pharm',  "...");
@@ -256,15 +281,37 @@ useEffect(() => {
     .then((response: { data: any; }) => {
       const data = response.data;
      console.log(data);
-      setIPData(data );
-
-      alert(ipData)
+      setIPData(data.ip );
+      getLocationFromIP();
+     // alert(data.ip)
     })
     .catch((error: any) => {
       console.error('Error fetching data:', error);
     });
 }, []);
  
+
+function getLocationFromIP(){
+
+  axios.get('https://ipinfo.io/?token=e04cc4d0473fbe', {
+   
+})
+  .then((response: { data: any; }) => {
+    const data = response.data;
+   console.log(data);
+   // setIPData(data.ip );
+
+   setCurrCity(data.city);
+
+  // filterPharmacies(data.city)
+   // alert(data.city)
+  })
+  .catch((error: any) => {
+    console.error('Error fetching data:', error);
+  });
+
+
+}
 
 
 
