@@ -61,10 +61,20 @@ const AdminPrescribers = () => {
     const handleClickOpen = () => {
       setOpen(true);
     };
-    
+     
     const handleClose = () => {
       setOpen(false);
     };
+
+    const [anchorElTwo, setAnchorElTwo] = useState(null);
+    const handleMenuClickTwo = (event:any) => {
+      setAnchorElTwo(event.currentTarget);
+    };
+  
+    const handleMenuCloseTwo = () => {
+      setAnchorElTwo(null);
+    };
+
 
 //get patient request data
     useEffect(() => {
@@ -140,16 +150,16 @@ const AdminPrescribers = () => {
           </Menu>
 
            {/* Main Menu Item: Requests */}
-           <ListItem button onClick={handleMenuClick}>
+           <ListItem button onClick={handleMenuClickTwo}>
             <ListItemText primary="Blogs" />
           </ListItem>
           <hr></hr>
 
           {/* Sub Menu Items: Patients and Prescribers */}
           <Menu
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={handleMenuClose}
+            anchorEl={anchorElTwo}
+            open={Boolean(anchorElTwo)}
+            onClose={handleMenuCloseTwo}
           >
             <MenuItem onClick={gotToPatients}>Med Info</MenuItem>
             <hr></hr>

@@ -10,7 +10,9 @@ import { useRouter } from 'next/navigation';
 // Your main component
 const AdminPanel = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
+    
     const [anchorEl, setAnchorEl] = useState(null);
+   
     const router = useRouter();
 
     const gotToPatients = () => {
@@ -49,6 +51,16 @@ const AdminPanel = () => {
   
     const handleMenuClose = () => {
       setAnchorEl(null);
+    };
+
+
+    const [anchorElTwo, setAnchorElTwo] = useState(null);
+    const handleMenuClickTwo = (event:any) => {
+      setAnchorElTwo(event.currentTarget);
+    };
+  
+    const handleMenuCloseTwo = () => {
+      setAnchorElTwo(null);
     };
 
 
@@ -105,16 +117,16 @@ const AdminPanel = () => {
 
 
            {/* Main Menu Item: Requests */}
-           <ListItem button onClick={handleMenuClick}>
+           <ListItem button onClick={handleMenuClickTwo}>
             <ListItemText primary="Blogs" />
           </ListItem>
           <hr></hr>
 
           {/* Sub Menu Items: Patients and Prescribers */}
           <Menu
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={handleMenuClose}
+            anchorEl={anchorElTwo}
+            open={Boolean(anchorElTwo)}
+            onClose={handleMenuCloseTwo}
           >
             <MenuItem onClick={goToMed}>Med Info</MenuItem>
             <hr></hr>

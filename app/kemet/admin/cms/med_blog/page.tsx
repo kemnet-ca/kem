@@ -62,7 +62,15 @@ const MedBlogCMS = () => {
     };
 
 
-   
+    const [anchorElTwo, setAnchorElTwo] = useState(null);
+    const handleMenuClickTwo = (event:any) => {
+      setAnchorElTwo(event.currentTarget);
+    };
+  
+    const handleMenuCloseTwo = () => {
+      setAnchorElTwo(null);
+    };
+
   
 
 
@@ -118,25 +126,23 @@ const MedBlogCMS = () => {
 
 
            {/* Main Menu Item: Requests */}
-           <ListItem button onClick={handleMenuClick}>
+           <ListItem button onClick={handleMenuClickTwo}>
             <ListItemText primary="Blogs" />
           </ListItem>
           <hr></hr>
 
           {/* Sub Menu Items: Patients and Prescribers */}
           <Menu
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={handleMenuClose}
+            anchorEl={anchorElTwo}
+            open={Boolean(anchorElTwo)}
+            onClose={handleMenuCloseTwo}
           >
             <MenuItem onClick={goToMed}>Med Info</MenuItem>
             <hr></hr>
             <MenuItem onClick={goToRD}>R & D</MenuItem>
             <hr></hr>
             <MenuItem onClick={goToKnowledge}>Knowledge</MenuItem>
-          </Menu>
-
-          
+          </Menu>          
 
 
         </List>

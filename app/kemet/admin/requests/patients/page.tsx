@@ -32,7 +32,10 @@ const Transition = React.forwardRef(function Transition(
 // Your main component
 const AdminPatients = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
+   
     const [anchorEl, setAnchorEl] = useState(null);
+    const [anchorElTwo, setAnchorElTwo] = useState(null);
+    
     const [patientRequestData, setPatientRequestData] = useState([]);
     const [open, setOpen] = React.useState(false);
     const [requestData, setRequestData] = React.useState([]);
@@ -44,6 +47,8 @@ const AdminPatients = () => {
     const gotToPatients = () => {
       router.push("../requests/patients")
      };
+
+   
  
 
 
@@ -58,6 +63,19 @@ const AdminPatients = () => {
     const handleMenuClick = (event:any) => {
       setAnchorEl(event.currentTarget);
     };
+
+    const goToMed = () => {
+      router.push("../admin/cms/med_blog")
+    };
+
+    const goToRD = () => {
+       router.push("../admin/requests/prescribers")
+     };
+
+     const goToKnowledge = () => {
+       router.push("../admin/requests/prescribers")
+     };
+ 
 
 
 const handleClickOpen = () => {
@@ -96,6 +114,16 @@ function showRequestInf(data:any){
     setOpen(true);
 
 }
+
+
+const handleMenuClickTwo = (event:any) => {
+  setAnchorElTwo(event.currentTarget);
+};
+
+const handleMenuCloseTwo = () => {
+  setAnchorElTwo(null);
+};
+
 
   return (
     <div >
@@ -171,6 +199,26 @@ function showRequestInf(data:any){
             <hr></hr>
             <MenuItem onClick={goToPrescribers}>Prescribers</MenuItem>
           </Menu>
+
+
+            {/* Main Menu Item: Requests */}
+            <ListItem button onClick={handleMenuClickTwo}>
+            <ListItemText primary="Blogs" />
+          </ListItem>
+          <hr></hr>
+
+            {/* Sub Menu Items: Patients and Prescribers */}
+            <Menu
+            anchorEl={anchorElTwo}
+            open={Boolean(anchorElTwo)}
+            onClose={handleMenuCloseTwo}
+          >
+            <MenuItem onClick={goToMed}>Med Info</MenuItem>
+            <hr></hr>
+            <MenuItem onClick={goToRD}>R & D</MenuItem>
+            <hr></hr>
+            <MenuItem onClick={goToKnowledge}>Knowledge</MenuItem>
+          </Menu>        
 
 
         </List>
