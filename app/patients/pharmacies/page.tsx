@@ -83,7 +83,7 @@ var errorMessage = "";
 
  function filterPharmacies(location_data:any) {
  const filteredData = pharmaciesRequestData.filter(
-      (pharmacy) => pharmacy.city == 'Lagos'
+      (pharmacy) => pharmacy?.city == 'Lagos'
     );
     setFilteredPharmacies(filteredData);
 
