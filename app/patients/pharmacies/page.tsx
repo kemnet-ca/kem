@@ -64,14 +64,33 @@ const [phone, setPhone]= useState("");
 
 const router = useRouter();
 
-const [pharmaciesRequestData, setPharmRequestData] = useState([]);
+interface Pharmacy {
+  id: number;
+  name: string;
+  city: string;
+
+  phone: string; 
+
+  fax: string;
+
+  postal_code:string;
+
+  province:string;
+
+
+  // ... other properties
+}
+
+const [pharmaciesRequestData, setPharmRequestData] = useState<Pharmacy[]>([]);
 
   // Filtered data state
-  const [filteredPharmacies, setFilteredPharmacies] = useState([]);
+  const [filteredPharmacies, setFilteredPharmacies] = useState<Pharmacy[]>([]);
+
 
 
 
 var errorMessage = "";
+
 
 
 
@@ -83,7 +102,7 @@ var errorMessage = "";
 
  function filterPharmacies(location_data:any) {
  const filteredData = pharmaciesRequestData.filter(
-      (pharmacy) => pharmacy?.city == 'Lagos'
+      (pharmacy) => pharmacy?.city == 'Edmonton'
     );
     setFilteredPharmacies(filteredData);
 
@@ -311,7 +330,7 @@ function getLocationFromIP(){
 
    setCurrCity(data.city);
 
- filterPharmacies("Edmonton")
+ //filterPharmacies("Edmonton")
    // alert(data.city)
   })
   .catch((error: any) => {
