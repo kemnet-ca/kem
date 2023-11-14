@@ -81,12 +81,13 @@ var errorMessage = "";
 
  // Filter pharmaciesRequestData when it changes
 
- function filterPharmacies(city) {
-  const filteredData = pharmaciesRequestData.filter(
-    (pharmacy) => pharmacy?.city.toLowerCase().includes(city.toLowerCase())
-  );
+ function filterPharmacies(location_data:any) {
+ const filteredData = pharmaciesRequestData.filter(
+      (pharmacy) => pharmacy.city == 'Lagos'
+    );
+    setFilteredPharmacies(filteredData);
 
-  setFilteredPharmacies(filteredData);
+    setPharmRequestData(filteredData);
 }
 
 
@@ -264,6 +265,8 @@ useEffect(() => {
       const data = response.data;
      console.log(data);
       setPharmRequestData(data );
+
+      getIP();
     })
     .catch((error: any) => {
       console.error('Error fetching data:', error);
@@ -272,7 +275,8 @@ useEffect(() => {
  
 
 
-//get patient request data
+function getIP(){
+  //get patient request data
 useEffect(() => {
   // Fetch all posts
   axios.get('https://kemet.care/api/get-ip', {
@@ -289,6 +293,7 @@ useEffect(() => {
       console.error('Error fetching data:', error);
     });
 }, []);
+}
  
 
 function getLocationFromIP(){
@@ -303,7 +308,7 @@ function getLocationFromIP(){
 
    setCurrCity(data.city);
 
-  // filterPharmacies(data.city)
+ filterPharmacies("Edmonton")
    // alert(data.city)
   })
   .catch((error: any) => {
