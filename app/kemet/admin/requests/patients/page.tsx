@@ -329,7 +329,7 @@ Full Name
                    {singleRequest.ip_address}
                 </td>
                  <td className="px-6 py-4 text-gray-700">
-                   {singleRequest.created_at}
+                   {formatMySQLTimestamp(singleRequest.created_at)}
                 </td>
 
                
@@ -365,5 +365,20 @@ Full Name
     </div>
   );
 };
+
+function formatMySQLTimestamp(mysqlTimestamp:any) {
+  const formattedTimestamp = new Date(mysqlTimestamp).toLocaleString('en-US', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    timeZoneName: 'short'
+  });
+
+  return formattedTimestamp;
+}
 
 export default AdminPatients;

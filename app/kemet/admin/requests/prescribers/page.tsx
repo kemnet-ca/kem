@@ -299,7 +299,7 @@ Pharmacy
                    {singleRequest.ip_address}
                 </td>
                 <td className="px-6 py-4 text-gray-700">
-                   {singleRequest.created_at}
+                {formatMySQLTimestamp(singleRequest.created_at)}
                 </td>
                 <td className="px-6 py-4 text-gray-700 font-medium cursor-pointer hover:font-semibold">
                    <p onClick={()=>showRequestInf(singleRequest.consult_request, singleRequest.additional_info)}>View</p> 
@@ -333,5 +333,20 @@ Pharmacy
     </div>
   );
 };
+
+function formatMySQLTimestamp(mysqlTimestamp:any) {
+  const formattedTimestamp = new Date(mysqlTimestamp).toLocaleString('en-US', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    timeZoneName: 'short'
+  });
+
+  return formattedTimestamp;
+}
 
 export default AdminPrescribers;
