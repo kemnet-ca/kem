@@ -105,13 +105,20 @@ var errorMessage = "";
 
  // Filter pharmaciesRequestData when it changes
 
- function filterPharmacies(location_data:any) {
- const filteredData = pharmaciesRequestData.filter(
-      (pharmacy) => pharmacy?.city == 'Edmonton'
+ function filterPharmacies(location_data:any, all_data:any) {
+ const filteredData = all_data.filter(
+      (pharmacy:any) => pharmacy?.city == location_data
     );
-    setFilteredPharmacies(filteredData);
+   // setFilteredPharmacies(filteredData);
 
+  if(filteredData.length > 0 ){
     setPharmRequestData(filteredData);
+  }
+
+
+
+
+  // alert(JSON.stringify(filteredData))
 }
 
 
@@ -288,7 +295,7 @@ useEffect(() => {
      console.log(data);
       setPharmRequestData(data );
 
-      getIP();
+      getIP(data);
     })
     .catch((error: any) => {
       console.error('Error fetching data:', error);
@@ -297,7 +304,7 @@ useEffect(() => {
  
 
 
-function getIP(){
+function getIP(allPharmData:any){
   //get patient request data
 
   // Fetch all posts
@@ -308,7 +315,7 @@ function getIP(){
       const data = response.data;
      console.log(data);
       setIPData(data.ip );
-      getLocationFromIP();
+      getLocationFromIP(allPharmData);
      // alert(data.ip)
     })
     .catch((error: any) => {
@@ -319,7 +326,7 @@ function getIP(){
 }
  
 
-function getLocationFromIP(){
+function getLocationFromIP(allPharmData:any){
 
   axios.get('https://ipinfo.io/?token=e04cc4d0473fbe', {
    
@@ -331,7 +338,7 @@ function getLocationFromIP(){
 
    setCurrCity(data.city);
 
- //filterPharmacies("Edmonton")
+ filterPharmacies("Edmonton", allPharmData)
    // alert(data.city)
   })
   .catch((error: any) => {
@@ -434,6 +441,11 @@ const handleOptionChange = (event:any) => {
     <p className='text-xl font-medium text-center    mt-10'>Nearby Pharmacies</p>
 
     <p className='text-sm text-zinc-500 text-center  mt-2 font-light'>Select Which Pharmacy You Would Want</p>
+
+    <p className='text-sm text-green-500 text-center  mt-2 font-medium'>Current Location:  {currCity}</p>
+
+
+    
 
     <div className="w-full  mt-4 flex justify-center ">
 
