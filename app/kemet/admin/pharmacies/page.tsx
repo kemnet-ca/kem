@@ -129,7 +129,7 @@ const handleMenuCloseTwo = () => {
 
 
 const goToDashboard = () => {
-  router.push("../../admin/crm")
+  router.push("../../kemet/admin/crm")
 };
 
   return (
