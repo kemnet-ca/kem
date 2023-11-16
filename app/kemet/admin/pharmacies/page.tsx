@@ -47,7 +47,7 @@ const AdminPharm = () => {
     const router = useRouter();
 
     const gotToPatients = () => {
-      router.push("../requests/patients")
+      router.push("../admin/requests/patients")
      };
 
    
@@ -55,7 +55,7 @@ const AdminPharm = () => {
 
 
    const goToPrescribers = () => {
-       router.push("../requests/prescribers")
+       router.push("../admin/requests/prescribers")
      };
   
     const toggleMenu = () => {
@@ -67,15 +67,15 @@ const AdminPharm = () => {
     };
 
     const goToMed = () => {
-      router.push("../cms/med_blog")
+      router.push("../admin/cms/med_blog")
     };
 
     const goToRD = () => {
-       router.push("../requests/prescribers")
+       router.push("../admin/cms/med_blog")
      };
 
      const goToKnowledge = () => {
-       router.push("../requests/prescribers")
+       router.push("../admin/cms/med_blog")
      };
  
 
