@@ -305,7 +305,8 @@ Pharmacy
                    <p onClick={()=>showRequestInf(singleRequest.consult_request, singleRequest.additional_info)}>View</p> 
                 </td>
                 <td className="px-6 py-4 text-gray-700">
-                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
+                 <div className="font-mediumdark:text-blue-500 hover:underline cursor-pointer text-red-600">Remove</div>
+                    <div className="font-medium text-blue-600 dark:text-blue-500 cursor-pointer hover:underline cursor-hover">Edit</div>
                 </td>
             </tr>
 
