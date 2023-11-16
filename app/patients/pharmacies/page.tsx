@@ -47,11 +47,16 @@ const [isChecked, setIsChecked] = useState(false);
 
 const [open, setOpen] = React.useState(false);
 
+const [selectedOption, setSelectedOption] = useState("");
+
+
 const [allSelections, setSelections] = useState([]);
 
-const [currCity, setCurrCity] = useState("");
+const [currCity, setCurrCity] = useState("Not Available");
 
-const [ipData, setIPData] = useState("");
+const [ipData, setIPData] = useState("Not Available");
+
+
 
 
 
@@ -130,7 +135,7 @@ useEffect(() => {
   
 
 
-  if(addedDetails !==undefined){
+  if(addedDetails !==undefined ){
 
      // 'allSelections' is a string, so you can work with it here
      console.log(allSelections);
@@ -138,6 +143,7 @@ useEffect(() => {
      setAdditionalInformation(addedDetails);
 
   }
+  
 
   // Check if 'allSelections' is undefined, and provide a default value if needed
   if (selections !== undefined) {
@@ -168,6 +174,8 @@ const send = async () => {
 
   const formData = new FormData();
 
+  
+
   formData.append('first_name',  firstName.toString());
   formData.append('last_name',  lastName.toString());
   formData.append('postal_code',  postal.toString());
@@ -175,17 +183,10 @@ const send = async () => {
   formData.append('additional_info',additionalInformation.toString());
   formData.append('request',  JSON.stringify(allSelections));
   formData.append('ip_address', ipData.toString());
+  formData.append('selected_pharm', selectedOption.toString());
 
 
-
-  
-
-
-  formData.append('selected_pharm',  "...");
-
-  formData.append('ip_address',  "...");
-
-  formData.append('est_location',  "...");
+  formData.append('est_location',  currCity);
 
 
   try {
@@ -341,6 +342,24 @@ function getLocationFromIP(){
 }
 
 
+{/* handle radio button change */}
+
+
+
+const handleOptionChange = (event:any) => {
+  setSelectedOption(event.target.value);
+
+ // alert(event.target.value);
+
+  if(selectedOption){
+
+    Cookies.set("selected_pharmacy",selectedOption);
+
+  }
+ 
+};
+
+
 
   return (
 
@@ -444,8 +463,8 @@ function getLocationFromIP(){
             type="radio"
             name={singleRequest.id}
             value={singleRequest.id}
-          //  checked={this.state.selectedOption === 'option2'}
-         //   onChange={this.handleOptionChange}
+           checked={selectedOption == singleRequest.id}
+            onChange={handleOptionChange}
           />
           <Link className='ml-4 font-medium text-sm text-zinc-800 hover:text-teal-500' href={"https://www.google.com/maps/dir//Hamptons+Pharmacy%2FRemedy's+RX.+Edmonton+canada/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x539f8bec5f9eabc7:0x76fba45b9d4bc801?sa=X&ved=2ahUKEwiU_-jL46eCAxX5rYkEHbUWDwQQ9Rd6BAg4EAA&hl=en"}>{singleRequest.name}<br></br><span className='text-xs font-light text-zinc-800 hover:text-teal-500'><span className="font-semibold text-black ml-8">Postal Code: </span>{singleRequest.postal_code} <br></br><span className="font-semibold text-black ml-8">City: </span>{singleRequest.city}</span></Link> 
           <span style={checkboxStyle}></span>

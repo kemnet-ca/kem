@@ -253,6 +253,11 @@ const AdminPrescribers = () => {
                 <th scope="col" className="px-6 py-3">
 Full Name
                 </th>
+
+                <th scope="col" className="px-6 py-3">
+Pharmacy
+                </th>
+
                 <th scope="col" className="px-6 py-3">
                     License No
                 </th>
@@ -279,9 +284,13 @@ Full Name
                 <>
 
 <tr className="bg-gray-200 border-b dark:border-gray-700 even:text-white odd:text-black" key={index}>
-             <th scope="row" className="px-6 py-4 font-medium even:text-white whitespace-nowrap dark:text-black">
+             <th scope="row" className="px-6 py-4 font-medium whitespace-nowrap text-zinc-900">
                    {singleRequest.first_name + " "+singleRequest.last_name}
                 </th>
+
+                <td className="px-6 py-4 text-gray-700">
+                   {singleRequest.pharmacy_name}
+                </td>
                 <td className="px-6 py-4 text-gray-700">
                    {singleRequest.licensee}
                 </td>

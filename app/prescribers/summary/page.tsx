@@ -46,11 +46,73 @@ const handleClose = () => {
   setOpen(false);
 };
 
+const [allSelections, setSelections] = useState([]);
+const [additionalInformation, setAdditionalInformation] = useState("");
+const [firstName, setFirstName]= useState("");
+const [lastName, setLastName]= useState("");
+const [licensee, setLicensee]= useState("");
+
+const [selectedPharm, setSelectedPharm]= useState("");
+const [currCity, setCurrCity]= useState("");
+const [ip, setIP]= useState("");
+
 
 
 
 useEffect(() => {
     const selections = Cookies.get('allSelections');
+
+    const addedDetails = Cookies.get('additionalInformation');
+
+    const selected_pharmacy = Cookies.get("selected_pharmacy");
+
+    const curr_city = Cookies.get("curr_city");
+
+    const ip = Cookies.get("ip_address");
+
+
+
+    if(selected_pharmacy  !==undefined){
+
+     // alert (selected_pharmacy);
+  
+      // 'allSelections' is a string, so you can work with it here
+     // console.log(allSelections);
+  
+      setSelectedPharm(selected_pharmacy);
+  
+   }
+
+   if(curr_city  !==undefined){
+  
+    // 'allSelections' is a string, so you can work with it here
+  //  console.log(allSelections);
+
+    setCurrCity(curr_city);
+
+ }
+
+ if(ip  !==undefined){
+  
+  // 'allSelections' is a string, so you can work with it here
+//  console.log(allSelections);
+
+  setIP(ip);
+
+}
+
+   
+
+
+    if(addedDetails !==undefined){
+  
+      // 'allSelections' is a string, so you can work with it here
+      console.log(allSelections);
+  
+      setAdditionalInformation(addedDetails);
+  
+   }
+
   
     // Check if 'allSelections' is undefined, and provide a default value if needed
     if (selections !== undefined) {
@@ -70,11 +132,7 @@ useEffect(() => {
 
 
 
-  const [allSelections, setSelections] = useState([]);
-  const [additionalInformation, setAdditionalInformation] = useState("");
-  const [firstName, setFirstName]= useState("");
-  const [lastName, setLastName]= useState("");
-  const [licensee, setLicensee]= useState("");
+ 
   
   
   const router = useRouter();
@@ -137,6 +195,8 @@ useEffect(() => {
     //setIsLoading(true);
   
     const formData = new FormData();
+
+    
   
     formData.append('first_name',  firstName.toString());
     formData.append('last_name',  lastName.toString());
@@ -144,6 +204,12 @@ useEffect(() => {
     
     formData.append('additional_info',additionalInformation.toString());
     formData.append('request',  JSON.stringify(allSelections));
+    formData.append('est_location',  currCity.toString());
+    formData.append('selected_pharm',  selectedPharm.toString());
+
+    formData.append('ip_address',  ip.toString());
+
+    
   
   
     try {
@@ -152,7 +218,7 @@ useEffect(() => {
   
   
      // create new guest post
-      axios.post('https://kemet.care/api/new_request', formData )
+      axios.post('https://kemet.care/api/new_prescriber_request', formData )
         .then((response: { data: any; }) => {
           const data = response.data;
           console.log(data);
@@ -314,6 +380,25 @@ useEffect(() => {
 
 
   
+<div className="w-full flex mt-8 ">
+
+<p className='font-medium text-sm'>Additional information</p>
+
+
+</div>
+
+<div className="w-full">
+
+<div className="w-full p-6 bg-white rounded-xl mt-4 text-sm font-light ">
+
+{additionalInformation}
+
+
+
+
+
+</div>
+</div>
 
 
        

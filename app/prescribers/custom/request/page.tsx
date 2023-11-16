@@ -22,7 +22,7 @@ export default function PrescriberRequestForm() {
 
 
 
-  const [additionalInfo, setAdditionalInfo] = useState('Additional information');
+  const [additionalInfo, setAdditionalInfo] = useState('--');
   
   {/*handle function to process additional information text*/}
     const handleTextareaChange = (event:any) => {
@@ -64,6 +64,9 @@ export default function PrescriberRequestForm() {
   function addAllSelectionsToCookies(){
   
     Cookies.set('allSelections',JSON.stringify(selectedValues) );
+
+     {/*save additional info to cookies*/}
+  Cookies.set("additionalInformation", additionalInfo);
   
     //alert(selectedValues)
 
@@ -371,7 +374,7 @@ export default function PrescriberRequestForm() {
 <textarea
 onChange={handleTextareaChange}
  className='border border-zinc-300 text-sm text-zinc-300 p-4 w-[500px] rounded-md text-light text-zinc-700'>
-    Additional information
+   
   </textarea>
 </div>
 

@@ -279,9 +279,17 @@ Full Name
                 <th scope="col" className="px-6 py-3">
                     Phone
                 </th>
+
+                <th scope="col" className="px-6 py-3">
+                    Pharmacy
+                </th>
+
+
                 <th scope="col" className="px-6 py-3">
                 Postal 
                 </th>
+
+
 
                  <th scope="col" className="px-6 py-3">
                IP addr
@@ -304,11 +312,15 @@ Full Name
                 <>
 
 <tr className="bg-gray-200 border-b dark:border-gray-700 even:text-white odd:text-black" key={index}>
-             <th scope="row" className="px-6 py-4 font-medium even:text-white whitespace-nowrap dark:text-black">
+             <th scope="row" className="px-6 py-4 font-medium text-zinc-900 whitespace-nowrap text-zinc-900">
                    {singleRequest.first_name + " "+singleRequest.last_name}
                 </th>
                 <td className="px-6 py-4 text-gray-700">
                    {singleRequest.phone}
+                </td>
+
+                <td className="px-6 py-4 text-gray-700">
+                   {singleRequest.pharmacy_name}
                 </td>
                 <td className="px-6 py-4 text-gray-700">
                    {singleRequest.postal_code}

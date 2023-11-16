@@ -22,7 +22,7 @@ const [selectedValues, setSelectedValues] = useState<string[]>([]);
 
 
 
-const [additionalInfo, setAdditionalInfo] = useState('Additional information');
+const [additionalInfo, setAdditionalInfo] = useState('--');
 
 {/*handle function to process additional information text*/}
   const handleTextareaChange = (event:any) => {
@@ -293,11 +293,11 @@ function addAllSelectionsToCookies(){
 
         <div className='mt-4 flex'>
 
-        <input value="I want my pain medications in a form that goes through my skill." type="checkbox"
-         checked={selectedValues.includes('I want my pain medications in a form that goes through my skill.')}
+        <input value="I want my pain medications in a form that goes through my skin." type="checkbox"
+         checked={selectedValues.includes('I want my pain medications in a form that goes through my skin.')}
          onChange={handleRadioChange}
         /> 
-        <p className="ml-4 font-normal text-sm flex">I want my pain medications in a form that goes through my skill. 
+        <p className="ml-4 font-normal text-sm flex">I want my pain medications in a form that goes through my skin. 
         <Tooltip  TransitionComponent={Fade}
         componentsProps={{
             tooltip: {
@@ -617,7 +617,7 @@ function addAllSelectionsToCookies(){
 <textarea 
 onChange={handleTextareaChange}
 className='border border-zinc-300 text-sm text-zinc-300 p-4 w-[500px] rounded-md text-light text-zinc-700'>
-    Additional information
+   
   </textarea>
 </div>
 
