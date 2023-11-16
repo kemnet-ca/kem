@@ -168,11 +168,19 @@ const AdminPanel = () => {
   <p className="text-sm text-zinc-500 font-medium">Total Prescriber Requests</p>
 
   <p className="text-xl text-zinc-700 font-medium mt-4">10</p>
+
+  <div className="flex-shrink-0 align-items-flex-end text-sm">
+    <Link href={"../admin/requests/prescribers"}>View All</Link>
+  </div>
 </div>
 
             <div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
                  <p className="text-sm text-zinc-500 font-medium">Pharmacies</p>
               <p className="text-xl text-zinc-700 font-medium mt-4">41</p>
+
+                <div className="flex-shrink-0 align-items-flex-end text-sm">
+    <Link href={"../admin/pharmacies"}>View All</Link>
+  </div>
 
             </div>
 
