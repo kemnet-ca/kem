@@ -171,6 +171,8 @@ const AdminPrescribers = () => {
             <MenuIcon />
           </IconButton>
           {/* Your other top navigation bar content goes here */}
+
+          <p className="font-medium text-xl text-white ml-4">Prescribers</p>
         </Toolbar>
       </AppBar>
 

@@ -86,6 +86,8 @@ const AdminPanel = () => {
             <MenuIcon />
           </IconButton>
           {/* Your other top navigation bar content goes here */}
+
+          <p className="font-medium text-xl text-white ml-4">Admin CRM</p>
         </Toolbar>
       </AppBar>
 
@@ -154,7 +156,7 @@ const AdminPanel = () => {
       <div className="w-screen h-screen px-4 py-4">
         <div className="grid grid-cols-4 gap-4">
 
-        <div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
+        <div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Total Patient Requests</p>
 
   <p className="text-xl text-zinc-700 font-medium mt-4">5</p>
@@ -164,7 +166,7 @@ const AdminPanel = () => {
   </div>
 </div>
 
-<div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
+<div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Total Prescriber Requests</p>
 
   <p className="text-xl text-zinc-700 font-medium mt-4">10</p>
@@ -174,7 +176,7 @@ const AdminPanel = () => {
   </div>
 </div>
 
-            <div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
+            <div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
                  <p className="text-sm text-zinc-500 font-medium">Pharmacies</p>
               <p className="text-xl text-zinc-700 font-medium mt-4">41</p>
 

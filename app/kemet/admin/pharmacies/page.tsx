@@ -177,6 +177,9 @@ const goToDashboard = () => {
             <MenuIcon />
           </IconButton>
           {/* Your other top navigation bar content goes here */}
+          <p className="font-medium text-xl text-white ml-4">Pharmacies</p>
+
+          <button className="font-medium text-sm text-white ml-auto border-1 border-white  border p-2 rounded-md">New Pharmacy +</button>
         </Toolbar>
       </AppBar>
 
@@ -243,7 +246,7 @@ const goToDashboard = () => {
       <div className="w-screen h-screen px-4 py-4">
         <div className="grid grid-cols-4 gap-4">
 
-        <div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
+        <div className="w-full h-28 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Total Pharmacies</p>
 
   <p className="text-xl text-zinc-700 font-medium mt-4">{pharmaciesRequestData.length}</p>

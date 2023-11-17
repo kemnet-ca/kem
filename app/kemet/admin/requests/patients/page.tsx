@@ -75,12 +75,16 @@ const AdminPatients = () => {
     };
 
     const goToRD = () => {
-       router.push("../requests/prescribers")
+       router.push("../cms/med_blog")
      };
 
      const goToKnowledge = () => {
-       router.push("../requests/prescribers")
+       router.push("../cms/med_blog")
      };
+
+     const goToPharmacies = () => {
+      router.push("../pharmacies")
+    };
  
 
 
@@ -228,6 +232,7 @@ const goToDashboard = () => {
             <MenuIcon />
           </IconButton>
           {/* Your other top navigation bar content goes here */}
+          <p className="font-medium text-xl text-white ml-4">Patients</p>
         </Toolbar>
       </AppBar>
 
@@ -242,7 +247,7 @@ const goToDashboard = () => {
           </ListItem>
 
           <hr></hr>
-          <ListItem button>
+          <ListItem button onClick={goToPharmacies}>
             <ListItemText primary="Pharmacies" />
           </ListItem>
 
