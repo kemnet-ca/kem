@@ -18,6 +18,8 @@ import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
 
 import Cookies from 'js-cookie';
+
+
 import { useRouter } from 'next/navigation';
 
 
@@ -257,13 +259,17 @@ function getLocationFromIP(){
 const handleOptionChange = (event:any) => {
   setSelectedOption(event.target.value);
 
- // alert(event.target.value);
+  
 
-  if(selectedOption){
+ 
 
-    Cookies.set("selected_pharmacy",selectedOption);
+    Cookies.set("selected_pharmacy",event.target.value);
 
-  }
+    //alert(event.target.value);
+
+    
+
+  
  
 };
 
@@ -295,7 +301,7 @@ const handleOptionChange = (event:any) => {
        </DialogContent>
        <DialogActions>
          <p className='text-zinc-400 cursor-pointer mr-10 hover:mb-1' onClick={handleClose}>Disagree</p>
-         <Link className='text-zinc-700 cursor-pointer hover:mb-1' href={"../../patients/success"}>Agree</Link>
+         <Link className='text-zinc-700 cursor-pointer hover:mb-1' href={"../../prescribers/success"}>Agree</Link>
        </DialogActions>
      </Dialog>
    </React.Fragment>

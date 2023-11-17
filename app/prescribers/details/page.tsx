@@ -82,15 +82,25 @@ function addAllDataToCookies(){
   Cookies.set('firstName', firstName);
   Cookies.set('lastName', lastName);
   Cookies.set('licensee', licensee);
- 
 
  
 
+ if(licensee == "" || licensee == null ||lastName == "" || lastName == null || firstName == "" || firstName == null){
+    alert("Please completely fill every field for all your information")
+  }
  
 
-  //alert(selectedValues)
+  else{
+    //alert(selectedValues)
 
   router.push("../../prescribers/pharmacies/list")
+  }
+
+ 
+
+ 
+
+  
 
 
 }

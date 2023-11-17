@@ -18,6 +18,7 @@ import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { useRouter } from 'next/navigation';
+import '../../css/loader.css';
 
 
 const Transition = React.forwardRef(function Transition(
@@ -51,6 +52,7 @@ const [additionalInformation, setAdditionalInformation] = useState("");
 const [firstName, setFirstName]= useState("");
 const [lastName, setLastName]= useState("");
 const [licensee, setLicensee]= useState("");
+const [isLoading, setIsLoading]= useState(false);
 
 const [selectedPharm, setSelectedPharm]= useState("");
 const [currCity, setCurrCity]= useState("");
@@ -72,9 +74,11 @@ useEffect(() => {
 
 
 
-    if(selected_pharmacy  !==undefined){
+    if(selected_pharmacy  !=undefined){
 
-     // alert (selected_pharmacy);
+
+
+    //  alert (selected_pharmacy);
   
       // 'allSelections' is a string, so you can work with it here
      // console.log(allSelections);
@@ -186,13 +190,19 @@ useEffect(() => {
 
   const send = async () => {
 
+   if(selectedPharm == ""|| selectedPharm ==null || selectedPharm== undefined){
 
-    //alert(firstName +" "+ lastName+" "+postal)
-  
-    //this method handles creation of anoniposts for logged in user
-  
+    alert("You did not select a pharmacy, please select a pharmacy. ");
+
+   
+    router.push("../../prescribers/pharmacies/list")
+
+   }
+   else{
+
+
     
-    //setIsLoading(true);
+    setIsLoading(true);
   
     const formData = new FormData();
 
@@ -224,13 +234,23 @@ useEffect(() => {
           console.log(data);
   
           router.push("../../prescribers/success")
-         // setPostData(data.post_text.split('\n'));
-        // setIsLoading(false);
-       // setOpenSuccessDialog(true)
+
+          Cookies.remove("selected_pharmacy")
+
+          Cookies.remove("allSelections")
+
+          Cookies.remove("additionalInformation")
+          Cookies.remove("firstName")
+          Cookies.remove("lastName")
+
+          
+        
+         setIsLoading(false);
+      
         })
         .catch((error: any) => {
           console.error('Error fetching data:', error);
-         // setIsLoading(false);
+          setIsLoading(false);
         });
     
   
@@ -254,14 +274,16 @@ useEffect(() => {
   }
   
   
-  //setIsLoading(false);
+  setIsLoading(false);
   
   
   }
   finally {
-  ///  setIsLoading(false);
+    setIsLoading(false);
   
   }
+
+}
   
   }
  
@@ -283,17 +305,31 @@ useEffect(() => {
        onClose={handleClose}
        aria-describedby="alert-dialog-slide-description"
      >
+
+
        <DialogTitle className="font-medium text-sm">{"Confirm To Send Your Request To A Prescriber"}</DialogTitle>
        <DialogContent>
          <p id="alert-dialog-slide-description " className="text-zinc-600 text-sm font-light">
           If you agree, your information and consult requests which you have submitted will be sent to <b>CareRx Pharmacy</b> by fax and email.
+         
+         
+         </p>
+
+         <p id="alert-dialog-slide-description " className="text-red-600 text-sm font-light mt-4">
+        {errorMessage} 
+         
          </p>
 
          
        </DialogContent>
        <DialogActions>
          <p className='text-zinc-400 cursor-pointer mr-10 hover:mb-1' onClick={handleClose}>Disagree</p>
-         <button onClick={send} className='text-zinc-700 cursor-pointer hover:mb-1' >Agree</button>
+          
+          {
+            isLoading == true?(<> <div className="loader "></div></>):(<><button onClick={send} className='text-zinc-700 cursor-pointer hover:mb-1' >Agree</button></>)
+          }
+         
+         
        </DialogActions>
      </Dialog>
    </React.Fragment>

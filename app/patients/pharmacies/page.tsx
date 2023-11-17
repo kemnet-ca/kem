@@ -18,7 +18,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
 import axios, { AxiosError, AxiosResponse } from "axios";
-
+import '../../css/loader.css';
 
 
 
@@ -49,7 +49,7 @@ const [open, setOpen] = React.useState(false);
 
 const [selectedOption, setSelectedOption] = useState("");
 
-
+const [isLoading, setIsLoading]= useState(false);
 const [allSelections, setSelections] = useState([]);
 
 const [currCity, setCurrCity] = useState("Not Available");
@@ -172,12 +172,17 @@ useEffect(() => {
 const send = async () => {
 
 
-  //alert(firstName +" "+ lastName+" "+postal)
+  if(selectedOption == ""|| selectedOption ==null || selectedOption == undefined){
 
-  //this method handles creation of anoniposts for logged in user
+    alert("You did not select a pharmacy, please select a pharmacy. ");
+
+    router.push("../../patients/pharmacies")
+
+   }
+   else{
 
   
-  //setIsLoading(true);
+  setIsLoading(true);
 
   const formData = new FormData();
 
@@ -211,6 +216,17 @@ const send = async () => {
        // setPostData(data.post_text.split('\n'));
       // setIsLoading(false);
      // setOpenSuccessDialog(true)
+
+     Cookies.remove("allSelections")
+
+     Cookies.remove("firstName")
+     Cookies.remove("lastName")
+     Cookies.remove("phone")
+     Cookies.remove("postal")
+
+    
+
+     Cookies.remove("additionalInformation")
       })
       .catch((error: any) => {
         console.error('Error fetching data:', error);
@@ -246,6 +262,8 @@ finally {
 ///  setIsLoading(false);
 
 }
+
+   }
 
 }
 
@@ -387,10 +405,18 @@ const handleOptionChange = (event:any) => {
        <DialogContent>
          <p id="alert-dialog-slide-description " className="text-zinc-600 text-sm font-light">
          Confirm to send your request to a pharmacist  </p>
+
+         <p id="alert-dialog-slide-description " className="text-red-600 text-sm font-light mt-4">
+        {errorMessage} 
+         
+         </p>
        </DialogContent>
        <DialogActions>
          <p className='text-zinc-400 cursor-pointer mr-10 hover:mb-1' onClick={handleClose}>Disagree</p>
-         <button onClick={send} className='text-zinc-700 cursor-pointer hover:mb-1' >Agree</button>
+         {
+            isLoading == true?(<> <div className="loader "></div></>):(<><button onClick={send} className='text-zinc-700 cursor-pointer hover:mb-1' >Agree</button></>)
+          }
+         
        </DialogActions>
      </Dialog>
    </React.Fragment>

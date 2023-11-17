@@ -100,12 +100,18 @@ function addAllDataToCookies(){
   Cookies.set('phone', phone);
 
  
+  if(phone == "" || phone == null || postal == "" || postal == null ||lastName == "" || lastName == null || firstName == "" || firstName == null){
+    alert("Please completely fill every field for all your information")
+  }
+ 
 
+  else{
  
 
   //alert(selectedValues)
 
   router.push('../../patients/pharmacies')
+  }
 
 
 }

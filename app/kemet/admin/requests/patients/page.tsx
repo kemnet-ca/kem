@@ -36,7 +36,11 @@ const AdminPatients = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const [anchorElTwo, setAnchorElTwo] = useState(null);
     
-    const [patientRequestData, setPatientRequestData] = useState([]);
+    const [patientRequestData, setPatientRequestData] = useState<any[]>([]); 
+    const [patientRequestDataTwo, setPatientRequestDataTwo] = useState<any[]>([]); 
+    const [todaysRecords, setTodayRecords] = useState<any[]>([]); 
+   
+
     const [open, setOpen] = React.useState(false);
     const [requestData, setRequestData] = React.useState([]);
 
@@ -102,6 +106,10 @@ const handleClickOpen = () => {
             const data = response.data;
            console.log(data);
             setPatientRequestData(data );
+            setPatientRequestDataTwo(data)
+
+            const filteredData = getTodayRecords(data); // Assuming 'data' is an array of objects with 'created_at' field
+            setTodayRecords(filteredData);
           })
           .catch((error: any) => {
             console.error('Error fetching data:', error);
@@ -132,6 +140,49 @@ const goToDashboard = () => {
   router.push("../../admin/crm")
 };
 
+
+
+  {/*filter records and get today's records*/}
+
+  function getTodayRecords(data: any[]) {
+    const currentDate = new Date(); // Get today's date
+    const today = currentDate.toISOString().split('T')[0]; // Format today's date as 'YYYY-MM-DD'
+  
+    const filteredRecords = data.filter((request: { created_at: string }) => {
+      const userRegistrationDate = new Date(request.created_at.split('T')[0]); // Extract only date part
+      const formattedRegistrationDate = userRegistrationDate.toISOString().split('T')[0]; // Convert to 'YYYY-MM-DD'
+  
+      return formattedRegistrationDate === today;
+    });
+  
+    return filteredRecords;
+  }
+
+  //filter today's records on click
+  function viewTodayRecords(data:any){
+
+  const filteredData = getTodayRecords(data); // Assuming 'data' is an array of objects with 'created_at' field
+
+ 
+
+  setPatientRequestData(filteredData);
+
+
+  }
+  
+
+  //filter today's records on click
+  function viewAllRecords(){
+
+ 
+  
+
+    setPatientRequestData(patientRequestDataTwo);
+
+
+    }
+    
+ 
   return (
     <div >
 
@@ -243,18 +294,24 @@ const goToDashboard = () => {
       <div className="w-screen h-screen px-4 py-4">
         <div className="grid grid-cols-4 gap-4">
 
-        <div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
+        <div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Total Patient Requests</p>
 
   <p className="text-xl text-zinc-700 font-medium mt-4">{patientRequestData.length}</p>
 
 
+  <p className="text-sm text-zinc-700 font-medium mt-4 cursor-pointer hover:font-semibold" onClick={viewAllRecords}>View All</p>
+
+
 </div>
 
-<div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
+<div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Today&apos;s Patient Requests</p>
 
-  <p className="text-xl text-zinc-700 font-medium mt-4">{ patientRequestData.length}</p>
+  <p className="text-xl text-zinc-700 font-medium mt-4">{todaysRecords.length}</p>
+
+  <p onClick={()=>viewTodayRecords(patientRequestData)} className="text-sm text-zinc-700 font-medium mt-4 cursor-pointer hover:font-semibold">View Records</p>
+
 </div>
 
             

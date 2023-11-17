@@ -63,14 +63,24 @@ export default function PrescriberRequestForm() {
   {/*add all selected consult requests to cookies */}
   function addAllSelectionsToCookies(){
   
-    Cookies.set('allSelections',JSON.stringify(selectedValues) );
+  Cookies.set('allSelections',JSON.stringify(selectedValues) );
+
+  
 
      {/*save additional info to cookies*/}
   Cookies.set("additionalInformation", additionalInfo);
   
     //alert(selectedValues)
 
-    router.push('../../prescribers/details/')
+    if(selectedValues.length > 0){
+      router.push('../../prescribers/details/')
+
+    }
+    else{
+      alert("Please select atleast one custom request option. ")
+    }
+
+   
   
   
   }

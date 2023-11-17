@@ -70,7 +70,15 @@ function addAllSelectionsToCookies(){
 
   //alert(selectedValues)
 
-  router.push('../../patients/data/details/')
+  if(selectedValues.length > 0){
+    router.push('../../patients/data/details/')
+
+  }
+  else{
+
+    alert("Please select atleast one custom request option. ")
+
+  }
 
 
 }

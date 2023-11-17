@@ -30,9 +30,14 @@ const Transition = React.forwardRef(function Transition(
 const AdminPrescribers = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
-    const [prescribersRequestData, setPrescribersRequestData] = useState([]);
+    const [prescribersRequestData, setPrescribersRequestData] = useState<any[]>([]); 
+    const [todaysRecords, setTodayRecords] = useState<any[]>([]); 
+    const [prescribersRequestDataTwo, setPrescribersRequestDataTwo] = useState<any[]>([]); 
+
     const [open, setOpen] = React.useState(false);
-    const [requestData, setRequestData] = React.useState([]);
+    const [requestData, setRequestData] = useState<any[]>([]); 
+   
+    
     const [additionalInfo, setAdditionalInfo] = React.useState([]);
 
     const router = useRouter();
@@ -91,6 +96,11 @@ const AdminPrescribers = () => {
             const data = response.data;
            console.log(data);
            setPrescribersRequestData(data );
+           setPrescribersRequestDataTwo(data)
+
+            // Usage in your code
+            const filteredData = getTodayRecords(data); // Assuming 'data' is an array of objects with 'created_at' field
+            setTodayRecords(filteredData);
           })
           .catch((error: any) => {
             console.error('Error fetching data:', error);
@@ -105,6 +115,50 @@ const AdminPrescribers = () => {
         setRequestData(JSON.parse(data))
     
     }
+
+    {/*filter records and get today's records*/}
+
+    function getTodayRecords(data: any[]) {
+      const currentDate = new Date(); // Get today's date
+      const today = currentDate.toISOString().split('T')[0]; // Format today's date as 'YYYY-MM-DD'
+    
+      const filteredRecords = data.filter((request: { created_at: string }) => {
+        const userRegistrationDate = new Date(request.created_at.split('T')[0]); // Extract only date part
+        const formattedRegistrationDate = userRegistrationDate.toISOString().split('T')[0]; // Convert to 'YYYY-MM-DD'
+    
+        return formattedRegistrationDate === today;
+      });
+    
+      return filteredRecords;
+    }
+
+    //filter today's records on click
+    function viewTodayRecords(data:any){
+
+    const filteredData = getTodayRecords(data); // Assuming 'data' is an array of objects with 'created_at' field
+
+   
+
+    setPrescribersRequestData(filteredData);
+
+
+    }
+    
+
+    //filter today's records on click
+    function viewAllRecords(){
+
+   
+    
+  
+      setPrescribersRequestData(prescribersRequestDataTwo);
+  
+  
+      }
+      
+   
+
+
 
 
   return (
@@ -220,18 +274,22 @@ const AdminPrescribers = () => {
       <div className="w-screen h-screen px-4 py-4">
         <div className="grid grid-cols-4 gap-4">
 
-        <div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
+        <div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Total Prescribers Requests</p>
 
   <p className="text-xl text-zinc-700 font-medium mt-4">{prescribersRequestData.length}</p>
 
+  <p className="text-sm text-zinc-700 font-medium mt-4 cursor-pointer hover:font-semibold" onClick={viewAllRecords}>View All</p>
+
  
 </div>
 
-<div className="w-full h-40 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
+<div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Today&apos;s Prescribers Requests</p>
 
-  <p className="text-xl text-zinc-700 font-medium mt-4">{prescribersRequestData.length}</p>
+  <p className="text-xl text-zinc-700 font-medium mt-4">{todaysRecords.length}</p>
+
+  <p onClick={()=>viewTodayRecords(prescribersRequestData)} className="text-sm text-zinc-700 font-medium mt-4 cursor-pointer hover:font-semibold">View Records</p>
 </div>
 
 
