@@ -149,6 +149,7 @@ const goToDashboard = () => {
 
        {requestData !== null && requestData.map((single: any, index: any) => (
         <p key={index} id="alert-dialog-slide-description " className="text-zinc-900 text-sm font-normal"><span className="mr-2">{index+1}</span>{single}</p>
+        
 
        ))}
 
@@ -179,8 +180,14 @@ const goToDashboard = () => {
           {/* Your other top navigation bar content goes here */}
           <p className="font-medium text-xl text-white ml-4">Pharmacies</p>
 
-          <Link href={"../admin/pharmacies/new"} className="font-medium text-sm text-white ml-auto border-1 border-white  border p-2 rounded-md">New Pharmacy +</Link>
-        </Toolbar>
+       
+       <div className="ml-auto">
+       <Link href={"../admin/pharmacies/new"} className="font-medium text-sm text-white  border-1 border-white  border p-2 rounded-md">New Pharmacy +</Link>
+          <button  className="font-medium text-sm text-white ml-2 border-1 border-white  border p-2 rounded-md">Refresh</button>
+    
+       </div>
+       
+           </Toolbar>
       </AppBar>
 
       {/* Slide-in Menu */}

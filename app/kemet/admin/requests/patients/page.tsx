@@ -21,6 +21,17 @@ import { useRouter } from 'next/navigation';
 
 
 
+import TextField from '@mui/material/TextField';
+
+import { Dayjs } from 'dayjs';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+
+
+
+
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
       children: React.ReactElement<any, any>;
@@ -39,12 +50,21 @@ const AdminPatients = () => {
     const [patientRequestData, setPatientRequestData] = useState<any[]>([]); 
     const [patientRequestDataTwo, setPatientRequestDataTwo] = useState<any[]>([]); 
     const [todaysRecords, setTodayRecords] = useState<any[]>([]); 
+    const [value, setValue] = React.useState<Dayjs | null>(null);
    
 
     const [open, setOpen] = React.useState(false);
     const [requestData, setRequestData] = React.useState([]);
 
     const [additionalInfo, setAdditionalInfo] = React.useState([]);
+
+    const [selectedFromDate, setSelectedFromDate] = useState(null);
+    const [selectedToDate, setSelectedToDate] = useState(null);
+    
+
+    const handleDateChange = (date:any) => {
+      //setSelectedFromDate(date);
+    };
 
 
 
@@ -233,6 +253,11 @@ const goToDashboard = () => {
           </IconButton>
           {/* Your other top navigation bar content goes here */}
           <p className="font-medium text-xl text-white ml-4">Patients</p>
+
+          <div className="ml-auto">
+           <button  className="font-medium text-sm text-white ml-2 border-1 border-white  border p-2 rounded-md">Refresh</button>
+    
+       </div>
         </Toolbar>
       </AppBar>
 
@@ -321,6 +346,36 @@ const goToDashboard = () => {
 
             
 
+        </div>
+
+        <div className="w-screen px-4 mt-10">
+
+          <p className=" text-md font-semibold">Filter Records By Date</p>
+
+       <div className='flex'>
+      <div className="">
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DemoContainer components={['DatePicker']}>
+        <DatePicker value={value} onChange={(newValue) => setValue(newValue)} />
+      </DemoContainer>
+    </LocalizationProvider>
+
+      </div>
+
+      <p className='font-semibold text-xl mx-10 text-green-600 mt-6'>To</p>
+
+
+      <div className="">
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DemoContainer components={['DatePicker']}>
+        <DatePicker value={value} onChange={(newValue) => setValue(newValue)} />
+      </DemoContainer>
+    </LocalizationProvider>
+       </div>
+
+
+
+       </div>
         </div>
      
 
