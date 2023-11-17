@@ -302,7 +302,7 @@ const goToDashboard = () => {
         <div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Total Patient Requests</p>
 
-  <p className="text-xl text-zinc-700 font-medium mt-4">{patientRequestData.length}</p>
+  <p className="text-xl text-zinc-700 font-medium mt-4">{patientRequestDataTwo.length}</p>
 
 
   <p className="text-sm text-zinc-700 font-medium mt-4 cursor-pointer hover:font-semibold" onClick={viewAllRecords}>View All</p>

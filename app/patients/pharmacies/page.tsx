@@ -122,6 +122,27 @@ var errorMessage = "";
 }
 
 
+ // Filter pharmaciesRequestData when it changes
+
+ function filterPharmaciesPostal(postal_data:any, all_data:any) {
+  const filteredData = all_data.filter(
+    (pharmacy: { postal_code: string; }) => pharmacy?.postal_code.startsWith(postal_data) // Check if the postal code starts with the entered value
+  );
+    // setFilteredPharmacies(filteredData);
+ 
+   if(filteredData.length > 0 ){
+     setPharmRequestData(filteredData);
+   }
+
+  
+ 
+ 
+ 
+ 
+   // alert(JSON.stringify(filteredData))
+ }
+
+
 
 useEffect(() => {
   const selections = Cookies.get('allSelections');
@@ -356,7 +377,7 @@ function getLocationFromIP(allPharmData:any){
 
    setCurrCity(data.city);
 
- filterPharmacies("Edmonton", allPharmData)
+ filterPharmacies(data.city, allPharmData)
    // alert(data.city)
   })
   .catch((error: any) => {
@@ -475,7 +496,7 @@ const handleOptionChange = (event:any) => {
 
     <div className="w-full  mt-4 flex justify-center ">
 
-<input type="text" className='p-2 border border-zinc-400 rounded-xl w-[200px] bg-transparent text-xs text-zinc-700' placeholder='Search By Postal Code' />
+<input onChange={(e) => filterPharmaciesPostal(e.target.value,pharmaciesRequestData)}  type="text" className='p-2 border border-zinc-400 rounded-xl w-[200px] bg-transparent text-xs text-zinc-700' placeholder='Search By Postal Code' />
 
 <Link href="../../patients/pharmacies" className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 hover:mt-2 ml-[20px] mr-6'>Submit</Link>
 

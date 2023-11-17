@@ -18,6 +18,10 @@ import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
 import { useRouter } from 'next/navigation';
 
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
+
+
 
 
 
@@ -30,7 +34,7 @@ const Transition = React.forwardRef(function Transition(
     return <Slide direction="up" ref={ref} {...props} />;
   });
 // Your main component
-const AdminPharm = () => {
+const AdminNewPharm = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
    
     const [anchorEl, setAnchorEl] = useState(null);
@@ -43,11 +47,24 @@ const AdminPharm = () => {
     const [additionalInfo, setAdditionalInfo] = React.useState([]);
 
 
+    const [pharmName, setPharmName] = useState("");
+    const [pharmAddress, setPharmAddress] = useState("");
+    const [pharmPhone, setPharmPhone] = useState("");
+
+    const [province, setProvince] = useState("");
+    const [postal, setPostal] = useState("");
+
+    const [city, setCity] = useState("");
+    const [fax, setFax] = useState("");
+    const [email, setEmail] = useState("");
+
+
+
 
     const router = useRouter();
 
     const gotToPatients = () => {
-      router.push("../admin/requests/patients")
+      router.push("../../admin/requests/patients")
      };
 
    
@@ -55,7 +72,7 @@ const AdminPharm = () => {
 
 
    const goToPrescribers = () => {
-       router.push("../admin/requests/prescribers")
+       router.push("../../admin/requests/prescribers")
      };
   
     const toggleMenu = () => {
@@ -67,7 +84,7 @@ const AdminPharm = () => {
     };
 
     const goToMed = () => {
-      router.push("../admin/cms/med_blog")
+      router.push("../../admin/cms/med_blog")
     };
 
     const goToRD = () => {
@@ -75,7 +92,7 @@ const AdminPharm = () => {
      };
 
      const goToKnowledge = () => {
-       router.push("../admin/cms/med_blog")
+       router.push("../../admin/cms/med_blog")
      };
  
 
@@ -109,14 +126,7 @@ const handleClickOpen = () => {
       }, []);
   
 
-function showRequestInf(data:any, additionalInformation:any){
 
-   
-    setRequestData(JSON.parse(data));
-    setAdditionalInfo(additionalInformation);
-    setOpen(true);
-
-}
 
 
 const handleMenuClickTwo = (event:any) => {
@@ -129,8 +139,13 @@ const handleMenuCloseTwo = () => {
 
 
 const goToDashboard = () => {
-  router.push("../../kemet/admin/crm")
+  router.push("../../../kemet/admin/crm")
 };
+
+function submiteNewPharm(){
+
+
+}
 
   return (
     <div >
@@ -177,9 +192,9 @@ const goToDashboard = () => {
             <MenuIcon />
           </IconButton>
           {/* Your other top navigation bar content goes here */}
-          <p className="font-medium text-xl text-white ml-4">Pharmacies</p>
+          <p className="font-medium text-xl text-white ml-4">New Pharmacy</p>
 
-          <Link href={"../admin/pharmacies/new"} className="font-medium text-sm text-white ml-auto border-1 border-white  border p-2 rounded-md">New Pharmacy +</Link>
+          <Link href={"../pharmacies"}className="font-medium text-sm text-white ml-auto border-1 border-white  border p-2 rounded-md">View Pharmacies</Link>
         </Toolbar>
       </AppBar>
 
@@ -244,110 +259,97 @@ const goToDashboard = () => {
     
 
       <div className="w-screen h-screen px-4 py-4">
-        <div className="grid grid-cols-4 gap-4">
 
-        <div className="w-full h-28 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
-  <p className="text-sm text-zinc-500 font-medium">Total Pharmacies</p>
+        <p className="text-xl text-zinc-700 ">CREATE A NEW PHARMACY</p>
 
-  <p className="text-xl text-zinc-700 font-medium mt-4">{pharmaciesRequestData.length}</p>
+        <Box sx={{ maxWidth: 400 }}>
+      <TextField
+        label="Pharmacy Name"
+        name="name"
+       // value={pharmacyData.name}
+       onChange={(e) => setPharmName(e.target.value)}
+        fullWidth
+        margin="normal"
+      />
+      <TextField
+        label="Address"
+        name="address"
+      //  value={pharmacyData.address}
+      onChange={(e) => setPharmAddress(e.target.value)}
+        fullWidth
+        margin="normal"
+      />
+      <TextField
+        label="Phone"
+        name="phone"
+       // value={pharmacyData.phone}
+       onChange={(e) => setPharmPhone(e.target.value)}
+        fullWidth
+        margin="normal"
+      />
 
+<TextField
+        label="Postal Code"
+        name="postal"
+       // value={pharmacyData.phone}
+       onChange={(e) => setPostal(e.target.value)}
+        fullWidth
+        margin="normal"
+      />
 
-</div>
+<TextField
+        label="Province"
+        name="province"
+       // value={pharmacyData.phone}
+       onChange={(e) => setProvince(e.target.value)}
+        fullWidth
+        margin="normal"
+      />
 
-            
+<TextField
+        label="City"
+        name="city"
+       // value={pharmacyData.phone}
+       onChange={(e) => setCity(e.target.value)}
+        fullWidth
+        margin="normal"
+      />
 
-        </div>
-     
+<TextField
+        label="Fax"
+        name="fax"
+       // value={pharmacyData.phone}
+       onChange={(e) => setFax(e.target.value)}
+        fullWidth
+        margin="normal"
+      />
+
+<TextField
+        label="Email"
+        name="email"
+       // value={pharmacyData.phone}
+       onChange={(e) => setEmail(e.target.value)}
+        fullWidth
+        margin="normal"
+      />
+      {/* Add other text fields for the remaining data */}
+
+      <Button className='text-zinc-700 hover:text-white mt-6 mb-10 hover:bg-black' variant="contained" onClick={submiteNewPharm}>
+        Submit
+      </Button>
+    </Box>
+
+      
 
        
 
       {/* Your main content goes here */}
 
-      <div className="overflow-x-auto shadow-md sm:rounded-lg mt-8">
-    <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-200 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-200">
-
-
-            
-            <tr>
-                <th scope="col" className="px-6 py-3">
-Name
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Postal Code
-                </th>
-                <th scope="col" className="px-6 py-3">
-                Fax
-                </th>
-
-                 <th scope="col" className="px-6 py-3">
-               Phone
-                </th>
-                <th scope="col" className="px-6 py-3">
-                   City
-                </th>
-                <th scope="col" className="px-6 py-3">
-                   Province
-                </th>
-
-               
-                <th scope="col" className="px-6 py-3">
-                    Action
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-
-             {pharmaciesRequestData !== null && pharmaciesRequestData.map((singleRequest: any, index: any) => (
-
-                <>
-
-<tr className="bg-gray-200 border-b dark:border-gray-700 even:text-white odd:text-black" key={index}>
-             <th scope="row" className="px-6 py-4 font-medium even:text-white whitespace-nowrap dark:text-black">
-                   {singleRequest.name}
-                </th>
-
-                <td className="px-6 py-4 text-gray-700">
-                   {singleRequest.postal_code}
-                </td>
-                <td className="px-6 py-4 text-gray-700">
-                   {singleRequest.fax}
-                </td>
-                <td className="px-6 py-4 text-gray-700">
-                   {singleRequest.phone}
-                </td>
-                <td className="px-6 py-4 text-gray-700">
-                   {singleRequest.city}
-                </td>
-                 <td className="px-6 py-4 text-gray-700">
-                   {singleRequest.province}
-                </td>
-
-               
-             
-                <td className="px-6 py-4 text-gray-700">
-                 <div className="font-mediumdark:text-blue-500 hover:underline cursor-pointer text-red-600">Remove</div>
-                    <div className="font-medium text-blue-600 dark:text-blue-500 cursor-pointer hover:underline cursor-hover">Edit</div>
-                </td>
-            </tr>
-
-
-
-                </>
-          
-
-        ))}
-      
-
-
-
-         
-        </tbody>
-    </table>
-</div>
-</div>
+     </div> 
       <div>
         {/* table content */}
+
+
 
 
        
@@ -356,4 +358,4 @@ Name
   );
 };
 
-export default AdminPharm;
+export default AdminNewPharm;

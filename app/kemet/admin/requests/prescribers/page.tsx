@@ -51,6 +51,11 @@ const AdminPrescribers = () => {
    const goToPrescribers = () => {
        router.push("../requests/prescribers")
      };
+
+
+   const goToPharmacies = () => {
+    router.push("../pharmacies")
+  };
   
     const toggleMenu = () => {
       setMenuOpen(!isMenuOpen);
@@ -187,7 +192,7 @@ const AdminPrescribers = () => {
           </ListItem>
 
           <hr></hr>
-          <ListItem button>
+          <ListItem button onClick={goToPharmacies}>
             <ListItemText primary="Pharmacies" />
           </ListItem>
 
@@ -279,7 +284,7 @@ const AdminPrescribers = () => {
         <div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Total Prescribers Requests</p>
 
-  <p className="text-xl text-zinc-700 font-medium mt-4">{prescribersRequestData.length}</p>
+  <p className="text-xl text-zinc-700 font-medium mt-4">{prescribersRequestDataTwo.length}</p>
 
   <p className="text-sm text-zinc-700 font-medium mt-4 cursor-pointer hover:font-semibold" onClick={viewAllRecords}>View All</p>
 
