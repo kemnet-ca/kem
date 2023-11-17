@@ -352,6 +352,37 @@ const goToDashboard = () => {
 
           <p className=" text-md font-semibold">Filter Records By Date</p>
 
+
+          {
+            /*
+
+ <div className='flex'>
+      <div className="">
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DemoContainer components={['DatePicker']}>
+        <DatePicker value={value} onChange={(newValue) => setValue(newValue)} />
+      </DemoContainer>
+    </LocalizationProvider>
+
+      </div>
+
+      <p className='font-semibold text-xl mx-10 text-green-600 mt-6'>To</p>
+
+
+      <div className="">
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DemoContainer components={['DatePicker']}>
+        <DatePicker value={value} onChange={(newValue) => setValue(newValue)} />
+      </DemoContainer>
+    </LocalizationProvider>
+       </div>
+
+
+
+       </div>
+            */
+          }
+
       
         </div>
      
