@@ -255,7 +255,7 @@ const goToDashboard = () => {
           <p className="font-medium text-xl text-white ml-4">Patients</p>
 
           <div className="ml-auto">
-           <button  className="font-medium text-sm text-white ml-2 border-1 border-white  border p-2 rounded-md">Refresh</button>
+           <button   className="font-medium text-sm text-white ml-2 border-1 border-white  border p-2 rounded-md">Refresh</button>
     
        </div>
         </Toolbar>

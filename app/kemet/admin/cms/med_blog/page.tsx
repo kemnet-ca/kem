@@ -35,25 +35,29 @@ const MedBlogCMS = () => {
 
     
     const gotToPatients = () => {
-      router.push("../admin/requests/patients")
+      router.push("../requests/patients")
      };
  
 
 
    const goToPrescribers = () => {
-       router.push("../admin/requests/prescribers")
+       router.push("../requests/prescribers")
      };
 
       const goToMed = () => {
-       router.push("../admin/cms/med_blog")
+       router.push("../cms/med_blog")
      };
 
      const goToRD = () => {
-        router.push("../admin/requests/prescribers")
+        router.push("../requests/prescribers")
       };
 
       const goToKnowledge = () => {
-        router.push("../admin/requests/prescribers")
+        router.push("../requests/prescribers")
+      };
+
+      const goToDashboard = () => {
+        router.push("../crm")
       };
   
     const toggleMenu = () => {
@@ -103,7 +107,7 @@ const MedBlogCMS = () => {
           }}>
         <List>
           {/* Add your menu items here */}
-          <ListItem button>
+          <ListItem button onClick={goToDashboard}>
             <ListItemText primary="Dashboard" />
           </ListItem>
 
