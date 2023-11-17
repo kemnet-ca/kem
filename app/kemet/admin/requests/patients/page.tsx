@@ -352,11 +352,7 @@ const goToDashboard = () => {
 
           <p className=" text-md font-semibold">Filter Records By Date</p>
 
-
-          {
-            /*
-
- <div className='flex'>
+       <div className='flex'>
       <div className="">
       <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DemoContainer components={['DatePicker']}>
@@ -380,10 +376,6 @@ const goToDashboard = () => {
 
 
        </div>
-            */
-          }
-
-      
         </div>
      
 

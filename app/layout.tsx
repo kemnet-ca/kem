@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 //import { Inter } from 'next/font/google'
 import './globals.css'
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 
 //const inter = Inter({ subsets: ['latin'] })
 
@@ -27,7 +29,14 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-space-grotesk">{children}</body>
+      <body className="font-space-grotesk">
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
+        
+        {children}
+
+        </LocalizationProvider>
+        
+        </body>
     </html>
   )
 }
