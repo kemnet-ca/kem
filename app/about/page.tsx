@@ -13,7 +13,9 @@ import { ClassNames } from '@emotion/react';
 export default function About() {
   
 
-
+function goBack(){
+  
+}
 
 
   return (
@@ -24,10 +26,10 @@ export default function About() {
 
 <div className='h-[100px] w-screen  relative md:pt-10 md:pb-10 md:pl-20 md:pr-20 md:pt-20 flex'>
 
-<Link href={"/"} style={{marginLeft:'60px', marginTop:'-35px'}} className='w-8 absolute h-8 bg-white  rounded-full md:mt-[-20]   ml-10 hidden md:block cursor-pointer absolute hover:ml-2 grid place-content-center p-1 shadow-md'>
+<div onClick={goBack} style={{marginLeft:'60px', marginTop:'-35px'}} className='w-8 absolute h-8 bg-white  rounded-full md:mt-[-20]   ml-10 hidden md:block cursor-pointer absolute hover:ml-2 grid place-content-center p-1 shadow-md'>
   <img src="/images/home/arrow-back-simple-svgrepo-com.svg" alt="arrow-back-kemnet" />
     
-    </Link>
+    </div>
 
    <div className='w-full flex justify-center'>
    <p className='text-center text-xl font-medium ' style={{marginTop:`-20px`}}>About Us</p>
