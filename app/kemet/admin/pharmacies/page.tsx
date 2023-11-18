@@ -310,7 +310,7 @@ Name
                 <>
 
 <tr className="bg-gray-200 border-b dark:border-gray-700 even:text-white odd:text-black" key={index}>
-             <th scope="row" className="px-6 py-4 font-medium even:text-white whitespace-nowrap dark:text-black">
+             <th scope="row" className="px-6 py-4 font-medium  whitespace-nowrap dark:text-black">
                    {singleRequest.name}
                 </th>
 
