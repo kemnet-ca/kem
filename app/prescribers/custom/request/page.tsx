@@ -13,6 +13,8 @@ import { useRouter } from 'next/navigation';
 
 
 export default function PrescriberRequestForm() {
+
+  
   
 
   const [selectedValues, setSelectedValues] = useState<string[]>([]);
@@ -32,7 +34,12 @@ export default function PrescriberRequestForm() {
 
 
 
-  const router = useRouter();
+    const router = useRouter();
+
+    function goBack()
+    {
+      router.back();
+    }
   
   
   {/*function below hahndles radio button selections */}
@@ -95,6 +102,11 @@ export default function PrescriberRequestForm() {
 <div className="h-[450px] w-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/home/Medicines_share.jpeg')" }}>
  
  <div className="w-full h-full grid place-content-center md:px-10" style={{backgroundColor:`rgba(0,0,0,0.7)`}}>
+
+ <div className='w-8 absolute h-8 bg-white  rounded-full md:mt-20 ml-10 hidden md:block cursor-pointer hover:ml-2 grid place-content-center p-1'>
+  <img onClick={goBack} src="/images/home/arrow-back-simple-svgrepo-com.svg" alt="arrow-back-kemnet" />
+    
+    </div>
 
     <p className='text-center text-white text-xl font-semibold mt-6'>WELCOME TO OUR CUSTOMIZATION CONSULT REQUEST PAGE</p>
     <p className='text-center text-white text-sm mt-4 font-normal'>PLEASE LET US KNOW HOW WE CAN ASSIST YOU WITH YOUR MEDICATION NEEDS FOR YOUR PATIENT. <br></br>CUSTOMIZE MEDICATION TO UNIQUE NEEDS AND REQUEST MEDICATION THAT ARE OUT OF STOCK AND A PHARMACIST WILL CONTACT YOU TO COMPLETE AN ASSESSMENT AND GET YOUR MEDICINES CUSTOM MADE FOR YOU.</p>

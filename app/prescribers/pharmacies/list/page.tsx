@@ -73,6 +73,14 @@ const [licensee, setLicensee]= useState("");
 
 const router = useRouter();
 
+//function to go back
+const router = useRouter();
+
+function goBack()
+{
+  router.back();
+}
+
 var errorMessage = "";
 
 const [currCity, setCurrCity] = useState("Not Available");
@@ -335,7 +343,7 @@ const handleOptionChange = (event:any) => {
  
  <div className="w-full h-full grid place-content-center md:px-10" style={{backgroundColor:`rgba(0,0,0,0.7)`}}>
  <div className='w-8 absolute h-8 bg-white  rounded-full md:mt-20 ml-10 hidden md:block cursor-pointer hover:ml-2 grid place-content-center p-1'>
-  <img src="/images/home/arrow-back-simple-svgrepo-com.svg" alt="arrow-back-kemnet" />
+  <img onClick={goBack} src="/images/home/arrow-back-simple-svgrepo-com.svg" alt="arrow-back-kemnet" />
     
     </div>
 
