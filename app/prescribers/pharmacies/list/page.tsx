@@ -71,7 +71,7 @@ const [lastName, setLastName]= useState("");
 const [licensee, setLicensee]= useState("");
 
 
-const router = useRouter();
+
 
 //function to go back
 const router = useRouter();
