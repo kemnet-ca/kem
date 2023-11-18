@@ -4,14 +4,20 @@ import { useState, useEffect } from "react";
 import ResponsiveCarousel from "@/components/Carousel";
 import Link from 'next/link';
 import Header from '@/components/Header';
-
+import { useRouter } from 'next/navigation';
 import Footer from '@/components/Footer';
 import { ClassNames } from '@emotion/react';
 
 
 
 export default function Options() {
+  const router = useRouter();
+
   
+  function goBack()
+  {
+    router.back();
+  }
 
 
 
@@ -25,7 +31,7 @@ export default function Options() {
 <div className='h-[400px] w-screen bg-slate-100 relative md:pt-10 md:pb-10 md:pl-20 md:pr-20 md:pt-28 flex'>
 
 <div style={{marginLeft:'60px', marginTop:'-35px'}} className='w-8 absolute h-8 bg-white  rounded-full md:mt-[-20]   ml-10 hidden md:block cursor-pointer absolute hover:ml-2 grid place-content-center p-1'>
-  <img src="/images/home/arrow-back-simple-svgrepo-com.svg" alt="arrow-back-kemnet" />
+  <img onClick={goBack} src="/images/home/arrow-back-simple-svgrepo-com.svg" alt="arrow-back-kemnet" />
     
     </div>
 

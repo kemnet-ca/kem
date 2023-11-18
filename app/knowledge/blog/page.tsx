@@ -11,7 +11,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Tooltip from '@mui/material/Tooltip';
-
+import { useRouter } from 'next/navigation';
 import Fade from '@mui/material/Fade';
 
 export default function Blog() {
@@ -19,6 +19,8 @@ export default function Blog() {
 
   const [selectedOption, setSelectedOption] = React.useState('Categories');
   const [selectedView, setSelectedView] = React.useState('GALLERY');
+  const router = useRouter();
+
 
   const handleCategoryChange = (event:any) => {
     setSelectedOption(event.target.value);
@@ -33,6 +35,10 @@ export default function Blog() {
   };
 
   
+  function goBack()
+  {
+    router.back();
+  }
 
 
   return (
@@ -44,7 +50,7 @@ export default function Blog() {
 <div className='h-[100px] w-screen  relative md:pt-10 md:pb-10 md:pl-20 md:pr-20 md:pt-28 flex'>
 
 <Link href={"/"} style={{marginLeft:'60px', marginTop:'-35px'}} className='w-8 absolute h-8 bg-white  rounded-full md:mt-[-20]   ml-10 hidden md:block cursor-pointer absolute hover:ml-2 grid place-content-center p-1 shadow-md'>
-  <img src="/images/home/arrow-back-simple-svgrepo-com.svg" alt="arrow-back-kemnet" />
+  <img onClick={goBack} src="/images/home/arrow-back-simple-svgrepo-com.svg" alt="arrow-back-kemnet" />
     
     </Link>
 

@@ -5,13 +5,12 @@ import ResponsiveCarousel from "@/components/Carousel";
 import Link from 'next/link';
 import Header from '@/components/Header';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-
 import Footer from '@/components/Footer';
 import { ClassNames } from '@emotion/react';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 
-
+import { useRouter } from 'next/navigation';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
@@ -22,6 +21,10 @@ import Fade from '@mui/material/Fade';
 
 export default function Upcoming() {
   
+ 
+
+
+ 
 
 
   const [selectedOption, setSelectedOption] = useState('Categories');
@@ -39,6 +42,15 @@ export default function Upcoming() {
     setSelectedView("SNIPPET");
   };
 
+  const router = useRouter();
+
+
+  function goBack()
+  {
+    router.back();
+  }
+
+
   return (
     <main className="bg-white relative">
 
@@ -48,7 +60,7 @@ export default function Upcoming() {
 <div className='h-[100px] w-screen  relative md:pt-10 md:pb-10 md:pl-20 md:pr-20 md:pt-28 flex'>
 
 <Link href={"/"} style={{marginLeft:'60px', marginTop:'-35px'}} className='w-8 absolute h-8 bg-white  rounded-full md:mt-[-20]   ml-10 hidden md:block cursor-pointer absolute hover:ml-2 grid place-content-center p-1 shadow-md'>
-  <img src="/images/home/arrow-back-simple-svgrepo-com.svg" alt="arrow-back-kemnet" />
+  <img onClick={goBack} src="/images/home/arrow-back-simple-svgrepo-com.svg" alt="arrow-back-kemnet" />
     
     </Link>
 

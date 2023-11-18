@@ -12,6 +12,7 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Tooltip from '@mui/material/Tooltip';
 import Fade from '@mui/material/Fade';
+import { useRouter } from 'next/navigation';
 
 export default function ResearchAndDev() {
   
@@ -31,6 +32,15 @@ export default function ResearchAndDev() {
       setSelectedView("SNIPPET");
     };
 
+    const router = useRouter();
+
+
+  function goBack()
+  {
+    router.back();
+  }
+
+
 
   return (
     <main className="bg-white relative">
@@ -41,7 +51,7 @@ export default function ResearchAndDev() {
 <div className='h-[100px] w-screen  relative md:pt-10 md:pb-10 md:pl-20 md:pr-20 md:pt-28 flex'>
 
 <Link href={"/"} style={{marginLeft:'60px', marginTop:'-35px'}} className='w-8 absolute h-8 bg-white  rounded-full md:mt-[-20]   ml-10 hidden md:block cursor-pointer absolute hover:ml-2 grid place-content-center p-1 shadow-md'>
-  <img src="/images/home/arrow-back-simple-svgrepo-com.svg" alt="arrow-back-kemnet" />
+  <img onClick={goBack} src="/images/home/arrow-back-simple-svgrepo-com.svg" alt="arrow-back-kemnet" />
     
     </Link>
 
