@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useRouter } from 'next/navigation';
+import { LineChart } from '@mui/x-charts/LineChart';
 
 
 // Your main component
@@ -187,7 +188,47 @@ const AdminPanel = () => {
             </div>
 
         </div>
+
+       <div className="grid md:grid-cols-2 gap-2 mt-8">
+
+        <div className="">
+
+        <p className="mt-4 font-semibold">Total Visits</p>
+
+<LineChart
+xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
+series={[
+{
+  data: [2, 5.5, 2, 8.5, 1.5, 5],
+},
+]}
+width={500}
+height={300}
+/>
+        </div>
+
+        <div className="">
+
+<p className="mt-4 font-semibold">Prescriber & Patients Requests</p>
+
+<LineChart
+xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
+series={[
+{
+data: [2, 5.5, 2, 8.5, 1.5, 5],
+},
+]}
+width={500}
+height={300}
+/>
+</div>
+       </div>
+
+
      </div>
+
+
+    
 
       {/* Your main content goes here */}
       <div>
