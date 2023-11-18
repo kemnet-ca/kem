@@ -58,8 +58,8 @@ const AdminPatients = () => {
 
     const [additionalInfo, setAdditionalInfo] = React.useState([]);
 
-    const [selectedFromDate, setSelectedFromDate] = useState(null);
-    const [selectedToDate, setSelectedToDate] = useState(null);
+    const [selectedFromDate, setSelectedFromDate] = useState("");
+    const [selectedToDate, setSelectedToDate] = useState("");
     
 
     const handleDateChange = (date:any) => {
@@ -350,32 +350,51 @@ const goToDashboard = () => {
 
         <div className="w-screen px-4 mt-10">
 
-          <p className=" text-md font-semibold">Filter Records By Date</p>
+          <p className=" text-md font-semibold text-zinc-500">Filter Records By Date</p>
 
        <div className='flex'>
-      <div className="">
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer components={['DatePicker']}>
-        <DatePicker value={value} onChange={(newValue) => setValue(newValue)} />
-      </DemoContainer>
-    </LocalizationProvider>
+      <div className="p-2 border border-1 border-zinc-400 mt-4 rounded-md">
+   
+      <input
+        type="date"
+       
+      //  value={selectedFromDate}
+      onChange={(e) => setSelectedFromDate(e.target.value)}
+       
+      />
 
       </div>
 
-      <p className='font-semibold text-xl mx-10 text-green-600 mt-6'>To</p>
+      
+
+      <p className='font-semibold text-xl mx-4 text-green-600 mt-6'>To</p>
 
 
-      <div className="">
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer components={['DatePicker']}>
-        <DatePicker value={value} onChange={(newValue) => setValue(newValue)} />
-      </DemoContainer>
-    </LocalizationProvider>
+      <div className="p-2 border border-1 border-zinc-400 mt-4 rounded-md">
+
+      <input
+        type="date"
+      //  value={selectedToDate}
+      onChange={(e) => setSelectedToDate(e.target.value)}
+      />
+   
        </div>
 
 
+       <button  className='text-center text-sm text-zinc-700 font-light bg-zinc-200 rounded-3xl flex items-center justify-center px-6   ml-[20px] mr-6 h-10 mt-5 w-20'>Filter</button>
+
+
+
+{/*search text field */}
+
+  <input type="text" className="border p-2 h-10 mt-10 border-1 border-zinc-500  ml-auto mr-10  rounded-md "  placeholder="Search Records" />
+  <button  className='text-center text-sm text-zinc-700 font-light bg-zinc-200 rounded-3xl flex items-center justify-center px-6   ml-[6px] mr-6 h-10 mt-10 w-20'>Search</button>
+
 
        </div>
+
+
+     
         </div>
      
 

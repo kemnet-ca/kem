@@ -49,11 +49,11 @@ const MedBlogCMS = () => {
      };
 
      const goToRD = () => {
-        router.push("../requests/prescribers")
+        router.push("../cms/med_blog")
       };
 
       const goToKnowledge = () => {
-        router.push("../requests/prescribers")
+        router.push("../cms/med_blog")
       };
 
       const goToDashboard = () => {
