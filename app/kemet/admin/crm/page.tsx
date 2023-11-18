@@ -13,6 +13,10 @@ const AdminPanel = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
     
     const [anchorEl, setAnchorEl] = useState(null);
+
+    const dataPatients = [2, 5.5, 2, 8.5, 1.5, 5];
+    const dataPrescribers = [3, 6, 3.5, 7, 2, 4.5];
+    const xAxisData = [1, 2, 3, 5, 8, 10];
    
     const router = useRouter();
 
@@ -195,16 +199,15 @@ const AdminPanel = () => {
 
         <p className="mt-4 font-semibold">Total Visits</p>
 
-<LineChart
-xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
-series={[
-{
-  data: [2, 5.5, 2, 8.5, 1.5, 5],
-},
-]}
-width={500}
-height={300}
-/>
+        <LineChart
+      xAxis={[{ data: xAxisData }]}
+      series={[
+        { data: dataPatients, name: 'Patients' },
+        { data: dataPrescribers, name: 'Prescribers' },
+      ]}
+      width={500}
+      height={300}
+    />
         </div>
 
         <div className="">
