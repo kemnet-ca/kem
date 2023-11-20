@@ -28,6 +28,7 @@ const Transition = React.forwardRef(function Transition(
 
 // Your main component
 const AdminPrescribers = () => {
+  var errorMessage = "";
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
     const [prescribersRequestData, setPrescribersRequestData] = useState<any[]>([]); 
@@ -166,7 +167,75 @@ const AdminPrescribers = () => {
    
 
 
+      function selectBetweenDates(){
 
+      //  alert(selectedFromDate.toString())
+      //  alert(selectedToDate.toString())
+        const formData = new FormData();
+  
+        formData.append('from_date',  selectedFromDate.toString());
+        formData.append('to_date',  selectedToDate.toString());
+  
+        try {
+  
+     
+  
+  
+          // create new guest post
+           axios.post('https://kemet.care/api/prescribers/get_req_btw_dates', formData )
+             .then((response: { data: any; }) => {
+               const data = response.data;
+               console.log(data);
+  
+            //   alert(JSON.stringify(data));
+  
+               setPrescribersRequestData(data);
+       
+            
+               
+             })
+             .catch((error: any) => {
+               console.error('Error fetching data:', error);
+              // setIsLoading(false);
+             });
+         
+       
+       }
+       
+       catch (err ) {
+            
+       
+       if (err instanceof Error) {
+         const axiosError = err as AxiosError;
+         if (axiosError.response) {
+           const errorResponse = axiosError.response as AxiosResponse;
+           if (errorResponse.data) {
+             errorMessage = errorResponse.data.message;
+           }
+         }
+       
+        
+       
+          console.log(errorMessage);
+       }
+       
+       
+       //setIsLoading(false);
+       
+       
+       }
+       finally {
+       ///  setIsLoading(false);
+       
+       }
+       
+          }
+       
+          function refresh(){
+
+            setPrescribersRequestData(prescribersRequestDataTwo)
+      
+          }
 
   return (
     <div >
@@ -180,6 +249,11 @@ const AdminPrescribers = () => {
           {/* Your other top navigation bar content goes here */}
 
           <p className="font-medium text-xl text-white ml-4">Prescribers</p>
+
+          <div className="ml-auto">
+           <button onClick={refresh}   className="font-medium text-sm text-white ml-2 border-1 border-white  border p-2 rounded-md">Refresh</button>
+    
+       </div>
         </Toolbar>
       </AppBar>
 
@@ -324,7 +398,7 @@ onChange={(e) => setSelectedFromDate(e.target.value)}
 
 
 
-<p className='font-semibold text-xl mx-4 text-green-600 mt-6'>To</p>
+<p className='font-light text-md mx-4 text-zinc-600 mt-6'>To</p>
 
 
 <div className="p-2 border border-1 border-zinc-400 mt-4 rounded-md">
@@ -338,7 +412,7 @@ onChange={(e) => setSelectedToDate(e.target.value)}
 </div>
 
 
-<button  className='text-center text-sm text-zinc-700 font-light bg-zinc-200 rounded-3xl flex items-center justify-center px-6   ml-[20px] mr-6 h-10 mt-5 w-20'>Filter</button>
+<button onClick={selectBetweenDates}  className=' cursor-pointer hover:shadow-xl text-center text-sm text-zinc-700 font-light bg-zinc-200 rounded-3xl flex items-center justify-center px-6   ml-[20px] mr-6 h-10 mt-5 w-20'>Filter</button>
 
 
 

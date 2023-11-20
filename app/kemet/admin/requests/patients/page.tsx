@@ -209,8 +209,8 @@ const goToDashboard = () => {
 
     function selectBetweenDates(){
 
-      alert(selectedFromDate.toString())
-      alert(selectedToDate.toString())
+    //  alert(selectedFromDate.toString())
+     // alert(selectedToDate.toString())
       const formData = new FormData();
 
       formData.append('from_date',  selectedFromDate.toString());
@@ -226,6 +226,10 @@ const goToDashboard = () => {
            .then((response: { data: any; }) => {
              const data = response.data;
              console.log(data);
+
+           //  alert(JSON.stringify(data));
+
+             setPatientRequestData(data);
      
           
              
@@ -269,7 +273,11 @@ const goToDashboard = () => {
      
 
            
-    
+    function refresh(){
+
+      setPatientRequestData(patientRequestDataTwo)
+
+    }
     
  
   return (
@@ -320,7 +328,7 @@ const goToDashboard = () => {
           <p className="font-medium text-xl text-white ml-4">Patients</p>
 
           <div className="ml-auto">
-           <button   className="font-medium text-sm text-white ml-2 border-1 border-white  border p-2 rounded-md">Refresh</button>
+           <button onClick={refresh}   className="font-medium text-sm text-white ml-2 border-1 border-white  border p-2 rounded-md">Refresh</button>
     
        </div>
         </Toolbar>
@@ -496,11 +504,12 @@ Full Name
                IP addr
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    Request Info
-                </th>
-                <th scope="col" className="px-6 py-3">
                    Date
                 </th>
+                <th scope="col" className="px-6 py-3">
+                    Request Info
+                </th>
+               
                 <th scope="col" className="px-6 py-3">
                     Action
                 </th>
