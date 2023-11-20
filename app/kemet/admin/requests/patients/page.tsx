@@ -42,6 +42,7 @@ const Transition = React.forwardRef(function Transition(
   });
 // Your main component
 const AdminPatients = () => {
+  var errorMessage = "";
     const [isMenuOpen, setMenuOpen] = useState(false);
    
     const [anchorEl, setAnchorEl] = useState(null);
@@ -205,6 +206,70 @@ const goToDashboard = () => {
 
 
     }
+
+    function selectBetweenDates(){
+
+      alert(selectedFromDate.toString())
+      alert(selectedToDate.toString())
+      const formData = new FormData();
+
+      formData.append('from_date',  selectedFromDate.toString());
+      formData.append('to_date',  selectedToDate.toString());
+
+      try {
+
+   
+
+
+        // create new guest post
+         axios.post('https://kemet.care/api/patients/get_req_btw_dates', formData )
+           .then((response: { data: any; }) => {
+             const data = response.data;
+             console.log(data);
+     
+          
+             
+           })
+           .catch((error: any) => {
+             console.error('Error fetching data:', error);
+            // setIsLoading(false);
+           });
+       
+     
+     }
+     
+     catch (err ) {
+          
+     
+     if (err instanceof Error) {
+       const axiosError = err as AxiosError;
+       if (axiosError.response) {
+         const errorResponse = axiosError.response as AxiosResponse;
+         if (errorResponse.data) {
+           errorMessage = errorResponse.data.message;
+         }
+       }
+     
+      
+     
+        console.log(errorMessage);
+     }
+     
+     
+     //setIsLoading(false);
+     
+     
+     }
+     finally {
+     ///  setIsLoading(false);
+     
+     }
+     
+        }
+     
+
+           
+    
     
  
   return (
@@ -367,7 +432,7 @@ const goToDashboard = () => {
 
       
 
-      <p className='font-semibold text-xl mx-4 text-green-600 mt-6'>To</p>
+      <p className='font-light text-md mx-4 text-zinc-600 mt-6'>To</p>
 
 
       <div className="p-2 border border-1 border-zinc-400 mt-4 rounded-md">
@@ -381,7 +446,7 @@ const goToDashboard = () => {
        </div>
 
 
-       <button  className='text-center text-sm text-zinc-700 font-light bg-zinc-200 rounded-3xl flex items-center justify-center px-6   ml-[20px] mr-6 h-10 mt-5 w-20'>Filter</button>
+       <button  onClick={selectBetweenDates} className='text-center text-sm text-zinc-700 font-light bg-zinc-200 rounded-3xl flex items-center justify-center px-6   ml-[20px] mr-6 h-10 mt-5 w-20'>Filter</button>
 
 
 
