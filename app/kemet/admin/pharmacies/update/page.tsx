@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import React, { useState,useEffect } from 'react';
-
+import Cookies from 'js-cookie';
 import axios, { AxiosError, AxiosResponse } from "axios";
 
 import Button from '@mui/material/Button';
@@ -20,6 +20,7 @@ import { useRouter } from 'next/navigation';
 
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
+import { error } from 'console';
 
 
 
@@ -35,9 +36,12 @@ const Transition = React.forwardRef(function Transition(
   });
 // Your main component
 const AdminEditPharm = () => {
+  var errorMessage ="";
     const [isMenuOpen, setMenuOpen] = useState(false);
    
     const [anchorEl, setAnchorEl] = useState(null);
+
+    const [loading, setLoading] = useState(false);
     const [anchorElTwo, setAnchorElTwo] = useState(null);
     
     const [pharmaciesRequestData, setPharmRequestData] = useState([]);
@@ -50,13 +54,73 @@ const AdminEditPharm = () => {
     const [pharmName, setPharmName] = useState("");
     const [pharmAddress, setPharmAddress] = useState("");
     const [pharmPhone, setPharmPhone] = useState("");
+    const [pharmID, setPharmID] = useState("");
 
     const [province, setProvince] = useState("");
     const [postal, setPostal] = useState("");
 
     const [city, setCity] = useState("");
+    //const [address, setAdress] = useState("");
     const [fax, setFax] = useState("");
     const [email, setEmail] = useState("");
+
+
+  
+  
+    useEffect(() => {
+      
+      const nameFromCookie = Cookies.get('name');
+      const postalFromCookie = Cookies.get('postal');
+      const phoneFromCookie = Cookies.get('phone');
+      const faxFromCookie = Cookies.get('fax');
+      const cityFromCookie = Cookies.get('city');
+      const idFromCookie = Cookies.get('id');
+      const emailFromCookie = Cookies.get('email');
+      const addressFromCookie = Cookies.get('address');
+  
+      if(nameFromCookie != null){
+       // alert(nameFromCookie)
+        setPharmName(nameFromCookie);
+      }
+
+      if(postalFromCookie != null){
+
+       // alert(postalFromCookie)
+        setPostal(postalFromCookie);
+      }
+     
+     if(phoneFromCookie != null){
+      setPharmPhone(phoneFromCookie);
+     }
+
+     if(faxFromCookie){
+
+      setFax(faxFromCookie);
+
+     }
+     
+      if(cityFromCookie){
+        setCity(cityFromCookie);
+      }
+
+      if(idFromCookie){
+
+        setPharmID(idFromCookie);
+
+      }
+
+      if(emailFromCookie){
+        setEmail(emailFromCookie);
+      }
+
+      if(addressFromCookie){
+        setPharmAddress(addressFromCookie);
+      }
+      
+     
+    }, []);
+  
+   
 
 
 
@@ -147,6 +211,80 @@ function submiteNewPharm(){
 
 }
 
+
+function update(){
+
+  setLoading(true)
+
+  //  alert(selectedFromDate.toString())
+   // alert(selectedToDate.toString())
+    const formData = new FormData();
+
+    formData.append('email',  email.toString());
+    formData.append('id',  pharmID.toString());
+
+    try {
+
+ 
+
+
+      // create new guest post
+       axios.post('https://kemet.care/api/pharm/update', formData )
+         .then((response: { data: any; }) => {
+           const data = response.data;
+           console.log(data);
+
+           alert("Pharmacy Updated Successfully!");
+
+          // setPatientRequestData(data);
+
+          setLoading(false)
+   
+        
+           
+         })
+         .catch((error: any) => {
+           console.error('Error fetching data:', error);
+          // setIsLoading(false);
+         });
+     
+   
+   }
+   
+   catch (err ) {
+        
+   
+   if (err instanceof Error) {
+     const axiosError = err as AxiosError;
+     if (axiosError.response) {
+       const errorResponse = axiosError.response as AxiosResponse;
+       if (errorResponse.data) {
+         errorMessage = errorResponse.data.message;
+       }
+     }
+   
+    
+   
+      console.log(errorMessage);
+
+      setLoading(false)
+   }
+   
+   
+   //setIsLoading(false);
+   
+   
+   }
+   finally {
+   ///  setIsLoading(false);
+   setLoading(false)
+   }
+   
+      }
+   
+
+ 
+  
   return (
     <div >
 
@@ -266,7 +404,8 @@ function submiteNewPharm(){
       <TextField
         label="Pharmacy Name"
         name="name"
-       // value={pharmacyData.name}
+        value={pharmName
+        }
        onChange={(e) => setPharmName(e.target.value)}
         fullWidth
         margin="normal"
@@ -274,7 +413,7 @@ function submiteNewPharm(){
       <TextField
         label="Address"
         name="address"
-      //  value={pharmacyData.address}
+        value={pharmAddress}
       onChange={(e) => setPharmAddress(e.target.value)}
         fullWidth
         margin="normal"
@@ -282,7 +421,7 @@ function submiteNewPharm(){
       <TextField
         label="Phone"
         name="phone"
-       // value={pharmacyData.phone}
+        value={pharmPhone}
        onChange={(e) => setPharmPhone(e.target.value)}
         fullWidth
         margin="normal"
@@ -291,34 +430,18 @@ function submiteNewPharm(){
 <TextField
         label="Postal Code"
         name="postal"
-       // value={pharmacyData.phone}
+        value={postal}
        onChange={(e) => setPostal(e.target.value)}
         fullWidth
         margin="normal"
       />
 
-<TextField
-        label="Province"
-        name="province"
-       // value={pharmacyData.phone}
-       onChange={(e) => setProvince(e.target.value)}
-        fullWidth
-        margin="normal"
-      />
 
-<TextField
-        label="City"
-        name="city"
-       // value={pharmacyData.phone}
-       onChange={(e) => setCity(e.target.value)}
-        fullWidth
-        margin="normal"
-      />
 
 <TextField
         label="Fax"
         name="fax"
-       // value={pharmacyData.phone}
+        value={fax}
        onChange={(e) => setFax(e.target.value)}
         fullWidth
         margin="normal"
@@ -327,16 +450,20 @@ function submiteNewPharm(){
 <TextField
         label="Email"
         name="email"
-       // value={pharmacyData.phone}
+        value={email}
        onChange={(e) => setEmail(e.target.value)}
         fullWidth
         margin="normal"
       />
       {/* Add other text fields for the remaining data */}
-
-      <Button className='text-zinc-700 hover:text-white mt-6 mb-10 hover:bg-black' variant="contained" onClick={submiteNewPharm}>
+{
+  loading==true?(<><p>Sending ...</p></>):(<>
+  
+  <Button onClick={update} className='text-zinc-700 hover:text-white mt-6 mb-10 hover:bg-black' variant="contained" >
         Submit
       </Button>
+  </>)
+}
     </Box>
 
       

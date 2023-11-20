@@ -297,14 +297,7 @@ function submiteNewPharm(){
         margin="normal"
       />
 
-<TextField
-        label="Province"
-        name="province"
-       // value={pharmacyData.phone}
-       onChange={(e) => setProvince(e.target.value)}
-        fullWidth
-        margin="normal"
-      />
+
 
 <TextField
         label="City"

@@ -18,6 +18,8 @@ import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
 import { useRouter } from 'next/navigation';
 
+import Cookies from 'js-cookie';
+
 
 
 
@@ -41,6 +43,15 @@ const AdminPharm = () => {
     const [requestData, setRequestData] = React.useState([]);
 
     const [additionalInfo, setAdditionalInfo] = React.useState([]);
+
+    const [name, setName] = useState("");
+    const [postal, setPostal] = useState("");
+    const [phone, setPhone] = useState("");
+    const [fax, setFax] = useState("");
+    const [city, setCity] = useState("");
+    const [id, setId] = useState("");
+    const [email, setEmail] = useState("");
+  
 
 
 
@@ -109,14 +120,6 @@ const handleClickOpen = () => {
       }, []);
   
 
-function showRequestInf(data:any, additionalInformation:any){
-
-   
-    setRequestData(JSON.parse(data));
-    setAdditionalInfo(additionalInformation);
-    setOpen(true);
-
-}
 
 
 const handleMenuClickTwo = (event:any) => {
@@ -131,6 +134,26 @@ const handleMenuCloseTwo = () => {
 const goToDashboard = () => {
   router.push("../../kemet/admin/crm")
 };
+
+function saveDataToCookies(name:any, postal:any, phone:any, fax:any, city:any, id:any, email:any, address:any ){
+
+
+// Save data to cookies when any of the state variables change
+Cookies.set('name', name);
+Cookies.set('postal', postal);
+Cookies.set('phone', phone);
+Cookies.set('fax', fax);
+Cookies.set('city', city);
+Cookies.set('id', id);
+Cookies.set('email', email);
+Cookies.set('address', address);
+
+//got to edit page
+
+router.push("./pharmacies/update")
+  
+}
+
 
   return (
     <div >
@@ -294,7 +317,7 @@ Name
                    City
                 </th>
                 <th scope="col" className="px-6 py-3">
-                   Province
+                   Email
                 </th>
 
                
@@ -327,14 +350,18 @@ Name
                    {singleRequest.city}
                 </td>
                  <td className="px-6 py-4 text-gray-700">
-                   {singleRequest.province}
+                   {singleRequest.email}
                 </td>
 
                
              
                 <td className="px-6 py-4 text-gray-700">
                  <div className="font-mediumdark:text-blue-500 hover:underline cursor-pointer text-red-600">Remove</div>
-                    <Link href={"../admin/pharmacies/update"} className="font-medium text-blue-600 dark:text-blue-500 cursor-pointer hover:underline cursor-hover">Edit</Link>
+                
+                  
+                    <p onClick={()=>saveDataToCookies(singleRequest.name, singleRequest.postal_code, singleRequest.phone, singleRequest.fax, singleRequest.city, singleRequest.id, singleRequest.email, singleRequest.address)} className="font-medium text-blue-600 dark:text-blue-500 cursor-pointer hover:underline cursor-hover">Edit</p>
+                
+                
                 </td>
             </tr>
 
