@@ -278,6 +278,26 @@ const goToDashboard = () => {
       setPatientRequestData(patientRequestDataTwo)
 
     }
+
+    function searchfunction(searchTerm:any){
+
+    //  alert(patientRequestDataTwo);
+
+        setPatientRequestData(patientRequestDataTwo)
+       const searchResult = patientRequestData.filter(
+        (data) =>
+          data.first_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          data.last_name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    
+      
+       // return searchResult;
+
+       setPatientRequestData(searchResult);
+
+
+  
+    }
     
  
   return (
@@ -460,7 +480,7 @@ const goToDashboard = () => {
 
 {/*search text field */}
 
-  <input type="text" className="border p-2 h-10 mt-10 border-1 border-zinc-500  ml-auto mr-10  rounded-md "  placeholder="Search Records" />
+  <input onChange={(e) =>searchfunction(e.target.value)} type="text" className="border p-2 h-10 mt-10 border-1 border-zinc-500  ml-auto mr-10  rounded-md "  placeholder="Search Records" />
   <button  className='text-center text-sm text-zinc-700 font-light bg-zinc-200 rounded-3xl flex items-center justify-center px-6   ml-[6px] mr-6 h-10 mt-10 w-20'>Search</button>
 
 
