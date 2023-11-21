@@ -93,6 +93,8 @@ interface Pharmacy {
 
 const [pharmaciesRequestData, setPharmRequestData] = useState<Pharmacy[]>([]);
 
+const [pharmaciesName, setPharmName] = useState("");
+
   // Filtered data state
   const [filteredPharmacies, setFilteredPharmacies] = useState<Pharmacy[]>([]);
 
@@ -222,6 +224,10 @@ const send = async () => {
   formData.append('request',  JSON.stringify(allSelections));
   formData.append('ip_address', ipData.toString());
   formData.append('selected_pharm', selectedOption.toString());
+
+  formData.append('selected_pharm_name', pharmaciesName.toString());
+
+  pharmaciesName
 
 
   formData.append('est_location',  currCity);
@@ -400,6 +406,9 @@ function getLocationFromIP(allPharmData:any){
 const handleOptionChange = (event:any) => {
   setSelectedOption(event.target.value);
 
+
+  
+
  // alert(event.target.value);
 
   if(selectedOption){
@@ -407,8 +416,29 @@ const handleOptionChange = (event:any) => {
     Cookies.set("selected_pharmacy",selectedOption);
 
   }
+
+  checkPharm(event.target.value)
  
 };
+
+function checkPharm(id: string) {
+  const foundPharmacy = pharmaciesRequestData.find((pharmacy) => pharmacy.id.toString() === id);
+
+  if (foundPharmacy) {
+    const { name } = foundPharmacy;
+    console.log(`Pharmacy name for ID ${id}: ${name}`);
+
+    alert(`Pharmacy name for ID ${id}: ${name}`);
+
+    Cookies.set('pharmacyName', name);
+
+    setPharmName(name)
+    return name; // Return the name if needed
+  } else {
+    console.log(`Pharmacy with ID ${id} does not exist.`);
+    return null; // Return null or handle the case where the ID is not found
+  }
+}
 
 
 
