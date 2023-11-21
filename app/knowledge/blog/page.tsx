@@ -97,9 +97,9 @@ export default function Blog() {
         <MenuItem value="Categories" disabled >
           Categories
         </MenuItem>
-        <MenuItem value="Category 1">Category 1</MenuItem>
-        <MenuItem value="Category 2">Category 2</MenuItem>
-        <MenuItem value="Category 3">Category 3</MenuItem>
+        <MenuItem value="Drug Product Compendium">Drug Product Compendium</MenuItem>
+        <MenuItem value="Compounding Clinical Practice Guidelines">Compounding Clinical Practice Guidelines</MenuItem>
+       
       </Select>
     </FormControl>
 

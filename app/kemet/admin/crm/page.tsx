@@ -1,22 +1,24 @@
 "use client"
 // Import necessary React and Material-UI components
-import React, { useState } from 'react';
+
 import Link from 'next/link';
 import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useRouter } from 'next/navigation';
 import { LineChart } from '@mui/x-charts/LineChart';
-
+import React, { useState,useEffect } from 'react';
+import axios, { AxiosError, AxiosResponse } from "axios";
 
 // Your main component
 const AdminPanel = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
     
     const [anchorEl, setAnchorEl] = useState(null);
+    const [prescribersRequestData, setPrescribersRequestData] = useState<any[]>([]); 
 
     const dataPatients = [2, 5.5, 2, 8.5, 1.5, 5];
-    const dataPrescribers = [3, 6, 3.5, 7, 2, 4.5];
-    const xAxisData = [1, 2, 3, 5, 8, 10];
+   // const dataPrescribers = [3, 6, 3.5, 7, 2, 4.5];
+    //const xAxisData = [1, 2, 3, 5, 8, 10];
    
     const router = useRouter();
 
@@ -75,6 +77,42 @@ const AdminPanel = () => {
     const handleMenuCloseTwo = () => {
       setAnchorElTwo(null);
     };
+
+    //get patient request data
+    useEffect(() => {
+      // Fetch all posts
+      axios.get('https://kemet.care/api/requests/prescribers', {
+       
+      })
+        .then((response: { data: any; }) => {
+          const data = response.data;
+         console.log(data);
+        
+
+         
+        })
+        .catch((error: any) => {
+          console.error('Error fetching data:', error);
+        });
+    }, []);
+
+
+
+    //handle  prescriber charts
+
+    // Count prescribers signed up on each date
+  const prescribersCountByDate = prescribersRequestData.reduce((acc: { [x: string]: any; }, prescriber: {
+    created_at: any; date: any; 
+}) => {
+    const date = prescriber.created_at;
+    acc[date] = (acc[date] || 0) + 1;
+    return acc;
+  }, {});
+
+  // Extract dates and prescriber counts for plotting
+  const xAxisData = Object.keys(prescribersCountByDate); // Dates for x-axis
+  const dataPrescribers = Object.values(prescribersCountByDate); // Number of prescribers for y-axis
+
 
 
    
@@ -215,7 +253,8 @@ height={300}
 
 <p className="mt-4 font-semibold">Prescriber & Patients Requests</p>
 
-<LineChart
+{
+  /*<LineChart
       xAxis={[{ data: xAxisData }]}
       series={[
         { data: dataPatients },
@@ -223,7 +262,9 @@ height={300}
       ]}
       width={500}
       height={300}
-    />
+    />*/
+
+}
 </div>
        </div>
 
