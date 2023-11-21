@@ -428,7 +428,7 @@ function checkPharm(id: string) {
     const { name } = foundPharmacy;
     console.log(`Pharmacy name for ID ${id}: ${name}`);
 
-    alert(`Pharmacy name for ID ${id}: ${name}`);
+   // alert(`Pharmacy name for ID ${id}: ${name}`);
 
     Cookies.set('pharmacyName', name);
 
