@@ -50,7 +50,7 @@ export default function Footer() {
         <li className="mt-2 hover:font-normal hover:cursor-pointer">Legal Notice</li>
 
         <li className="mt-2 hover:font-normal hover:cursor-pointer">Legal Disclaimer</li>
-        <li className="mt-2 hover:font-normal hover:cursor-pointer">Support</li>
+        <li className="mt-2 hover:font-normal hover:cursor-pointer"><Link href={"../contact"}>Support</Link></li>
 
 
         </ul>
