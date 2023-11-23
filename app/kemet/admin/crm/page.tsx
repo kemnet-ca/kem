@@ -219,7 +219,7 @@ useEffect(() => {
         <div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Total Patient Requests</p>
 
-  <p className="text-xl text-zinc-700 font-medium mt-4">{crmRequestData?.patients}</p>
+  <p className="text-xl text-zinc-700 font-medium mt-4">{crmRequestData?.patients.length}</p>
 
   <div className="flex-shrink-0 align-items-flex-end text-sm">
     <Link href={"../admin/requests/patients"}>View All</Link>
@@ -229,7 +229,7 @@ useEffect(() => {
 <div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Total Prescriber Requests</p>
 
-  <p className="text-xl text-zinc-700 font-medium mt-4">{crmRequestData?.prescribers}</p>
+  <p className="text-xl text-zinc-700 font-medium mt-4">{crmRequestData?.prescribers.length}</p>
 
   <div className="flex-shrink-0 align-items-flex-end text-sm">
     <Link href={"../admin/requests/prescribers"}>View All</Link>
@@ -238,7 +238,7 @@ useEffect(() => {
 
             <div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
                  <p className="text-sm text-zinc-500 font-medium">Pharmacies</p>
-              <p className="text-xl text-zinc-700 font-medium mt-4">{crmRequestData?.pharmacies}</p>
+              <p className="text-xl text-zinc-700 font-medium mt-4">{crmRequestData?.pharmacies.length}</p>
 
                 <div className="flex-shrink-0 align-items-flex-end text-sm">
     <Link href={"../admin/pharmacies"}>View All</Link>
