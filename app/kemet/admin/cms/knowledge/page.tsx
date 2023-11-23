@@ -23,7 +23,7 @@ import 'react-quill/dist/quill.snow.css';
 
 
 // Your main component
-const MedBlogCMS = () => {
+const KnowledgeCMS = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
     const router = useRouter();
@@ -188,7 +188,24 @@ const MedBlogCMS = () => {
 
        <p className='font-medium text-2xl'>Add New Content</p>
 
-      
+       <div className="mt-6"></div>
+       <p className='text-zinc-600 mb-2 text-sm'>Select A Category For This Post</p>
+       <FormControl>
+      <Select
+        value={selectedOption}
+        onChange={handleCategoryChange}
+        displayEmpty
+
+        className="w-full md:w-[200px] mr-auto"
+      >
+        <MenuItem value="Categories" disabled >
+          Categories
+        </MenuItem>
+        <MenuItem value="Drug Product Compendium">Drug Product Compendium</MenuItem>
+        <MenuItem value="Compounding Clinical Practice Guidelines">Compounding Clinical Practice Guidelines</MenuItem>
+       
+      </Select>
+    </FormControl>
 
 
 
@@ -235,4 +252,4 @@ const MedBlogCMS = () => {
   );
 };
 
-export default MedBlogCMS;
+export default ResearchCMS;
