@@ -95,13 +95,14 @@ const AdminPatients = () => {
       router.push("../cms/med_blog")
     };
 
-    const goToRD = () => {
-       router.push("../cms/med_blog")
-     };
+     const goToRD = () => {
+      router.push("../cms/research")
+    };
 
-     const goToKnowledge = () => {
-       router.push("../cms/med_blog")
-     };
+    const goToKnowledge = () => {
+      router.push("../cms/knowledge")
+    };
+
 
      const goToPharmacies = () => {
       router.push("../pharmacies")

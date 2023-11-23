@@ -42,11 +42,11 @@ const AdminPanel = () => {
     };
 
     const goToRD = () => {
-      router.push("../admin/requests/prescribers")
+      router.push("../admin/cms/research")
     };
 
     const goToKnowledge = () => {
-      router.push("../admin/requests/prescribers")
+      router.push("../admin/cms/knowledge")
     };
 
     const goToDashboard = () => {

@@ -82,12 +82,13 @@ const AdminPharm = () => {
     };
 
     const goToRD = () => {
-       router.push("../admin/cms/med_blog")
-     };
+      router.push("../../admin/cms/research")
+    };
 
-     const goToKnowledge = () => {
-       router.push("../admin/cms/med_blog")
-     };
+    const goToKnowledge = () => {
+      router.push("../../admin/cms/knowledge")
+    };
+
  
 
 

@@ -23,7 +23,7 @@ import 'react-quill/dist/quill.snow.css';
 
 
 // Your main component
-const MedBlogCMS = () => {
+const ResearchCMS = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
     const router = useRouter();
@@ -201,8 +201,13 @@ const MedBlogCMS = () => {
         <MenuItem value="Categories" disabled >
           Categories
         </MenuItem>
-        <MenuItem value="Drug Product Compendium">Drug Product Compendium</MenuItem>
-        <MenuItem value="Compounding Clinical Practice Guidelines">Compounding Clinical Practice Guidelines</MenuItem>
+        <MenuItem value="Applied Research">Applied Research</MenuItem>
+        <MenuItem value="Technical Reports">Technical Reports</MenuItem>
+        <MenuItem value="Journal Articles">Journal Articles</MenuItem>
+        <MenuItem value="Ebooks">Ebooks</MenuItem>
+        <MenuItem value="White Papers & Literature Reviews">White Papers & Literature Reviews</MenuItem>
+
+        
        
       </Select>
     </FormControl>
@@ -252,4 +257,4 @@ const MedBlogCMS = () => {
   );
 };
 
-export default MedBlogCMS;
+export default ResearchCMS;

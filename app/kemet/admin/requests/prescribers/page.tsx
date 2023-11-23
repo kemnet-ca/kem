@@ -58,6 +58,8 @@ const AdminPrescribers = () => {
      };
 
 
+
+
    const goToPharmacies = () => {
     router.push("../pharmacies")
   };
@@ -94,6 +96,19 @@ const AdminPrescribers = () => {
     const handleMenuCloseTwo = () => {
       setAnchorElTwo(null);
     };
+
+    const goToRD = () => {
+      router.push("../cms/research")
+    };
+
+    const goToKnowledge = () => {
+      router.push("../cms/knowledge")
+    };
+
+    const goToMed = () => {
+      router.push("../cms/med_blog")
+    };
+
 
 
 //get patient request data
@@ -326,11 +341,11 @@ const AdminPrescribers = () => {
             open={Boolean(anchorElTwo)}
             onClose={handleMenuCloseTwo}
           >
-            <MenuItem onClick={gotToPatients}>Med Info</MenuItem>
+            <MenuItem onClick={goToMed}>Med Info</MenuItem>
             <hr></hr>
-            <MenuItem onClick={goToPrescribers}>R & D</MenuItem>
+            <MenuItem onClick={goToRD}>R & D</MenuItem>
             <hr></hr>
-            <MenuItem onClick={goToPrescribers}>Knowledge</MenuItem>
+            <MenuItem onClick={goToKnowledge}>Knowledge</MenuItem>
           </Menu>
 
 
