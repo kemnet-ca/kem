@@ -1,10 +1,13 @@
 "use client"
 // Import necessary React and Material-UI components
-import React, { useState } from 'react';
+import React, { useState,useRef } from 'react';
+
 import Link from 'next/link';
 import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useRouter } from 'next/navigation';
+
+import { Editor } from '@tinymce/tinymce-react';
 
 //import ReactQuill from 'react-quill';
 
@@ -23,6 +26,8 @@ const MedBlogCMS = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
     const router = useRouter();
+
+    const editorRef = useRef([]);
 
 
     const [content, setContent] = useState('');
@@ -81,6 +86,8 @@ const MedBlogCMS = () => {
     const handleMenuCloseTwo = () => {
       setAnchorElTwo(null);
     };
+
+    
 
   
 
@@ -167,17 +174,28 @@ const MedBlogCMS = () => {
        <p className='font-medium text-2xl'>Add New Content</p>
 
 
-       <div>
-      <div className="editor">
-        <ReactQuill
-          value={content}
-          onChange={handleEditorChange}
-          placeholder="Write your blog post here..."
-        />
-      </div>
+       
+       
 
-      <button  className='text-center text-xs text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 mt-8'>Submit</button>
+       <>
+      <Editor
+        apiKey='kady3ovshsq2e07vntd5muf0tn6yyxzez3uq52u5sufofav0'
+        onInit={(evt, editor) => editorRef.current = editor}
+        initialValue="<p>This is the initial content of the editor.</p>"
+        init={{
+          height: 500,
+          menubar: false,
+          plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+          toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+          content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+        }}
+      />
+       <button  className='text-center text-xs text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 mt-8'>Submit</button>
 
+    </>
+    
+
+    
 
 
       {
@@ -191,7 +209,7 @@ const MedBlogCMS = () => {
     </div>
        
        </div>
-    </div>
+ 
   );
 };
 
