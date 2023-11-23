@@ -252,4 +252,4 @@ const KnowledgeCMS = () => {
   );
 };
 
-export default ResearchCMS;
+export default KnowledgeCMS;
