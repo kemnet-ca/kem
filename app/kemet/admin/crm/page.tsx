@@ -16,6 +16,8 @@ const AdminPanel = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const [prescribersRequestData, setPrescribersRequestData] = useState<any[]>([]); 
 
+    const [crmRequestData, setCRMRequestData] = useState<any[]>([]); 
+
     const dataPatients = [2, 5.5, 2, 8.5, 1.5, 5];
    // const dataPrescribers = [3, 6, 3.5, 7, 2, 4.5];
     //const xAxisData = [1, 2, 3, 5, 8, 10];
@@ -114,7 +116,22 @@ const AdminPanel = () => {
   const dataPrescribers = Object.values(prescribersCountByDate); // Number of prescribers for y-axis
 
 
-
+//get crm request data
+useEffect(() => {
+  // Fetch all posts
+  axios.get('https://kemet.care/api/main/view', {
+   
+  })
+    .then((response: { data: any; }) => {
+      const data = response.data;
+     console.log(data);
+     setCRMRequestData(data );
+    
+    })
+    .catch((error: any) => {
+      console.error('Error fetching data:', error);
+    });
+}, []);
    
   
 
@@ -202,7 +219,7 @@ const AdminPanel = () => {
         <div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Total Patient Requests</p>
 
-  <p className="text-xl text-zinc-700 font-medium mt-4">5</p>
+  <p className="text-xl text-zinc-700 font-medium mt-4">{crmRequestData?.patients}</p>
 
   <div className="flex-shrink-0 align-items-flex-end text-sm">
     <Link href={"../admin/requests/patients"}>View All</Link>
@@ -212,7 +229,7 @@ const AdminPanel = () => {
 <div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Total Prescriber Requests</p>
 
-  <p className="text-xl text-zinc-700 font-medium mt-4">10</p>
+  <p className="text-xl text-zinc-700 font-medium mt-4">{crmRequestData?.prescribers}</p>
 
   <div className="flex-shrink-0 align-items-flex-end text-sm">
     <Link href={"../admin/requests/prescribers"}>View All</Link>
@@ -221,7 +238,7 @@ const AdminPanel = () => {
 
             <div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
                  <p className="text-sm text-zinc-500 font-medium">Pharmacies</p>
-              <p className="text-xl text-zinc-700 font-medium mt-4">41</p>
+              <p className="text-xl text-zinc-700 font-medium mt-4">{crmRequestData?.pharmacies}</p>
 
                 <div className="flex-shrink-0 align-items-flex-end text-sm">
     <Link href={"../admin/pharmacies"}>View All</Link>
