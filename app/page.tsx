@@ -9,6 +9,7 @@ import Tooltip from '@mui/material/Tooltip';
 import Fade from '@mui/material/Fade';
 import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie';
+import CookieConsent from "react-cookie-consent";
 
 
 
@@ -447,17 +448,18 @@ className='flex w-screen justify-center'>
 
 <div className='w-full flex justify-center mt-4'>
 
-<div className='grid grid-cols-4 grid-cols-gap-4  px-20 w-full ml-40'>
-    <p className='text-slate-400 text-3xl font-medium mt-2'>Logo</p>
-    <p className='text-slate-400 text-3xl font-medium mt-2'>Logo</p>
-    <p className='text-slate-400 text-3xl font-medium mt-2'>Logo</p>
-    <p className='text-slate-400 text-3xl font-medium mt-2'>Logo</p>
+<div className='grid md:grid-cols-4 grid-cols-1 gap-4 gap-4  px-20 w-full ml-40'>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/carerx-logo-1.png" className='' alt="carerx logo kemet" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/_axis pharmacy logo.png" className='' alt="carerx logo kemet" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/_strathcona prescription centre logo .png" className='' alt="carerx logo kemet" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/centre pharmacy.png" className='' alt="carerx logo kemet" /></p>
 
 
-    <p className='text-slate-400 text-3xl font-medium mt-2'>Logo</p>
-    <p className='text-slate-400 text-3xl font-medium mt-2'>Logo</p>
-    <p className='text-slate-400  text-3xl font-medium mt-2'>Logo</p>
-    <p className='text-slate-400 text-3xl font-medium mt-2'>Logo</p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/_pharmasave-logo.png" className='' alt="carerx logo kemet" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/_waldins pharmacy logo.png" className='' alt="carerx logo kemet" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/hamptons_pharmacy_logo.png" className='' alt="carerx logo kemet" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/lemarchand.png" className='' alt="carerx logo kemet" /></p>
+
   </div>
 </div>
 
@@ -758,6 +760,24 @@ className='flex w-screen justify-center'>
 </div>
 
 <Footer />
+
+<CookieConsent
+  location="bottom"
+  buttonText="Yes, I'm cool!"
+  cookieName="myAwesomeCookieName2"
+  style={{ background: "#2B373B" }}
+  declineButtonText="Not interested"
+  buttonStyle={{ color: "#000000", backgroundColor:"#ffffff", fontSize: "13px" }}
+  expires={150}
+
+  enableDeclineButton
+  onDecline={() => {
+   // alert("nay!");
+  }}
+>
+  This website uses cookies to enhance the user experience.{" "}
+  <span style={{ fontSize: "10px" }}>You can enable cookies to allows store your session data</span>
+</CookieConsent>
 
     </main>
   )
