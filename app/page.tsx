@@ -448,17 +448,17 @@ className='flex w-screen justify-center'>
 
 <div className='w-full flex justify-center mt-4'>
 
-<div className='grid md:grid-cols-4 grid-cols-1 gap-4 gap-4  px-20 w-full ml-40'>
-    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/carerx-logo-1.png" className='' alt="carerx logo kemet" /></p>
-    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/_axis pharmacy logo.png" className='' alt="carerx logo kemet" /></p>
-    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/_strathcona prescription centre logo .png" className='' alt="carerx logo kemet" /></p>
-    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/centre pharmacy.png" className='' alt="carerx logo kemet" /></p>
+<div className='grid md:grid-cols-4 grid-cols-1 gap-4 gap-10  px-20 w-full ml-40'>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/carerx-logo-1.png" className='h-16 w-36' alt="carerx logo kemet partners" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/_axis pharmacy logo.png" className='h-16 w-36' alt="carerx logo kemet partners" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/_strathcona prescription centre logo .png" className='h-16 w-36' alt="carerx logo kemet partners" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/centre pharmacy.png" className='h-16 w-36' alt="carerx logo kemet partners" /></p>
 
 
-    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/_pharmasave-logo.png" className='' alt="carerx logo kemet" /></p>
-    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/_waldins pharmacy logo.png" className='' alt="carerx logo kemet" /></p>
-    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/hamptons_pharmacy_logo.png" className='' alt="carerx logo kemet" /></p>
-    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/lemarchand.png" className='' alt="carerx logo kemet" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/_pharmasave-logo.png" className='h-16 w-36' alt="carerx logo kemet" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/_waldins pharmacy logo.png" className='h-16 w-36' alt="waldins logo kemet partners" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/hamptons_pharmacy_logo.png" className='h-16 w-36' alt="hamptons logo kemet partners" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/lemarchand.png" className='h-16 w-36' alt="lemarchand logo kemet partners" /></p>
 
   </div>
 </div>
