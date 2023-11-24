@@ -462,6 +462,9 @@ className='flex w-screen justify-center'>
 
   </div>
 </div>
+<div className='w-screen flex justify-center mt-6'>
+<Link href={"../focus/clients"} className='text-center mt-8 font-semibold hover:ml-2 '>View All</Link>
+</div>
 
 
 
