@@ -369,7 +369,7 @@ className='flex w-screen justify-center'>
   //first feature section
 }
 
-<div className=' h-48 w-screen mt-16 md:px-20  items-center '>
+<div className=' h-48 w-screen mt-16 md:px-6  items-center '>
 
  <div className='md:px-40 h-full w-full inner-padding flex'>
 
@@ -403,7 +403,7 @@ className='flex w-screen justify-center'>
   //second feature section
 }
 
-<div className=' h-48 w-screen mt-16 md:px-20  items-center  hidden'>
+<div className=' h-48 w-screen mt-16 md:px-6  items-center  hidden'>
 
  <div className='md:px-40 h-full w-full inner-padding flex'>
 
@@ -448,17 +448,23 @@ className='flex w-screen justify-center'>
 
 <div className='w-full flex justify-center mt-4'>
 
-<div className='grid md:grid-cols-4 grid-cols-1 gap-4 gap-10  px-20 w-full ml-40'>
-    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/carerx-logo-1.png" className='h-16 w-36' alt="carerx logo kemet partners" /></p>
-    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/_axis pharmacy logo.png" className='h-16 w-36' alt="carerx logo kemet partners" /></p>
-    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/_strathcona prescription centre logo .png" className='h-16 w-36' alt="carerx logo kemet partners" /></p>
-    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/centre pharmacy.png" className='h-16 w-36' alt="carerx logo kemet partners" /></p>
+<div className='grid md:grid-cols-4 grid-cols-1 gap-4 gap-10  px-20 w-full ml-20'>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/partners/_NRC-logo.jpg" className='h-16 w-36' alt="_NRC-logo  kemet partners" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/partners/_canadian womens foundation.jpg" className='h-16 w-36' alt="_canadian womens foundation kemet partners" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/partners/_SEF.png" className='h-16 w-36' alt="_SEF kemet partners" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/partners/_alberta innovates.jpg" className='h-16 w-36' alt="_alberta innovates  kemet partners" /></p>
 
 
-    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/_pharmasave-logo.png" className='h-16 w-36' alt="carerx logo kemet" /></p>
-    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/_waldins pharmacy logo.png" className='h-16 w-36' alt="waldins logo kemet partners" /></p>
-    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/hamptons_pharmacy_logo.png" className='h-16 w-36' alt="hamptons logo kemet partners" /></p>
-    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/clients/lemarchand.png" className='h-16 w-36' alt="lemarchand logo kemet partners" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/partners/_canadian womens foundation.jpg" className='h-16 w-36' alt="carerx logo kemet" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/partners/_MIT_Solve.jpg" className='h-16 w-36' alt="waldins logo kemet partners" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/partners/_ERIN_logo.png" className='h-16 w-36' alt="_MIT_Solve kemet partners" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/partners/Black Opportunity Fund.png" className='h-16 w-36' alt="Black Opportunity Fund.png logo kemet partners" /></p>
+
+
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/partners/Canada-AB .png" className='h-16 w-36' alt="carerx logo kemet" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/partners/edmonton unlimited.png" className='h-16 w-36' alt="edmonton unlimited kemet partners" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/partners/employment-and-social-development-canada.png" className='h-20 w-36' alt="_MIT_Solve kemet partners" /></p>
+    <p className='text-slate-400 text-3xl font-medium mt-2'><img src="/images/partners/YC Logo Expanded.png" className='h-16 w-36' alt="YC Logo Expanded.png logo kemet partners" /></p>
 
   </div>
 </div>
@@ -483,55 +489,87 @@ className='flex w-screen justify-center'>
 <div className='w-screen items-center mt-16'>
 
   <p className='font-medium text-xl text-center'>Recognized & Awarded</p>
-  <p className='text-sm text-zinc-600 text-center mt-2 font-light'>Partered With The Very Best</p>
 
 
 <div className='w-full flex justify-center mt-4'>
 
-<div className='grid grid-cols-4 grid-cols-gap-4  px-20 w-full ml-40 mt-4'>
-   <div className='items-center'>
+<div className='grid md:grid-cols-2 gap-6 grid-cols-1  px-10 w-full ml-10 mt-4'>
+   <div className='p-2 shadow-xl flex'>
 
-    <div className='h-16 w-16 rounded-full bg-slate-300'>
+    <div className='h-16 w-16 rounded-full '>
+      <img src="/images/award-medal-trophy-svgrepo-com.svg" alt="kemet awards" />
 
     </div>
-    <p className='text-sm'>Award Name</p>
+   
+  <div className=''>
+  <p className='ml-4 text-sm text-zinc-700'>Community Award, 2021 MIT Solve Global Challenges; Health Security & Pandemics Challenge</p>
+   <Link href={"https://solve.mit.edu/challenges/2021-health-security-pandemics/solutions/45940"} className='mt-2 ml-4 text-sm text-orange-300 hover:ml-6'>View</Link>
 
+  </div>
 
    </div>
 
 
-   <div className='items-center'>
+   <div className='p-2 shadow-xl flex'>
 
-<div className='h-16 w-16 rounded-full bg-slate-300'>
-
-</div>
-<p className='text-sm'>Award Name</p>
-
-
+   <div className='h-16 w-16 rounded-full '>
+   <img src="/images/award-medal-trophy-svgrepo-com.svg" alt="kemet awards" />
 </div>
 
+<div className=''>
+  <p className='ml-4 text-sm text-zinc-700'>Second place, 2022 Zeton/CSChE Plant Design Competition at the Canadian Chemical Engineering Conference</p>
+   <Link href={"https://www.cheminst.ca/conference/canadian-chemical-engineering-conference-2022/"} className='mt-2 ml-4 text-sm text-orange-300 hover:ml-6'>View</Link>
 
+  </div>
 
-<div className='items-center'>
-
-<div className='h-16 w-16 rounded-full bg-slate-300'>
-
-</div>
-<p className='text-sm'>Award Name</p>
 
 
 </div>
 
 
-<div className='items-center'>
 
-<div className='h-16 w-16 rounded-full bg-slate-300'>
+<div className='p-2 shadow-xl flex'>
+
+<div className='h-16 w-16 rounded-full '>
+<img src="/images/award-medal-trophy-svgrepo-com.svg" alt="kemet awards" />
+</div>
+
+<div className=''>
+  <p className='ml-4 text-sm text-zinc-700'>2023 Alumni Award Recipients, University of Alberta, Faculty of Pharmacy & Pharmaceutical Sciences</p>
+   <Link href={"https://www.ualberta.ca/alumni/recognition/alumni-awards/2023-recipients.html#:~:text=Mor%E1%BA%B9%CC%81nik%E1%BA%B9%CC%81%20%E1%BA%B8ni%E1%BB%8Dl%C3%A1%20%E1%BB%8Cl%C3%A1%C3%B2%E1%B9%A3eb%C3%ACkan,%20%E2%80%9909%20BSc(Pharm)"} className='mt-2 ml-4 text-sm text-orange-300 hover:ml-6'>View</Link>
+
+  </div>
+
+
 
 </div>
-<p className='text-sm'>Award Name</p>
+
+
+
+<div className='p-2 shadow-xl flex'>
+
+<div className='h-16 w-16 rounded-full '>
+<img src="/images/award-medal-trophy-svgrepo-com.svg" alt="kemet awards" />
+</div>
+
+<div className=''>
+  <p className='ml-4 text-sm text-zinc-700'>First place, Capstone - Modular Medication Manufacturing project, Schulich School of Engineering, University in Calgary, Alberta</p>
+   <Link href={"https://engineeringdesignfair.ucalgary.ca/chemical/modular-medication-manufacturing"} className='mt-2 ml-4 text-sm text-orange-300 hover:ml-6'>View</Link>
+
+  </div>
+
 
 
 </div>
+
+
+
+
+
+
+
+
+
 
 
     
@@ -552,7 +590,17 @@ className='flex w-screen justify-center'>
 
 }
 
-<div className='w-screen items_center mt-16 px-20'>
+
+
+{
+  //section below case study
+}
+
+{
+  //other section
+
+  /*
+  <div className='w-screen items_center mt-16 px-20'>
 
   <p className='font-medium text-xl text-center'>Case Study</p>
  
@@ -581,9 +629,8 @@ className='flex w-screen justify-center'>
 
 </div>
 
-{
-  //section below case study
-}
+
+
 
 <div className='w-full flex   mt-48'>
 
@@ -667,19 +714,26 @@ className='flex w-screen justify-center'>
   
 </div>
 
+  */
+
+
+}
+
+
+
 {
   //mentioned in
 }
 
 <div className=' h-48 w-screen mt-16 md:px-20  items-center '>
 
- <div className='md:px-40 h-full w-full inner-padding flex'>
+ <div className='md:px-40 h-full w-full inner-padding '>
 
  
 
-<div className='right-sub-section md:px-10 py-4 '>
+<div className='right-sub-section md:px-10 md:pt-10 '>
 
-  <p className="text-xl font-semimedium">Mentioned</p>
+  <p className="text-xl font-semibold text-center ">We&apos;ve been mentioned on:</p>
 
  
 
@@ -687,31 +741,36 @@ className='flex w-screen justify-center'>
 
 </div>
 
-<div className=" h-full w-full rounded-md left-sub-section">
+<div className="  w-full rounded-md left-sub-section">
 
 <div className='w-full flex justify-center mt-4'>
 
-<div className='grid grid-cols-4 grid-cols-gap-4  px-20 w-full ml-40'>
-    <p className='text-slate-400 text-2xl font-semibold mt-2'>Logo</p>
-    <p className='text-slate-400 text-2xl font-semibold mt-2'>Logo</p>
-    <p className='text-slate-400 text-2xl font-semibold mt-2'>Logo</p>
-    <p className='text-slate-400 text-2xl font-semibold mt-2'>Logo</p>
+<div className='grid md:grid-cols-5 grid-cols-2 gap-10  px-20 w-full ml-10'>
+    <p className='text-slate-400 text-2xl font-semibold mt-2'><img src="/images/mentioned/pharmacy-practice-plus-business-logo-vector.png" className='h-20 w-36' alt="carerx logo kemet" /></p>
+    <p className='text-slate-400 text-2xl font-semibold mt-2'><img src="/images/mentioned/2560px-CTV_News.png" className='h-20 w-36' alt="ctv logo kemet" /></p>
+    <p className='text-slate-400 text-2xl font-semibold mt-2'><img src="/images/mentioned/radioactive.jpeg" className='h-20 w-36' alt="radioactive kemet" /></p>
+   
+
+    <p className='text-slate-400 text-2xl font-semibold mt-2'><img src="/images/mentioned/CBC_logo.svg.png" className='h-16 w-36' alt="carerx logo kemet" /></p>
+    <p className='text-slate-400 text-2xl font-semibold mt-2'><img src="/images/mentioned/uofcengineering.png" className='h-20 w-36' alt="ctv logo kemet" /></p>
+    <p className='text-slate-400 text-2xl font-semibold mt-2'><img src="/images/mentioned/whatshesaidlogo.png" className='h-20 w-36' alt="radioactive kemet" /></p>
+   
+   
+    <p className='text-slate-400 text-2xl font-semibold mt-2'><img src="/images/mentioned/melanistic magazine.png" className='h-20 w-36' alt="carerx logo kemet" /></p>
+    <p className='text-slate-400 text-2xl font-semibold mt-2'><img src="/images/mentioned/uofapharm.jpeg" className='h-20 w-36' alt="ctv logo kemet" /></p>
+    <p className='text-slate-400 text-2xl font-semibold mt-2'><img src="/images/mentioned/whatshesaidlogo.png" className='h-20 w-36' alt="radioactive kemet" /></p>
+
+   <p className='text-slate-400 text-2xl font-semibold mt-2'><img src="/images/mentioned/1200px-Edmonton_Journal_(2020-01-15).svg.png" className='h-20 w-36' alt="carerx logo kemet" /></p>
+    <p className='text-slate-400 text-2xl font-semibold mt-2'><img src="/images/mentioned/Bloomsbury-Radio.jpg" className='h-20 w-36' alt="ctv logo kemet" /></p>
+    <p className='text-slate-400 text-2xl font-semibold mt-2'><img src="/images/mentioned/CHN-logo-new-blue-2021-320px.png" className='h-20 w-36' alt="radioactive kemet" /></p>
+
+    <p className='text-slate-400 text-2xl font-semibold mt-2'><img src="/images/mentioned/taproot logo.png" className='h-20 w-36' alt="ctv logo kemet" /></p>
+    <p className='text-slate-400 text-2xl font-semibold mt-2'><img src="/images/mentioned/canada today logo.png" className='h-20 w-36' alt="radioactive kemet" /></p>
 
 
-    <p className='text-slate-400 text-2xl font-semibold mt-2'>Logo</p>
-    <p className='text-slate-400 text-2xl font-semibold mt-2'>Logo</p>
-    <p className='text-slate-400  text-2xl font-semibold mt-2'>Logo</p>
-    <p className='text-slate-400 text-2xl font-semibold mt-2'>Logo</p>
+    
 
-    <p className='text-slate-400 text-2xl font-semibold mt-2'>Logo</p>
-    <p className='text-slate-400 text-2xl font-semibold mt-2'>Logo</p>
-    <p className='text-slate-400  text-2xl font-semibold mt-2'>Logo</p>
-    <p className='text-slate-400 text-2xl font-semibold mt-2'>Logo</p>
-
-    <p className='text-slate-400 text-2xl font-semibold mt-2'>Logo</p>
-    <p className='text-slate-400 text-2xl font-semibold mt-2'>Logo</p>
-    <p className='text-slate-400  text-2xl font-semibold mt-2'>Logo</p>
-    <p className='text-slate-400 text-2xl font-semibold mt-2'>Logo</p>
+  
   </div>
 </div>
 
@@ -724,8 +783,8 @@ className='flex w-screen justify-center'>
 
 {
   //other section
-}
 
+  /*
 <div className='w-full flex   mt-10'>
 
 <div className='grid grid-cols-3 grid-cols-gap-3  px-20 w-full  '>
@@ -761,6 +820,12 @@ className='flex w-screen justify-center'>
 
   
 </div>
+
+
+  */
+}
+
+<div className='h-32 mt-10'></div>
 
 <Footer />
 
