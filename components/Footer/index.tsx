@@ -62,20 +62,22 @@ export default function Footer() {
 
 <div className="">
 
-<p className="text-sm font-medium ">Media Channels</p>
+<p className="text-sm font-medium ">Connect With Us:</p>
 
 
-<div className="w-[130px] grid grid-cols-3 gap-2 mt-6">
+<div className="w-[130px] grid grid-cols-4 gap-2 mt-6">
 
-  <div className="h-10 w-full bg-white rounded-full"></div>
+  <div className="h-10 w-full cursor-pointer  rounded-full"><img src="/images/social/linkedin-svgrepo-com.svg"  alt="Kemet LinkedIN"/><Link href={"https://www.linkedin.com/company/kemet-group"}></Link></div>
 
-  <div className="h-10 w-full bg-white rounded-full"></div>
+  <div className="h-10 w-full cursor-pointer ml-2 rounded-full"><img src="/images/social/facebook-svgrepo-com.svg"  alt="Kemet LinkedIN"/><Link href={"https://www.linkedin.com/company/kemnetinc/"}></Link></div>
 
-  <div className="h-10 w-full bg-white rounded-full"></div>
+  <div className="h-10 w-full cursor-pointer ml-2 rounded-full"><img src="/images/social/twitter-round-svgrepo-com.svg"  alt="Kemet LinkedIN"/><Link href={"https://twitter.com/KemNet_"}></Link></div>
+  <div className="h-10 w-full cursor-pointer ml-2  rounded-full"><img src="/images/social/youtube-svgrepo-com.svg"  alt="Kemet LinkedIN"/><Link href={"https://www.youtube.com/@kemetglobal"}></Link></div>
+
 
 </div>
 
-<p className="mt-4 hover:font-light text-sm hover:cursor-pointer">Cookies Settings</p>
+
 </div>
 
 </div>
