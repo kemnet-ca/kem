@@ -118,8 +118,7 @@ const ResearchCMS = () => {
 
 
   function makePost(){
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
+    
     const editorContent = editorRef?.current?.getContent();
    
   
@@ -333,8 +332,6 @@ const ResearchCMS = () => {
 
         onChange={handleEditorChange}
         apiKey='kady3ovshsq2e07vntd5muf0tn6yyxzez3uq52u5sufofav0'
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
         onInit={(evt, editor) => editorRef.current = editor}
         initialValue="<p>...</p>"
         init={{
