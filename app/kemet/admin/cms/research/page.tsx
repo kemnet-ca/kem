@@ -120,7 +120,7 @@ const ResearchCMS = () => {
 
 
   function makePost(){
-    const editorContent = editorRef.current.getContent();
+    const editorContent = editorRef.current?.getContent();
    
   
 
