@@ -119,7 +119,7 @@ const ResearchCMS = () => {
 
   function makePost(){
     
-    const editorContent = editorRef?.current?.getContent();
+  //  const editorContent = editorRef?.current?.getContent();
    
   
 
@@ -132,7 +132,7 @@ const ResearchCMS = () => {
       
     
       formData.append('title',  title.toString());
-      formData.append('body',  editorContent);
+     // formData.append('body',  editorContent);
       formData.append('group',  "RESEARCH");
       
       formData.append('sub_category',selectedOption);
