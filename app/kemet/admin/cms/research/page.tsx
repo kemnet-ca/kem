@@ -15,8 +15,6 @@ import '../../../../css/loader.css';
 
 import dynamic from 'next/dynamic';
 
-const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
-
 // Use ReactQuill in your component
 
 import 'react-quill/dist/quill.snow.css';
@@ -34,7 +32,7 @@ const ResearchCMS = () => {
     const router = useRouter();
     const [isLoading, setIsLoading]= useState(false);
 
-    const editorRef = useRef([]);
+    const editorRef = useRef(null);
     var errorMessage = "";
 
 
@@ -120,7 +118,7 @@ const ResearchCMS = () => {
 
 
   function makePost(){
-    const editorContent = editorRef.current?.getContent();
+    const editorContent = editorRef?.current?.getContent();
    
   
 
