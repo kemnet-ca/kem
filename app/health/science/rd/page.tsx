@@ -235,7 +235,7 @@ selectedView=="GALLERY"?(<>
 
 <div className="w-2/3 grid grid-cols-2 p-4 gap-4  items-center place-content-center mx-auto">
 {postsData !== null && postsData.map((singlePost: any, index: any) => (
-    <div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
+    <div key={index} className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
 
 
    
@@ -262,14 +262,14 @@ selectedView=="GALLERY"?(<>
   </div></div>
   </>):(<>
   
-    <div className='flex w-screen justify-center  flex'>
+    <div  className='flex w-screen justify-center  flex'>
 
 <div className="w-2/3 grid grid-cols-2 p-4 gap-4  items-center place-content-center mx-auto">
 
 
 {postsData !== null && postsData.map((singlePost: any, index: any) => (
   
-  <div className="flex w-full shadow-xl p-2 rounded-xl border border-slate-200">
+  <div key={index} className="flex w-full shadow-xl p-2 rounded-xl border border-slate-200">
     <div className="h-20 w-32 bg-slate-200 rounded-md">
 
     </div>
