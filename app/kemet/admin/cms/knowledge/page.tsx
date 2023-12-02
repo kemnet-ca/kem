@@ -330,7 +330,7 @@ const KnowledgeCMS = () => {
 
         onChange={handleEditorChange}
         apiKey='kady3ovshsq2e07vntd5muf0tn6yyxzez3uq52u5sufofav0'
-        onInit={(evt, editor) => editorRef.current = editor}
+       // onInit={(evt, editor) => editorRef.current = editor}
         initialValue="<p>...</p>"
         init={{
           height: 500,
