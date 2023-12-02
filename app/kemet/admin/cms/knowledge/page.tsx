@@ -3,12 +3,13 @@
 import React, { useState,useRef } from 'react';
 
 import Link from 'next/link';
-import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Menu, MenuItem } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Menu, MenuItem, TextField } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useRouter } from 'next/navigation';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { Editor } from '@tinymce/tinymce-react';
+import '../../../../css/loader.css';
 
 //import ReactQuill from 'react-quill';
 
@@ -19,25 +20,45 @@ const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 // Use ReactQuill in your component
 
 import 'react-quill/dist/quill.snow.css';
+import axios, { AxiosError, AxiosResponse } from 'axios';
 //import ReactMarkdown from 'react-markdown';
+
 
 
 // Your main component
 const KnowledgeCMS = () => {
+
+
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
     const router = useRouter();
+    const [isLoading, setIsLoading]= useState(false);
 
     const editorRef = useRef([]);
+    var errorMessage = "";
 
 
     const [content, setContent] = useState('');
  // const [markdown, setMarkdown] = useState('');
 
+
+
   const handleEditorChange = (value:any) => {
     setContent(value);
+
+   
  //   setMarkdown(value); // You can use a library to convert HTML to Markdown if needed
   };
+
+  const [title, setTitle] = useState('');
+
+  const handleTitleChange = (event:any) => {
+    setTitle(event.target.value);
+    // Additional logic can be added here if needed
+  };
+  
+
+  
 
     
     const gotToPatients = () => {
@@ -88,14 +109,97 @@ const KnowledgeCMS = () => {
       setAnchorElTwo(null);
     };
 
-  const [selectedOption, setSelectedOption] = React.useState('Categories');
-  const [selectedView, setSelectedView] = React.useState('GALLERY');
- 
-
+  const [selectedOption, setSelectedOption] = React.useState('Drug Product Compendium');
+  
 
   const handleCategoryChange = (event:any) => {
     setSelectedOption(event.target.value);
+
+    
   };
+
+
+  function makePost(){
+    const editorContent = editorRef.current.getContent();
+   
+  
+
+    if(title !="" && content !=""  && selectedOption!=""){
+
+      setIsLoading(true);
+  
+      const formData = new FormData();
+  
+      
+    
+      formData.append('title',  title.toString());
+      formData.append('body',  editorContent);
+      formData.append('group',  "MED_INFO_BLOG");
+      
+      formData.append('sub_category',selectedOption);
+     
+      
+    
+    
+      try {
+    
+       
+    
+    
+       // create new guest post
+        axios.post('https://kemet.care/api/cms/new_post', formData )
+          .then((response: { data: any; }) => {
+            const data = response.data;
+            console.log(data);
+
+            alert("The post has been submitted successfully");
+    
+            setIsLoading(false);
+        
+          })
+          .catch((error: any) => {
+            console.error('Error fetching data:', error);
+            setIsLoading(false);
+          });
+      
+    
+    }
+    
+    catch (err ) {
+         
+    
+    if (err instanceof Error) {
+      const axiosError = err as AxiosError;
+      if (axiosError.response) {
+        const errorResponse = axiosError.response as AxiosResponse;
+        if (errorResponse.data) {
+          errorMessage = errorResponse.data.message;
+        }
+      }
+    
+     
+    
+       console.log(errorMessage);
+    }
+    
+    
+    setIsLoading(false);
+    
+    
+    }
+    finally {
+      setIsLoading(false);
+    
+    }
+
+    }
+
+    else{
+      alert("Please fill in every detail")
+    }
+   
+
+  }
 
     
 
@@ -117,7 +221,7 @@ const KnowledgeCMS = () => {
           {/* Your other top navigation bar content goes here */}
 
           <div className="ml-auto">
-       <Link href={"../admin/pharmacies/new"} className="font-medium text-sm text-white  border-1 border-white  border p-2 rounded-md">All Posts</Link>
+       <Link href={"../cms/posts"} className="font-medium text-sm text-white  border-1 border-white  border p-2 rounded-md">All Posts</Link>
        
        </div>
         </Toolbar>
@@ -186,39 +290,48 @@ const KnowledgeCMS = () => {
       <div className="w-screen h-screen px-4 py-4">
 
 
-       <p className='font-medium text-2xl'>Add New Content</p>
+       <p className='font-medium text-2xl'>Add New Content - <span className='text-zinc-500'>MED BLOG</span></p>
+
+      
+
+
 
        <div className="mt-6"></div>
-       <p className='text-zinc-600 mb-2 text-sm'>Select A Category For This Post</p>
-       <FormControl>
+
+       <TextField
+          id="outlined-basic"
+          label="Enter A Title"
+          variant="outlined"
+          className='w-full'
+          onChange={handleTitleChange}
+        />
+       <div className="mt-6"></div>
+
+<p className='text-zinc-500 text-sm mb-2' >Select A Category</p>
+       <FormControl className='w-80'>
       <Select
+      className='w-80'
         value={selectedOption}
         onChange={handleCategoryChange}
         displayEmpty
 
-        className="w-full md:w-[200px] mr-auto"
+       // className="w-full md:w-[200px] mr-auto"
       >
-        <MenuItem value="Categories" disabled >
-          Categories
-        </MenuItem>
+      
+
         <MenuItem value="Drug Product Compendium">Drug Product Compendium</MenuItem>
         <MenuItem value="Compounding Clinical Practice Guidelines">Compounding Clinical Practice Guidelines</MenuItem>
        
       </Select>
     </FormControl>
-
-
-
-       <div className="mt-6"></div>
-       
-
+    <div className="mt-6"></div>
        <>
       <Editor
 
-        
+        onChange={handleEditorChange}
         apiKey='kady3ovshsq2e07vntd5muf0tn6yyxzez3uq52u5sufofav0'
         onInit={(evt, editor) => editorRef.current = editor}
-        initialValue="<p>This is the initial content of the editor.</p>"
+        initialValue="<p>...</p>"
         init={{
           height: 500,
           menubar: false,
@@ -229,8 +342,15 @@ const KnowledgeCMS = () => {
 
         
       />
-       <button  className='text-center text-xs text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 mt-8'>Submit</button>
 
+{
+            isLoading == true?(<> <div className="loader mt-2 mb-4 "></div></>):(<>   
+              <button onClick={makePost}  className='text-center text-xs text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 mt-8'>Submit</button>
+       </>)
+          }
+
+         
+      
     </>
     
 
@@ -250,6 +370,8 @@ const KnowledgeCMS = () => {
        </div>
  
   );
+
+  
 };
 
 export default KnowledgeCMS;

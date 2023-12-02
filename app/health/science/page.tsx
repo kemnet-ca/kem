@@ -72,7 +72,7 @@ export default function KemetScience() {
        
             <div  className='w-full h-8 bg-400 rouned-br-md rounded-bl-2xl flex flex-col border-t  '>
             
-                <Link href="../health/science/rd"  style={{marginBottom:`3%`, marginTop:`53%`}} className='text-xs font-medium  text-center '>Research & Development</Link>
+                <Link href="../health/science/rd"  style={{marginBottom:`3%`, marginTop:`43%`}} className='text-xs font-medium  text-center '>Research & Development</Link>
             </div>
 
         </div>
@@ -88,7 +88,7 @@ export default function KemetScience() {
        
 <div  className='w-full h-8 bg-400 rouned-br-md rounded-bl-2xl flex flex-col border-t  '>
 
-<Link href="../health/science/publications"  style={{marginBottom:`3%`, marginTop:`53%`}} className='text-xs font-medium  text-center '>Knowledge Hub</Link>
+<Link href="../health/science/publications"  style={{marginBottom:`3%`, marginTop:`43%`}} className='text-xs font-medium  text-center '>Knowledge Hub</Link>
 </div>
 
 </div>

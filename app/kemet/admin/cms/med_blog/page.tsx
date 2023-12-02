@@ -290,7 +290,7 @@ const MedBlogCMS = () => {
       <div className="w-screen h-screen px-4 py-4">
 
 
-       <p className='font-medium text-2xl'>Add New Content</p>
+       <p className='font-medium text-2xl'>Add New Content - <span className='text-zinc-500'>MED BLOG</span></p>
 
       
 
