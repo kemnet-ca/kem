@@ -14,6 +14,8 @@ import Tooltip from '@mui/material/Tooltip';
 import { useRouter } from 'next/navigation';
 import Fade from '@mui/material/Fade';
 import axios from 'axios';
+import { Dialog, DialogTitle, DialogContent, DialogActions, Slide, TextField, Button } from '@mui/material';
+import { TransitionProps } from '@mui/material/transitions';
 
 export default function Blog() {
   
@@ -22,6 +24,7 @@ export default function Blog() {
   const [selectedView, setSelectedView] = React.useState('GALLERY');
   const router = useRouter();
   const [postsData, setPostsData] = useState<any[]>([]); 
+  const [open, setOpen] = React.useState(false);
 
 
   const handleCategoryChange = (event:any) => {
@@ -36,6 +39,10 @@ export default function Blog() {
     setSelectedView("SNIPPET");
   };
 
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   
   function goBack()
   {
@@ -85,11 +92,80 @@ export default function Blog() {
   };
 
 
+  const Transition = React.forwardRef(function Transition(
+    props: TransitionProps & {
+      children: React.ReactElement<any, any>;
+    },
+    ref: React.Ref<unknown>,
+  ) {
+    return <Slide direction="up" ref={ref} {...props} />;
+  });
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  
+
 
   return (
     <main className="bg-white relative">
 
+
+
  <Header />
+
+
+ <React.Fragment>
+     
+     <Dialog
+       open={open}
+       TransitionComponent={Transition}
+       keepMounted
+       onClose={handleClose}
+       aria-describedby="alert-dialog-slide-description"
+     >
+       <DialogTitle className=" text-center font-semibold text-md">{"Receive this Content in your email"}</DialogTitle>
+       <DialogContent>
+
+
+    <div className="mt-6"></div>
+
+       <TextField
+          id="outlined-basic"
+          label="Your First Name"
+          variant="outlined"
+          className='w-full'
+         // onChange={handleTitleChange}
+        />
+
+<div className="mt-6"></div>
+
+<TextField
+   id="outlined-basic"
+   label="Your Email"
+   variant="outlined"
+   className='w-full'
+  // onChange={handleTitleChange}
+ />
+
+      
+
+       <p className="text-zinc-900 text-sm font-normal">
+       
+ 
+       </p>
+
+
+        
+       </DialogContent>
+       <DialogActions>
+        <Button className='bg-zinc-100 rounded-xl p-2 mr-6 text-xs shadow-xl text-zinc-600'>Get It Now</Button>
+         <p className='text-zinc-400 cursor-pointer mr-10 hover:mb-1' onClick={handleClose}>Cancel</p>
+        
+       </DialogActions>
+     </Dialog>
+   </React.Fragment>
+
 
 
 <div className='h-[100px] w-screen  relative md:pt-10 md:pb-10 md:pl-20 md:pr-20 md:pt-28 flex'>
@@ -119,7 +195,7 @@ export default function Blog() {
 
 <p className="text-xs font-light text-zinc-800"> Take the confusion out of compounding and get all of your burning questions answered. Kemet simplifies compounding: &apos;Customized medicine companion: Mastering the Basics with Ease&apos;</p>
 
-  <button  className='text-center text-xs text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 ml-[20px] mr-6'>Download PDF</button>
+  <button  className='text-center text-xs text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 py-2 hover:mt-2 ml-[20px] mr-6' onClick={handleClickOpen}>Download PDF</button>
 
 
   

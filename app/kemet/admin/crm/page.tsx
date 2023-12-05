@@ -255,7 +255,10 @@ useEffect(() => {
 
         <div className="">
 
-        <p className="mt-4 font-semibold">Total Visits</p>
+{
+
+  /*
+  <p className="mt-4 font-semibold">Total Visits</p>
 
 <LineChart
 xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
@@ -267,14 +270,19 @@ series={[
 width={500}
 height={300}
 />
+  */
+}
+      
         </div>
 
         <div className="">
 
+{
+  /*
+  
 <p className="mt-4 font-semibold">Prescriber & Patients Requests</p>
 
-{
-  /*<LineChart
+  <LineChart
       xAxis={[{ data: xAxisData }]}
       series={[
         { data: dataPatients },
