@@ -216,6 +216,19 @@ useEffect(() => {
       <div className="w-screen h-screen px-4 py-4">
         <div className="grid grid-cols-4 gap-4">
 
+
+        <div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
+  <p className="text-sm text-zinc-500 font-medium">Download Requests</p>
+
+
+
+  <p className="text-xl text-zinc-700 font-medium mt-4">{300}</p>
+
+  <div className="flex-shrink-0 align-items-flex-end text-sm">
+    <Link href={"../admin/requests/patients"}>View All</Link>
+  </div>
+</div>
+
         <div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Total Patient Requests</p>
 
@@ -248,8 +261,12 @@ useEffect(() => {
   </div>
 
             </div>
+            
 
         </div>
+
+
+        
 
        <div className="grid md:grid-cols-2 gap-2 mt-8">
 

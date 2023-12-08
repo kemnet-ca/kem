@@ -134,7 +134,7 @@ const KnowledgeCMS = () => {
     
       formData.append('title',  title.toString());
       formData.append('body',  editorContent);
-      formData.append('group',  "MED_INFO_BLOG");
+      formData.append('group',  "KNOWLEDGE_HUB");
       
       formData.append('sub_category',selectedOption);
      
