@@ -45,7 +45,7 @@ export default function ResearchAndDev() {
    //get patient request data
    useEffect(() => {
     // Fetch all posts
-    axios.get('https://kemet.care/api/cms/rd/posts', {
+    axios.get('https://back.kemet.care/api/cms/rd/posts', {
      
     })
       .then((response: { data: any; }) => {

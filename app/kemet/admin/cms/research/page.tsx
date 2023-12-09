@@ -146,7 +146,7 @@ const ResearchCMS = () => {
     
     
        // create new guest post
-        axios.post('https://kemet.care/api/cms/new_post', formData )
+        axios.post('https://back.kemet.care/api/cms/new_post', formData )
           .then((response: { data: any; }) => {
             const data = response.data;
             console.log(data);

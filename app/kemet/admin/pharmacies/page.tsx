@@ -107,7 +107,7 @@ const handleClickOpen = () => {
 //get patient request data
     useEffect(() => {
         // Fetch all posts
-        axios.get('https://kemet.care/api/all_pharm', {
+        axios.get('https://back.kemet.care/api/all_pharm', {
          
         })
           .then((response: { data: any; }) => {

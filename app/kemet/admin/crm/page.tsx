@@ -83,7 +83,7 @@ const AdminPanel = () => {
     //get patient request data
     useEffect(() => {
       // Fetch all posts
-      axios.get('https://kemet.care/api/requests/prescribers', {
+      axios.get('https://back.kemet.care/api/requests/prescribers', {
        
       })
         .then((response: { data: any; }) => {
@@ -119,7 +119,7 @@ const AdminPanel = () => {
 //get crm request data
 useEffect(() => {
   // Fetch all posts
-  axios.get('https://kemet.care/api/main/view', {
+  axios.get('https://back.kemet.care/api/main/view', {
    
   })
     .then((response: { data: any; }) => {

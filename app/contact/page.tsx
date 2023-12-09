@@ -58,7 +58,7 @@ T6N 1E5</p>
 
 <p className="font-semibold mt-4">Contact Us By Email Below:</p>
 
-<p>admin@kemet.care</p>
+<p>admin@back.kemet.care</p>
 
 
 <p className="font-semibold mt-4">Contact Us By Fax Below:</p>

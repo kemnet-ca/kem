@@ -16,6 +16,7 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Tooltip from '@mui/material/Tooltip';
 import Fade from '@mui/material/Fade';
+import axios from 'axios';
 
 
 
@@ -29,6 +30,8 @@ export default function Upcoming() {
 
   const [selectedOption, setSelectedOption] = useState('Categories');
   const [selectedView, setSelectedView] = useState('GALLERY');
+  const [postsData, setPostsData] = useState<any[]>([]); 
+  
 
   const handleCategoryChange = (event:any) => {
     setSelectedOption(event.target.value);
@@ -49,6 +52,49 @@ export default function Upcoming() {
   {
     router.back();
   }
+
+    //get patient request data
+    useEffect(() => {
+      // Fetch all posts
+      axios.get('https://back.kemet.care/api/cms/knowledge_hub/posts', {
+       
+      })
+        .then((response: { data: any; }) => {
+          const data = response.data;
+        
+         console.log(data);
+         setPostsData(data );
+         
+  
+        
+        })
+        .catch((error: any) => {
+          console.error('Error fetching data:', error);
+        });
+    }, []);
+  
+    const formatText = (text:any) => {
+   
+      
+      // Remove surrounding quotes if needed
+      const parsedContent = text.replace(/^"|"$/g, '');
+      
+       
+      // Create a temporary element to render HTML content
+      const tempElement = document.createElement('div');
+      tempElement.innerHTML = parsedContent;
+    
+      // Access the parsed content text without HTML tags
+      const textContent = tempElement.textContent;
+    
+      
+    
+      const truncatedText = textContent!.length > 100 ? textContent!.substring(0, 100) + '...' : textContent;
+    
+      return truncatedText;
+    
+    };
+  
 
 
   return (
@@ -324,191 +370,66 @@ selectedView=="GALLERY"?(<>
 <div className='flex w-screen justify-center  flex'>
 
 <div className="w-2/3 grid grid-cols-2 p-4 gap-4  items-center place-content-center mx-auto">
-    <div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
+{postsData !== null && postsData.map((singlePost: any, index: any) => (
+    <div key={index} className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
+
+
+   
 
         <div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer p-4 ">
 
        
         <div  className='w-full h-8 bg-400 rouned-br-2xl p-2 rounded-bl-2xl   border-t grid place-content-center  '>
 
-<p   className='text-sm font-light text-center '>Blog Item</p>
+<p   className='text-sm font-medium  text-center '>{singlePost.title}</p>
 
 
 </div>
 
         </div>
 
-       
-    </div>
    
 
-    <div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
-
-<div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer p-4">
-
        
-<div  className='w-full h-8 bg-400 rouned-br-2xl p-2 rounded-bl-2xl   border-t grid place-content-center p-4  '>
+    </div>
+    ))}
+   
 
-    <p   className='text-sm font-light text-center '>Blog Item</p>
-
-  
-</div>
-
-</div>
-
-</div>
-
-
-
-
-<div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
-
-<div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer border-t grid place-content-center p-4 ">
-
-       
-<div  className='w-full h-8 bg-400 rouned-br-2xl p-2 rounded-bl-2xl    '>
-
-    <p   className='text-sm font-light text-center '>Blog Item</p>
-
- 
-</div>
-
-</div>
-
-</div>
-
-
-<div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
-
-<div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer border-t grid place-content-center p-4 ">
-
-       
-<div  className='w-full h-8 bg-400 rouned-br-2xl p-2 rounded-bl-2xl   border-t grid place-content-center   '>
-
-    <p   className='text-sm font-light text-center '>Blog Item</p>
-
- 
-</div>
-
-</div>
-
-</div>
-
-
-<div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
-
-<div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer p-4">
-
-       
-<div  className='w-full h-8 bg-400 rouned-br-2xl p-2 rounded-bl-2xl   border-t grid place-content-center  '>
-
-    <p   className='text-sm font-light text-center '>Blog Item</p>
-
- 
-</div>
-
-</div>
-
-</div>
-
-
-<div className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
-
-<div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer border-t flex flex-col justify-center items-center p-4">
-
-  <p className='text-sm font-light text-center'>Blog Item</p>
-
-</div>
-
-
-</div>
-
-  </div>
-  
-</div>
+  </div></div>
   </>):(<>
   
-    <div className='flex w-screen justify-center  flex'>
+    <div  className='flex w-screen justify-center  flex'>
 
 <div className="w-2/3 grid grid-cols-2 p-4 gap-4  items-center place-content-center mx-auto">
 
 
-  <div className="flex w-full shadow-xl p-2 rounded-xl border border-slate-200">
-    <div className="h-20 w-32 bg-slate-200 rounded-md">
-
-    </div>
-    <p   className='text-xs font-light text-start ml-2'>Blog Item</p>
-
-
-
-  </div>
-   
-
-  <div className="flex w-full shadow-xl p-2 rounded-xl border border-slate-200">
-    <div className="h-20 w-32 bg-slate-200 rounded-md">
-
-    </div>
-    <p   className='text-xs font-light text-start ml-2'>Blog Item</p>
-
-
-
-  </div>
-
-
-
-
-
-
-  <div className="flex w-full shadow-xl p-2 rounded-xl border border-slate-200">
-    <div className="h-20 w-32 bg-slate-200 rounded-md">
-
-    </div>
-    <p   className='text-xs font-light text-start ml-2'>Blog Item</p>
-
-
-
-  </div>
-
-
-  <div className="flex w-full shadow-xl p-2 rounded-xl border border-slate-200">
-    <div className="h-20 w-32 bg-slate-200 rounded-md">
-
-    </div>
-    <p   className='text-xs font-light text-start ml-2'>Blog Item</p>
-
-
-
-  </div>
-
-
-  <div className="flex w-full shadow-xl p-2 rounded-xl border border-slate-200">
-    <div className="h-20 w-32 bg-slate-200 rounded-md">
-
-    </div>
-    <p   className='text-xs font-light text-start ml-2'>Blog Item</p>
-
-
-
-  </div>
-
-
-  <div className="flex w-full shadow-xl p-2 rounded-xl border border-slate-200">
-    <div className="h-20 w-32 bg-slate-200 rounded-md">
-
-    </div>
-    <p   className='text-xs font-light text-start ml-2'>Blog Item</p>
-
-
-
-  </div>
-
-  </div>
+{postsData !== null && postsData.map((singlePost: any, index: any) => (
   
-</div>
+  <div key={index} className="flex w-full shadow-xl p-2 rounded-xl border border-slate-200">
+    <div className="h-20 w-32 bg-slate-200 rounded-md">
+
+    </div>
+  <div>
+  <p   className='text-xs font-medium text-start ml-2'>{singlePost.title}</p>
+
+
+    <p   className='text-xs  mt-2 text-start ml-2'>{formatText(singlePost.body)}</p>
+
+    </div>
+
+
+  </div>
+
+))}
+
+
+
+
+
+</div></div>
   
   </>)
 }
-
 
 
 {/*Medicine For You, By You */}
