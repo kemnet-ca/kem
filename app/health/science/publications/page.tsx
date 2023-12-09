@@ -56,7 +56,7 @@ export default function Upcoming() {
     //get patient request data
     useEffect(() => {
       // Fetch all posts
-      axios.get('https://back.kemet.care/api/cms/knowledge_hub/posts', {
+      axios.get('https://www.back.kemet.care/api/cms/knowledge_hub/posts', {
        
       })
         .then((response: { data: any; }) => {

@@ -234,7 +234,7 @@ function goBack()
   
   
      // create new guest post
-      axios.post('https://back.kemet.care/api/new_prescriber_request', formData )
+      axios.post('https://www.back.kemet.care/api/new_prescriber_request', formData )
         .then((response: { data: any; }) => {
           const data = response.data;
           console.log(data);

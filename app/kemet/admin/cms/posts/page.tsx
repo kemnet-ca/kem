@@ -118,7 +118,7 @@ const handleClickOpen = () => {
 //get patient request data
     useEffect(() => {
         // Fetch all posts
-        axios.get('https://back.kemet.care/api/cms/posts', {
+        axios.get('https://www.back.kemet.care/api/cms/posts', {
          
         })
           .then((response: { data: any; }) => {
@@ -208,7 +208,7 @@ const goToDashboard = () => {
 
 
         // create new guest post
-         axios.post('https://back.kemet.care/api/patients/get_req_btw_dates', formData )
+         axios.post('https://www.back.kemet.care/api/patients/get_req_btw_dates', formData )
            .then((response: { data: any; }) => {
              const data = response.data;
              console.log(data);

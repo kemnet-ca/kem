@@ -52,7 +52,7 @@ export default function Blog() {
   //get patient request data
   useEffect(() => {
     // Fetch all posts
-    axios.get('https://back.kemet.care/api/cms/med_blog/posts', {
+    axios.get('https://www.back.kemet.care/api/cms/med_blog/posts', {
      
     })
       .then((response: { data: any; }) => {

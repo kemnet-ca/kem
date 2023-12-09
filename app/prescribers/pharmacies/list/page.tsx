@@ -195,7 +195,7 @@ const checkboxStyle = {
 //get patient request data
 useEffect(() => {
   // Fetch all posts
-  axios.get('https://back.kemet.care/api/all_pharm', {
+  axios.get('https://www.back.kemet.care/api/all_pharm', {
    
   })
     .then((response: { data: any; }) => {
@@ -216,7 +216,7 @@ function getIP(){
   //get patient request data
 
   // Fetch all posts
-  axios.get('https://back.kemet.care/api/get-ip', {
+  axios.get('https://www.back.kemet.care/api/get-ip', {
    
   })
     .then((response: { data: any; }) => {
