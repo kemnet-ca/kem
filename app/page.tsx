@@ -53,6 +53,19 @@ useEffect(() => {
 }, []);
 
 
+return(
+
+  <>
+  
+  <main className="bg-white relative grid place-content-center h-screen w-screen">
+  <p className='text-3xl text-zinc-400 text-center'>Oops! We havn't launched yet </p>
+<p className='text-3xl text-zinc-400 text-center'>Kemet Is Coming Soon </p>
+
+
+    </main>
+  </>
+);
+
  
 
   return (

@@ -9,7 +9,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
 export const metadata: Metadata = {
   title: 'Kemet Pharamceuticals',
-  description: 'Kemet Pharamceuticals',
+  description: 'Kemet Pharmaceuticals',
 }
 
 export default function RootLayout({
