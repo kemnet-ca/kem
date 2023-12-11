@@ -8,8 +8,8 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 //const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Kemet Pharamceuticals',
-  description: 'Kemet Pharmaceuticals',
+  title: 'Kemet Pharamceuticals - Custom Medicines For Everyone & Every Need',
+  description: 'Kemet Pharmaceuticals - Custom Medicines For Everyone & Every Need',
 }
 
 export default function RootLayout({
@@ -20,6 +20,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+      <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-BDG69VG5P2"
+    ></script>
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BDG69VG5P2');
+      `,
+      }}
+    ></script>
         {/* Add the Google Fonts link for Space Grotesque */}
         <link
           rel="preconnect"
