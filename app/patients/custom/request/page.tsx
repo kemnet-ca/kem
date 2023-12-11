@@ -659,7 +659,9 @@ className='border border-zinc-300 text-sm text-zinc-300 p-4 w-[500px] rounded-md
 
   </div>
 
-<div className="w-screen flex justify-center md:p-16">
+{
+  /*
+  <div className="w-screen flex justify-center md:p-16">
 
   <div className="py-8 bg-slate-200 w-2/3 px-4 rounded-md flex">
 
@@ -678,6 +680,9 @@ className='border border-zinc-300 text-sm text-zinc-300 p-4 w-[500px] rounded-md
 
   </div>
 </div>
+
+  */
+}
 
 <ParticipatingPharms />
 
