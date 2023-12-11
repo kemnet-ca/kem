@@ -92,10 +92,11 @@ useEffect(() => {
 <CookieConsent
   location="bottom"
   buttonText="Yes, I'm cool!"
+  
   cookieName="myAwesomeCookieName2"
   style={{ background: "#2B373B" }}
   declineButtonText="Not interested"
-  buttonStyle={{ color: "#000000", backgroundColor:"#ffffff", fontSize: "13px" }}
+  buttonStyle={{ color: "#000000", backgroundColor:"#ffffff"}}
   expires={150}
 
   enableDeclineButton
