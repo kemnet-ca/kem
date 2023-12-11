@@ -154,7 +154,10 @@ export default function PrescriberRequestForm() {
          <p className="ml-4 font-normal text-sm flex">Change the medication formulation
          
 
-         <Tooltip  TransitionComponent={Fade}
+         {
+  /*
+   
+      <Tooltip  TransitionComponent={Fade}
          componentsProps={{
             tooltip: {
               sx: {
@@ -183,6 +186,11 @@ export default function PrescriberRequestForm() {
          <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
        
     </Tooltip>
+
+  */
+}        
+    
+       
          
          </p>
 
@@ -195,8 +203,13 @@ export default function PrescriberRequestForm() {
           
          onChange={handleRadioChange}
            /> 
+      
          <p className="ml-4 font-normal text-sm flex">Change the medication flavor
-         <Tooltip  TransitionComponent={Fade}
+     
+         {
+  /*
+   
+      <Tooltip  TransitionComponent={Fade}
          componentsProps={{
             tooltip: {
               sx: {
@@ -224,6 +237,13 @@ export default function PrescriberRequestForm() {
   } arrow>
          <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
          </Tooltip>
+
+  */
+}        
+    
+     
+     
+        
          </p>
          </div>
 
@@ -237,7 +257,11 @@ export default function PrescriberRequestForm() {
          /> 
          <p className="ml-4 font-normal text-sm flex">Change the medication dose
 
-         <Tooltip  TransitionComponent={Fade}
+
+         {
+  /*
+   
+      <Tooltip  TransitionComponent={Fade}
          componentsProps={{
             tooltip: {
               sx: {
@@ -265,6 +289,11 @@ export default function PrescriberRequestForm() {
   } arrow>
          <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
          </Tooltip>
+
+  */
+}        
+    
+        
          </p>
          </div>
 
@@ -276,7 +305,13 @@ export default function PrescriberRequestForm() {
          onChange={handleRadioChange}
         /> 
         <p className="ml-4 font-normal text-sm flex">Create a combination medication. 
-        
+
+
+
+       {
+  /*
+   
+          
         <Tooltip  TransitionComponent={Fade}
         componentsProps={{
     tooltip: {
@@ -305,6 +340,9 @@ export default function PrescriberRequestForm() {
   } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
+
+  */
+}     
         </p>
         </div>
 
@@ -317,6 +355,11 @@ export default function PrescriberRequestForm() {
          onChange={handleRadioChange}
          /> 
         <p className="ml-4 font-normal text-sm flex">I want to consult with a compounding pharmacist. 
+      
+        {
+  /*
+   
+          
         <Tooltip  TransitionComponent={Fade}
         componentsProps={{
             tooltip: {
@@ -345,6 +388,12 @@ export default function PrescriberRequestForm() {
   } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
+
+  */
+}     
+      
+      
+       
         </p>
         </div>
 
@@ -357,7 +406,12 @@ export default function PrescriberRequestForm() {
         /> 
         <p className="ml-4 font-normal text-sm flex">I am looking for a specific compounding medication.
         
-        <Tooltip  TransitionComponent={Fade}
+     
+        {
+  /*
+   
+          
+       <Tooltip  TransitionComponent={Fade}
         componentsProps={{
             tooltip: {
               sx: {
@@ -385,6 +439,12 @@ export default function PrescriberRequestForm() {
   } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
+
+  */
+}     
+      
+     
+       
         </p>
         </div>
 

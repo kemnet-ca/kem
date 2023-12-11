@@ -151,7 +151,10 @@ function addAllSelectionsToCookies(){
          <p className="ml-4 font-normal text-sm flex">I have trouble swallowing your pill 
          
 
-         <Tooltip  TransitionComponent={Fade}
+{
+  /*
+
+   <Tooltip  TransitionComponent={Fade}
          componentsProps={{
             tooltip: {
               sx: {
@@ -180,6 +183,10 @@ function addAllSelectionsToCookies(){
          <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
        
     </Tooltip>
+
+  */
+}
+        
          
          </p>
 
@@ -192,7 +199,12 @@ function addAllSelectionsToCookies(){
           onChange={handleRadioChange}
          /> 
          <p className="ml-4 font-normal text-sm flex">I do not want to inject my hormones and other medications 
-         <Tooltip  TransitionComponent={Fade}
+     
+     
+         {
+  /*
+
+   <Tooltip  TransitionComponent={Fade}
          componentsProps={{
             tooltip: {
               sx: {
@@ -221,6 +233,11 @@ function addAllSelectionsToCookies(){
    arrow>
          <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
          </Tooltip>
+
+  */
+}
+     
+        
          </p>
          </div>
 
@@ -233,7 +250,12 @@ function addAllSelectionsToCookies(){
          /> 
          <p className="ml-4 font-normal text-sm flex">I want my medications to taste better 
 
-         <Tooltip  TransitionComponent={Fade}
+
+
+         {
+  /*
+
+   <Tooltip  TransitionComponent={Fade}
          componentsProps={{
             tooltip: {
               sx: {
@@ -261,6 +283,11 @@ function addAllSelectionsToCookies(){
   } arrow>
          <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
          </Tooltip>
+
+  */
+}
+     
+        
          </p>
          </div>
 
@@ -271,7 +298,13 @@ function addAllSelectionsToCookies(){
          onChange={handleRadioChange}
         /> 
         <p className="ml-4 font-normal text-sm flex">I want a different strength of my medication that is not commercially available. 
-        
+
+
+
+           {
+  /*
+
+  
         <Tooltip  TransitionComponent={Fade}
         componentsProps={{
     tooltip: {
@@ -300,6 +333,9 @@ function addAllSelectionsToCookies(){
   } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
+
+  */
+}   
         </p>
         </div>
 
@@ -311,7 +347,12 @@ function addAllSelectionsToCookies(){
          onChange={handleRadioChange}
         /> 
         <p className="ml-4 font-normal text-sm flex">I want my pain medications in a form that goes through my skin. 
-        <Tooltip  TransitionComponent={Fade}
+      
+      
+        {
+  /*
+
+    <Tooltip  TransitionComponent={Fade}
         componentsProps={{
             tooltip: {
               sx: {
@@ -339,6 +380,12 @@ function addAllSelectionsToCookies(){
   } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
+
+  */
+}   
+      
+      
+      
         </p>
         </div>
 
@@ -349,8 +396,12 @@ function addAllSelectionsToCookies(){
          onChange={handleRadioChange}
         /> 
         <p className="ml-4 font-normal text-sm flex">I want to combine specific strengths for my supplements. 
-        
-        <Tooltip  TransitionComponent={Fade}
+
+
+
+      {
+  /*
+  <Tooltip  TransitionComponent={Fade}
         componentsProps={{
             tooltip: {
               sx: {
@@ -378,6 +429,11 @@ function addAllSelectionsToCookies(){
   } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
+
+  */
+}   
+         
+      
         </p>
         </div>
 
@@ -388,8 +444,11 @@ function addAllSelectionsToCookies(){
          onChange={handleRadioChange}
         /> 
         <p className="ml-4 font-normal text-sm flex">I want help with designing my medication, so I take it regularly and adhere to them as prescribed. 
-        
-        <Tooltip  TransitionComponent={Fade}
+
+
+      {
+  /*
+   <Tooltip  TransitionComponent={Fade}
         componentsProps={{
             tooltip: {
               sx: {
@@ -417,6 +476,10 @@ function addAllSelectionsToCookies(){
   } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
+
+  */
+}      
+       
         </p>
         </div>
 
@@ -428,7 +491,11 @@ function addAllSelectionsToCookies(){
          /> 
         <p className="ml-4 font-normal text-sm flex">I want a speedy erection.
         
-        <Tooltip  TransitionComponent={Fade}
+       
+       
+      {
+  /*
+  <Tooltip  TransitionComponent={Fade}
         componentsProps={{
             tooltip: {
               sx: {
@@ -456,6 +523,11 @@ function addAllSelectionsToCookies(){
   } arrow>
          <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
                  </Tooltip>
+
+  */
+}      
+       
+        
          </p>
         </div>
 
@@ -467,8 +539,11 @@ function addAllSelectionsToCookies(){
         onChange={handleRadioChange}
         /> 
         <p className="ml-4 font-normal text-sm flex">I want a medication that is out of stock. 
-        
-        <Tooltip  TransitionComponent={Fade}
+
+
+        {
+  /*
+   <Tooltip  TransitionComponent={Fade}
         componentsProps={{
             tooltip: {
               sx: {
@@ -496,6 +571,11 @@ function addAllSelectionsToCookies(){
   } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
+
+  */
+}      
+         
+       
         </p>
         </div>
 
@@ -507,7 +587,12 @@ function addAllSelectionsToCookies(){
         onChange={handleRadioChange}
         /> 
         <p className="ml-4 font-normal text-sm flex">I want a medication that is currently out of stock. 
-        
+
+
+
+       {
+  /*
+   
         <Tooltip  TransitionComponent={Fade}
         componentsProps={{
             tooltip: {
@@ -536,6 +621,9 @@ function addAllSelectionsToCookies(){
   } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
+
+  */
+}      
         </p>
         </div>
 
@@ -549,7 +637,13 @@ function addAllSelectionsToCookies(){
         <p className="ml-4 font-normal text-sm flex">I want to request a specific Customization of my medications. 
         
 
-        <Tooltip  TransitionComponent={Fade}
+
+
+
+        {
+  /*
+   
+       <Tooltip  TransitionComponent={Fade}
         componentsProps={{
             tooltip: {
               sx: {
@@ -578,6 +672,10 @@ function addAllSelectionsToCookies(){
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         
         </Tooltip>
+
+  */
+}      
+       
         </p>
         </div>
 
@@ -590,8 +688,13 @@ function addAllSelectionsToCookies(){
         onChange={handleRadioChange}
         /> 
         <p className="ml-4 font-normal text-sm flex">I want to request a specific compound. 
-        
-        <Tooltip  TransitionComponent={Fade}
+
+
+
+        {
+  /*
+   
+      <Tooltip  TransitionComponent={Fade}
         componentsProps={{
             tooltip: {
               sx: {
@@ -619,6 +722,10 @@ function addAllSelectionsToCookies(){
   } arrow>
         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
         </Tooltip>
+
+  */
+}        
+       
         </p>
         </div>
 
