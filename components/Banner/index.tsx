@@ -43,30 +43,30 @@ const Banner = () => {
 			<div className='w-[90%] lg:w-[80%] min-h-screen text-black mx-auto py-10 flex flex-col justify-center items-center'>
 				{/* --------------BANNER TAG---------------- */}
 				<div className='relative hidden gap-12 items-center mb-[150px] sm:flex'>
-					<span className='font-bold text-[72px] text-[#000]'>i am a</span>
+					<span className='font-bold text-[45px] text-[#000]'>i am a</span>
 				
 
 				{
 
-					displayText =="Patient"?(<>	<Link href={"/patients/custom/request"} className='banner_btn uppercase bg-[#DE923A] text-white text-4xl font-bold px-[70px] py-6 rounded-[15px] shadow-[0_8.505px_0_0_rgba(0,0,0,0.10)]'>
+					displayText =="Patient"?(<>	<Link href={"/patients/custom/request"} className='banner_btn uppercase bg-[#DE923A] text-white text-2xl font-bold px-[40px] py-4 rounded-[15px] shadow-[0_8.505px_0_0_rgba(0,0,0,0.10)]'>
 					Patient
 				</Link>
-</>):(<>	<Link href={"/prescribers/custom/request"} className='banner_btn uppercase bg-[#DE923A] text-white text-4xl font-bold px-[70px] py-6 rounded-[15px] shadow-[0_8.505px_0_0_rgba(0,0,0,0.10)]'>
+</>):(<>	<Link href={"/prescribers/custom/request"} className='banner_btn uppercase bg-[#DE923A] text-white text-2xl font-bold px-[40px] py-4 rounded-[15px] shadow-[0_8.505px_0_0_rgba(0,0,0,0.10)]'>
 						Prescriber
 					</Link>
 </>)
 				}
 					{/* ------------ARROW ICON---------------- */}
 					<div className='absolute -bottom-14 left-[40%] -translate-x-1/2'>
-						<Image src='/images/arrow.png' alt='arrow-icon' height={100} width={100} />
+						<Image src='/images/arrow.png' alt='arrow-icon' height={80} width={80} />
 					</div>
 				</div>
 				{/* --------------BANNER TEXT---------------- */}
 				<div className='banner_tag text-center max-w-[890px]'>
-					<h1 className='text-[50px] sm:text-[60px] font-bold mb-5'>
+					<h1 className='text-[27px] sm:text-[37px] font-bold mb-5'>
 						Personalized Custom Medicine
 					</h1>
-					<p className='text-lg lg:text-xl text-black/50'>
+					<p className='text-sm lg:text-md text-black/50'>
 						We take your personalized needs for customized medicines and connect
 						you with the pharmacies that can make or provide them. Unique
 						dosages, unique formulations, out of stock medications and so on, we
