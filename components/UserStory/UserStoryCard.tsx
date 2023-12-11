@@ -15,6 +15,8 @@ const UserStoryCard = () => {
 						<img src='/placeholder.png' alt='profile-img' />
 					</div>
 
+					
+
 					{/* RIGHT CONTENT */}
 					<div className='col-span-1 text-[#fff] flex flex-col'>
 						<h6 className='mb-7 text-[20px] font-medium'>USER STORY</h6>
