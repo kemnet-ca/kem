@@ -70,7 +70,7 @@ const Banner = () => {
 					<p className='text-sm lg:text-xl text-black/50'>
 						We take your personalized needs for customized medicines and connect
 						you with<br></br> the pharmacies that can make or provide them. Unique
-						dosages, unique formulations, out of stock medications and so on, we
+						dosages, unique formulations, <br></br>out of stock medications and so on, we
 						can handle it all.<br></br> Currently servicing residents of Alberta.
 					</p>
 				</div>
