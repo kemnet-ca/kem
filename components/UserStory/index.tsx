@@ -19,7 +19,7 @@ const UserStory = () => {
 			</div>
 			<div className='absolute right-0 bottom-0'>
 				<Image
-					src='/user-story-bottom-bg.png'
+					src='/images/user-story-bottom-bg.png'
 					alt='top-bg'
 					height={200}
 					className='w-[120px] sm:w-[150px]'
