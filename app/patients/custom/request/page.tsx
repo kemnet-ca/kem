@@ -107,8 +107,9 @@ function addAllSelectionsToCookies(){
     
     </div>
 
-    <p className='text-center text-white text-xl font-semibold mt-6'>WELCOME TO OUR CUSTOMIZATION CONSULT REQUEST PAGE</p>
-    <p className='text-center text-white text-sm mt-4 font-normal'>PLEASE LET US KNOW HOW WE CAN ASSIST YOU WITH YOUR MEDICATION NEEDS. <br></br>CUSTOMIZE MEDICATION TO UNIQUE NEEDS AND REQUEST MEDICATION THAT ARE OUT OF STOCK AND A PHARMACIST WILL CONTACT YOU TO COMPLETE AN ASSESSMENT AND GET YOUR MEDICINES CUSTOM MADE FOR YOU.</p>
+    <p className='text-center text-white text-xl font-semibold mt-6'>Welcome to your Medication Customization Consultation Request page.</p>
+    <p className='text-center text-white text-sm mt-4 font-normal'>Please let us know how we can assist with your medication needs. You can customize<br></br> medications to meet your unique requirements and request medications that are currently out<br></br> of stock. A pharmacist will contact you to conduct an assessment and arrange for your<br></br> medicines to be custom-made for you.
+</p>
 
  </div>
 </div>
@@ -144,7 +145,7 @@ function addAllSelectionsToCookies(){
 
          <div className='mt-4 flex'>
          <input value="I have trouble swallowing your pill" type="checkbox" 
-           checked={selectedValues.includes('I have trouble swallowing your pill')}
+           checked={selectedValues.includes('I have trouble swallowing my pill')}
           
            onChange={handleRadioChange}
          /> 
@@ -193,12 +194,12 @@ function addAllSelectionsToCookies(){
          </div>
        
          <div className='mt-4 flex'>
-         <input value="I do not want to inject my hormones and other medications" type="checkbox" 
-          checked={selectedValues.includes('I do not want to inject my hormones and other medications')}
+         <input value="I prefer not to inject my medication." type="checkbox" 
+          checked={selectedValues.includes('I prefer not to inject my medication.')}
           
           onChange={handleRadioChange}
          /> 
-         <p className="ml-4 font-normal text-sm flex">I do not want to inject medications 
+         <p className="ml-4 font-normal text-sm flex">I prefer not to inject my medication. 
      
      
          {
@@ -244,11 +245,11 @@ function addAllSelectionsToCookies(){
 
          <div className='mt-4 flex'>
 
-         <input value="I want my medications to taste better" type="checkbox"
-          checked={selectedValues.includes('I want my medications to taste better')}
+         <input value="I want my medications to have a better taste." type="checkbox"
+          checked={selectedValues.includes('I want my medications to have a better taste.')}
           onChange={handleRadioChange}
          /> 
-         <p className="ml-4 font-normal text-sm flex">I want my medications to taste better 
+         <p className="ml-4 font-normal text-sm flex">I want my medications to have a better taste. 
 
 
 
@@ -293,11 +294,11 @@ function addAllSelectionsToCookies(){
 
          <div className='mt-4 flex'>
 
-        <input value="I want a different strength of my medication that is not commercially available." type="checkbox"
-         checked={selectedValues.includes('I want a different strength of my medication that is not commercially available.')}
+        <input value="I require a different strength of my medication that is not available commercially." type="checkbox"
+         checked={selectedValues.includes('I require a different strength of my medication that is not available commercially.')}
          onChange={handleRadioChange}
         /> 
-        <p className="ml-4 font-normal text-sm flex">I want a different strength of my medication that is not commercially available. 
+        <p className="ml-4 font-normal text-sm flex">I require a different strength of my medication that is not available commercially. 
 
 
 
@@ -342,11 +343,11 @@ function addAllSelectionsToCookies(){
 
         <div className='mt-4 flex'>
 
-        <input value="I want my pain medications in a form that goes through my skin." type="checkbox"
-         checked={selectedValues.includes('I want my pain medications in a form that goes through my skin.')}
+        <input value="I desire my medications in a form that can be absorbed through my skin." type="checkbox"
+         checked={selectedValues.includes('I desire my medications in a form that can be absorbed through my skin.')}
          onChange={handleRadioChange}
         /> 
-        <p className="ml-4 font-normal text-sm flex">I want my medications in a form that goes through my skin. 
+        <p className="ml-4 font-normal text-sm flex">I desire my medications in a form that can be absorbed through my skin. 
       
       
         {
@@ -439,11 +440,11 @@ function addAllSelectionsToCookies(){
 
         <div className='mt-4 flex'>
 
-        <input value="I want help with designing my medication, so I take it regularly and adhere to them as prescribed." type="checkbox"
-         checked={selectedValues.includes('I want help with designing my medication, so I take it regularly and adhere to them as prescribed.')}
+        <input value="I need assistance in designing my medication regimen to ensure regular intake and adherence to the prescribed schedule." type="checkbox"
+         checked={selectedValues.includes('I need assistance in designing my medication regimen to ensure regular intake and adherence to the prescribed schedule.')}
          onChange={handleRadioChange}
         /> 
-        <p className="ml-4 font-normal text-sm flex">I want help with designing my medication, so I take it regularly and adhere to them as prescribed. 
+        <p className="ml-4 font-normal text-sm flex">I need assistance in designing my medication regimen to ensure regular intake and adherence to the prescribed schedule. 
 
 
       {
@@ -486,12 +487,12 @@ function addAllSelectionsToCookies(){
       
         <div className='mt-4 flex'>
 
-        <input value="I want to request a specific compounded medication." type="checkbox" 
+        <input value="I am seeking medication that is currently out of stock." type="checkbox" 
         
-        checked={selectedValues.includes('I want to request a specific compounded medication.')}
+        checked={selectedValues.includes('I am seeking medication that is currently out of stock.')}
         onChange={handleRadioChange}
         /> 
-        <p className="ml-4 font-normal text-sm flex">I want to request a specific compounded medication. 
+        <p className="ml-4 font-normal text-sm flex">I am seeking medication that is currently out of stock. 
 
 
 
@@ -534,12 +535,12 @@ function addAllSelectionsToCookies(){
 
         <div className='mt-4 flex'>
 
-        <input value="I want to request a specific Customization of my medications." type="checkbox"
+        <input value="I would like to request a specific compounded medication." type="checkbox"
         
-        checked={selectedValues.includes('I want to request a specific Customization of my medications.')}
+        checked={selectedValues.includes('I would like to request a specific compounded medication.')}
         onChange={handleRadioChange}
         /> 
-        <p className="ml-4 font-normal text-sm flex">I want to request a specific Customization of my medications. 
+        <p className="ml-4 font-normal text-sm flex">I would like to request a specific compounded medication. 
         
 
 

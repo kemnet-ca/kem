@@ -69,7 +69,7 @@ const Navbar = () => {
 							<span className='font-bold'>Talk to a</span>
 							<span className='text-[23px]'>Pharmacist</span>
 						</p>
-						<Link href={"options"} className=''>
+						<Link href={"/options"} className=''>
 							<span className='bg-[#2D86C8] text-white rounded-full h-[50px] w-[50px] flex justify-center items-center text-3xl cursor-pointer select-none'>
 								<FaArrowRight />
 							</span>

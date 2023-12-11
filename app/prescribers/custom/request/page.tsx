@@ -109,10 +109,9 @@ export default function PrescriberRequestForm() {
     
     </div>
 
-    <p className='text-center text-white text-xl font-semibold mt-6'>WELCOME TO OUR CUSTOMIZATION CONSULT REQUEST PAGE</p>
-    <p className='text-center text-white text-sm mt-4 font-normal'>PLEASE LET US KNOW HOW WE CAN ASSIST YOU WITH YOUR MEDICATION NEEDS FOR YOUR PATIENT. <br></br>CUSTOMIZE MEDICATION TO UNIQUE NEEDS AND REQUEST MEDICATION THAT ARE OUT OF STOCK AND A PHARMACIST WILL CONTACT YOU TO COMPLETE AN ASSESSMENT AND GET YOUR MEDICINES CUSTOM MADE FOR YOU.</p>
-    <p className='text-center text-white text-sm mt-4 font-normal'>WE ARE ABLE TO FAX AN AVAILABLE COMPOUNDER TO SOURCE YOUR PATIENT&apos;S SPECIFIC NEEDS. UPON YOUR REQUEST, A PHARMACIST WILL CONTACT YOU AS REQUIRED, AS REQUIRED TO COMPLETE AN ASSESSMENT AND GET YOUR MEDICINES CUSTOM MADE FOR YOUR PATIENTS.</p>
-
+    <p className='text-center text-white text-xl font-semibold mt-6'>Welcome to your Customization Consultation Request page.</p>
+    <p className='text-center text-white text-sm mt-4 font-normal'>Please let us know how we can assist you in customizing medications to meet your patient&apos;s<br></br> unique needs, and in requesting medications that are currently out of stock. A pharmacist will<br></br> contact you for a consultation.</p>
+   
  </div>
 </div>
 
