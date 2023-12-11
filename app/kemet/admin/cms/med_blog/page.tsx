@@ -84,7 +84,11 @@ const MedBlogCMS = () => {
       };
 
       const goToDashboard = () => {
-        router.push("../crm")
+        router.push("../pharmacies")
+      };
+
+      const goToPharmacies = () => {
+        router.push("../cms")
       };
   
     const toggleMenu = () => {
@@ -238,7 +242,7 @@ const MedBlogCMS = () => {
           </ListItem>
 
           <hr></hr>
-          <ListItem button>
+          <ListItem onClick={goToPharmacies} button>
             <ListItemText primary="Pharmacies" />
           </ListItem>
 

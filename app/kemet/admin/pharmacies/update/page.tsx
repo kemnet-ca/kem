@@ -2,7 +2,7 @@
 // Import necessary React and Material-UI components
 
 import Link from 'next/link';
-import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Menu, MenuItem } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Menu, MenuItem, FormControl, Select } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import React, { useState,useEffect } from 'react';
 import Cookies from 'js-cookie';
@@ -49,6 +49,8 @@ const AdminEditPharm = () => {
     const [requestData, setRequestData] = React.useState([]);
 
     const [additionalInfo, setAdditionalInfo] = React.useState([]);
+    const [selectedOption, setSelectedOption] = React.useState('APPROVED');
+  
 
 
     const [pharmName, setPharmName] = useState("");
@@ -120,7 +122,12 @@ const AdminEditPharm = () => {
      
     }, []);
   
-   
+    const handleStatusChange = (event:any) => {
+      setSelectedOption(event.target.value);
+  
+      
+    };
+  
 
 
 
@@ -174,22 +181,6 @@ const handleClickOpen = () => {
       setAnchorEl(null);
     };
 
-//get patient request data
-    useEffect(() => {
-        // Fetch all posts
-        axios.get('https://www.back.kemet.care/api/all_pharm', {
-         
-        })
-          .then((response: { data: any; }) => {
-            const data = response.data;
-           console.log(data);
-            setPharmRequestData(data );
-          })
-          .catch((error: any) => {
-            console.error('Error fetching data:', error);
-          });
-      }, []);
-  
 
 
 
@@ -223,6 +214,7 @@ function update(){
 
     formData.append('email',  email.toString());
     formData.append('id',  pharmID.toString());
+    formData.append('status',  selectedOption.toString());
 
     try {
 
@@ -456,6 +448,24 @@ function update(){
         fullWidth
         margin="normal"
       />
+
+<p className='text-zinc-500 text-sm mb-2' >Select A Category</p>
+       <FormControl className='w-80'>
+      <Select
+      className='w-80'
+        value={selectedOption}
+        onChange={handleStatusChange}
+        displayEmpty
+
+       // className="w-full md:w-[200px] mr-auto"
+      >
+      
+
+        <MenuItem value="APPROVED">APPROVED</MenuItem>
+        <MenuItem value="PENDING">PENDING</MenuItem>
+       
+      </Select>
+    </FormControl>
       {/* Add other text fields for the remaining data */}
 {
   loading==true?(<><p>Sending ...</p></>):(<>

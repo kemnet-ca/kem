@@ -1,9 +1,11 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import SectionHeader from "@/components/SectionHeader";
 // Import Swiper React components
+
 import { Swiper, SwiperSlide } from "swiper/react";
+
 
 // Import Swiper styles
 import "swiper/css";
@@ -15,6 +17,25 @@ import { Pagination, Navigation } from "swiper/modules";
 import SlideItem from "./SlideItem";
 
 const StoryBook = () => {
+    const [showPrevButton, setShowPrevButton] = useState(false);
+    const [showNextButton, setShowNextButton] = useState(true);
+
+    const handleSwiper = (swiper:any) => {
+        swiper.on('slideChange', () => {
+          if (swiper.isBeginning) {
+            setShowPrevButton(false);
+          } else {
+            setShowPrevButton(true);
+          }
+    
+          if (swiper.isEnd) {
+            setShowNextButton(false);
+          } else {
+            setShowNextButton(true);
+          }
+        });
+      };
+  
 	return (
 		<div className='pb-[20px]   w-screen flex justify-center'>
 			
@@ -28,7 +49,16 @@ const StoryBook = () => {
 					pagination={{
 						clickable: true,
 					}}
-					navigation={true}
+                 //  navi
+					//navigation
+                    parallax={true}
+                    navigation={{
+                        nextEl: showNextButton ? '.swiper-button-next' : '',
+                        prevEl: showPrevButton ? '.swiper-button-prev' : '',
+                      }}
+                      onSwiper={handleSwiper}
+
+                      
 
                     
 					modules={[Pagination, Navigation]}
