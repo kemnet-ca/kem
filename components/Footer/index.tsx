@@ -23,7 +23,7 @@ const NewFooter = () => {
 						</Link>
 
 						<p className='text-lg font-medium text-left'>
-							Kemet Group Inc Incorporated ESR.2023
+							Kemet Group Inc Incorporated EST. 2021
 						</p>
 
 						<ul className='flex gap-4'>
