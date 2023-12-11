@@ -136,7 +136,7 @@ function addAllSelectionsToCookies(){
 
 
 
-    <p className='text-xl font-normal text-center mt-10'>Customisation Custom Request</p>
+    <p className='text-xl font-normal text-center mt-10'>Customization Request</p>
 
 
 
@@ -148,7 +148,7 @@ function addAllSelectionsToCookies(){
           
            onChange={handleRadioChange}
          /> 
-         <p className="ml-4 font-normal text-sm flex">I have trouble swallowing your pill 
+         <p className="ml-4 font-normal text-sm flex">I have trouble swallowing my pill 
          
 
 {
@@ -198,7 +198,7 @@ function addAllSelectionsToCookies(){
           
           onChange={handleRadioChange}
          /> 
-         <p className="ml-4 font-normal text-sm flex">I do not want to inject my hormones and other medications 
+         <p className="ml-4 font-normal text-sm flex">I do not want to inject medications 
      
      
          {
@@ -346,7 +346,7 @@ function addAllSelectionsToCookies(){
          checked={selectedValues.includes('I want my pain medications in a form that goes through my skin.')}
          onChange={handleRadioChange}
         /> 
-        <p className="ml-4 font-normal text-sm flex">I want my pain medications in a form that goes through my skin. 
+        <p className="ml-4 font-normal text-sm flex">I want my medications in a form that goes through my skin. 
       
       
         {
@@ -483,110 +483,15 @@ function addAllSelectionsToCookies(){
         </p>
         </div>
 
+      
         <div className='mt-4 flex'>
 
-        <input value="I want a speedy erection." type="checkbox"
-         checked={selectedValues.includes('I want a speedy erection.')}
-         onChange={handleRadioChange}
-         /> 
-        <p className="ml-4 font-normal text-sm flex">I want a speedy erection.
+        <input value="I want to request a specific compounded medication." type="checkbox" 
         
-       
-       
-      {
-  /*
-  <Tooltip  TransitionComponent={Fade}
-        componentsProps={{
-            tooltip: {
-              sx: {
-                bgcolor: 'common.white',
-                color: 'common.black',
-                '& .MuiTooltip-arrow': {
-                  color: 'common.white',
-                },
-              },
-            },
-          }}
-  TransitionProps={{ timeout: 600 }} title={
-    <div className='flex  w-[300px] p-2'>
-
-       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
-
-       </div>
-
-       <div className="">
-       <p className='text-xs font-normal text-left'>Hint</p>
-     <p className='text-xs font-light text-leight'> Fast erection assistance</p>
-    
-        </div> 
-    </div>
-  } arrow>
-         <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
-                 </Tooltip>
-
-  */
-}      
-       
-        
-         </p>
-        </div>
-
-        <div className='mt-4 flex'>
-
-        <input value="I want a medication that is out of stock." type="checkbox"
-        
-        checked={selectedValues.includes('I want a medication that is out of stock.')}
+        checked={selectedValues.includes('I want to request a specific compounded medication.')}
         onChange={handleRadioChange}
         /> 
-        <p className="ml-4 font-normal text-sm flex">I want a medication that is out of stock. 
-
-
-        {
-  /*
-   <Tooltip  TransitionComponent={Fade}
-        componentsProps={{
-            tooltip: {
-              sx: {
-                bgcolor: 'common.white',
-                color: 'common.black',
-                '& .MuiTooltip-arrow': {
-                  color: 'common.white',
-                },
-              },
-            },
-          }}
-  TransitionProps={{ timeout: 600 }} title={
-    <div className='flex  w-[300px] p-2'>
-
-       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
-
-       </div>
-
-       <div className="">
-       <p className='text-xs font-normal text-left'>Hint</p>
-     <p className='text-xs font-light text-leight'> Unavailable medication?</p>
-    
-        </div> 
-    </div>
-  } arrow>
-        <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
-        </Tooltip>
-
-  */
-}      
-         
-       
-        </p>
-        </div>
-
-        <div className='mt-4 flex'>
-
-        <input value="I want a medication that is currently out of stock." type="checkbox" 
-        
-        checked={selectedValues.includes('I want a medication that is currently out of stock.')}
-        onChange={handleRadioChange}
-        /> 
-        <p className="ml-4 font-normal text-sm flex">I want a medication that is currently out of stock. 
+        <p className="ml-4 font-normal text-sm flex">I want to request a specific compounded medication. 
 
 
 
