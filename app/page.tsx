@@ -14,6 +14,7 @@ import Banner from '@/components/Banner';
 import Medicine from '@/components/Medicine';
 import UserStory from '@/components/UserStory';
 import Footer from '@/components/Footer';
+import Header from "@/components/Header";
 
 
 
@@ -65,7 +66,7 @@ useEffect(() => {
   return (
     <div>
 
-<Navbar />
+<Header />
 
 <Banner />
 <Medicine />
