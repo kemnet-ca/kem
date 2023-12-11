@@ -50,13 +50,10 @@ const StoryBook = () => {
 						clickable: true,
 					}}
                  //  navi
-					//navigation
+					navigation
                     parallax={true}
-                    navigation={{
-                        nextEl: showNextButton ? '.swiper-button-next' : '',
-                        prevEl: showPrevButton ? '.swiper-button-prev' : '',
-                      }}
-                      onSwiper={handleSwiper}
+                 
+                    //  onSwiper={handleSwiper}
 
                       
 
