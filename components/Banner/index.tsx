@@ -43,7 +43,7 @@ const Banner = () => {
 			{/* --------------BANNER CONTENT---------------- */}
 			<div className='w-[90%] lg:w-[80%] min-h-screen text-black mx-auto py-12 flex flex-col justify-center items-center'>
 				{/* --------------BANNER TAG---------------- */}
-				<div className='relative hidden gap-12 items-center mb-[150px] md:mt-40 sm:flex'>
+				<div className='relative hidden gap-12 items-center mb-[90px] md:mt-40 sm:flex'>
 					<span className='font-bold text-[60px] text-[#000]'>i am a</span>
 				
 
