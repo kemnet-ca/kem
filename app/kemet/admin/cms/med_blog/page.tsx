@@ -84,11 +84,11 @@ const MedBlogCMS = () => {
       };
 
       const goToDashboard = () => {
-        router.push("../pharmacies")
+        router.push("../crm")
       };
 
       const goToPharmacies = () => {
-        router.push("../cms")
+        router.push("../pharmacies")
       };
   
     const toggleMenu = () => {
