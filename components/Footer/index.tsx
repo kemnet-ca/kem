@@ -155,7 +155,7 @@ const NewFooter = () => {
 			</div>
       {/* Floating Action Button */}
  <div
-        className="fixed bottom-[100px] right-10 h-16 w-16 bg-blue-500 text-white rounded-full flex items-center justify-center cursor-pointer hover:bg-blue-600">
+        className="fixed md:bottom-[90px] md:right-10 right-6 bottom-[60px] h-16 w-16 bg-blue-500 text-white rounded-full flex items-center justify-center cursor-pointer hover:bg-blue-600">
 
 
 <Link href={"https://wa.link/o3sg6d"} className="h-16 w-16 bg-white rounded-full fixed z-400 p-2" >

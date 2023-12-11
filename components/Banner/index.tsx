@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaChevronRight } from "react-icons/fa";
 
 const Banner = () => {
 
@@ -73,7 +74,25 @@ const Banner = () => {
 						can handle it all.<br></br> Currently servicing residents of Alberta.
 					</p>
 				</div>
+
+				<div className="md:hidden block mt-8">
+
+				<button className='bg-white rounded-[50px] text-[#2D86C8] px-9 py-3 max-w-fit font-medium pr-16 relative'>
+						Get Started
+						<span className='absolute top-1/2 right-2 -translate-y-1/2'>
+							<p className=''>
+								<span className='bg-[#2D86C8] text-white rounded-full h-[35px] w-[35px] flex justify-center items-center text-xl cursor-pointer select-none'>
+									<FaChevronRight />
+								</span>
+							</p>
+						</span>
+					</button>
+
+
+				</div>
 			</div>
+
+		
 		</header>
 	);
 };

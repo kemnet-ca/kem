@@ -17,7 +17,7 @@ const Navbar = () => {
 
 	return (
 		<nav className='bg-[#000] fixed top-0 left-0 w-full z-[999999999]'>
-			<div className='nav_container w-[95%] lg:w-[80%] mx-auto py-10 text-white flex justify-between relative'>
+			<div className='nav_container w-[95%] lg:w-[80%] mx-auto py-4 text-white flex justify-between relative'>
 				{/* ------------LOGO---------------- */}
 				<div className='logo'>
 					<Link href='/'>
