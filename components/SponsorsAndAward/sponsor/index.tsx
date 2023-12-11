@@ -6,7 +6,7 @@ import SectionHeader from "@/components/SectionHeader";
 
 const Sponsor = () => {
 	return (
-		<div className='py-[140px]'>
+		<div className='py-[50px] mt-[-80px]'>
 			<SectionHeader
 				title={"Backed By"}
 				subtitle={"Partnered with very best"}

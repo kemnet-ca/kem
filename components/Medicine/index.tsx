@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { FaChevronRight } from "react-icons/fa";
 
@@ -18,7 +19,7 @@ const Medicine = () => {
 						Do you need a meditation that is currently <br /> not available?
 					</p>
 
-					<button className='bg-white rounded-[50px] text-[#2D86C8] px-9 py-3 max-w-fit font-medium pr-16 relative'>
+					<Link href="options/" className='bg-white rounded-[50px] text-[#2D86C8] px-9 py-3 max-w-fit font-medium pr-16 relative'>
 						Discover More
 						<span className='absolute top-1/2 right-2 -translate-y-1/2'>
 							<p className=''>
@@ -27,7 +28,7 @@ const Medicine = () => {
 								</span>
 							</p>
 						</span>
-					</button>
+					</Link>
 				</div>
 			</div>
 		</section>

@@ -5,7 +5,7 @@ import { awardData } from "@/app/data/AwardData";
 
 const Award = () => {
 	return (
-		<div className='py-[140px]'>
+		<div className='py-[20px] mt-[-10px]'>
 			<SectionHeader title={"Recognized & Awarded"} subtitle={""} />
 
 			{/* ---------------- Award list ----------------- */}

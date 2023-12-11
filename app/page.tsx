@@ -72,9 +72,15 @@ useEffect(() => {
 
 <SponsorsAndAward />
 
-<Blank />
+{
+/* <Blank /> */
+}
 
-<UserStory />
+
+{
+/*<UserStory />*/
+}
+
 
 <Footer />
 

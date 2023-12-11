@@ -29,7 +29,7 @@ const SponsorsAndAward = () => {
 			<div className='container w-[95%] sm:w-[85%] lg:w-[60%] mx-auto text-center relative z-40'>
 				<Sponsor />
 				<Award />
-				<CaseStudy />
+				{/*<CaseStudy />*/}
 			</div>
 		</section>
 	);
