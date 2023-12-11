@@ -46,7 +46,7 @@ function goBack(){
  
 </div>
 
-<div className='w-screen  md:mt-[200px] mt-[130px] mt-6 md:h-[500px] md:mb-[500px] mb-[180px]   '>
+<div className='w-screen  md:mt-[200px] mt-[130px] mt-6 md:h-[300px] md:mb-[200px] mb-[180px]   '>
 
 
 

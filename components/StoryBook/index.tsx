@@ -17,10 +17,10 @@ import SlideItem from "./SlideItem";
 const StoryBook = () => {
 	return (
 		<div className='pb-[20px]   w-screen flex justify-center'>
-			<SectionHeader title={"Story Book"} subtitle={""} />
+			
 
 			{/* ---------------- Slider list ----------------- */}
-			<div className='slider_container md:w-2/3 w-screen md:h-[1000px] absolute rounded-2xl overflow-hidden'>
+			<div className='slider_container md:w-2/3 flex  w-screen md:h-[500px] absolute rounded-2xl overflow-hidden mt-[20px]'>
 				<Swiper
 					slidesPerView={1}
 					spaceBetween={30}
