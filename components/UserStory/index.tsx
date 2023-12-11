@@ -6,7 +6,7 @@ import { seeonData } from "@/app/data/SeeonData";
 
 const UserStory = () => {
 	return (
-		<section className='bg-[#F4F6F9] relative min-h-screen'>
+		<section className='bg-[#F4F6F9] relative mt-[-350px]'>
 			{/* --------------TOP BOTTOM BG IMAGES---------------- */}
 			<div className='absolute top-5 left-0'>
 				<Image
@@ -19,7 +19,7 @@ const UserStory = () => {
 			</div>
 			<div className='absolute right-0 bottom-0'>
 				<Image
-					src='/images/user-story-bottom-bg.png'
+					src='/user-story-bottom-bg.png'
 					alt='top-bg'
 					height={200}
 					className='w-[120px] sm:w-[150px]'
@@ -29,7 +29,7 @@ const UserStory = () => {
 
 			{/* ------------------USER PROFILE CARD------------------ */}
 			<div className='absolute left-1/2 -top-1/2 w-full -translate-x-1/2 '>
-				<UserStoryCard />
+			{/*	<UserStoryCard />*/}
 			</div>
 
 			<div className='container w-[95%] sm:w-[85%] lg:w-[60%] mx-auto text-center relative z-40 pt-[800px]  md:pt-[400px] pb-20'>
