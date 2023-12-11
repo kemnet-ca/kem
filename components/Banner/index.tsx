@@ -40,10 +40,10 @@ const Banner = () => {
 			</div>
 
 			{/* --------------BANNER CONTENT---------------- */}
-			<div className='w-[90%] lg:w-[80%] min-h-screen text-black mx-auto py-10 flex flex-col justify-center items-center'>
+			<div className='w-[90%] lg:w-[80%] min-h-screen text-black mx-auto py-12 flex flex-col justify-center items-center'>
 				{/* --------------BANNER TAG---------------- */}
-				<div className='relative hidden gap-12 items-center mb-[150px] sm:flex'>
-					<span className='font-bold text-[45px] text-[#000]'>i am a</span>
+				<div className='relative hidden gap-12 items-center mb-[150px] md:mt-40 sm:flex'>
+					<span className='font-bold text-[60px] text-[#000]'>i am a</span>
 				
 
 				{
@@ -66,11 +66,11 @@ const Banner = () => {
 					<h1 className='text-[27px] sm:text-[37px] font-bold mb-5'>
 						Personalized Custom Medicine
 					</h1>
-					<p className='text-sm lg:text-md text-black/50'>
+					<p className='text-sm lg:text-xl text-black/50'>
 						We take your personalized needs for customized medicines and connect
-						you with the pharmacies that can make or provide them. Unique
+						you with<br></br> the pharmacies that can make or provide them. Unique
 						dosages, unique formulations, out of stock medications and so on, we
-						can handle it all. Currently servicing residents of Alberta.
+						can handle it all.<br></br> Currently servicing residents of Alberta.
 					</p>
 				</div>
 			</div>
