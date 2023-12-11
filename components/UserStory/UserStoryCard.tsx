@@ -12,10 +12,10 @@ const UserStoryCard = () => {
 				<div className='grid grid-cols-1 md:grid-cols-2 gap-[70px]'>
 					{/* LEFT CONTENT */}
 					<div className='profile-img'>
-						<img src='/placeholder.png' alt='profile-img' />
+						<img src='/Placeholder.png' alt='profile-img' />
 					</div>
 
-					
+
 
 					{/* RIGHT CONTENT */}
 					<div className='col-span-1 text-[#fff] flex flex-col'>
