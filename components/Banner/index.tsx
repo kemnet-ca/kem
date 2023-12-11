@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Banner = () => {
+
+	const [displayText, setDisplayText] = useState('Patient');
+
+	useEffect(() => {
+		const intervalId = setInterval(() => {
+		  setDisplayText(prevText => (prevText === 'Patient' ? 'Prescriber' : 'Patient'));
+		}, 5000); // Switch every set number of seconds
+	
+		// Clear the interval when the component unmounts
+		return () => clearInterval(intervalId);
+	  }, []);
+	
+
+	
 	return (
 		<header className='min-h-screen w-full bg-[#F4F6F9] overflow-hidden relative'>
 			{/* --------------TOP BOTTOM BG IMAGES---------------- */}
@@ -29,10 +44,18 @@ const Banner = () => {
 				{/* --------------BANNER TAG---------------- */}
 				<div className='relative hidden gap-12 items-center mb-[150px] sm:flex'>
 					<span className='font-bold text-[72px] text-[#000]'>i am a</span>
-					<button className='banner_btn uppercase bg-[#DE923A] text-white text-4xl font-bold px-[70px] py-6 rounded-[15px] shadow-[0_8.505px_0_0_rgba(0,0,0,0.10)]'>
-						Patient
-					</button>
+				
 
+				{
+
+					displayText =="Patient"?(<>	<Link href={"/patients/custom/request"} className='banner_btn uppercase bg-[#DE923A] text-white text-4xl font-bold px-[70px] py-6 rounded-[15px] shadow-[0_8.505px_0_0_rgba(0,0,0,0.10)]'>
+					Patient
+				</Link>
+</>):(<>	<Link href={"/prescribers/custom/request"} className='banner_btn uppercase bg-[#DE923A] text-white text-4xl font-bold px-[70px] py-6 rounded-[15px] shadow-[0_8.505px_0_0_rgba(0,0,0,0.10)]'>
+						Prescriber
+					</Link>
+</>)
+				}
 					{/* ------------ARROW ICON---------------- */}
 					<div className='absolute -bottom-14 left-[40%] -translate-x-1/2'>
 						<Image src='/images/arrow.png' alt='arrow-icon' height={100} width={100} />
