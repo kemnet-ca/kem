@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useState, useEffect } from "react";
 import ResponsiveCarousel from "@/components/Carousel";
 import Link from 'next/link';
-import Header from '@/components/Header';
+import Navbar from '@/components/Navbar';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Footer from '@/components/Footer';
 import { ClassNames } from '@emotion/react';
@@ -100,7 +100,7 @@ export default function Upcoming() {
   return (
     <main className="bg-white relative">
 
- <Header />
+ <Navbar />
 
 
 <div className='h-[100px] w-screen  relative md:pt-10 md:pb-10 md:pl-20 md:pr-20 md:pt-28 flex'>

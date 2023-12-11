@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
-import Header from '@/components/Header';
+import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/navigation';
@@ -123,7 +123,7 @@ function addAllDataToCookies(){
  
     <main className="bg-white relative">
 
-<Header />
+<Navbar />
 
 
 <div className="h-[350px] w-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/home/Medicines_share.jpeg')" }}>
@@ -279,7 +279,7 @@ function addAllDataToCookies(){
   <div className="md:w-[300px]">
 
     <p className="text-xs mt-2"><span className="font-medium">Pharmacy Name:</span> <span className="font-light">Kempound Compounding & Repackaging Pharmacy Inc</span></p>
-    <p className="text-xs mt-4"><span className="font-medium">Licensee:</span> Onyinyechi Nnaji</p>
+    <p className="text-xs mt-4"><span className="font-medium">Licensee:</span> Morẹ́nikẹ́ Ẹniọlá Ọláòṣebìkan</p>
     <p className="text-xs mt-4"><span className="font-medium">Pharmacy License Number:</span> 4088</p>
     
 

@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useState, useEffect } from "react";
 import ResponsiveCarousel from "@/components/Carousel";
 import Link from 'next/link';
-import Header from '@/components/Header';
+import Navbar from '@/components/Navbar';
 import React from 'react';
 import Footer from '@/components/Footer';
 import { ClassNames } from '@emotion/react';
@@ -112,7 +112,7 @@ export default function SinglePost() {
 
 
 
- <Header />
+ <Navbar />
 
 
  <React.Fragment>

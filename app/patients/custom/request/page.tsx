@@ -5,10 +5,11 @@ import ResponsiveCarousel from "@/components/Carousel";
 import Link from 'next/link';
 import Tooltip from '@mui/material/Tooltip';
 import Fade from '@mui/material/Fade';
-import Header from '@/components/Header';
+
 import Footer from '@/components/Footer';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/navigation';
+import Navbar from '@/components/Navbar';
 
 
 
@@ -90,12 +91,12 @@ function addAllSelectionsToCookies(){
   return (
     <main className="bg-white relative">
 
-<Header />
+<Navbar />
 
 
 
 
-<div className="h-[350px] w-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/home/Medicines_share.jpeg')" }}>
+<div className="h-[350px] w-screen bg-cover bg-center md:mt-[100px]" style={{ backgroundImage: "url('/images/home/Medicines_share.jpeg')" }}>
 
 
  
@@ -683,7 +684,7 @@ className='border border-zinc-300 text-sm text-zinc-300 p-4 w-[500px] rounded-md
   <div className="md:w-[300px]">
 
     <p className="text-xs mt-2"><span className="font-medium">Pharmacy Name:</span> <span className="font-light">Kempound Compounding & Repackaging Pharmacy Inc</span></p>
-    <p className="text-xs mt-4"><span className="font-medium">Licensee:</span> Onyinyechi Nnaji</p>
+    <p className="text-xs mt-4"><span className="font-medium">Licensee:</span> Morẹ́nikẹ́ Ẹniọlá Ọláòṣebìkan</p>
     <p className="text-xs mt-4"><span className="font-medium">Pharmacy License Number:</span> 4088</p>
     
 

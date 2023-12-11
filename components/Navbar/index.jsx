@@ -57,7 +57,7 @@ const Navbar = () => {
 
 				{/* ------------ALERT MSG BOX---------------- */}
 				<div className='alert_msg_box hidden bg-white absolute right-10 top-[101%] z-50 text-black sm:block   shadow-sm rounded-b-[37px]'>
-					<div className='relative flex gap-6 px-7 py-8 pt-11 items-center'>
+					<div className='relative flex gap-2 px-7 py-2 pt-4 items-center'>
 						<Image
 							src='/images/curve.png'
 							alt='curve icon'
@@ -65,15 +65,15 @@ const Navbar = () => {
 							width={60}
 							className='absolute top-[-1px] -left-10'
 						/>
-						<p className='flex flex-col text-[30px]'>
+						<p className='flex flex-col text-[26px]'>
 							<span className='font-bold'>Talk to a</span>
-							<span className='text-[26px]'>Pharmacist</span>
+							<span className='text-[18px]'>Pharmacist</span>
 						</p>
-						<p className=''>
+						<Link href={"options"} className=''>
 							<span className='bg-[#2D86C8] text-white rounded-full h-[50px] w-[50px] flex justify-center items-center text-2xl cursor-pointer select-none'>
 								<FaArrowRight />
 							</span>
-						</p>
+						</Link>
 					</div>
 				</div>
 			</div>

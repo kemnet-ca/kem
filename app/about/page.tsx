@@ -3,14 +3,14 @@ import Image from 'next/image'
 import { useState, useEffect } from "react";
 import ResponsiveCarousel from "@/components/Carousel";
 import Link from 'next/link';
-import Header from '@/components/Header';
+import Navbar from '@/components/Navbar';
 
 import Footer from '@/components/Footer';
 import { ClassNames } from '@emotion/react';
 import Award from '@/components/SponsorsAndAward/award';
 import CaseStudy from '@/components/SponsorsAndAward/case-study';
 import StoryBook from '@/components/StoryBook';
-import Navbar from '@/components/Navbar';
+
 import SectionHeader from '@/components/SectionHeader';
 
 

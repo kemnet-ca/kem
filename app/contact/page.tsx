@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useState, useEffect } from "react";
 import ResponsiveCarousel from "@/components/Carousel";
 import Link from 'next/link';
-import Header from '@/components/Header';
+import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useRouter } from 'next/navigation';
 
@@ -29,7 +29,7 @@ function goBack()
   return (
     <main className="bg-white relative">
 
-<Header />
+<Navbar />
 
 
 <div className="h-[350px] w-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/home/Medicines_share.jpeg')" }}>

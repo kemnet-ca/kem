@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
-import Header from '@/components/Header';
+import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Cookies from 'js-cookie';
 
@@ -132,10 +132,10 @@ function addAllDataToCookies(){
  
     <main className="bg-white relative">
 
-<Header />
+<Navbar />
 
 
-<div className="h-[350px] w-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/home/Medicines_share.jpeg')" }}>
+<div className="h-[350px] w-screen bg-cover bg-center md:pt-[100px]" style={{ backgroundImage: "url('/images/home/Medicines_share.jpeg')" }}>
  
  <div className="w-full h-full grid place-content-center md:px-10" style={{backgroundColor:`rgba(0,0,0,0.7)`}}>
  <div className='w-8 absolute h-8 bg-white  rounded-full md:mt-20 ml-10 hidden md:block cursor-pointer hover:mr-2 grid place-content-center p-1'>
@@ -300,7 +300,7 @@ function addAllDataToCookies(){
   <div className="md:w-[300px]">
 
     <p className="text-xs mt-2"><span className="font-medium">Pharmacy Name:</span> <span className="font-light">Kempound Compounding & Repackaging Pharmacy Inc</span></p>
-    <p className="text-xs mt-4"><span className="font-medium">Licensee:</span> Onyinyechi Nnaji</p>
+    <p className="text-xs mt-4"><span className="font-medium">Licensee:</span> Morẹ́nikẹ́ Ẹniọlá Ọláòṣebìkan</p>
     <p className="text-xs mt-4"><span className="font-medium">Pharmacy License Number:</span> 4088</p>
     
 

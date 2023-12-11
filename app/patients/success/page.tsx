@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import ResponsiveCarousel from "@/components/Carousel";
 import Link from 'next/link';
 import Footer from '@/components/Footer';
-import Header from '@/components/Header';
+import Navbar from '@/components/Navbar';
 
 
 
@@ -26,10 +26,10 @@ export default function PatientSuccessPage() {
   {/* main widgets */}
     <main className="bg-white relative">
 
-<Header />
+<Navbar />
 
 
-<div className="h-[350px] w-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/home/Medicines_share.jpeg')" }}>
+<div className="h-[350px] w-screen bg-cover bg-center md:pt-[100px]" style={{ backgroundImage: "url('/images/home/Medicines_share.jpeg')" }}>
  
  <div className="w-full h-full grid place-content-center md:px-10" style={{backgroundColor:`rgba(0,0,0,0.7)`}}>
 
