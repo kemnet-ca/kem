@@ -75,7 +75,7 @@ const Banner = () => {
 					</p>
 				</div>
 
-				<div className="md:hidden block mt-8">
+				<div className="lg:hidden sm:block block mt-8">
 
 				<button className='bg-white rounded-[50px] text-[#2D86C8] px-9 py-3 max-w-fit font-medium pr-16 relative'>
 						Get Started
