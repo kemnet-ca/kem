@@ -65,9 +65,9 @@ const Navbar = () => {
 							width={60}
 							className='absolute top-[-1px] -left-10'
 						/>
-						<p className='flex flex-col text-[25px]'>
+						<p className='flex flex-col text-[28px]'>
 							<span className='font-bold'>Talk to a</span>
-							<span className='text-[20px]'>Pharmacist</span>
+							<span className='text-[23px]'>Pharmacist</span>
 						</p>
 						<Link href={"options"} className=''>
 							<span className='bg-[#2D86C8] text-white rounded-full h-[50px] w-[50px] flex justify-center items-center text-3xl cursor-pointer select-none'>
