@@ -142,9 +142,9 @@ function addAllDataToCookies(){
  </div>
 </div>
 
-<div className="flex w-screen justify-center px-10">
+<div className="flex w-screen justify-center md:px-10 px-2 ">
 
-<div className='w-1/3 bg-slate-100 py-2 px-6 flex mt-8 rounded-md justify-center '>
+<div className='md:w-1/3 w-full bg-slate-100 py-2 px-6 flex mt-8 rounded-md justify-center '>
 
 <p className="text-md text-center font-medium  text-zinc-800">I am a licensed prescriber</p>
 
@@ -153,13 +153,13 @@ function addAllDataToCookies(){
   
 </div>
 </div>
-<div className='w-screen 0 md:pb-10 md:pl-20 md:pr-20 md:pt-10 flex justify-center'>
+<div className='w-screen 0 md:pb-10 md:pl-20 md:pr-20 md:pt-10 mt-10 flex justify-center'>
     
   {/* Create 6 copies of inner-img */}
 
   
 
-  <div className='h-[300] w-2/3 bg-slate-200 rounded-md p-4 '>
+  <div className='h-[300] md:w-2/3 w-full bg-slate-200 rounded-md p-4 '>
 
 
 

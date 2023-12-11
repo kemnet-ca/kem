@@ -370,7 +370,7 @@ function goBack()
 
   
 
-  <div className='h-[300] w-2/3 bg-slate-200 rounded-md p-4 '>
+  <div className='h-[300] md:w-2/3 w-full bg-slate-200 rounded-md p-4 '>
 
 
 
