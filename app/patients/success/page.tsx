@@ -5,6 +5,7 @@ import ResponsiveCarousel from "@/components/Carousel";
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import ParticipatingPharms from '@/components/ParticipatingPharms';
 
 
 
@@ -75,6 +76,8 @@ export default function PatientSuccessPage() {
 </div>
 
 </div>
+
+<ParticipatingPharms />
 
 
 <Footer />
