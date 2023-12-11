@@ -338,7 +338,7 @@ const checkboxStyle = {
 //get patient request data
 useEffect(() => {
   // Fetch all posts
-  axios.get('https://www.back.kemet.care/api/all_pharm', {
+  axios.get('https://www.back.kemet.care/api/all_approved_pharm', {
    
   })
     .then((response: { data: any; }) => {

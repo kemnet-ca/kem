@@ -210,6 +210,7 @@ function update(){
 
   //  alert(selectedFromDate.toString())
    // alert(selectedToDate.toString())
+   alert(selectedOption.toString());
     const formData = new FormData();
 
     formData.append('email',  email.toString());
