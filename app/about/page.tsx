@@ -106,7 +106,7 @@ function goBack(){
 
 }
 
-<div className='w-screen items-center mt-10 md:px-[200px] text-center'>
+<div className='w-screen items-center md:mt-[270px] mt-[550px] md:px-[200px] text-center'>
 
 
 

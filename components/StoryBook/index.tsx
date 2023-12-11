@@ -34,23 +34,23 @@ const StoryBook = () => {
 					modules={[Pagination, Navigation]}
 					className='mySwiper'>
 					<SwiperSlide>
-						<SlideItem src="/storybook/0BFFF3D1-CEC2-4B85-B6EB-E027017B8E5D_1_201_a.jpeg" />
+						<SlideItem src="/storybook/4CCB5EB4-9A0C-46E8-8E5B-672687ADFD22_1_201_a.jpeg" />
 					</SwiperSlide >
+					<SwiperSlide>
+						<SlideItem src ="/storybook/D04F4A58-199F-4B5A-AE31-A31CF97D1B41_1_201_a.jpeg" />
+					</SwiperSlide>
+					<SwiperSlide>
+						<SlideItem src ="/storybook/507D0308-D4DA-47E5-BB51-9419EB75F2AF_1_201_a.jpeg" />
+					</SwiperSlide>
 					<SwiperSlide>
 						<SlideItem src ="/storybook/3D4C3342-F030-4CEB-84DB-2623D0098EEC_1_201_a.jpeg" />
 					</SwiperSlide>
 					<SwiperSlide>
-						<SlideItem src ="/storybook/4CCB5EB4-9A0C-46E8-8E5B-672687ADFD22_1_201_a.jpeg" />
-					</SwiperSlide>
-					<SwiperSlide>
 						<SlideItem src ="/storybook/219BF5BF-B867-4652-975D-9E097DDE1812_1_201_a.jpeg" />
-					</SwiperSlide>
-					<SwiperSlide>
-						<SlideItem src ="/storybook/466E20FF-C5F5-40BD-A444-F87E632870CA_1_201_a.jpeg" />
 					</SwiperSlide>
 
                     <SwiperSlide>
-						<SlideItem src ="/storybook/507D0308-D4DA-47E5-BB51-9419EB75F2AF_1_201_a.jpeg" />
+						<SlideItem src ="/storybook/466E20FF-C5F5-40BD-A444-F87E632870CA_1_201_a.jpeg" />
 					</SwiperSlide>
 
                     <SwiperSlide>
@@ -58,7 +58,7 @@ const StoryBook = () => {
 					</SwiperSlide>
 
                     <SwiperSlide>
-						<SlideItem src ="/storybook/D04F4A58-199F-4B5A-AE31-A31CF97D1B41_1_201_a.jpeg" />
+						<SlideItem src ="/storybook/0BFFF3D1-CEC2-4B85-B6EB-E027017B8E5D_1_201_a.jpeg" />
 					</SwiperSlide>
 				</Swiper>
 			</div>
