@@ -462,8 +462,7 @@ function checkPharm(id: string) {
        <DialogTitle className="font-medium text-sm">{"Confirm To Send Your Request To A Prescriber"}</DialogTitle>
        <DialogContent>
          <p id="alert-dialog-slide-description " className="text-zinc-600 text-sm font-light">
-         If you agree, your information and consult requests which you have submitted will be sent to the selected Pharmacy by fax and email.
-  </p>
+         Confirm to send your request to a pharmacist  </p>
 
          <p id="alert-dialog-slide-description " className="text-red-600 text-sm font-light mt-4">
         {errorMessage} 
