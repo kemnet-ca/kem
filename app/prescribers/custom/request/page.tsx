@@ -173,8 +173,8 @@ export default function PrescriberRequestForm() {
        </div>
 
        <div className="">
-       <p className='text-xs font-normal text-left'>Header</p>
-     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+       <p className='text-xs font-normal text-left'>Hint</p>
+     <p className='text-xs font-light text-leight'> Update medication type. Adjust the formulation.</p>
     
         </div> 
     </div>
@@ -215,8 +215,8 @@ export default function PrescriberRequestForm() {
        </div>
 
        <div className="">
-       <p className='text-xs font-normal text-left'>Header</p>
-     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+       <p className='text-xs font-normal text-left'>Hint</p>
+     <p className='text-xs font-light text-leight'> Modify taste preference to suit your tolerance.</p>
     
         </div> 
     </div>
@@ -256,8 +256,8 @@ export default function PrescriberRequestForm() {
        </div>
 
        <div className="">
-       <p className='text-xs font-normal text-left'>Header</p>
-     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+       <p className='text-xs font-normal text-left'>Hint</p>
+     <p className='text-xs font-light text-leight'> Adjust dosage amount.</p>
     
         </div> 
     </div>
@@ -296,8 +296,8 @@ export default function PrescriberRequestForm() {
        </div>
 
        <div className="">
-       <p className='text-xs font-normal text-left'>Header</p>
-     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+       <p className='text-xs font-normal text-left'>Hint</p>
+     <p className='text-xs font-light text-leight'> Combine different meds in a safe and efficient mixture.</p>
     
         </div> 
     </div>
@@ -336,8 +336,8 @@ export default function PrescriberRequestForm() {
        </div>
 
        <div className="">
-       <p className='text-xs font-normal text-left'>Header</p>
-     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+       <p className='text-xs font-normal text-left'>Hint</p>
+     <p className='text-xs font-light text-leight'> Seek pharmacist advice.</p>
     
         </div> 
     </div>
@@ -376,8 +376,8 @@ export default function PrescriberRequestForm() {
        </div>
 
        <div className="">
-       <p className='text-xs font-normal text-left'>Header</p>
-     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+       <p className='text-xs font-normal text-left'>Hint</p>
+     <p className='text-xs font-light text-leight'> Find specific compound.</p>
     
         </div> 
     </div>

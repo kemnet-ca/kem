@@ -6,7 +6,7 @@ export const sponsorList = [
 	{ path: "/Black_Opportunity_Fund.png", id: 4 },
 	{ path: "/ERIN_logo.png", id: 5 },
 	{ path: "/MIT_Solve.png", id: 6 },
-	{ path: "/alberta_innovates.png", id: 7 },
+	{ path: "/images/partners/_alberta innovates.jpg", id: 7 },
 	{ path: "/NRC.png", id: 8 },
 	{ path: "/SEF.png", id: 9 },
 	{ path: "/canada_woman.png", id: 10 },
