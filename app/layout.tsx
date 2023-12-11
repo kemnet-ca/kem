@@ -5,6 +5,9 @@ import './globals.css'
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
+import { Space_Grotesk } from 'next/font/google'
+const space_grotesk =  Space_Grotesk({ subsets: ['latin'] })
+
 //const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -44,7 +47,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-space-grotesk">
+      <body className={space_grotesk.className}>
    
         
         {children}
