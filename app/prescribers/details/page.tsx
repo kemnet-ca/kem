@@ -126,7 +126,7 @@ function addAllDataToCookies(){
 <Navbar />
 
 
-<div className="h-[350px] w-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/home/Medicines_share.jpeg')" }}>
+<div className="h-[350px] w-screen bg-cover bg-center mt-8" style={{ backgroundImage: "url('/images/home/Medicines_share.jpeg')" }}>
  
  <div className="w-full h-full grid place-content-center md:px-10" style={{backgroundColor:`rgba(0,0,0,0.7)`}}>
  <div className='w-8 absolute h-8 bg-white  rounded-full md:mt-20 ml-10 hidden md:block cursor-pointer hover:ml-2 grid place-content-center p-1'>

@@ -171,8 +171,8 @@ function addAllSelectionsToCookies(){
        </div>
 
        <div className="">
-       <p className='text-xs font-normal text-left'>Header</p>
-     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+       <p className='text-xs font-normal text-left'>Hint</p>
+     <p className='text-xs font-light text-leight'> Pick this option if you have trouble swallowing pills.</p>
     
         </div> 
     </div>
@@ -212,8 +212,8 @@ function addAllSelectionsToCookies(){
        </div>
 
        <div className="">
-       <p className='text-xs font-normal text-left'>Header</p>
-     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+       <p className='text-xs font-normal text-left'>Hint</p>
+     <p className='text-xs font-light text-leight'> Pick this option if you&apos;re avoiding taking injections.</p>
     
         </div> 
     </div>
@@ -253,8 +253,8 @@ function addAllSelectionsToCookies(){
        </div>
 
        <div className="">
-       <p className='text-xs font-normal text-left'>Header</p>
-     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+       <p className='text-xs font-normal text-left'>Hint</p>
+     <p className='text-xs font-light text-leight'> Improve the general taste of your medications.</p>
     
         </div> 
     </div>
@@ -292,8 +292,8 @@ function addAllSelectionsToCookies(){
        </div>
 
        <div className="">
-       <p className='text-xs font-normal text-left'>Header</p>
-     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+       <p className='text-xs font-normal text-left'>Hint</p>
+     <p className='text-xs font-light text-leight'> Pick this option if you are requesting a medication with a specialized dosage strength that isn't commercially available.</p>
     
         </div> 
     </div>
@@ -331,8 +331,8 @@ function addAllSelectionsToCookies(){
        </div>
 
        <div className="">
-       <p className='text-xs font-normal text-left'>Header</p>
-     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+       <p className='text-xs font-normal text-left'>Hint</p>
+     <p className='text-xs font-light text-leight'> I&apos;m seeking a pain relief medication formulated to be administered through the skin for a transdermal, non-oral delivery method.</p>
     
         </div> 
     </div>
@@ -370,8 +370,8 @@ function addAllSelectionsToCookies(){
        </div>
 
        <div className="">
-       <p className='text-xs font-normal text-left'>Header</p>
-     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+       <p className='text-xs font-normal text-left'>Hint</p>
+     <p className='text-xs font-light text-leight'>Blend supplement strengths</p>
     
         </div> 
     </div>
@@ -409,8 +409,8 @@ function addAllSelectionsToCookies(){
        </div>
 
        <div className="">
-       <p className='text-xs font-normal text-left'>Header</p>
-     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+       <p className='text-xs font-normal text-left'>Hint</p>
+     <p className='text-xs font-light text-leight'> I'm looking for personalized medication design assistance to ensure regular intake and adherence to prescribed treatment plans.</p>
     
         </div> 
     </div>
@@ -448,8 +448,8 @@ function addAllSelectionsToCookies(){
        </div>
 
        <div className="">
-       <p className='text-xs font-normal text-left'>Header</p>
-     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+       <p className='text-xs font-normal text-left'>Hint</p>
+     <p className='text-xs font-light text-leight'> Fast erection assistance</p>
     
         </div> 
     </div>
@@ -488,8 +488,8 @@ function addAllSelectionsToCookies(){
        </div>
 
        <div className="">
-       <p className='text-xs font-normal text-left'>Header</p>
-     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+       <p className='text-xs font-normal text-left'>Hint</p>
+     <p className='text-xs font-light text-leight'> Unavailable medication?</p>
     
         </div> 
     </div>
@@ -528,8 +528,8 @@ function addAllSelectionsToCookies(){
        </div>
 
        <div className="">
-       <p className='text-xs font-normal text-left'>Header</p>
-     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+       <p className='text-xs font-normal text-left'>Hint</p>
+     <p className='text-xs font-light text-leight'> Temporarily unavailable meds?</p>
     
         </div> 
     </div>
@@ -569,8 +569,8 @@ function addAllSelectionsToCookies(){
        </div>
 
        <div className="">
-       <p className='text-xs font-normal text-left'>Header</p>
-     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+       <p className='text-xs font-normal text-left'>Hint</p>
+     <p className='text-xs font-light text-leight'>Specific medication tweak?</p>
     
         </div> 
     </div>
@@ -611,8 +611,8 @@ function addAllSelectionsToCookies(){
        </div>
 
        <div className="">
-       <p className='text-xs font-normal text-left'>Header</p>
-     <p className='text-xs font-light text-leight'> This is a brief summary of what this option entails</p>
+       <p className='text-xs font-normal text-left'>Hint</p>
+     <p className='text-xs font-light text-leight'> Seeking specific compound?</p>
     
         </div> 
     </div>
