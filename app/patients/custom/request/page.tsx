@@ -145,7 +145,7 @@ function addAllSelectionsToCookies(){
     <div className="w-full  mt-8">
 
          <div className='mt-4 flex'>
-         <input value="I have trouble swallowing your pills" type="checkbox" 
+         <input value="I have trouble swallowing my pills." type="checkbox" 
            checked={selectedValues.includes('I have trouble swallowing my pills.')}
           
            onChange={handleRadioChange}

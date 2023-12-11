@@ -36,9 +36,9 @@ export default function PatientSuccessPage() {
 
 
 
-    <p className='text-center text-white text-xl font-semibold'>WELCOME TO OUR CUSTOMIZATION CONSULT REQUEST PAGE</p>
-    <p className='text-center text-white text-sm mt-4 font-normal'>PLEASE LET US KNOW HOW WE CAN ASSIST YOU WITH YOUR MEDICATION NEEDS. <br></br>CUSTOMIZE MEDICATION TO UNIQUE NEEDS AND REQUEST MEDICATION THAT ARE OUT OF STOCK AND A PHARMACIST WILL CONTACT YOU TO COMPLETE AN ASSESSMENT AND GET YOUR MEDICINES CUSTOM MADE FOR YOU.</p>
-
+ <p className='text-center text-white text-xl font-semibold mt-6'>Welcome to your Medication Customization Consultation Request page.</p>
+    <p className='text-center text-white text-sm mt-4 font-normal'>Please let us know how we can assist with your medication needs. You can customize<br></br> medications to meet your unique requirements and request medications that are currently out<br></br> of stock. A pharmacist will contact you to conduct an assessment and arrange for your<br></br> medicines to be custom-made for you.
+</p>
  </div>
 </div>
 
@@ -57,9 +57,11 @@ export default function PatientSuccessPage() {
       <img src="/images/home/checkmark-circle-svgrepo-com.svg" className='h-16 w-16' alt="request-sent kemnet" />
      </div>
 
-    <p className='text-md font-medium text-center mt-4'>REQUEST SUCCESSFULLY SENT !</p>
+    <p className='text-md font-medium text-center mt-4'>Request Successfully Sent!
+</p>
 
-    <p className='text-xs font-light text-center mt-4'>As is deemed therapeutically necessary, a prescriber will be in touch at the <b> patient&apos;s phone number</b> with you, to complete an assessment and support you further to make medicine that works for your unique body</p>
+    <p className='text-xs font-light text-center mt-4'>A prescriber, as deemed therapeutically necessary, will contact you at the patient&apos;s<br></br> phone number to complete an assessment and provide further support in creating<br></br> medicine tailored to your unique body.
+</p>
 
 
 
