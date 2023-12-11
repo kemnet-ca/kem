@@ -145,12 +145,12 @@ function addAllSelectionsToCookies(){
     <div className="w-full  mt-8">
 
          <div className='mt-4 flex'>
-         <input value="I have trouble swallowing your pill" type="checkbox" 
-           checked={selectedValues.includes('I have trouble swallowing my pill')}
+         <input value="I have trouble swallowing your pills" type="checkbox" 
+           checked={selectedValues.includes('I have trouble swallowing my pills.')}
           
            onChange={handleRadioChange}
          /> 
-         <p className="ml-4 font-normal text-sm flex">I have trouble swallowing my pill 
+         <p className="ml-4 font-normal text-sm flex">I have trouble swallowing my pills.
          
 
 {
@@ -586,56 +586,7 @@ function addAllSelectionsToCookies(){
         </p>
         </div>
 
-        <div className='mt-4 flex'>
-
-
-        <input value="I want to request a specific compound." type="checkbox"
-        
-        checked={selectedValues.includes('I want to request a specific compound.')}
-        onChange={handleRadioChange}
-        /> 
-        <p className="ml-4 font-normal text-sm flex">I want to request a specific compound. 
-
-
-
-        {
-  /*
-   
-      <Tooltip  TransitionComponent={Fade}
-        componentsProps={{
-            tooltip: {
-              sx: {
-                bgcolor: 'common.white',
-                color: 'common.black',
-                '& .MuiTooltip-arrow': {
-                  color: 'common.white',
-                },
-              },
-            },
-          }}
-  TransitionProps={{ timeout: 600 }} title={
-    <div className='flex  w-[300px] p-2'>
-
-       <div className="h-16 w-20 bg-slate-200 rounded-md mr-2">
-
-       </div>
-
-       <div className="">
-       <p className='text-xs font-normal text-left'>Hint</p>
-     <p className='text-xs font-light text-leight'> Seeking specific compound?</p>
-    
-        </div> 
-    </div>
-  } arrow>
-        <span className='ml-2 '><img className='h-[25px] w-[25px] mt-[-2px] cursor-pointer' src="/images/home/info-circle-svgrepo-com.svg" alt="info-circle" /></span>
-        </Tooltip>
-
-  */
-}        
        
-        </p>
-        </div>
-
     </div>
 
 <p className='text-sm text-zinc-800 font-semibold mt-10'>Additional information</p>

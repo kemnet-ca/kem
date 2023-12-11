@@ -146,12 +146,12 @@ export default function PrescriberRequestForm() {
     <div className="w-full  mt-8">
 
          <div className='mt-4 flex'>
-         <input value="Change the medication formulation" type="checkbox"
-          checked={selectedValues.includes('Change the medication formulation')}
+         <input value="Modify the medication formulation." type="checkbox"
+          checked={selectedValues.includes('Modify the medication formulation.')}
           
           onChange={handleRadioChange}
          /> 
-         <p className="ml-4 font-normal text-sm flex">Change the medication formulation
+         <p className="ml-4 font-normal text-sm flex">Modify the medication formulation.
          
 
          {
@@ -197,14 +197,14 @@ export default function PrescriberRequestForm() {
          </div>
        
          <div className='mt-4 flex'>
-         <input value="Change the medication flavor" type="checkbox"
+         <input value="Alter the medication flavor." type="checkbox"
          
-         checked={selectedValues.includes('Change the medication flavor')}
+         checked={selectedValues.includes('Alter the medication flavor.')}
           
          onChange={handleRadioChange}
            /> 
       
-         <p className="ml-4 font-normal text-sm flex">Change the medication flavor
+         <p className="ml-4 font-normal text-sm flex">Alter the medication flavor.
      
          {
   /*
@@ -250,12 +250,12 @@ export default function PrescriberRequestForm() {
 
          <div className='mt-4 flex'>
 
-         <input value="Change the medication dose" type="checkbox" 
-         checked={selectedValues.includes('Change the medication dose')}
+         <input value="Adjust the medication dosage." type="checkbox" 
+         checked={selectedValues.includes('Adjust the medication dosage.')}
           
          onChange={handleRadioChange}
          /> 
-         <p className="ml-4 font-normal text-sm flex">Change the medication dose
+         <p className="ml-4 font-normal text-sm flex">Adjust the medication dosage.
 
 
          {
@@ -299,12 +299,12 @@ export default function PrescriberRequestForm() {
 
          <div className='mt-4 flex'>
 
-        <input value="Create a combination medication." type="checkbox"
-         checked={selectedValues.includes('Create a combination medication.')}
+        <input value="Formulate a combination medication." type="checkbox"
+         checked={selectedValues.includes('Formulate a combination medication.')}
           
          onChange={handleRadioChange}
         /> 
-        <p className="ml-4 font-normal text-sm flex">Create a combination medication. 
+        <p className="ml-4 font-normal text-sm flex">Formulate a combination medication. 
 
 
 
@@ -349,12 +349,12 @@ export default function PrescriberRequestForm() {
 
         <div className='mt-4 flex'>
 
-        <input value="I want to consult with a compounding pharmacist." type="checkbox"
-         checked={selectedValues.includes('I want to consult with a compounding pharmacist.')}
+        <input value="I wish to consult with a compounding pharmacist." type="checkbox"
+         checked={selectedValues.includes('I wish to consult with a compounding pharmacist.')}
           
          onChange={handleRadioChange}
          /> 
-        <p className="ml-4 font-normal text-sm flex">I want to consult with a compounding pharmacist. 
+        <p className="ml-4 font-normal text-sm flex">I wish to consult with a compounding pharmacist. 
       
         {
   /*
@@ -399,12 +399,12 @@ export default function PrescriberRequestForm() {
 
         <div className='mt-4 flex'>
 
-        <input value="I am looking for a specific compounding medication." type="checkbox"
-        checked={selectedValues.includes('I am looking for a specific compounding medication.')}
+        <input value="I am searching for a specific compounded medication." type="checkbox"
+        checked={selectedValues.includes('I am searching for a specific compounded medication.')}
           
         onChange={handleRadioChange}
         /> 
-        <p className="ml-4 font-normal text-sm flex">I am looking for a specific compounding medication.
+        <p className="ml-4 font-normal text-sm flex">I am searching for a specific compounded medication.
         
      
         {
