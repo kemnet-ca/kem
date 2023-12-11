@@ -104,7 +104,7 @@ useEffect(() => {
   }}
 >
   This website uses cookies to enhance the user experience.{" "}
-  <span style={{ fontSize: "10px" }}>You can enable cookies to allows store your session data</span>
+  <span >You can enable cookies to allow storage of your session data</span>
 </CookieConsent>
 
     </div>
