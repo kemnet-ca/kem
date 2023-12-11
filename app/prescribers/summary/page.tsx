@@ -317,8 +317,8 @@ function goBack()
        <DialogTitle className="font-medium text-sm">{"Confirm To Send Your Request To A Prescriber"}</DialogTitle>
        <DialogContent>
          <p id="alert-dialog-slide-description " className="text-zinc-600 text-sm font-light">
-          If you agree, your information and consult requests which you have submitted will be sent to <b>CareRx Pharmacy</b> by fax and email.
-         
+         If you agree, your information and consult requests which you have submitted will be sent to the selected Pharmacy by fax and email.
+   
          
          </p>
 
