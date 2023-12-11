@@ -155,10 +155,10 @@ const NewFooter = () => {
 			</div>
       {/* Floating Action Button */}
  <div
-        className="fixed md:bottom-[90px] md:right-10 right-6 bottom-[60px] h-16 w-16 bg-blue-500 text-white rounded-full flex items-center justify-center cursor-pointer hover:bg-blue-600">
+        className="z-50000 fixed md:bottom-[90px] md:right-10 right-6 bottom-[60px] h-16 w-16  text-white rounded-full flex items-center justify-center cursor-pointer hover:bg-blue-600">
 
 
-<Link href={"https://wa.link/o3sg6d"} className="h-16 w-16 bg-white rounded-full fixed z-400 p-2" >
+<Link href={"https://wa.link/o3sg6d"} className="h-16 w-16 bg-white rounded-full   p-2" >
 
 <img src="/images/home/whatsapp-svgrepo-com.svg" className="w-full h-full" alt="whatsapp-kemnet"/>
 </Link>

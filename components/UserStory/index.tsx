@@ -32,7 +32,7 @@ const UserStory = () => {
 			{/*	<UserStoryCard />*/}
 			</div>
 
-			<div className='container w-[95%] sm:w-[85%] lg:w-[60%] mx-auto text-center relative z-40 pt-[800px]  md:pt-[400px] pb-20'>
+			<div className='container w-[95%] sm:w-[85%] lg:w-[60%] mx-auto text-center relative z-40   md:pt-[400px] pt-[310px] pb-20'>
 				<div className='flex flex-wrap justify-evenly gap-10 items-center'>
 					<div className=''>
 						<p className='text-[36px] font-bold'>As seen on</p>
