@@ -14,7 +14,7 @@ export const awardData = [
 	{
 		id: 3,
 		description:
-			"First place - Modular Medication Manufacturing project, Schulich School of Engineering, University in Calgary, Alberta",
+			"First place - Modular Medication Manufacturing project, Schulich School of Engineering, University of Calgary, Alberta",
 		image: "/trophy.png",
 	},
 	{
