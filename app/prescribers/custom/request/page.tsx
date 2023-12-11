@@ -8,6 +8,7 @@ import Fade from '@mui/material/Fade';
 import Navbar from '@/components/Navbar';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/navigation';
+import Footer from '@/components/Footer';
 
 
 
@@ -453,6 +454,7 @@ onChange={handleTextareaChange}
   
 </div>
 </div>
+<Footer />
 
     </main>
   )

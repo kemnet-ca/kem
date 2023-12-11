@@ -135,7 +135,10 @@ const NewFooter = () => {
 			<div className='w-[95%] sm:w-[85%] lg:w-[60%] mx-auto text-center py-[30px] flex justify-between items-center'>
 				<p className='text-sm '>©KEMET2023, All rights reserved.</p>
 
-				<ul className='flex items-center gap-9'>
+			{
+
+/*
+<ul className='flex items-center gap-9'>
 					<li className='text-sm '>
 						<Link href={"/"}> Terms</Link>
 					</li>
@@ -147,6 +150,8 @@ const NewFooter = () => {
 						<Link href={"/"}>Cookies</Link>
 					</li>
 				</ul>
+*/
+      }	
 			</div>
       {/* Floating Action Button */}
  <div
