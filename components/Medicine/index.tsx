@@ -16,7 +16,7 @@ const Medicine = () => {
 						unique body?
 					</p>
 					<p className='text-[26px] mb-10 font-normal'>
-						Do you need a meditation that is currently <br /> not available?
+						Do you need a medication that is currently <br /> not available?
 					</p>
 
 					<Link href="options/" className='bg-white rounded-[50px] text-[#2D86C8] px-9 py-3 max-w-fit font-medium pr-16 relative'>
