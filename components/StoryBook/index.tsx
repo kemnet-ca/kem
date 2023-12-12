@@ -64,7 +64,7 @@ const StoryBook = () => {
 						<SlideItem src="/storybook/4CCB5EB4-9A0C-46E8-8E5B-672687ADFD22_1_201_a.jpeg" />
 					</SwiperSlide >
 					<SwiperSlide>
-						<SlideItem src ="/storybook/D04F4A58-199F-4B5A-AE31-A31CF97D1B41_1_201_a.jpeg" />
+						<SlideItem src ="/storybook/KemetVV_StoryBook Design File.pptx (1).jpg" />
 					</SwiperSlide>
 					<SwiperSlide>
 						<SlideItem src ="/storybook/507D0308-D4DA-47E5-BB51-9419EB75F2AF_1_201_a.jpeg" />
