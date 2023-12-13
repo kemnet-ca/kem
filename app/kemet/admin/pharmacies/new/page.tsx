@@ -55,9 +55,9 @@ const AdminNewPharm = () => {
     const [pharmAddress, setPharmAddress] = useState("");
     const [pharmPhone, setPharmPhone] = useState("");
 
-    const [mapLink, setMapLink] = useState("");
+    const [mapLink, setMapLink] = useState("-");
 
-    const [website, setWebsite] = useState("");
+    const [website, setWebsite] = useState("-");
 
     
 
