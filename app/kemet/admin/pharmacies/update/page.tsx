@@ -445,7 +445,7 @@ function update(){
         margin="normal"
       />
 
-<p className='text-zinc-500 text-sm mb-2' >Select A Category</p>
+<p className='text-zinc-500 text-sm mb-2' >Status</p>
        <FormControl className='w-80'>
       <Select
       className='w-80'
