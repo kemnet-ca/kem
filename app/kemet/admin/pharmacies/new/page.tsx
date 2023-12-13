@@ -188,7 +188,9 @@ function submiteNewPharm(){
            const data = response.data;
            console.log(data);
 
-          notify
+           alert("Pharmacy has been successfully listed");
+
+          notify();
 
           // setPatientRequestData(data);
 
