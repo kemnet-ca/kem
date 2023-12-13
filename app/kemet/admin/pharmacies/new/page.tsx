@@ -55,6 +55,10 @@ const AdminNewPharm = () => {
     const [pharmAddress, setPharmAddress] = useState("");
     const [pharmPhone, setPharmPhone] = useState("");
 
+    const [mapLink, setMapLink] = useState("");
+
+    const [website, setWebsite] = useState("");
+
     
 
     const [province, setProvince] = useState("");
@@ -149,6 +153,13 @@ function submiteNewPharm(){
     formData.append('address',  pharmAddress.toString());
 
     formData.append('city',  city.toString());
+
+
+    formData.append('map_link',  mapLink.toString());
+
+
+    formData.append('website',  website.toString());
+
 
     formData.append('postal_code',  postal.toString());
 
@@ -408,6 +419,24 @@ function submiteNewPharm(){
         name="email"
        // value={pharmacyData.phone}
        onChange={(e) => setEmail(e.target.value)}
+        fullWidth
+        margin="normal"
+      />
+
+<TextField
+        label="Website"
+        name="website"
+       // value={pharmacyData.phone}
+       onChange={(e) => setWebsite(e.target.value)}
+        fullWidth
+        margin="normal"
+      />
+
+<TextField
+        label="Map Link"
+        name="map_link"
+       // value={pharmacyData.phone}
+       onChange={(e) => setMapLink(e.target.value)}
         fullWidth
         margin="normal"
       />
