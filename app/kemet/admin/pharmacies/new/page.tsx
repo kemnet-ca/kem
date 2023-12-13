@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import React, { useState,useEffect } from 'react';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import axios, { AxiosError, AxiosResponse } from "axios";
 
 import Button from '@mui/material/Button';
@@ -36,6 +37,9 @@ const Transition = React.forwardRef(function Transition(
 // Your main component
 const AdminNewPharm = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
+    var errorMessage ="";
+    const notify = () => toast.success("Pharmacy was listed successfully!");
+  //  const notifyError = (error:any) => toast.error("An error occured with the following details");
    
     const [anchorEl, setAnchorEl] = useState(null);
     const [anchorElTwo, setAnchorElTwo] = useState(null);
@@ -46,7 +50,7 @@ const AdminNewPharm = () => {
 
     const [additionalInfo, setAdditionalInfo] = React.useState([]);
 
-
+    const [loading, setLoading] = useState(false);
     const [pharmName, setPharmName] = useState("");
     const [pharmAddress, setPharmAddress] = useState("");
     const [pharmPhone, setPharmPhone] = useState("");
@@ -110,22 +114,6 @@ const handleClickOpen = () => {
       setAnchorEl(null);
     };
 
-//get patient request data
-    useEffect(() => {
-        // Fetch all posts
-        axios.get('https://www.back.kemet.care/api/all_pharm', {
-         
-        })
-          .then((response: { data: any; }) => {
-            const data = response.data;
-           console.log(data);
-            setPharmRequestData(data );
-          })
-          .catch((error: any) => {
-            console.error('Error fetching data:', error);
-          });
-      }, []);
-  
 
 
 
@@ -146,10 +134,92 @@ const goToDashboard = () => {
 function submiteNewPharm(){
 
 
+  setLoading(true)
+
+  //  alert(selectedFromDate.toString())
+   // alert(selectedToDate.toString())
+   
+    const formData = new FormData();
+
+    formData.append('email',  email.toString());
+    formData.append('name',  email.toString());
+    formData.append('phone',  email.toString());
+    formData.append('address',  email.toString());
+
+    formData.append('city',  email.toString());
+
+    formData.append('postal_code',  email.toString());
+
+    formData.append('province',  email.toString());
+   
+    formData.append('status',  "PENDING");
+
+    try {
+
+ 
+
+
+      // create new guest post
+       axios.post('https://kemet.care/api/new_pharm', formData )
+         .then((response: { data: any; }) => {
+           const data = response.data;
+           console.log(data);
+
+          notify
+
+          // setPatientRequestData(data);
+
+          setLoading(false)
+   
+        
+           
+         })
+         .catch((error: any) => {
+         // notify
+          alert("A server error occured: " + error)
+           console.error('Error fetching data:', error);
+          // setIsLoading(false);
+         });
+     
+   
+   }
+   
+   catch (err ) {
+        
+   
+   if (err instanceof Error) {
+     const axiosError = err as AxiosError;
+     if (axiosError.response) {
+       const errorResponse = axiosError.response as AxiosResponse;
+       if (errorResponse.data) {
+         errorMessage = errorResponse.data.message;
+       }
+     }
+   
+    
+   
+      console.log(errorMessage);
+
+      setLoading(false)
+   }
+   
+   
+   //setIsLoading(false);
+   
+   
+   }
+   finally {
+   ///  setIsLoading(false);
+   setLoading(false)
+   }
+   
+
+
 }
 
   return (
     <div >
+      <ToastContainer />
 
 <React.Fragment>
      
@@ -328,9 +398,13 @@ function submiteNewPharm(){
       />
       {/* Add other text fields for the remaining data */}
 
+      {
+  loading==true?(<><p>Sending ...</p></>):(<>
       <Button className='text-zinc-700 hover:text-white mt-6 mb-10 hover:bg-black' variant="contained" onClick={submiteNewPharm}>
         Submit
       </Button>
+      </>)
+}
     </Box>
 
       

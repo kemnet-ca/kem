@@ -222,7 +222,7 @@ useEffect(() => {
 
 
 
-  <p className="text-xl text-zinc-700 font-medium mt-4">{300}</p>
+  <p className="text-xl text-zinc-700 font-medium mt-4">{"--"}</p>
 
   <div className="flex-shrink-0 align-items-flex-end text-sm">
     <Link href={"../admin/requests/patients"}>View All</Link>
