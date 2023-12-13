@@ -55,6 +55,8 @@ const AdminNewPharm = () => {
     const [pharmAddress, setPharmAddress] = useState("");
     const [pharmPhone, setPharmPhone] = useState("");
 
+    
+
     const [province, setProvince] = useState("");
     const [postal, setPostal] = useState("");
 
@@ -153,6 +155,8 @@ function submiteNewPharm(){
     formData.append('province',  province.toString());
 
     formData.append('fax',  fax.toString());
+
+    formData.append('province',  province.toString());
    
     formData.append('status',  "PENDING");
 
@@ -377,6 +381,15 @@ function submiteNewPharm(){
         name="city"
        // value={pharmacyData.phone}
        onChange={(e) => setCity(e.target.value)}
+        fullWidth
+        margin="normal"
+      />
+
+<TextField
+        label="Province"
+        name="province"
+       // value={pharmacyData.phone}
+       onChange={(e) => setProvince(e.target.value)}
         fullWidth
         margin="normal"
       />
