@@ -142,15 +142,17 @@ function submiteNewPharm(){
     const formData = new FormData();
 
     formData.append('email',  email.toString());
-    formData.append('name',  email.toString());
-    formData.append('phone',  email.toString());
-    formData.append('address',  email.toString());
+    formData.append('name',  pharmName.toString());
+    formData.append('phone',  pharmPhone.toString());
+    formData.append('address',  pharmAddress.toString());
 
-    formData.append('city',  email.toString());
+    formData.append('city',  city.toString());
 
-    formData.append('postal_code',  email.toString());
+    formData.append('postal_code',  postal.toString());
 
-    formData.append('province',  email.toString());
+    formData.append('province',  province.toString());
+
+    formData.append('fax',  fax.toString());
    
     formData.append('status',  "PENDING");
 
