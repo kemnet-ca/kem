@@ -162,7 +162,7 @@ function submiteNewPharm(){
 
 
       // create new guest post
-       axios.post('https://kemet.care/api/new_pharm', formData )
+       axios.post('https://www.back.kemet.care/api/new_pharm', formData )
          .then((response: { data: any; }) => {
            const data = response.data;
            console.log(data);
