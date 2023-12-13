@@ -466,6 +466,9 @@ function submiteNewPharm(){
     </FormControl>
       {/* Add other text fields for the remaining data */}
 
+<div className='h-2'>
+
+</div>
       {
   loading==true?(<><p>Sending ...</p></>):(<>
       <Button className='text-zinc-700 hover:text-white mt-6 mb-10 hover:bg-black' variant="contained" onClick={submiteNewPharm}>
