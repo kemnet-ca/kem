@@ -175,7 +175,7 @@ function submiteNewPharm(){
 
     formData.append('province',  province.toString());
    
-    formData.append('status',  "PENDING");
+    formData.append('status',  selectedOption);
 
     try {
 
