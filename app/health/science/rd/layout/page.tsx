@@ -1,6 +1,6 @@
 
 import Head from 'next/head';
-import Cookies from "js-cookie";
+import Cookies from"js-cookie
 
 
 import { Metadata, ResolvingMetadata } from 'next';
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     console.log(blogPost);
   
     return {
-      title: "KEMET BLOG - "+ posttitle,
+      title: "KEMET BLOG - ",
       description: "BLOG - ",
     };
   }

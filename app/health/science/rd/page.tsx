@@ -12,7 +12,7 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Tooltip from '@mui/material/Tooltip';
 import Fade from '@mui/material/Fade';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import Cookies from "js-cookie";
 
@@ -87,11 +87,12 @@ export default function ResearchAndDev() {
 
   function gotToSinglePage(title:any, body:any){
 
-   
-    router.push({
-      pathname: './rd/layout',
-      query: { data: title }, // Add your data as query parameters
-    });
+    Cookies.set("post_title", title);
+    Cookies.set("post_body", body);
+
+    router.push("./rd/layout")
+
+    
   }
 
 
