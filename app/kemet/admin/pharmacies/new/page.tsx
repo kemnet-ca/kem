@@ -195,6 +195,8 @@ function submiteNewPharm(){
           // setPatientRequestData(data);
 
           setLoading(false)
+
+          window.location.reload();
    
         
            

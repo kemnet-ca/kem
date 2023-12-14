@@ -17,7 +17,8 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
 import { useRouter } from 'next/navigation';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -39,6 +40,7 @@ const Transition = React.forwardRef(function Transition(
 // Your main component
 const AdminPatients = () => {
   var errorMessage = "";
+  const notify = () => toast.success("Record was deleted successfully!");
     const [isMenuOpen, setMenuOpen] = useState(false);
    
     const [anchorEl, setAnchorEl] = useState(null);
@@ -48,12 +50,27 @@ const AdminPatients = () => {
     const [postsDataTwo, setPostsDataTwo] = useState<any[]>([]); 
     const [todaysRecords, setTodayRecords] = useState<any[]>([]); 
     const [value, setValue] = React.useState<Dayjs | null>(null);
+    const [selectedIndexToDelete, setSelectedIndexToDelete] = useState(0);
+
+    
    
 
-    const [open, setOpen] = React.useState(false);
+    const [deleteOpen, setDeleteOpen] = React.useState(false);
    
     const [selectedFromDate, setSelectedFromDate] = useState("");
     const [selectedToDate, setSelectedToDate] = useState("");
+
+    const [medInforBlogCount, setSedInforBlogCount] = useState(0);
+
+    const [getKnowledHubCount, setKnowledgeHubCount ] = useState(0);
+
+    const [getResearchCount, setResearchCount ] = useState(0);
+    const [loading, setLoading] = useState(false);
+
+    
+   
+
+    
     
 
     const handleDateChange = (date:any) => {
@@ -103,12 +120,14 @@ const AdminPatients = () => {
  
 
 
-const handleClickOpen = () => {
-    setOpen(true);
+const openDeleteDialog = (index:any) => {
+
+  setSelectedIndexToDelete(index)
+    setDeleteOpen(true);
   };
   
-  const handleClose = () => {
-    setOpen(false);
+  const closeDeleteDialog = () => {
+    setDeleteOpen(false);
   };
   
     const handleMenuClose = () => {
@@ -124,11 +143,33 @@ const handleClickOpen = () => {
           .then((response: { data: any; }) => {
             const data = response.data;
            console.log(data);
-           setPostsData(data );
-            setPostsDataTwo(data)
+
 
             const filteredData = getTodayRecords(data); // Assuming 'data' is an array of objects with 'created_at' field
             setTodayRecords(filteredData);
+
+            setPostsData(postsDataTwo)
+
+            //get count of posts from MED_INFO_BLOG category
+            const filteredMedInfoPosts = data.filter((post: { group: string; }) => post.group === "MED_INFO_BLOG");
+
+            setSedInforBlogCount(filteredMedInfoPosts.length)
+
+            //get count of posts from KNOWLEDG HUB
+            const filteredKnowledgeHubPosts = data.filter((post: { group: string; }) => post.group === "KNWOLEDGE_HUB");
+
+            setKnowledgeHubCount(filteredKnowledgeHubPosts.length)
+
+
+              //get count of posts from RESEARCH
+              const filteredResearchPosts = data.filter((post: { group: string; }) => post.group === "RESEARCH");
+
+              setResearchCount(filteredResearchPosts.length)
+
+            setPostsData(data );
+            setPostsDataTwo(data)
+
+            
           })
           .catch((error: any) => {
             console.error('Error fetching data:', error);
@@ -208,7 +249,7 @@ const goToDashboard = () => {
 
 
         // create new guest post
-         axios.post('https://www.back.kemet.care/api/patients/get_req_btw_dates', formData )
+         axios.post('https://www.back.kemet.care/api/posts/get_posts_btw_dates', formData )
            .then((response: { data: any; }) => {
              const data = response.data;
              console.log(data);
@@ -270,10 +311,10 @@ const goToDashboard = () => {
     //  alert(patientRequestDataTwo);
 
     setPostsData(postsDataTwo)
-       const searchResult = postsData.filter(
+       const searchResult = postsDataTwo.filter(
         (data) =>
-          data.first_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          data.last_name.toLowerCase().includes(searchTerm.toLowerCase())
+          data.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          data.body.toLowerCase().includes(searchTerm.toLowerCase())
       );
     
       
@@ -284,25 +325,132 @@ const goToDashboard = () => {
 
   
     }
+
+
+
+   
+
+     function viewMedInfoPosts() {
+
+      setPostsData(postsDataTwo)
+      const filteredMedInfoPosts = postsDataTwo.filter(post => post.group === "MED_INFO_BLOG");
+       setPostsData(filteredMedInfoPosts)
+    }
+
+
+    function knowledgePosts() {
+      setPostsData(postsDataTwo)
+      const filteredMedInfoPosts = postsDataTwo.filter(post => post.group === "KNOWLEDGE_HUB");
+       setPostsData(filteredMedInfoPosts)
+    }
+
+
+    function  researchPosts() {
+      setPostsData(postsDataTwo)
+      const filteredMedInfoPosts = postsDataTwo.filter(post => post.group === "RESEARCH");
+       setPostsData(filteredMedInfoPosts)
+    }
+
+
+    function deleteItem(){
+
+
+      setLoading(true)
+    
+      //  alert(selectedFromDate.toString())
+       // alert(selectedToDate.toString())
+       
+        const formData = new FormData();
+    
+        formData.append('id',  selectedIndexToDelete.toString());
+       
+    
+        try {
+    
+     
+    
+    
+          // create new guest post
+           axios.post('https://www.back.kemet.care/api/delete/blog', formData )
+             .then((response: { data: any; }) => {
+               const data = response.data;
+               console.log(data);
+    
+               alert("Record has been successfully deleted");
+    
+              notify();
+    
+              // setPatientRequestData(data);
+    
+              setLoading(false)
+    
+              window.location.reload();
+       
+            
+               
+             })
+             .catch((error: any) => {
+             // notify
+              alert("A server error occured: " + error)
+               console.error('Error fetching data:', error);
+              // setIsLoading(false);
+             });
+         
+       
+       }
+       
+       catch (err ) {
+            
+       
+       if (err instanceof Error) {
+         const axiosError = err as AxiosError;
+         if (axiosError.response) {
+           const errorResponse = axiosError.response as AxiosResponse;
+           if (errorResponse.data) {
+             errorMessage = errorResponse.data.message;
+           }
+         }
+       
+        
+       
+          console.log(errorMessage);
+    
+          setLoading(false)
+       }
+       
+       
+       //setIsLoading(false);
+       
+       
+       }
+       finally {
+       ///  setIsLoading(false);
+       setLoading(false)
+       }
+       
+    
+    
+    }
     
  
   return (
     <div >
+        <ToastContainer />
 
 <React.Fragment>
      
      <Dialog
-       open={open}
+       open={deleteOpen}
        TransitionComponent={Transition}
        keepMounted
-       onClose={handleClose}
+       onClose={closeDeleteDialog}
        aria-describedby="alert-dialog-slide-description"
      >
-       <DialogTitle className="font-semibold text-md">{"Request Details"}</DialogTitle>
+       <DialogTitle className="font-semibold text-md text-red-500">{"DELETE CONTENT"}</DialogTitle>
        <DialogContent>
 
 
-       <p className='mt-4 font-medium text-sm'>Additional Info:</p>
+       <p className='mt-4 font-medium text-sm'>If you continue, this content will be deleted</p>
 
        <p className="text-zinc-900 text-sm font-normal">
        
@@ -313,7 +461,15 @@ const goToDashboard = () => {
         
        </DialogContent>
        <DialogActions>
-         <p className='text-zinc-400 cursor-pointer mr-10 hover:mb-1' onClick={handleClose}>Close</p>
+
+        {
+          loading == true?(<>Deleting...</>):(<>       <p className=' cursor-pointer mr-10 hover:mb-1 text-red-500' onClick={deleteItem}>YES, Delete</p>
+          </>)
+        }
+
+
+
+         <p className='text-zinc-400 cursor-pointer mr-10 hover:mb-1' onClick={closeDeleteDialog}>Cancel</p>
         
        </DialogActions>
      </Dialog>
@@ -402,10 +558,10 @@ const goToDashboard = () => {
         <div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Med Info Blog</p>
 
-  <p className="text-xl text-zinc-700 font-medium mt-4">{postsDataTwo.length}</p>
+  <p className="text-xl text-zinc-700 font-medium mt-4">{medInforBlogCount}</p>
 
 
-  <p className="text-sm text-zinc-700 font-medium mt-4 cursor-pointer hover:font-semibold" onClick={viewAllRecords}>View All</p>
+  <p className="text-sm text-zinc-700 font-medium mt-4 cursor-pointer hover:font-semibold" onClick={viewMedInfoPosts}>View All</p>
 
 
 </div>
@@ -413,9 +569,9 @@ const goToDashboard = () => {
 <div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">Knowledge Hub</p>
 
-  <p className="text-xl text-zinc-700 font-medium mt-4">{todaysRecords.length}</p>
+  <p className="text-xl text-zinc-700 font-medium mt-4">{getKnowledHubCount}</p>
 
-  <p onClick={()=>viewTodayRecords(postsData)} className="text-sm text-zinc-700 font-medium mt-4 cursor-pointer hover:font-semibold">View All</p>
+  <p onClick={knowledgePosts} className="text-sm text-zinc-700 font-medium mt-4 cursor-pointer hover:font-semibold">View All</p>
 
 </div>
 
@@ -423,9 +579,9 @@ const goToDashboard = () => {
 <div className="w-full h-32 shadow-xl rounded-xl border border-zinc-200 border-2 p-4">
   <p className="text-sm text-zinc-500 font-medium">R & D</p>
 
-  <p className="text-xl text-zinc-700 font-medium mt-4">{todaysRecords.length}</p>
+  <p className="text-xl text-zinc-700 font-medium mt-4">{getResearchCount}</p>
 
-  <p onClick={()=>viewTodayRecords(postsData)} className="text-sm text-zinc-700 font-medium mt-4 cursor-pointer hover:font-semibold">View All</p>
+  <p onClick={researchPosts} className="text-sm text-zinc-700 font-medium mt-4 cursor-pointer hover:font-semibold">View All</p>
 
 </div>
 
@@ -555,7 +711,7 @@ Title
 
                
                 <td className="px-6 py-4 text-gray-700 font-medium cursor-pointer hover:font-semibold">
-                  Edit <span className='ml-2 text-red-500'>Delete</span>
+                  Edit <span className='ml-2 text-red-500' onClick={()=>openDeleteDialog(singlePost.id)}>Delete</span>
                   </td>
                
             </tr>

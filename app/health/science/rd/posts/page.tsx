@@ -12,11 +12,14 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Tooltip from '@mui/material/Tooltip';
 import Fade from '@mui/material/Fade';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import axios from 'axios';
-import Cookies from "js-cookie";
+import Head from 'next/head';
 
-export default function ResearchAndDev() {
+
+
+
+export default function SinglePost(props:any) {
   
 
     const [selectedOption, setSelectedOption] = React.useState('Categories');
@@ -85,20 +88,16 @@ export default function ResearchAndDev() {
   
   };
 
-  function gotToSinglePage(title:any, body:any){
-
-   
-    router.push({
-      pathname: './rd/layout',
-      query: { data: title }, // Add your data as query parameters
-    });
-  }
-
 
 
 
   return (
+    <>  
+
+
+
     <main className="bg-white relative">
+       
 
  <Navbar />
 
@@ -253,9 +252,9 @@ selectedView=="GALLERY"?(<>
         <div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer p-4 ">
 
        
-        <div onClick={()=>gotToSinglePage(singlePost.title, singlePost.body)}  className='w-full h-full bg-400 roudned-br-2xl p-2 rounded-bl-2xl   grid place-content-center  '>
+        <div  className='w-full h-8 bg-400 rouned-br-2xl p-2 rounded-bl-2xl   border-t grid place-content-center  '>
 
-<p   className='text-xl font-medium  text-center '>{singlePost.title}</p>
+<p   className='text-sm font-medium  text-center '>{singlePost.title}</p>
 
 
 </div>
@@ -284,7 +283,7 @@ selectedView=="GALLERY"?(<>
 
     </div>
   <div>
-  <p   className='text-md font-medium text-start ml-2'>{singlePost.title}</p>
+  <p   className='text-xs font-medium text-start ml-2'>{singlePost.title}</p>
 
 
     <p   className='text-xs  mt-2 text-start ml-2'>{formatText(singlePost.body)}</p>
@@ -320,5 +319,6 @@ selectedView=="GALLERY"?(<>
 <Footer />
 
     </main>
+    </>
   )
 }

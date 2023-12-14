@@ -16,6 +16,7 @@ import Fade from '@mui/material/Fade';
 import axios from 'axios';
 import { Dialog, DialogTitle, DialogContent, DialogActions, Slide, TextField, Button } from '@mui/material';
 import { TransitionProps } from '@mui/material/transitions';
+import Cookies from "js-cookie";
 
 export default function Blog() {
   
@@ -319,7 +320,7 @@ selectedView=="GALLERY"?(<>
 
     </div>
   <div>
-  <p   className='text-xs font-medium text-start ml-2'>{singlePost.title}</p>
+  <p   className='text-sm font-medium text-start ml-2'>{singlePost.title}</p>
 
 
     <p   className='text-xs  mt-2 text-start ml-2'>{formatText(singlePost.body)}</p>
