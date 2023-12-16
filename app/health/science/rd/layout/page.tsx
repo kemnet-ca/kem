@@ -1,6 +1,6 @@
 
 import Head from 'next/head';
-import Cookies from"js-cookie
+import Cookies from"js-cookie";
 
 
 import { Metadata, ResolvingMetadata } from 'next';
