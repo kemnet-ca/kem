@@ -94,6 +94,7 @@ interface Pharmacy {
 }
 
 const [pharmaciesRequestData, setPharmRequestData] = useState<Pharmacy[]>([]);
+const [pharmaciesRequestDataTwo, setPharmRequestDataTwo] = useState<Pharmacy[]>([]);
 
 const [pharmaciesName, setPharmName] = useState("");
 
@@ -347,12 +348,19 @@ useEffect(() => {
      console.log(data);
       setPharmRequestData(data );
 
+      setPharmRequestDataTwo(data);
+
       getIP(data);
     })
     .catch((error: any) => {
       console.error('Error fetching data:', error);
     });
 }, []);
+
+function viewAllPharm(){
+  setPharmRequestData(pharmaciesRequestDataTwo)
+
+}
  
 
 
@@ -542,8 +550,11 @@ function checkPharm(id: string) {
 
 </div>
 
+<div className="w-full  mt-6 flex justify-center ">
 
+<button onClick={viewAllPharm} className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 hover:mt-2 ml-[20px] w-60 h-10 mr-6'>View All Pharmacies</button>
 
+</div>
 
 
    <div className='w-full flex justify-center  ml-6'>
@@ -590,6 +601,7 @@ function checkPharm(id: string) {
 
          <button onClick={handleClickOpen} className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 hover:mt-2 ml-[20px] w-32 h-10 mr-6'>Submit</button>
 
+       
          </div>
 
 

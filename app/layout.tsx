@@ -12,7 +12,7 @@ const space_grotesk =  Space_Grotesk({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Kemet Pharamceuticals - Custom Medicines For Everyone & Every Need',
-  description: 'Kemet Pharmaceuticals - Custom Medicines For Everyone & Every Need',
+  description: 'We take your personalized needs for customized medicines and connect you with the pharmacies that can make or provide them. Unique dosages, unique formulations, <br></br>out of stock medications and so on, we can handle it all. Currently servicing residents of Alberta.',
 }
 
 export default function RootLayout({

@@ -89,6 +89,7 @@ const [currCity, setCurrCity] = useState("Not Available");
 const [ipData, setIPData] = useState("Not Available");
 
 const [pharmaciesRequestData, setPharmRequestData] = useState<Pharmacy[]>([]);
+const [pharmaciesRequestDataTwo, setPharmRequestDataTwo] = useState<Pharmacy[]>([]);
 
   // Filtered data state
 const [filteredPharmacies, setFilteredPharmacies] = useState<Pharmacy[]>([]);
@@ -203,6 +204,7 @@ useEffect(() => {
       const data = response.data;
      console.log(data);
       setPharmRequestData(data );
+      setPharmRequestDataTwo(data);
 
       getIP();
     })
@@ -210,6 +212,13 @@ useEffect(() => {
       console.error('Error fetching data:', error);
     });
 }, []);
+
+function viewAllPharm(){
+  setPharmRequestData(pharmaciesRequestDataTwo)
+
+}
+ 
+
  
 
 
@@ -393,7 +402,11 @@ const handleOptionChange = (event:any) => {
 
 </div>
 
+<div className="w-full  mt-6 flex justify-center ">
 
+<button onClick={viewAllPharm} className='text-center text-sm text-white font-light bg-black rounded-3xl flex items-center justify-center px-6 hover:mt-2 ml-[20px] w-60 h-10 mr-6'>View All Pharmacies</button>
+
+</div>
 
 
 

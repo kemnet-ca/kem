@@ -211,6 +211,8 @@ function update(){
     formData.append('email',  email.toString());
     formData.append('id',  pharmID.toString());
     formData.append('status',  selectedOption.toString());
+    formData.append('phone',  pharmPhone.toString());
+    formData.append('fax',  fax.toString());
 
     try {
 
