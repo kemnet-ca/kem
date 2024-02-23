@@ -601,14 +601,15 @@ className='border border-zinc-300 text-sm text-zinc-300 p-4 w-[500px] rounded-md
   </textarea>
 </div>
 
-<div className='w-full flex justify-center mt-2'>
-
-    <button onClick={addAllSelectionsToCookies} className='text-center text-sm text-white font-light bg-black rounded-3xl py-2 px-6 hover:mt-2'>Submit</button>
-</div>
 
 
   */
 }
+
+<div className='w-full flex justify-center mt-6'>
+
+    <button onClick={addAllSelectionsToCookies} className='text-center text-sm text-white font-light bg-black rounded-3xl py-2 px-6 hover:mt-2'>Submit</button>
+</div>
 
 
   </div>
