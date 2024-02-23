@@ -85,12 +85,13 @@ export default function ResearchAndDev() {
   
   };
 
-  function gotToSinglePage(title:any, body:any){
+  function gotToSinglePage(title:any, body:any, id:any){
 
     Cookies.set("post_title", title);
     Cookies.set("post_body", body);
+    Cookies.set("post_id", id);
 
-    router.push("./rd/layout")
+    router.push("./rd/layout?content_id="+id)
 
     
   }
@@ -254,7 +255,7 @@ selectedView=="GALLERY"?(<>
         <div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer p-4 ">
 
        
-        <div onClick={()=>gotToSinglePage(singlePost.title, singlePost.body)}  className='w-full h-full bg-400 roudned-br-2xl p-2 rounded-bl-2xl   grid place-content-center  '>
+        <div onClick={()=>gotToSinglePage(singlePost.title, singlePost.body, singlePost.id)}  className='w-full h-full bg-400 roudned-br-2xl p-2 rounded-bl-2xl   grid place-content-center  '>
 
 <p   className='text-xl font-medium  text-center '>{singlePost.title}</p>
 

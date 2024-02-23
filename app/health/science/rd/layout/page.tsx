@@ -2,32 +2,49 @@
 import Head from 'next/head';
 import Cookies from"js-cookie";
 
-
-import { Metadata, ResolvingMetadata } from 'next';
+import { headers } from "next/headers";
+import { usePathname  } from 'next/navigation'
+import {  ResolvingMetadata } from 'next';
 import SinglePost from '../posts/page';
 
-type Props = {
-  params: { id: string };
+type Metadata = {
+  title: string;
+  description?: string;
+  // Add other metadata properties if needed
 };
 
-// set dynamic metadata
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    // read route params
-    const id = params.id;
-    const url = 'https://api.slingacademy.com/v1/sample-data/blog-posts/' + id;
 
-    var posttitle = Cookies.get("post_body");
-  
-    // fetch data
-    const data = await fetch(url).then((res) => res.json());
-    const blogPost = data.blogs;
-    console.log(blogPost);
-  
-    return {
-      title: "KEMET BLOG - ",
-      description: "BLOG - ",
-    };
+export async function generateMetadata(content_id: any): Promise<Metadata> {
+ 
+ 
+  const url = `https://back.kemet.care/api/single/post/${content_id.searchParams.content_id}`;
+
+  try {
+      const response = await fetch(url);
+      if (!response.ok) {
+          throw new Error('Failed to fetch data');
+      }
+
+      const data = await response.json();
+      const blogPost = data.post;
+
+      return {
+          title: `KEMET BLOG - ${blogPost!.title}`,
+          description: `BLOG - ${blogPost!.title}`,
+          // Add other metadata properties as needed
+      };
+  } catch (error) {
+      console.error('Error fetching data:', error);
+      return {
+          title: 'Error occurred ', // Provide a fallback title or error message
+          description: 'Failed to fetch data',
+          // Add other error-related metadata properties as needed
+      };
   }
+ 
+
+}
+
   export default function SinglePostLayout(props:any) {
 
     return (

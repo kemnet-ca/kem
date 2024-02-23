@@ -66,7 +66,11 @@ useEffect(() => {
   return (
     <div>
 
-<Header />
+      <Navbar />
+
+{
+  /*<Header />*/
+}
 
 <Banner />
 <Medicine />

@@ -49,14 +49,14 @@ export default function SinglePost(props:any) {
    //get patient request data
    useEffect(() => {
     // Fetch all posts
-    axios.get('https://www.back.kemet.care/api/cms/rd/posts', {
+    axios.get('https://back.kemet.care/api/single/post/5', {
      
     })
       .then((response: { data: any; }) => {
         const data = response.data;
       
        console.log(data);
-       setPostsData(data );
+       setPostsData(data.post );
        
 
       
@@ -66,27 +66,24 @@ export default function SinglePost(props:any) {
       });
   }, []);
 
-  const formatText = (text:any) => {
- 
-    
-    // Remove surrounding quotes if needed
-    const parsedContent = text.replace(/^"|"$/g, '');
-    
-     
-    // Create a temporary element to render HTML content
-    const tempElement = document.createElement('div');
-    tempElement.innerHTML = parsedContent;
-  
-    // Access the parsed content text without HTML tags
-    const textContent = tempElement.textContent;
-  
-    
-  
-    const truncatedText = textContent!.length > 100 ? textContent!.substring(0, 100) + '...' : textContent;
-  
-    return truncatedText;
-  
-  };
+  const formatText = (text: string) => {
+    if (typeof text !== 'undefined') {
+        // Remove surrounding quotes if needed
+        const parsedContent = text.replace(/^"|"$/g, '');
+        
+        // Create a temporary element to render HTML content
+        const tempElement = document.createElement('div');
+        tempElement.innerHTML = parsedContent;
+        
+        // Access the parsed content text without HTML tags
+        const textContent = tempElement.textContent;
+        
+        return textContent;
+    } else {
+        // Handle the case when text is undefined
+        return '';
+    }
+};
 
 
 
@@ -142,19 +139,7 @@ export default function SinglePost(props:any) {
 
 <div className='w-2/3 py-2 px-6  mt-8 rounded-md '>
 
-<p className="text-sm font-light text-zinc-800 mt-4"> At Kemet, innovation is at the heart of everything we do. We&apos;re committed to expanding our product offerings through user discovery programs, strategic alliances with industry partners and research institutes, and it&apos;s a cornerstone of our growth strategy.</p>
-
-
-
-<p className="text-sm font-light text-zinc-800 mt-4"> Our dedication extends to ensuring medication accessibility for all, especially in underserved communities. Kemet is deeply committed to understanding the unique medication needs of equity deserving people and populations. Together, we co-create, make, and deliver equitable, sustainable, and personalized medicine solutions.</p>
-
-
-<p className="text-sm font-light text-zinc-800 mt-4"> Within the Kemet Group, we continuously conceive and develop groundbreaking medications with novel delivery methods. These medicines have the potential to positively impact the lives of millions in African countries and around the world each year. We prioritize your medication experience and overall health outcomes, which is why we invest in creating new drug formulations.</p>
-
-
-
-<p className="text-sm font-light text-zinc-800 mt-4"> Our commitment to innovation is backed by scientific rigor, cutting-edge capabilities, and a highly specialized team. This enables us to maintain a robust and innovative product pipeline that paves the way for a healthier future.</p>
-
+<p>{formatText(postsData!.body)}</p>
 
   
 </div>
@@ -162,147 +147,8 @@ export default function SinglePost(props:any) {
 
 
 
-  <div className='w-full flex justify-center mt-10'>
-   <p className='text-center text-xl font-medium ' style={{marginTop:`-20px`}}>Our Library</p>
+ 
 
-
-
-
-   </div>
-
-
-
-   <div className="w-screen flex  justify-center mt-6 ">
-
-  <div className="w-2/3 px-8  flex ">
-
-  <FormControl>
-      <Select
-        value={selectedOption}
-        onChange={handleCategoryChange}
-        displayEmpty
-
-        className="w-full md:w-[200px] mr-auto"
-      >
-        <MenuItem value="Categories" disabled >
-          Categories
-        </MenuItem>
-        <MenuItem value="Applied Research">Applied Research</MenuItem>
-        <MenuItem value="Technical Reports">Technical Reports</MenuItem>
-        <MenuItem value="Category 3">Journal Articles</MenuItem>
-        <MenuItem value="Technical Reports">Ebooks</MenuItem>
-        <MenuItem value="Category 3">White Papers & Literature Reviews</MenuItem>
-      </Select>
-    </FormControl>
-
-
-   <div className="w-[100px]  flex ml-auto mt-4 ">
-
-
-   <Tooltip  TransitionComponent={Fade}
-        componentsProps={{
-            tooltip: {
-              sx: {
-                bgcolor: 'common.white',
-                color: 'common.black',
-                '& .MuiTooltip-arrow': {
-                  color: 'common.white',
-                },
-              },
-            },
-          }}
-  TransitionProps={{ timeout: 600 }} title={
-   
-     <p className='text-xs font-light text-leight'> Change post view to gallery mode</p>
-    
-        
-  } arrow>
-
-<img onClick={setViewGallery} src="/images/grid-svgrepo-com (2).svg" alt=" " className="h-8 w-8 cursor-pointer" />
-   
-    </Tooltip>
-    <div className="w-4"></div>
-
-    <div className="w-1 bg-zinc-400"></div>
-
-    <div className="w-4"></div>
-
-    <img onClick={setViewSnippet} src="/images/snippet-svgrepo-com.svg" alt=" " className="h-8 w-8 cursor-pointer" />
-
-
-   </div>
-
-
-  </div>
-
-</div>
-{
-
-selectedView=="GALLERY"?(<>
-
-<div className='flex w-screen justify-center  flex'>
-
-<div className="w-2/3 grid grid-cols-2 p-4 gap-4  items-center place-content-center mx-auto">
-{postsData !== null && postsData.map((singlePost: any, index: any) => (
-    <div key={index} className='h-60 w-full bg-slate-300 rounded-2xl single-item'>
-
-
-   
-
-        <div className="sub-inner w-full h-full bg-zinc-300 rounded-2xl cursor-pointer p-4 ">
-
-       
-        <div  className='w-full h-8 bg-400 rouned-br-2xl p-2 rounded-bl-2xl   border-t grid place-content-center  '>
-
-<p   className='text-sm font-medium  text-center '>{singlePost.title}</p>
-
-
-</div>
-
-        </div>
-
-   
-
-       
-    </div>
-    ))}
-   
-
-  </div></div>
-  </>):(<>
-  
-    <div  className='flex w-screen justify-center  flex'>
-
-<div className="w-2/3 grid grid-cols-2 p-4 gap-4  items-center place-content-center mx-auto">
-
-
-{postsData !== null && postsData.map((singlePost: any, index: any) => (
-  
-  <div key={index} className="flex w-full shadow-xl p-2 rounded-xl border border-slate-200">
-    <div className="h-20 w-32 bg-slate-200 rounded-md">
-
-    </div>
-  <div>
-  <p   className='text-xs font-medium text-start ml-2'>{singlePost.title}</p>
-
-
-    <p   className='text-xs  mt-2 text-start ml-2'>{formatText(singlePost.body)}</p>
-
-    </div>
-
-
-  </div>
-
-))}
-
-
-
-
-
-</div></div>
-  
-  </>)
-}
 
 
 

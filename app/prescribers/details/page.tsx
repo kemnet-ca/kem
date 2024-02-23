@@ -228,7 +228,10 @@ function addAllDataToCookies(){
       </div>
     </div>
 
-    <div className="w-full flex mt-8 ">
+    {
+      /*
+
+       <div className="w-full flex mt-8 ">
 
 <p className='font-medium text-sm'>Additional information</p>
 
@@ -247,6 +250,11 @@ function addAllDataToCookies(){
 
 </div>
 </div>
+
+      */
+    }
+
+   
 
     <div className="w-full  mt-4 flex justify-center">
 
