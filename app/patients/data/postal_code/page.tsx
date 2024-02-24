@@ -126,7 +126,8 @@ useEffect(() => {
 </div>
 
 </div>
-<ParticipatingPharms />
+{ //<ParticipatingPharms />
+}
 
 <Footer />
 

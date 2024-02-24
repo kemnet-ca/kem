@@ -612,7 +612,8 @@ function checkPharm(id: string) {
 
 </div>
 
-<ParticipatingPharms />
+{ //<ParticipatingPharms />
+}
 <Footer />
 
     </main>

@@ -79,7 +79,8 @@ export default function PatientSuccessPage() {
 
 </div>
 
-<ParticipatingPharms />
+{ //<ParticipatingPharms />
+}
 
 
 <Footer />

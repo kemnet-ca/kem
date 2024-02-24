@@ -645,7 +645,8 @@ className='border border-zinc-300 text-sm text-zinc-300 p-4 w-[500px] rounded-md
 
 
 
-<ParticipatingPharms />
+{ //<ParticipatingPharms />
+}
 
 <Footer />
 

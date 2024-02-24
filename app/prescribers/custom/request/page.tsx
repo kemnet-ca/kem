@@ -480,7 +480,8 @@ onChange={handleTextareaChange}
 
   </div>
 
-  <ParticipatingPharms />
+  { //<ParticipatingPharms />
+}
 <Footer />
 
     </main>

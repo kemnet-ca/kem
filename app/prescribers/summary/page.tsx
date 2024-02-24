@@ -468,7 +468,8 @@ function goBack()
 
 </div>
 
-<ParticipatingPharms />
+{ //<ParticipatingPharms />
+}
 <Footer />
 
     </main>

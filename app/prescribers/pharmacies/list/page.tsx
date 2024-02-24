@@ -468,7 +468,8 @@ const handleOptionChange = (event:any) => {
 
 </div>
 
-<ParticipatingPharms />
+{ //<ParticipatingPharms />
+}
 
 <Footer />
 

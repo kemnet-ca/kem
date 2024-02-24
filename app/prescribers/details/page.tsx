@@ -270,7 +270,8 @@ function addAllDataToCookies(){
 
 </div>
 
-<ParticipatingPharms />
+{ //<ParticipatingPharms />
+}
 <Footer />
 
 
