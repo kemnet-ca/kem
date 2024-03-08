@@ -23,29 +23,7 @@ export default function Home() {
   
 
 
-const [displayText, setDisplayText] = useState('Patient');
 
-
-
-const router = useRouter();
-
-
-
-useEffect(() => {
-  const interval = setInterval(() => {
-
- 
-
-    setDisplayText((currentText) => (currentText == 'Patient' ? 'Prescriber' : 'Patient'));
- 
-
-    console.log(displayText)
-  }, 6000);
-
-  return () => {
-    clearInterval(interval);
-  };
-}, []);
 
 
 /*return(
@@ -64,54 +42,17 @@ useEffect(() => {
  
 
   return (
-    <div>
+    <div className="h-screen w-screen grid place-content-center">
 
-      <Navbar />
+     
 
-{
-  /*<Header />*/
-}
-
-<Banner />
-<Medicine />
-
-<SponsorsAndAward />
-
-{
-/* <Blank /> */
-}
+<h1 className="text-5xl text center">
+Updates Coming Soon!
 
 
-
-<UserStory />
-
+</h1>
 
 
-<Footer />
-
-
-
-
-
-
-<CookieConsent
-  location="bottom"
-  buttonText="Yes, I'm cool!"
-  
-  cookieName="myAwesomeCookieName2"
-  style={{ background: "#2B373B" }}
-  declineButtonText="Not interested"
-  buttonStyle={{ color: "#000000", backgroundColor:"#ffffff"}}
-  expires={150}
-
-  enableDeclineButton
-  onDecline={() => {
-   // alert("nay!");
-  }}
->
-  This website uses cookies to enhance the user experience.{" "}
-  <span >You can enable cookies to allow storage of your session data</span>
-</CookieConsent>
 
     </div>
   )
